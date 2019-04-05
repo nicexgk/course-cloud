@@ -1,0 +1,36 @@
+#contain_left{
+	width:200px;
+	height: 1020px;
+	background-color: #393d49;
+	float: left;
+}
+#contain_right{
+	width:1000px;
+	height: 1020px;
+	background-color: ;
+	float: left;
+	margin: 50px auto;
+}
+.firstselect{
+	width:200px;
+	float: left;
+}
+.courselist-table{
+	margin-left:10px;
+}
+#coursepage{
+	margin-left:10px;
+}
+#course_type{
+	margin-left:10px;
+	width:200px;
+	margin-top:-33px;
+}
+#coursetypepage{
+	margin-left:10px;
+}
+#selecttype{
+	width:200px;
+	float: left;
+	margin-left:0px;
+}

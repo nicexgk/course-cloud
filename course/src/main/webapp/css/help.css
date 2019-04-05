@@ -1,0 +1,79 @@
+
+.content-c{
+	width: 1200px;
+	margin: 0 auto;
+	margin-top: 40px;
+	overflow: hidden;
+}
+/*左侧内容*/
+.left{
+	width: 200px;
+	overflow: hidden;
+	float: left;
+}
+.left ul dl{
+	width: 195px;
+	height: 40px;
+	line-height: 40px;
+	text-indent: 1em;
+	margin-bottom: 5px;
+}
+.left ul dl h3{
+	font-weight: normal;
+	font-size: 21px;
+	color: #777;
+}
+.left ul li{
+	width: 195px;
+	height: 40px;
+	line-height: 40px;
+	border-left: 5px solid #fff;
+	text-indent: 1em;
+	font-size: 14px;
+	cursor: pointer;
+}
+.left ul li:hover{
+	background: #f2f2f2;
+	border-left: 5px solid #e0e0e0;
+}
+#li-bg{
+	border-left: 5px solid #2274e5;
+}
+#li-bg p{
+	color: #2274e5;
+}
+#teacher{
+	border-top: 1px solid #e0e0e0;
+	margin-top: 15px;
+}
+
+
+
+/*右侧内容*/
+.right{
+	width: 939px;
+	overflow: hidden;
+	border-left: 1px solid #ccc;
+	padding: 30px;
+	padding-top: 1px;
+	line-height: 30px;
+}
+.top-title{
+	font-size: 20px;
+	height: 60px;
+	line-height: 60px;
+	font-weight: normal;
+	border-bottom: 1px solid #e0e0e0;
+}
+.title{
+	margin-top: 20px;
+	font-size: 14px;
+}
+.cont{
+	font-size: 14px;
+	color: #999;
+}
+
+#s2,#s3,#s4,#s5,#s6,#s7{
+	display: none;
+}

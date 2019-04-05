@@ -1,0 +1,159 @@
+body,html{
+	width: 100%;
+	height: 100%;
+}
+*{
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	color: #333;
+	font-family: 微软雅黑;
+}
+a{
+	color: #333;
+	text-decoration: none;
+	cursor: pointer;
+	vertical-align: middle;
+}
+a:hover{
+	color: #188eee;
+}
+ul{
+	list-style: none;
+}
+select,input{
+	outline-width: 0px;
+	outline: 0!important;
+    outline-color: initial;
+    outline-style: initial;
+	vertical-align: middle;
+}
+img{
+	vertical-align: middle;
+}
+
+.course-card{
+	width: 226px;
+	height: 201px;
+	float: left;
+	margin: 1px;
+	border:1px solid #fff;
+	padding: 5px;
+	cursor: pointer;
+	position: relative;
+	margin-bottom: 15px;
+}
+.course-card:hover{
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#909090,direction=120,strength=4);/*ie*/ 
+	-moz-box-shadow: 0px 0px 1px #909090;/*firefox*/ 
+	-webkit-box-shadow: 0px 0px 1px #909090;/*safari或chrome*/ 
+	box-shadow:0px 0px 1px #909090;/*opera或ie9*/ 
+}
+.course-img{
+	width: 100%;
+	height: 124px;
+	position: relative;
+}
+.course-img img{
+	width: 100%;
+}
+.course-info{
+	height: 20px;
+	width: 100%;
+	background: url(../img/bg.png);
+	position: absolute;
+	bottom: 0px;
+	color: #fff;
+	font-size: 12px;
+	text-indent: 2px;
+	line-height: 20px;
+}
+.course-name a{
+	font-size: 14px;
+}
+.author span{
+	float: left;
+	font-size: 14px;
+	color: #5fb41b;
+}
+.author .buy{
+	color: red;
+}
+.author{
+	width: 100%;
+	position: absolute;
+	bottom: -80px;
+}
+.author a{
+	float: right;
+	font-size: 14px;
+	color: #999;
+}
+.author a:hover{
+	 color:#188eee;
+}
+
+
+.footer{
+	background: #444547;
+}
+.footer-content{
+	margin-top: 30px;
+	width: 100%;
+	text-align: center;
+}
+.footer-content p{
+	font-size: 12px;
+	color: #999;
+}
+
+
+
+
+
+input[type="checkbox"]{  
+    -webkit-appearance: none;  
+    top: 5px;  
+    float: left;  
+    position: relative;  
+    vertical-align:middle;  
+    margin-top:0;  
+    background:#fff;  
+    border:#999 solid 1px;  
+    min-height: 18px;  
+    min-width: 18px;  
+} 
+input[type="checkbox"]:focus {  
+    outline: none;   
+} 
+input[type="checkbox"]:hover{
+	 border:green solid 1px;  
+}
+input[type=checkbox]:checked{
+	background: #61b618;
+	border:none;
+}
+input[type=checkbox]:checked::after{  
+    content: '';  
+    top: 1px;  
+    left: 1px;  
+    position: absolute;  
+    vertical-align: middle;  
+    margin-top: 0;  
+    background: transparent;  
+    border: #fff solid 2px;  
+    border-top: none;  
+    border-right: none;  
+    height: 8px;  
+    width: 12px;  
+    -moz-transform: rotate(-45deg);  
+    -ms-transform: rotate(-45deg);  
+    -webkit-transform: rotate(-45deg);   
+    transform: rotate(-45deg);  
+} 
+input[type=button]{
+	cursor: pointer;
+}
+input[type=button]:hover{
+	background: #f1f1f1;
+}

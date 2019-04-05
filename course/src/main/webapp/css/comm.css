@@ -1,0 +1,114 @@
+.header{
+	width: 100%;
+	overflow: hidden;
+	border-bottom:1px solid #e0e0e0; 
+}
+.header-c{
+	width: 1200px;
+	height: 50px;
+	margin: 0 auto;
+	overflow: hidden;
+
+}
+.logo{
+	margin-top: 6px;
+	float: left;
+}
+
+.nav{
+	width: 600px;
+	height: 50px;
+	line-height: 50px;
+	float: left;
+	margin-left: 45px;
+}
+.nav-bg{
+	 color:#188eee;
+}
+.nav a{
+	display: block;
+	float: left;
+	margin-right: 30px;
+}
+
+
+.search{
+	width: 250px;
+	float: left;
+	background: #fff;
+	border:1px solid #0087ff;
+	margin-top: 10px;
+}
+
+select{
+	height: 28px;
+}
+.search-tex{
+	height: 20px;
+	border-left: 1px solid #ccc;
+	text-indent: 1em;
+}
+.search-btn{
+	width: 38px;
+	height: 28px;
+	background: url(../img/search.jpg) center center;
+	color: #fff;
+	float: right;
+	text-indent: 100px;
+	cursor: pointer;
+}
+.link{
+	height: 50px;
+	width: 102px;
+	float: right;
+	font-size: 12px;
+}
+.link a{
+	margin-top: 15px;
+	display: block;
+	height: 15px;
+	width: 50px;
+	float: left;
+	text-align: center;
+	border-right: 1px solid #ccc;
+}
+#no-border{
+	border:none;
+}
+
+
+.map{
+	width: 100%;
+	height: 30px;
+	overflow: hidden;
+	line-height: 39px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.map a{
+	font-size: 14px;
+}
+
+/**按钮组*/
+
+.btn-group{
+	width: 100%;
+	height: 100px;
+	text-align: center;
+	margin-top: 30px;
+}
+.prev,.next{
+	width: 80px;
+	height: 40px;
+	background: #fff;
+	border:2px solid #eee;
+	font-size: 20px;
+}
+.btn{
+	width: 66px;
+	height: 40px;
+	background: #fff;
+	border:2px solid #eee;
+	font-size: 18px;
+
+}

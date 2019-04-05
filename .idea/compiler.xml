@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="common" />
+        <module name="course" />
+        <module name="course-provide" />
+        <module name="course-service" />
+        <module name="eureka-service" />
+        <module name="order-provide" />
+        <module name="order-service" />
+        <module name="social-service" />
+        <module name="user-provide" />
+        <module name="user-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="common" target="1.8" />
+      <module name="course" target="1.8" />
+      <module name="course-provide" target="1.8" />
+      <module name="course-service" target="1.8" />
+      <module name="eureka-server" target="1.5" />
+      <module name="eureka-service" target="1.8" />
+      <module name="order-provide" target="1.8" />
+      <module name="order-service" target="1.8" />
+      <module name="social-service" target="1.8" />
+      <module name="user-provide" target="1.8" />
+      <module name="user-service" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

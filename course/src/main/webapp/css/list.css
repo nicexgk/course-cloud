@@ -1,0 +1,299 @@
+﻿
+.container{
+    min-height: 200px;
+}
+.course-label{
+	display: inline-block;
+	line-height: 38px;
+	height: 38px;
+	border-color: #009688;
+	color: #333;
+	margin-left: 35px;
+	margin-right: 10px;
+}
+.course-label2{
+    display: inline-block;
+    line-height: 38px;
+    height: 38px;
+    border-color: #009688;
+    color: #333;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.course-price{
+    display: inline-block;
+    line-height: 38px;
+    height: 38px;
+    border-color: #009688;
+    color: #333;
+    background-color: #f4f4f4;
+    padding-left: 30px;
+    width: 110px;
+    border: 1px solid #C9C9C9;
+}
+
+
+#contain_right{
+    width: 1200px !important;
+}
+
+.layui-upload-img{
+    width: 250px;
+    height: 250px;
+}
+
+.header{
+	width: 100%;
+	overflow: hidden;
+	border-bottom:1px solid #e0e0e0; 
+}
+.header-c{
+	width: 1200px;
+	height: 50px;
+	margin: 0 auto;
+	overflow: hidden;
+
+}
+.logo{
+	margin-top: 6px;
+	float: left;
+}
+
+.nav{
+	width: 600px;
+	height: 50px;
+	line-height: 50px;
+	float: left;
+	margin-left: 45px;
+}
+.nav-bg{
+	 color:#188eee;
+}
+.nav a{
+	display: block;
+	float: left;
+	margin-right: 30px;
+}
+
+
+.search{
+	width: 250px;
+	float: left;
+	background: #fff;
+	border:1px solid #0087ff;
+	margin-top: 10px;
+}
+
+select{
+	height: 28px;
+}
+.search-tex{
+	height: 20px;
+	border-left: 1px solid #ccc;
+	text-indent: 1em;
+}
+.search-btn{
+	width: 38px;
+	height: 28px;
+	background: url(../img/search.jpg) center center;
+	color: #fff;
+	float: right;
+	text-indent: 100px;
+	cursor: pointer;
+}
+.link{
+	height: 50px;
+	width: 102px;
+	float: right;
+	font-size: 12px;
+}
+.link a{
+	margin-top: 15px;
+	display: block;
+	height: 15px;
+	width: 50px;
+	float: left;
+	text-align: center;
+	border-right: 1px solid #ccc;
+}
+#no-border{
+	border:none;
+}
+
+
+
+/*内容主体部分*/
+
+.content-c{
+	width: 1200px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.cont-left{
+	width: 950px;
+	overflow: hidden;
+	float: left;
+}
+
+
+.guide-wrap{
+	width: 100%;
+	overflow: hidden;
+}
+.guide{
+	padding:15px;
+	overflow: hidden;
+	background: #f7f7f7;
+	border: 1px solid #eee;
+}
+.guide-left,.theme-left{
+	width: 80px;
+	float: left;
+}
+.guide-wrap h3,.theme h3{
+	font-size: 14px;
+	font-weight: normal;
+	color: #949494;
+}
+.guide-right,.theme-right{
+	overflow: hidden;
+	width:800px;
+	float: right;
+}
+.guide a{
+	display: block;
+	width: 100px;
+	float: left;
+	margin-right: 5px;
+	font-size: 14px;
+	margin-bottom: 30px;
+}
+.theme{
+	padding:15px;
+	overflow: hidden;
+	background: #f7f7f7;
+	margin-top: -30px;
+	background: #fff;
+	overflow: hidden;
+	border:#eee;
+	border: 1px solid #eee;
+	font-size: 14px;
+	position: relative;	
+
+}
+
+.order{
+	width: 100%;
+	overflow: hidden;
+	margin-top: 30px;
+	background: #f7f7f7;
+}
+.order ul{
+	border-bottom: 1px solid #eee;
+	font-size: 14px;
+	border: 1px solid #eee;
+	overflow: hidden;
+}
+.order ul li{
+	float: left;
+	display: block;
+	min-width: 70px;
+	text-align: center;
+	padding: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	line-height: 30px;
+	cursor: pointer;
+}
+  
+.order-bg{
+	background: #fff;
+	border: 1px solid #eee;
+	border-bottom: 0px;
+}
+.c-box{
+	border:none;
+}
+
+.price{
+	border: 1px solid #eee;
+	width: 150px;
+	position: absolute;
+	background: #f7f7f7;
+	border-top: none;
+	left: 50%;
+	z-index: 3000;
+	margin-left: -180px;
+	padding: 10px;
+	text-align: left;
+	display: none;
+}
+
+.state{
+	height: 40px;
+	background: #fff;
+	border:1px solid #eee;
+	border-top:none;
+	border-top: none;
+}
+
+
+/*卡片组*/
+.card-group{
+	width: 960px;
+	margin-top: 30px;
+	overflow: hidden;
+}
+
+/*猜你喜欢*/
+.like{
+	width: 1200px;
+	height: 300px;
+	clear: both;
+	margin: 0 auto;
+}
+.like h3{
+	font-weight: normal;
+	font-size: 16px;
+	margin-bottom: 30px;
+}
+
+.like-card-group{
+	width: 100%;
+}
+
+/*右边热门推荐*/
+.cont-right{
+	width: 240px;
+	float: right;
+	margin-top: 40px;
+}
+.hot{
+	padding: 15px;
+	background: #f7f7f7;
+}
+.hot h3{
+	height: 30px;
+	font-weight: normal;
+	font-size: 16px;
+	border-bottom: 1px solid #dfdee0;
+}
+
+/*版权部分*/
+.footer{
+	height: 140px;
+	padding-top: 1px;
+	margin-top: 30px;
+}
+/*主页搜索*/
+.search-btn-lyh{
+	width: 50px;
+	height: 40px;
+	background: url(../img/search.jpg) center center;
+	color: #fff;
+	float: right;
+	text-indent: 100px;
+	cursor: pointer;
+}

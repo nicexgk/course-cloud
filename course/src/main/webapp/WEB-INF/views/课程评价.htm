@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta name="keywords" content="腾讯课堂,腾讯教育,远程教育,公务员考试,公务员考试时间,结构化面试,公务员面试,面试真题,公务员考试培训班">
+		<meta name="description" content="腾讯课堂提供大量优质公务员考试课程、考题题库，您可以在腾讯课堂了解公务员考试时间、考情、考试指导、考试培训、面试真题等内容，获得免费面试测评、结构化面试实战、专家点评服务">
+		<title>私信-腾讯课堂</title>
+		<script>
+			var T = {
+				page_start: Date.now()
+			};
+		</script>
+		<link rel="dns-prefetch" href="https://7.url.cn/">
+		<link rel="dns-prefetch" href="https://8.url.cn/">
+		<link rel="dns-prefetch" href="https://9.url.cn/">
+		<link rel="shortcut icon" href="https://9.url.cn/edu/lego_modules/edu-ui/0.0.1/img/nohash/favicon.ico">
+		<link rel="stylesheet" href="index_data/common_7f700a34f3623b8a5aa0d96d2efd6d1b.css">
+		<link rel="stylesheet" href="index_data/index_fcfea22b2b24731d51ed9580860d4004.css">
+		<script src="index_data/vendor_27fc447e8b2454ff2a47.js"></script>
+		<script>
+			webpackJsonp([6], {
+				467: function(n, t) {
+					window._wang = window._wang || function() {
+						var n = {
+								url: ""
+							},
+							t = {};
+						return {
+							cfg: n,
+							maps: {},
+							push: function(n, a) {
+								t[n] = a || new Date - 0
+							},
+							getCachedData: function() {
+								return {
+									cfg: n,
+									speedPoints: t
+								}
+							}
+						}
+					}()
+				}
+			}, [467]);
+		</script>
+		<script>
+			webpackJsonp([5], {
+				426: function(n, e) {
+					var r = function(n) {
+						function e(n) {
+							var e = document.cookie.match(new RegExp("(^| )" + n + "=([^;]*)(;|$)"));
+							return e ? decodeURIComponent(e[2]) : ""
+						}
+						if(n.BJ_REPORT) return n.BJ_REPORT;
+						var r = [],
+							t = {
+								id: 0,
+								uin: 0,
+								url: "",
+								combo: 1,
+								ext: null,
+								level: 4,
+								ignore: [],
+								random: 1,
+								delay: 1e3,
+								submit: null,
+								initPv: !0,
+								pvMsg: "!#imweb-badjs-pv#!"
+							},
+							o = n.location.href,
+							i = function(n, e) {
+								return Object.prototype.toString.call(n) === "[object " + (e || "Object") + "]"
+							},
+							u = function(n) {
+								return "object" == typeof n && !!n
+							},
+							a = function(n) {
+								return null === n || !i(n, "Number") && !n
+							},
+							c = 2 === parseInt(e("uid_type"), 10),
+							s = n.onerror;
+						n.onerror = function(e, r, o, u, a) {
+							var c = e;
+							a && a.stack && (c = l(a)), i(c, "Event") && (c += c.type ? "--" + c.type + "--" + (c.target ? c.target.tagName + "::" + c.target.src : "") : "");
+							var f = {
+								msg: c,
+								level: 4,
+								target: r,
+								rowNum: o,
+								colNum: u
+							};
+							t.jsErrorMSID && (f.ext = {
+								msid: t.jsErrorMSID
+							}), b.push(f), m(), s && s.apply(n, arguments)
+						};
+						var f = function(n) {
+								try {
+									if(n.stack) {
+										var e = n.stack.match("https?://[^\n]+");
+										e = e ? e[0] : "";
+										var r = e.match(":(\\d+):(\\d+)");
+										return r || (r = [0, 0, 0]), {
+											msg: l(n),
+											rowNum: r[1],
+											colNum: r[2],
+											target: e.replace(r[0], "")
+										}
+									}
+									return n.name && n.message && n.description ? {
+										msg: JSON.stringify(n)
+									} : n
+								} catch(e) {
+									return n
+								}
+							},
+							l = function(n) {
+								var e = n.stack.replace(/\n/gi, "").split(/\bat\b/).slice(0, 5).join("@").replace(/\?[^:]+/gi, ""),
+									r = n.toString();
+								return e.indexOf(r) < 0 && (e = r + "@" + e), e
+							},
+							p = function(n, e) {
+								var r = [],
+									o = [],
+									i = [];
+								if(u(n)) {
+									if(n.level = n.level || t.level, !n.ext) {
+										var c = null;
+										switch(n.level) {
+											case 1:
+												c = t.debugMSID;
+												break;
+											case 2:
+												c = t.infoMSID;
+												break;
+											case 4:
+												c = t.errorMSID
+										}
+										c && (n.ext = {
+											msid: c
+										})
+									}
+									for(var s in n) {
+										var f = n[s];
+										if(!a(f)) {
+											if(u(f)) try {
+												f = JSON.stringify(f)
+											} catch(n) {
+												f = "[BJ_REPORT detect value stringify error] " + n.toString()
+											}
+											i.push(s + ":" + f), r.push(s + "=" + encodeURIComponent(f)), "id" !== s && o.push(s + "[" + e + "]=" + encodeURIComponent(f))
+										}
+									}
+								}
+								return [o.join("&"), i.join(","), r.join("&")]
+							},
+							d = [],
+							v = function(n) {
+								if(t.submit) t.submit(n);
+								else {
+									var e = new Image;
+									d.push(e), e.src = n
+								}
+							},
+							h = [],
+							g = 0,
+							m = function(n) {
+								if(t.report) {
+									for(; r.length;) {
+										var e = !1,
+											o = r.shift(),
+											u = p(o, h.length);
+										if(i(t.ignore, "Array"))
+											for(var a = 0, c = t.ignore.length; a < c; a++) {
+												var s = t.ignore[a];
+												if(i(s, "RegExp") && s.test(u[1]) || i(s, "Function") && s(o, u[1])) {
+													e = !0;
+													break
+												}
+											}
+										if(!e) {
+											if(o.id && o.id.toString() !== t.id.toString()) {
+												var f = (t.url || "/badjs") + "?uin=" + t.uin + "&from=" + encodeURIComponent(location.href) + "&";
+												v(f + u[2] + "&_t=" + +new Date)
+											} else t.combo ? h.push(u[0]) : v(t.report + u[2] + "&_t=" + +new Date);
+											t.onReport && t.onReport(t.id, o)
+										}
+									}
+									if(h.length) {
+										var l = function() {
+											clearTimeout(g), v(t.report + h.join("&") + "&count=" + h.length + "&_t=" + +new Date), g = 0, h = []
+										};
+										n ? l() : g || (g = setTimeout(l, t.delay))
+									}
+								}
+							},
+							w = function(n, e) {
+								var r = n;
+								return u(n) ? r.level = e : r = {
+									msg: n,
+									level: e
+								}, r
+							},
+							R = function() {
+								var n = parseInt(t.id, 10);
+								t.report = (t.url || "/badjs") + "?id=" + n + "&uin=" + t.uin + "&from=" + encodeURIComponent(location.href) + "&"
+							},
+							b = {
+								push: function(n) {
+									var e = location.href;
+									if(e !== o && (b.report(), o = e, R()), Math.random() >= t.random) return b;
+									var i = u(n) ? f(n) : {
+										msg: n
+									};
+									return t.ext && !i.ext && (i.ext = t.ext), r.push(i), m(), b
+								},
+								report: function(n) {
+									return n && b.push(n), m(!0), b
+								},
+								error: function(n) {
+									return n ? (n = w(n, 4), b.push(n), b) : b
+								},
+								info: function(n) {
+									return n ? (n = w(n, 2), b.push(n), b) : b
+								},
+								debug: function(n) {
+									return n ? (n = w(n, 1), b.push(n), b) : b
+								},
+								pv: function() {
+									return b.info(t.pvMsg)
+								},
+								init: function(n) {
+									if(u(n))
+										for(var r in n) t[r] = n[r];
+									return parseInt(t.id, 10) && (/qq\.com$/gi.test(location.hostname) && (t.url || (t.url = "//badjs.qq.com/badjs"), t.uin || (t.uin = e(c ? "uid_uin" : "uin"))), R(), t.initPv && b.pv()), b
+								},
+								__onerror__: n.onerror
+							};
+						if("undefined" != typeof console && console.error && setTimeout(function() {
+								(location.hash || "").match(/([#&])BJ_ERROR=([^&$]+)/)
+							}, 0), window.onhashchange) {
+							var _ = window.onhashchange;
+							window.onhashchange = function(n) {
+								_(n), b.pv()
+							}
+						} else window.onhashchange = function() {
+							b.pv()
+						};
+						return b
+					}(window);
+					void 0 !== e && (void 0 !== n && n.exports && (e = n.exports = r), e.BJ_REPORT = r)
+				},
+				464: function(n, e, r) {
+					"use strict";
+					Object.defineProperty(e, "__esModule", {
+						value: !0
+					});
+					var t = r(426),
+						o = r.n(t);
+					window.BJ_REPORT || (window.BJ_REPORT = o.a), window.BJ_REPORT && window.BJ_REPORT.init({
+						id: 1362,
+						ignore: [],
+						repeat: 1
+					})
+				}
+			}, [464]);
+		</script>
+		<!--[if IE]><script src="//7.url.cn/edu/letter/ie_polyfill_d75797a800a63c7d82e4.js"></script><![endif]-->
+		<script>
+			T.page_css_ready = Date.now();
+		</script>
+	</head>
+
+	<body>
+		<div id="ie-tips" style="display:none;">当前浏览器无法保证最佳体验，请升级或使用chrome、safari、firebox等浏览器</div>
+		<div id="react-body">
+			<div class="">
+				<div>
+					<div class="letter letter--list">
+						<header>
+							<h1 class="letter-title">私信(0)</h1>
+							<a class="letter-close js-letter-close"><i class="icon-font i-close"></i></a>
+						</header>
+						<div class="session-list" style="height: 420px; overflow: hidden scroll;">
+							<div>
+								<div style="width: 100%; height: 0px;"></div>
+								<div class="session-item" role="presentation">
+									<a><span class="im-icon icon-font icon-close i-close"></span></a><img src="index_data/a.jpg" class="item-avatar" alt="头像" width="40" height="40">
+									<div class="item-main">
+										<div>
+											<h2 class="item-name">职坐标</h2><span class="item-time item-right">11-14</span></div>
+										<div>
+											<p class="item-msg">有什么能帮你的吗同学</p>
+										</div>
+									</div>
+								</div>
+								<div></div>
+								<div style="width: 100%; height: 0px;"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="index_data/common_5118895416a191e1a609.js"></script>
+		<script src="index_data/index_d3677762953b89601cf2.js"></script>
+		<script>
+			T.page_js_ready = Date.now();
+		</script>
+		<script>
+			var theUA = window.navigator.userAgent.toLowerCase();
+			if((theUA.match(/msie\s\d+/) && theUA.match(/msie\s\d+/)[0]) || (theUA.match(/trident\s?\d+/) && theUA.match(/trident\s?\d+/)[0])) {
+				var ieVersion = theUA.match(/msie\s\d+/)[0].match(/\d+/)[0] || theUA.match(/trident\s?\d+/)[0];
+				if(ieVersion < 9) {
+					document.getElementById('ie-tips').style.display = 'block';
+				};
+			}
+
+			if(window._wang) {
+				window._wang.push('page_js_ready');
+			}
+		</script>
+	</body>
+
+</html>
