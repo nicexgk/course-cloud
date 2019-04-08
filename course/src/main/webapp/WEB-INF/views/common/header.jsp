@@ -12,12 +12,16 @@
     <title>header</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/css/header.css">
-    <link rel="stylesheet" href="css/jsuggest.css">
-    <link rel="stylesheet" href="css/mycss/home-page-body.css">
-    <script src="js/jquery.js"></script>
+    <link rel="stylesheet" href="/css/jsuggest.css">
+    <link rel="stylesheet" href="/css/mycss/home-page-body.css">
+
+    <script src="/js/jquery.js"></script>
+    <script src="/layui/layui.all.js"></script>
+    <script src="/layui/layui.js"></script>
     <script src="/js/jSuggest.js"></script>
-    <script src="js/myjs/login-form.js"></script>
-    <script src="js/myjs/courseTypeCatalog.js"></script>
+    <script src="/js/myjs/login-form.js"></script>
+    <script src="/js/myjs/course-type-catalog.js"></script>
+
     <script>
         $(document).ready(function () {
             //绑定输入框，产生自动补全效果

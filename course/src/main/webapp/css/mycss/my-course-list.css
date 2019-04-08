@@ -1,0 +1,59 @@
+
+.card-body{
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.card-item{
+    height: 300px;
+    text-align: center;
+    padding: 25px;
+}
+.card-item-inner:hover{
+    border: #EEEEEE solid 2px;
+}
+
+.card-item-inner{
+    margin: auto;
+    width: 320px;
+    height: 280px;
+    left: 50%;
+    top: 50%;
+}
+.item-image{
+    min-width: 300px;
+    min-height: 200px;
+    width: 250px;
+    height: 200px;
+    margin-top: 10px;
+}
+.item-title{
+    min-width: 300px;
+    width: 250px;
+    margin: 0px auto;
+    text-align: left;
+    padding: 5px;
+
+}
+.item-line{
+    min-width: 300px;
+    width: 250px;
+    margin: 0px auto;
+    text-align: left;
+    padding: 5px;
+    margin-top: 10px;
+
+}
+
+.item-price .item-editor{
+    display: inline-block;
+    margin: 2px;
+}
+
+.item-editor{
+    float: right;
+    padding: 3px 15px;
+}
+.item-editor:hover{
+    background-color: #E3E6F2;
+}

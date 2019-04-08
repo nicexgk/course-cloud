@@ -55,7 +55,7 @@ public class Course implements Serializable {
     // 课程图标url路径
     private String picUrl;
     // 课程内容列表
-    private String courseContentList;
+    private String courseDetail;
     // 课程创建日期
     private String courseDate;
 

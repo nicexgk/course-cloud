@@ -1,5 +1,10 @@
 var dialogInstace, onMoveStartId, mousePos = {x: 0, y: 0};
 
+layui.use(['layer'], function(){
+    layer = layui.layer;
+
+});
+
 // 根据元素的id获取元素
 function g(id) {
     return document.getElementById(id);
@@ -91,30 +96,33 @@ function updateHidden(hiddentrue, hiddenfalse) {
 // ============== 从后端获取数据 ================//
 
 // 登录成功操作
-function loginSuccess(data){
+function loginSuccess(data) {
     $("#js_logout_outer").css("display", "none");
     $("#js_logout_inter").css("display", "block");
-    $(".mod-header__user-avatar").attr("src", data.user_icon);
-    $(".js-username").attr("title", data.user_name).html(data.user_name);
+    $(".mod-header__user-avatar").attr("src", data.userIcon);
+    $(".js-username").attr("title", data.userName).html(data.userName);
     hideDialog();
 }
 
 // 退登操作
-function loginOuter(){
-    $.getJSON(
-        "user/login/outer"
-        ,function(data){
+function loginOuter() {
+    console.log("login outer");
+    $.post(
+        "/user/", {_method: "DELETE"}, function (data) {
             console.log(data);
-            if (data.status == 1) {
+            if (data.status == 200) {
                 $("#js_logout_inter").css("display", "none");
                 $("#js_logout_outer").css("display", "block");
+                layer.msg("你以退出登录!", {icon: 1});
             }
-             else {
+            else {
                 console.log("login outer final");
+                layer.msg("服务正忙，退登失败!", {icon: 5})
             }
         }
     )
 }
+
 // 登录操作
 function login() {
     var account = $(".ui-dialog-input-username").val();
@@ -122,14 +130,16 @@ function login() {
     console.log(account);
     console.log(pwd);
     $.getJSON(
-        "/user/login/inter"
-        ,{account: account , pwd: pwd}
-        ,function(data){
+        "/user/"
+        , {account: account, pwd: pwd}
+        , function (data) {
             console.log(data);
-            if(data.user_id == undefined){
-                console.log("incorrect user or password ")
+            if (data.userId == undefined) {
+                console.log("incorrect user or password ");
+                layer.msg("登录失败!!!", {icon: 5});
             } else {
                 loginSuccess(data);
+                layer.msg("登录成功!!!", {icon: 1});
             }
         }
     )

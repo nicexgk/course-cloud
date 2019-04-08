@@ -33,10 +33,10 @@
     border: 1px solid #C9C9C9;
 }
 
-
-#contain_right{
-    width: 1200px !important;
+.layui-input-block{
+	margin-left: 140px !important;
 }
+
 
 .layui-upload-img{
     width: 250px;

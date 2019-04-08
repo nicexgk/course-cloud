@@ -5,21 +5,20 @@
 <head>
     <title>course</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="css/mycss/home-page.css"/>
-    <link rel="stylesheet" type="text/css" href="css/jsuggest.css">
-    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="js/jSuggest.js"></script>
-    <script type="text/javascript" src="js/bootstrap-popover.js"></script>
-    <script type="text/javascript" src="js/myjs/blanner.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/mycss/home-page.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/jsuggest.css">
+    <script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/js/jSuggest.js"></script>
+    <script type="text/javascript" src="/js/bootstrap-popover.js"></script>
+    <script type="text/javascript" src="/js/myjs/blanner.js"></script>
 </head>
 <body>
 <c:if test="${requestScope.courseTypeCatalog == null}">
-    <jsp:forward page="index.html"></jsp:forward>
-    <h1>nice nice nice</h1>
+    <jsp:forward page="/index.html"></jsp:forward>
 </c:if>
 <!------------------------------ header start --------------------------------------->
 <div>
-    <jsp:include page="WEB-INF/views/common/header.jsp" flush="true"></jsp:include>
+    <jsp:include page="/WEB-INF/views/common/header.jsp" flush="true"></jsp:include>
 </div>
 <!------------------------------ header end ----------------------------------------->
 
@@ -2331,7 +2330,7 @@
 
         <!------------------------ 页脚DIV start ------------------------------>
         <div class="footer">
-            <jsp:include page="WEB-INF/views/common/footer.jsp" flush="true"></jsp:include>
+            <jsp:include page="/WEB-INF/views/common/footer.jsp" flush="true"></jsp:include>
         </div>
         <!------------------------ 页脚DIV end   ------------------------------>
     </div>

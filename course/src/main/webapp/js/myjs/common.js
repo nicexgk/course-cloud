@@ -1,13 +1,13 @@
 
 
 var courseTypeCatalog;
-function getCourseTypeCatalog(){
+(function (){
+    console.log("get course type catalog   common.js");
     $.getJSON(
-        "/course/type/catalog"
+        "/course/type/"
         ,function(data){
             courseTypeCatalog = data;
             console.log(data);
         }
     )
-}
-getCourseTypeCatalog();
+})();
