@@ -46,7 +46,7 @@ public class Catalog implements Serializable {
     // 目录的名字
     private String catalogName;
     // 目录的内容一般为url路径
-    private String catalogContent;
+    private String catalogResource;
     // 目录创建的时间
     private String catalogDate;
     //该目录下的所有子类

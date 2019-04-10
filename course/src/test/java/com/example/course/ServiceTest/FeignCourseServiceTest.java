@@ -31,7 +31,6 @@ public class FeignCourseServiceTest {
 
     @Test
     public void modifyCourseTest(){
-
         Course course = new Course ();
         course.setCourseId(50);
         course.setCourseDetail("Java  架构师课程");
@@ -39,5 +38,10 @@ public class FeignCourseServiceTest {
         course.setCoursePrice(30000);
         course.setDescription("nice nice nice nice nice nice nice nice nice nice");
         System.out.println(feignCourseService.modifyCourse(course));
+    }
+
+    @Test
+    public void getCourseByIdTest(){
+        System.out.println(feignCourseService.getCourseById(40));
     }
 }

@@ -29,4 +29,7 @@ public interface FeignCourseService {
     @GetMapping("/course/user/{id}")
     public ArrayList<Course> getUserCourseList(@RequestParam("id") int id);
 
+    @GetMapping("/course/{id}")
+    public Course getCourseById(@RequestParam("id") int id);
+
 }

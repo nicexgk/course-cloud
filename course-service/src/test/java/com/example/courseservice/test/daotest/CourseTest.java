@@ -26,6 +26,7 @@ public class CourseTest {
         course.setCourseDetail("dfjdfjdlf");
 //        course.setCourseTeacher();
         System.out.println(courseMapper.addCourse(course));
+        System.out.println(course.getCourseId());
     }
 
     @Test
@@ -44,5 +45,11 @@ public class CourseTest {
         course.setDescription("nice nice nice nice nice nice nice nice nice nice");
         System.out.println(courseMapper.updateCourse(course));
 
+    }
+
+    @Test
+    public void getCourseById(){
+
+        System.out.println(courseMapper.queryCourseById(40));
     }
 }

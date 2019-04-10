@@ -31,10 +31,15 @@ public class CourseController {
         return status;
     }
 
-    @GetMapping("/user/{id}")
-    public ArrayList<Course> getUserCourseList(@PathParam("id") int id){
-
-        return courseService.getUserCourseList(id);
+    @GetMapping("/{id}")
+    public Course getCourseById(@PathVariable("id") int id){
+        Course course = courseService.getCourseById(id);
+        return course;
     }
 
+    @GetMapping("/user/{id}")
+    public ArrayList<Course> getUserCourseList(@PathParam("id") int id){
+        return courseService.getUserCourseList(id);
+
+    }
 }

@@ -3,6 +3,7 @@ package com.example.common.entity;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /*
  * 
@@ -58,5 +59,8 @@ public class Course implements Serializable {
     private String courseDetail;
     // 课程创建日期
     private String courseDate;
+    // 课程目列表
+    private ArrayList<Catalog> catalogList;
+
 
 }

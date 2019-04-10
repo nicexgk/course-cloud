@@ -13,4 +13,6 @@ public interface CourseService {
     public ArrayList<Course> getUserCourseList(int id);
 
     public Status modifyCourse(Course course);
+
+    public Course getCourseById(int id);
 }

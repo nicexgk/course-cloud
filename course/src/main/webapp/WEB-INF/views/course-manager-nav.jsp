@@ -8,11 +8,11 @@
     <link rel="stylesheet" type="text/css" href="/layui/css/layui.css">
     <link type="text/css" rel="stylesheet" href="/css/jsuggest.css">
 
-
     <script src="/js/jquery.js"></script>
-    <script src="/layui/layui.js"></script>
+    <script type="text/javascript" src="/layui/layui.js"></script>
     <script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
     <script type="text/javascript" src="/ueditor/ueditor.all.js"></script>
+    <script type="text/javascript" src="/ueditor/ueditor.parse.js"></script>
     <script type="text/javascript" src="/js/myjs/course-manager-navigation.js"></script>
 
 </head>

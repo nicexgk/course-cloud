@@ -1,13 +1,16 @@
 
 
-function edotorCourse(id) {
+function editorCourse(id) {
+
+
+    if (typeof(ue) != 'undefined'){
+        ue.destroy();
+        console.log("nice nice nice");
+    }
+    console.log("nice nice nice");
     $.getJSON('/course/' + id , function (data) {
-        console.log(data);
-        loadContain('editorcourse.html');
-
+        course = data;
+        loadContain('/editorcourse.html');
     })
-}
 
-function fullDate(data){
-    
 }

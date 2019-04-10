@@ -1,6 +1,7 @@
 package com.example.courseservice.service;
 
 import com.example.common.entity.CourseType;
+import com.example.common.entity.Status;
 import com.example.courseservice.dao.CourseTypeMapper;
 import org.springframework.stereotype.Service;
 

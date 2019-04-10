@@ -9,24 +9,37 @@
     <link type="text/css" rel="stylesheet" href="/css/jsuggest.css">
     <link rel="stylesheet" type="text/css" href="/css/mycss/home-page-body.css"/>
     <link rel="stylesheet" type="text/css" href="/css/mycss/home-page.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/mycss/add-course.css"/>
 
+    <script src="/js/jquery.js"></script>
+    <script src="/layui/layui.js"></script>
+    <script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" src="/ueditor/ueditor.all.js"></script>
+    <script type="text/javascript" src="/js/myjs/common.js"></script>
+    <script type="text/javascript" src="/js/myjs/add-course.js"></script>
 </head>
 
 <body>
 <div>
     <jsp:include page="/WEB-INF/views/common/header.jsp" flush="true"></jsp:include>
 </div>
-<div id="contain_right">
-    <form class="layui-form" id="form" action="" >
+<div style="margin-left: 5%">
+    <form class="layui-form" id="form" action="">
         <div class="layui-form-item">
             <label class="layui-form-label">课程名称</label>
             <div class="layui-input-block">
-                <input type="text" name="course-name" lay-verify="required" value="${requestScope.course.getCourseName() }" class="layui-input" style="width:250px;">
+                <input type="text" name="course-name" lay-verify="required" value="${requestScope.course.getCourseName() }" class="layui-input" style="width:70%;">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">简洁描述</label>
+            <div class="layui-input-block">
+                <input type="text" name="course-detail" class="layui-input" style="width:70%;">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">所属类目</label>
-            <div  class="layui-input-inline" id="div1">
+            <div class="layui-input-inline" id="div1">
                 <select id="select1" name="paren-ttype" lay-filter="select1">
                     <c:forEach items="${requestScope.courseTypeCatalog }" var="parentType" varStatus="status">
                         <c:choose>
@@ -65,7 +78,7 @@
         <div class="layui-form-item" id="upload-thumb">
             <label class="layui-form-label">课程封面</label>
             <div class="layui-upload-list">
-                <img class="layui-upload-img" name="courseimg" id="courseimg" width="150" height="150" src="/img/courseimages/c01.jpg" style="width: 200px; height: 200px">
+                <img class="layui-upload-img" name="course-img" id="courseimg" width="150" height="150" src="/img/courseimages/c01.jpg" style="width: 200px; height: 200px">
             </div>
             <label class="layui-form-label"></label>
             <button type="button" id="uploadimg" name="upfile" class="layui-btn layui-btn-primary">设置课程封面</button>
@@ -80,32 +93,84 @@
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">简洁描述</label>
-            <div class="layui-input-block">
-                <input type="text" name="course-detail" class="layui-input" style="width:1050px;">
+            <label class="layui-form-label">目录结构</label>
+            <div class="layui-form-block">
+                <ul class="layui-nav layui-nav-tree layui-inline" lay-filter="catalog" style=" width: 65%;">
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="javascript:;">
+                            <span>目录一</span>
+                            <span class="catalog-tool catalog-add layui-icon" onclick="addCatalog(this)">&#xe608;</span>
+                            <span class="catalog-tool catalog-sub layui-icon" onclick="removeCatalog(this)">&#x1006;</span>
+                            <span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xeb61;</span>
+                        </a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">
+                                <span>选项一</span>
+                                <span class="catalog-tool catalog-add layui-icon" onclick="addChildCatalog(this)">&#xe608;</span>
+                                <span class="catalog-tool catalog-sub layui-icon" onclick="removeCatalog(this)">&#x1006;</span>
+                                <span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xeb61;</span>
+                                <span class="catalog-tool catalog-view layui-icon" onclick="">&#xe652;</span>
+                                <span class="catalog-tool catalog-upload layui-icon upload-file-1" onclick="">&#xe681;</span>
+                                <span class="catalog-tool catalog-open layui-icon open-file-1" onclick="">&#xe655;</span>
+                            </a></dd>
+                            <dd><a href="javascript:;">
+                                <span>选项二</span>
+                                <span class="catalog-tool catalog-add layui-icon" onclick="addChildCatalog(this)">&#xe608;</span>
+                                <span class="catalog-tool catalog-sub layui-icon" onclick="removeCatalog(this)">&#x1006;</span>
+                                <span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xeb61;</span>
+                                <span class="catalog-tool catalog-view layui-icon" onclick="">&#xe652;</span>
+                                <span class="catalog-tool catalog-upload layui-icon upload-file-2" onclick="">&#xe681;</span>
+                                <span class="catalog-tool catalog-open layui-icon open-file-2" onclick="">&#xe655;</span>
+                            </a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">
+                            <span>目录二</span>
+                            <span class="catalog-tool catalog-add layui-icon" onclick="addCatalog(this)">&#xe608;</span>
+                            <span class="catalog-tool catalog-sub layui-icon" onclick="removeCatalog(this)">&#x1006;</span>
+                            <span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xeb61;</span>
+                        </a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">
+                                <span>选项一</span>
+                                <span class="catalog-tool catalog-add layui-icon" onclick="addChildCatalog(this)">&#xe608;</span>
+                                <span class="catalog-tool catalog-sub layui-icon" onclick="removeCatalog(this)">&#x1006;</span>
+                                <span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xeb61;</span>
+                                <span class="catalog-tool catalog-view layui-icon" onclick="">&#xe652;</span>
+                                <span class="catalog-tool catalog-upload layui-icon upload-file-3" onclick="">&#xe681;</span>
+                                <span class="catalog-tool catalog-open layui-icon open-file-3" onclick="">&#xe655;</span>
+                            </a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">
+                            <span>目录三</span>
+                            <span class="catalog-tool catalog-add layui-icon" onclick="addCatalog(this)">&#xe608;</span>
+                            <span class="catalog-tool catalog-sub layui-icon" onclick="removeCatalog(this)">&#x1006;</span>
+                            <span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xeb61;</span>
+                        </a>
+                        <dl class="layui-nav-child"></dl>
+                    </li>
+                </ul>
             </div>
         </div>
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label">课程简介</label>
             <div class="layui-input-block">
-                <textarea id="container" class="container"></textarea>
+                <textarea id="container" class="container" style="width: 94%;"></textarea>
             </div>
         </div>
         <div class="layui-form-item">
             <div class="layui-input-block">
-                <button type="submit" class="layui-btn" lay-submit lay-filter="addcoursesubmit">修改</button>
+                <button type="submit" class="layui-btn" lay-submit lay-filter="addcoursesubmit">添加</button>
                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
             </div>
         </div>
     </form>
+    <i class="layui-icon">&#xe60c;</i>
 </div>
 <!----------- contain_right end   ----------->
 
-<script src="/js/jquery.js"></script>
-<script src="/layui/layui.js"></script>
-<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
-<script type="text/javascript" src="/ueditor/ueditor.all.js"></script>
-<script type="text/javascript" src="/js/myjs/common.js"></script>
-<script type="text/javascript" src="/js/myjs/add-course.js"></script>
 </body>
 </html>

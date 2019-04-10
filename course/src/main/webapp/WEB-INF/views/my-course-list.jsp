@@ -10,8 +10,6 @@
     <link type="text/css" rel="stylesheet" href="/css/jsuggest.css">
     <link type="text/css" rel="stylesheet" href="/css/mycss/my-course-list.css">
 
-    <script src="/js/jquery.js"></script>
-    <script src="/layui/layui.js"></script>
     <script src="/js/myjs/my-course-list.js"></script>
 
 </head>
@@ -37,7 +35,7 @@
                         <c:if test="${course.coursePrice != 0}">
                             <span class="item-price">${course.coursePrice}￥</span>
                         </c:if>
-                        <span class="item-editor" data-course-id="${course.courseId}" onclick="loadContain(url)">编辑</span></a>
+                        <span class="item-editor" data-course-id="${course.courseId}" onclick="editorCourse(${course.courseId})">编辑</span></a>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,9 @@
+
+.catalog-tool{
+    display: inline-block;
+    width: 30px;
+    float: right;
+}
+.catalog-tool:hover{
+    font-size: 20px;
+}

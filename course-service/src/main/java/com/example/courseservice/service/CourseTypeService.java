@@ -1,5 +1,6 @@
 package com.example.courseservice.service;
 
+import com.example.common.entity.Catalog;
 import com.example.common.entity.CourseType;
 import org.springframework.stereotype.Service;
 

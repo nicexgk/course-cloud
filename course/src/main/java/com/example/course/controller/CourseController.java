@@ -1,19 +1,15 @@
 package com.example.course.controller;
 
-import com.example.common.entity.Course;
-import com.example.common.entity.CourseType;
-import com.example.common.entity.Status;
-import com.example.common.entity.User;
+import com.example.common.entity.*;
 import com.example.course.service.feign.FeignCourseService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import javax.websocket.server.PathParam;
+import java.io.IOException;
 import java.util.ArrayList;
 
 @RestController
@@ -25,11 +21,10 @@ public class CourseController {
     FeignCourseService feignCourseService;
 
     @ApiOperation(value = "添加课程接口", tags = {"返回一个状态对象", "course-controller"}, notes = "必须与JSON格式提交课要添加的课程对象")
-    @PostMapping("/")
-    public Status addCourse(HttpServletRequest request, Course course) {
+    @PostMapping(value = "/")
+    public Status addCourse(HttpServletRequest request, @RequestBody Course course) throws IOException {
         Status status = null;
         System.out.println(course);
-        course.getCourseDetail();
         User user = (User) request.getSession().getAttribute("user");
         if (user == null) {
             status = new Status();
@@ -48,7 +43,7 @@ public class CourseController {
 
     @ApiOperation(value = "修改课程接口", notes = "用户需要有权限才能修改课程")
     @PutMapping("/")
-    public Status modifyCourse(HttpServletRequest request, Course course){
+    public Status modifyCourse(HttpServletRequest request, @RequestBody Course course) {
         Status status = null;
         System.out.println(course);
         User user = (User) request.getSession().getAttribute("user");
@@ -58,12 +53,24 @@ public class CourseController {
             status.setDescription("您还没有登录，请先登录！！！");
         }
         status = feignCourseService.modifyCourse(course);
-        if(status == null){
+        if (status == null) {
             status = new Status();
             status.setStatus(400);
             status.setDescription("课程修改失败，稍后请重试！");
         }
         return status;
+    }
+
+    @ApiOperation(value = "根据课程id获取课程接口")
+    @GetMapping("/{id}")
+    public Course getCourseById(@PathVariable("id") int id) {
+        System.out.println(id);
+        Course course = feignCourseService.getCourseById(id);
+        if (course == null) {
+            course = new Course();
+        }
+        System.out.println(course);
+        return course;
     }
 
     @ApiOperation(value = "获取课程目录列表", tags = {"返回JSON格式的目录对象", "course-controller"})
@@ -74,19 +81,20 @@ public class CourseController {
 
     @ApiOperation("根据用户id获取用户的课程列表接口")
     @GetMapping("/user/{id}")
-    public ArrayList<Course> getUserCourseList(@PathVariable("id") int id){
+    public ArrayList<Course> getUserCourseList(@PathVariable("id") int id) {
         System.out.println(id);
         return feignCourseService.getUserCourseList(id);
     }
 
     @ApiOperation(value = "获取用户的课程列表", notes = "用户必须登录后才能调用此接口")
     @GetMapping("/user/")
-    public ArrayList<Course> getUserCourseList(HttpServletRequest request){
-        User user = (User)request.getSession().getAttribute("user");
-        if (user == null){
+    public ArrayList<Course> getUserCourseList(HttpServletRequest request) {
+        User user = (User) request.getSession().getAttribute("user");
+        if (user == null) {
             return null;
         }
         return feignCourseService.getUserCourseList(user.getUserId());
     }
+
 
 }

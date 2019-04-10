@@ -1,5 +1,6 @@
 package com.example.courseservice.service;
 
+import com.example.common.entity.Catalog;
 import com.example.common.entity.Course;
 import com.example.common.entity.CourseType;
 import com.example.common.entity.Status;
@@ -13,6 +14,8 @@ import java.util.ArrayList;
 public class CourseServiceImpl implements CourseService{
     @Resource
     CourseMapper courseMapper;
+    @Resource
+    CatalogService catalogService;
 
     @Override
     public Status addCourse(Course course) {
@@ -42,6 +45,20 @@ public class CourseServiceImpl implements CourseService{
             status.setDescription("课程添加失败，请重试!");
             return status;
         }
+        if(course.getCatalogList() == null){
+            status.setStatus(200);
+            status.setDescription("课程添加成功");
+        }
+        for(Catalog catalog : course.getCatalogList()){
+            catalog.setCatalogCourse(course.getCourseId());
+            for(Catalog child : catalog.getChildList()){
+                child.setCatalogCourse(course.getCourseId());
+            }
+        }
+        if(!catalogService.addCatalogList(course.getCatalogList())){
+            status.setStatus(400);
+            status.setDescription("课程添目录添加失败，请重试!");
+        }
         status.setStatus(200);
         status.setDescription("课程添加成功");
         return status;
@@ -66,8 +83,25 @@ public class CourseServiceImpl implements CourseService{
             status.setStatus(400);
             status.setDescription("课程信息修改失败，稍后请重试!");
         }
+        if(course.getCatalogList() == null){
+            status.setStatus(200);
+            status.setDescription("课程添加成功");
+        }
+        if(!catalogService.deleteCatalogByCourseId(course.getCourseId()) && !catalogService.addCatalogList(course.getCatalogList())){
+            status.setStatus(400);
+            status.setDescription("课程信息修改失败，稍后请重试!");
+        }
         status.setStatus(200);
         status.setDescription("课程添加成功");
         return status;
     }
+
+    @Override
+    public Course getCourseById(int id) {
+        Course course = courseMapper.queryCourseById(id);
+        ArrayList<Catalog> catalogList = catalogService.getCatalogList(id);
+        course.setCatalogList(catalogList);
+        return course;
+    }
+
 }

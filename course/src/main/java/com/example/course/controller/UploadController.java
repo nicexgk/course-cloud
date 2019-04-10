@@ -67,11 +67,42 @@ public class UploadController {
     // 上传视频
     @ApiOperation(value = "视频上传接口", tags = {"返回一个JSON格式的状态对象", "upload-controller"})
     @PostMapping("/video")
-    public String upload(HttpServletRequest request) {
-        System.out.println(request.getContextPath());
-        System.out.println(request.getServletContext().getClassLoader().getParent());
-        System.out.println(request.getServletContext().getContextPath());
-        return "路径" + request.getContextPath();
+    public Status upload(HttpServletRequest request,  @RequestParam(name = "file") MultipartFile upfile) {
+        // 获得指定目录的真实路径
+        String path = request.getServletContext().getRealPath("/upload/video");
+        // 创建文件名
+        String filename =  UUID.randomUUID().toString().replace("-","")  + upfile.getOriginalFilename();
+        // 获取当前的 年月
+        String date = simpleDateFormat.format(new Date());
+        // 拼接创建文件的路径
+        path += "\\" + date + "\\" + filename;
+        // 创建文件的保存对象
+        File file = new File(path);
+        // 创建目录
+        if (!file.getParentFile().exists()){
+            file.getParentFile().mkdirs();
+            System.out.println("mk dirs");
+        }
+        // 创建返回前端的状态对象
+        Status status = new Status();
+        try {
+            // 创建文件
+            if(!file.exists()){
+                file.createNewFile();
+                System.out.println("mk file");
+            }
+            upfile.transferTo(file);
+        } catch (IOException e) {
+            e.printStackTrace();
+            status.setStatus(400);
+            return status;
+        }
+        System.out.println(file.getAbsolutePath());
+        System.out.println(path);
+        status.setResource("/upload/video/" + date + "/" + file.getName());
+        status.setStatus(200);
+        System.out.println(status);
+        return status;
     }
 
 }
