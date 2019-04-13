@@ -137,7 +137,7 @@ public class DynamicSqlProvider {
                     SET("course_price = #{coursePrice}");
                 if (course.getPicUrl() != null )
                     SET("pic_url = #{picUrl}");
-                WHERE("course_teacher_id = #{courseId}");
+                WHERE("course_id = #{courseId}");
             }
         }.toString();
     }

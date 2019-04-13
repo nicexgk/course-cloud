@@ -16,7 +16,7 @@ public class CatalogServiceTest {
     @Test
     public void getCatalog(){
 
-        System.out.println(catalogService.getCatalogList(176));
+        System.out.println(catalogService.getCatalogList(179).size());
     }
 
 }

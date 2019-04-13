@@ -1,6 +1,21 @@
 
 
 
+
+.course-link-title{
+    color: #188eee;
+    border-bottom: #188eee solid 3px;
+}
+
+.course-price{
+    float: left !important;
+}
+
+.course-teacher{
+    float: right !important;
+}
+
+
 body{
     margin:0px;
     padding:0px;
@@ -579,6 +594,12 @@ a{
     margin-top:8px;
     margin-left:12px;
 }
+
+.aImgRongQi>img{
+    width: 220px;
+    height: 124px;
+}
+
 .aImgBottom{
     display:block;
     width:222px;
@@ -619,7 +640,6 @@ a{
 }
 .aBottomSchool{
     color:#99bbcd;
-    width:100px;
     text-align:left;
 }
 .aBottomSchool:hover{
@@ -692,7 +712,7 @@ a{
 }
 .bBigRightBottomLeft{
     height:435px;
-    width:745px;
+    width:985px;
     float:left;
 }
 .bBigRightBottomRight{

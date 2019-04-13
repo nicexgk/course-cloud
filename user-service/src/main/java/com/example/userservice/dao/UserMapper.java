@@ -1,10 +1,7 @@
 package com.example.userservice.dao;
 
 import com.example.common.entity.User;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 @Mapper
 public interface UserMapper {
@@ -26,7 +23,7 @@ public interface UserMapper {
             @Result(property = "userPhone", column = "user_phone"),
             @Result(property = "userAddress", column = "user_address"),
             @Result(property = "userIcon", column = "user_icon"),
-            @Result(property = "userIntroduce", column = "user_introduce"),
+            @Result(property = "userDescription", column = "user_description"),
             @Result(property = "userDate", column = "user_date"),
     })
     public User queryUser(String account, String pwd);
@@ -35,7 +32,8 @@ public interface UserMapper {
 
     public User userLingoByEmail(String email, String pwd);
 
-    public boolean inserUser(User user);
+    @InsertProvider(type = DynamicSqlProvider.class, method = "addUserProvider")
+    public boolean insertUser(User user);
 
     public boolean updateUser(User user);
 }

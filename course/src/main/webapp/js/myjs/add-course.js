@@ -33,8 +33,7 @@ function form_init() {
             done: function (res) {
                 if (res.status == 200) {
                     layer.msg("上传成功", {icon: 1});
-                    $("#courseimg").attr("src", res.resource);
-                    $("#upload-thumb").append("<input type='hidden' name='photo' value='" + res.resource + "'>");
+                    $("img[name='course-img']").attr("src", res.resource);
                 } else if (res.status == 400) {
                     layer.msg("图片上传失败，稍后请重试。。。", {icon: 5});
                 }
@@ -82,7 +81,7 @@ function form_init() {
         form.on('submit(addcoursesubmit)', function (data) {
             var course = new Object();
             course.courseName = $("input[name='course-name']").val();
-            course.picUrl = $("input[name='photo']").val();
+            course.picUrl = $("img[name='course-img']").attr("src");
             course.courseDetail = $("input[name='course-detail']").val();
             course.courseType = $("#select3").val();
             course.description = ue.getContent();
@@ -199,7 +198,7 @@ function addChildCatalog(target) {
         '<span class="catalog-tool catalog-upload layui-icon upload-file-' + ++i + '" onclick="">&#xe681;</span>' +
         '<span class="catalog-tool catalog-open layui-icon open-file-' + i + '" onclick="">&#xe655;</span>';
 
-    var catalogChild = '<dd><a href="javascript:;"><span>子目录</span>' + catalogEditorChild + '</a></dd>';
+    var catalogChild = '<dd><a href="javascript:;" data-name="子目录"><span>子目录</span>' + catalogEditorChild + '</a></dd>';
     $(target).parent().parent().after(catalogChild);
     var target = console.log($(target).parent().parent().next());
     renderNav();

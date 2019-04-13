@@ -5,12 +5,14 @@ import com.example.course.service.feign.FeignCourseService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
 @RestController
 @RequestMapping("/course")
@@ -19,6 +21,9 @@ public class CourseController {
 
     @Resource
     FeignCourseService feignCourseService;
+
+    @Autowired
+    ObjectMapper objectMapper;
 
     @ApiOperation(value = "添加课程接口", tags = {"返回一个状态对象", "course-controller"}, notes = "必须与JSON格式提交课要添加的课程对象")
     @PostMapping(value = "/")
@@ -96,5 +101,39 @@ public class CourseController {
         return feignCourseService.getUserCourseList(user.getUserId());
     }
 
+    @ApiOperation(value = "获取指定类型的课程，并分页查询", notes = "页数从0开始不是1")
+    @GetMapping("/{tid}/{page}/{size}")
+    public Superstate getCourseByTypePageSize(@PathVariable("tid") int tid, @PathVariable("page") int page, @PathVariable("size") int size){
+        return  feignCourseService.getCourseList(tid, page, size);
+    }
+
+    @ApiOperation(value = "并分页查询课程，", notes = "页数从0开始不是1")
+    @GetMapping("/{page}/{size}")
+    public Superstate getCourseForPageSize(@PathVariable("page") int page, @PathVariable("size") int size){
+        return  feignCourseService.getCourseList(page, size);
+    }
+
+    @ApiOperation(value="根据父类的id查询其所有子类型的课程，分页查询，", notes = "页数从0开始不是1")
+    @GetMapping("/top/{parentId}/{page}/{size}")
+    public LinkedHashMap<String, ArrayList<Course>> getCourseTopNumByParentType(@PathVariable("parentId")int parentId, @PathVariable("page")int page, @PathVariable("size")int size){
+        return feignCourseService.getCourseTopNumByParentType(parentId, page, size);
+    }
+
+
+
+
+
+    @ApiOperation(value = "用户评论接口", notes = "用户必须登录后才能调用此接口")
+    @PostMapping("/commentary/")
+    public Status commentary(HttpServletRequest request, @RequestBody Commentary commentary){
+        User user = (User)request.getSession().getAttribute("user");
+        commentary.setCommentUser(user);
+        Status status = feignCourseService.addCommentary(commentary);
+        if(status == null){
+            status.setStatus(400);
+            status.setDescription("发布评论失败，稍后请重试！");
+        }
+        return status;
+    }
 
 }

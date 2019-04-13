@@ -1,9 +1,9 @@
 package com.example.course.service.feign;
 
+import com.example.common.entity.Status;
 import com.example.common.entity.User;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.websocket.server.PathParam;
 
@@ -16,6 +16,9 @@ import javax.websocket.server.PathParam;
 public interface FeignUserService {
 
     @GetMapping("/user/{account}/{pwd}")
-    public User getUser(@RequestParam("account") String account, @RequestParam("pwd") String pwd);
+    public User getUser(@PathVariable("account") String account, @PathVariable("pwd") String pwd);
+
+    @PostMapping("/user/")
+    public Status register(@RequestBody User user);
 
 }

@@ -23,7 +23,7 @@
 <div>
     <jsp:include page="/WEB-INF/views/common/header.jsp" flush="true"></jsp:include>
 </div>
-<div style="margin-left: 5%">
+<div style="width: 1400px; margin: 0 auto">
     <form class="layui-form" id="form" action="">
         <div class="layui-form-item">
             <label class="layui-form-label">课程名称</label>
@@ -95,16 +95,16 @@
         <div class="layui-form-item">
             <label class="layui-form-label">目录结构</label>
             <div class="layui-form-block">
-                <ul class="layui-nav layui-nav-tree layui-inline" lay-filter="catalog" style=" width: 65%;">
+                <ul class="layui-nav layui-nav-tree layui-inline catalog-nav" lay-filter="catalog" style=" width: 65%;">
                     <li class="layui-nav-item layui-nav-itemed">
-                        <a href="javascript:;">
+                        <a href="javascript:;" data-name="目录一">
                             <span>目录一</span>
                             <span class="catalog-tool catalog-add layui-icon" onclick="addCatalog(this)">&#xe608;</span>
                             <span class="catalog-tool catalog-sub layui-icon" onclick="removeCatalog(this)">&#x1006;</span>
                             <span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xeb61;</span>
                         </a>
                         <dl class="layui-nav-child">
-                            <dd><a href="javascript:;">
+                            <dd><a href="javascript:;" data-name="选项一">
                                 <span>选项一</span>
                                 <span class="catalog-tool catalog-add layui-icon" onclick="addChildCatalog(this)">&#xe608;</span>
                                 <span class="catalog-tool catalog-sub layui-icon" onclick="removeCatalog(this)">&#x1006;</span>
@@ -113,7 +113,7 @@
                                 <span class="catalog-tool catalog-upload layui-icon upload-file-1" onclick="">&#xe681;</span>
                                 <span class="catalog-tool catalog-open layui-icon open-file-1" onclick="">&#xe655;</span>
                             </a></dd>
-                            <dd><a href="javascript:;">
+                            <dd><a href="javascript:;" data-name="选项二">
                                 <span>选项二</span>
                                 <span class="catalog-tool catalog-add layui-icon" onclick="addChildCatalog(this)">&#xe608;</span>
                                 <span class="catalog-tool catalog-sub layui-icon" onclick="removeCatalog(this)">&#x1006;</span>
@@ -125,14 +125,14 @@
                         </dl>
                     </li>
                     <li class="layui-nav-item">
-                        <a href="javascript:;">
+                        <a href="javascript:;" data-name="目录二">
                             <span>目录二</span>
                             <span class="catalog-tool catalog-add layui-icon" onclick="addCatalog(this)">&#xe608;</span>
                             <span class="catalog-tool catalog-sub layui-icon" onclick="removeCatalog(this)">&#x1006;</span>
                             <span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xeb61;</span>
                         </a>
                         <dl class="layui-nav-child">
-                            <dd><a href="javascript:;">
+                            <dd><a href="javascript:;" data-name="选项一">
                                 <span>选项一</span>
                                 <span class="catalog-tool catalog-add layui-icon" onclick="addChildCatalog(this)">&#xe608;</span>
                                 <span class="catalog-tool catalog-sub layui-icon" onclick="removeCatalog(this)">&#x1006;</span>
@@ -144,7 +144,7 @@
                         </dl>
                     </li>
                     <li class="layui-nav-item">
-                        <a href="javascript:;">
+                        <a href="javascript:;" data-name="目录三">
                             <span>目录三</span>
                             <span class="catalog-tool catalog-add layui-icon" onclick="addCatalog(this)">&#xe608;</span>
                             <span class="catalog-tool catalog-sub layui-icon" onclick="removeCatalog(this)">&#x1006;</span>
@@ -158,7 +158,7 @@
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label">课程简介</label>
             <div class="layui-input-block">
-                <textarea id="container" class="container" style="width: 94%;"></textarea>
+                <textarea id="container" class="container" style="width: 1180px;"></textarea>
             </div>
         </div>
         <div class="layui-form-item">

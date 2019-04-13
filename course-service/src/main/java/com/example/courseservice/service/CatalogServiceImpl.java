@@ -40,17 +40,22 @@ public class CatalogServiceImpl implements CatalogService {
     public ArrayList<Catalog> getCatalogList(int id){
 
         ArrayList<Catalog> catalogList = catalogMapper.queryCatalogListByCourseId(id);
+
         for(int i = 0; i < catalogList.size() ;i ++){
             if(catalogList.get(i).getParentId() != null){
                 continue;
             }
             Catalog catalog = catalogList.get(i);
+//            System.out.println(catalog);
             catalog.setChildList(new ArrayList<Catalog>());
+
             for(int j = 0; j < catalogList.size(); j ++){
-                if(catalogList.get(j).getParentId() == catalog.getCatalogId()){
+                System.out.println(catalogList.get(j).getParentId());
+                if(catalogList.get(j).getParentId() != null && catalogList.get(j).getParentId().intValue() == catalog.getCatalogId()){
                     catalog.getChildList().add(catalogList.get(j));
                 }
             }
+            System.out.println(catalog);
         }
         for(int i = 0; i < catalogList.size() ;i ++){
             if(catalogList.get(i).getParentId() != null){

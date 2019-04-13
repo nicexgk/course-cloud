@@ -53,8 +53,7 @@ function form_init() {
             done: function (res) {
                 if (res.status == 200) {
                     layer.msg("上传成功", {icon: 1});
-                    $("#courseimg").attr("src", res.resource);
-                    $("#upload-thumb").append("<input type='hidden' name='photo' value='" + res.resource + "'>");
+                    $("img[name='course-img']").attr("src", res.resource);
                 } else if (res.status == 400) {
                     layer.msg("图片上传失败，稍后请重试。。。", {icon: 5});
                 }
@@ -102,7 +101,7 @@ function form_init() {
         form.on('submit(addcoursesubmit)', function (data) {
             console.log(course);
             course.courseName = $("input[name='course-name']").val();
-            course.picUrl = $("input[name='photo']").val();
+            course.picUrl = $("img[name='course-img']").attr("src");
             course.courseDetail = $("input[name='course-detail']").val();
             course.courseType = $("#select3").val();
             course.description = ue.getContent();
@@ -110,6 +109,7 @@ function form_init() {
             var catalogList = getCatalog();
             course.catalogList = catalogList;
             console.log(course);
+            console.log(catalogList);
             var str = JSON.stringify(course);
             console.log(str);
             $.ajax({
@@ -120,7 +120,7 @@ function form_init() {
                 success: function (res) {
                     console.log(res);
                     if (res.status == 200) {
-                        layer.msg('添加成功!!!', {icon: 1});
+                        layer.msg('修改成功!!!', {icon: 1});
                     } else {
                         layer.alert(res.description, {icon: 5, skin: 'layer-ext-moon'});
                     }
@@ -207,7 +207,7 @@ function addChildCatalog(target) {
         '<span class="catalog-tool catalog-upload layui-icon upload-file-' + ++i + '" onclick="">&#xe681;</span>' +
         '<span class="catalog-tool catalog-open layui-icon open-file-' + i + '" onclick="">&#xe655;</span>';
 
-    var catalogChild = '<dd><a href="javascript:;"><span>子目录</span>' + catalogEditorChild + '</a></dd>';
+    var catalogChild = '<dd><a href="javascript:;" data-name="子目录"><span>子目录</span>' + catalogEditorChild + '</a></dd>';
     $(target).parent().parent().after(catalogChild);
     var target = console.log($(target).parent().parent().next());
     renderNav();
@@ -218,6 +218,7 @@ function addChildCatalog(target) {
 function removeCatalog(target) {
     console.log(target);
     $(target).parent().parent().remove();
+    renderNav();
 }
 
 // 编辑目录的名字
@@ -300,7 +301,7 @@ function renderNav() {
 //获取目录的json对象结构
 function getCatalog() {
     var catalogArray = [];
-    var catalogList = $('.layui-nav>li>a');
+    var catalogList = $('.catalog-nav>li>a');
     console.log(catalogList);
     for (var i = 0; i < catalogList.length; i++) {
         console.log(i);
@@ -459,6 +460,10 @@ function previewVideo(target) {
     console.log($(target).parent('a'));
     console.log(this);
     var resource = $(target).parent('a').attr('data-resource');
+    if(resource === undefined || resource === null || resource == 'null'){
+        layer.msg('该目录没有视频哦！请上传。', {icon: 4});
+        return;
+    }
     if (resource !== undefined) {
         layer.open({
             type: 2,

@@ -1,9 +1,7 @@
 package com.example.courseservice.test.daotest;
 
 import com.example.common.entity.Course;
-import com.example.common.entity.User;
 import com.example.courseservice.dao.CourseMapper;
-import com.sun.org.apache.xpath.internal.SourceTree;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -25,7 +23,7 @@ public class CourseTest {
         course.setCoursePrice(00);
         course.setCourseDetail("dfjdfjdlf");
 //        course.setCourseTeacher();
-        System.out.println(courseMapper.addCourse(course));
+        System.out.println(courseMapper.insertCourse(course));
         System.out.println(course.getCourseId());
     }
 
@@ -36,7 +34,6 @@ public class CourseTest {
 
     @Test
     public void updateCourseTest(){
-
         Course course = new Course ();
         course.setCourseId(50);
         course.setCourseDetail("Java  架构师课程");
@@ -49,7 +46,18 @@ public class CourseTest {
 
     @Test
     public void getCourseById(){
+        System.out.println(courseMapper.queryCourseById(107));
+    }
 
-        System.out.println(courseMapper.queryCourseById(40));
+    @Test
+    public void queryCourseByTypeForStartSizeTest(){
+        System.out.println(courseMapper.queryCourseByTypeForStartSize(46, 0, 5));
+//        System.out.println(courseMapper.queryCourseByTypeForCount(46));
+    }
+
+    @Test
+    public void queryCourseStartSize(){
+        System.out.println(courseMapper.queryCourseStartSize(0, 4));
+        System.out.println(courseMapper.queryCourseCount());
     }
 }

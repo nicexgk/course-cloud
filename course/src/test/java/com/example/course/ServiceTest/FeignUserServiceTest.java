@@ -1,5 +1,6 @@
 package com.example.course.ServiceTest;
 
+import com.example.common.entity.User;
 import com.example.course.service.feign.FeignUserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,7 +19,20 @@ public class FeignUserServiceTest {
 
     @Test
     public void userServiceTest(){
-
         System.out.println(feignUserService.getUser("123456", "123456"));
+    }
+
+    @Test
+    public void addUserTest(){
+        User user = new User();
+        user.setUserEmail("621392d651@Dfd");
+        user.setUserName("nice");
+        user.setUserOn("34343df44");
+        user.setUserPwd("123456");
+        user.setUserDescription("nice nci enic enice");
+        user.setUserType(1);
+        user.setUserAddress(":dd");
+        user.setUserPhone("11225");
+        System.out.println(feignUserService.register(user));
     }
 }

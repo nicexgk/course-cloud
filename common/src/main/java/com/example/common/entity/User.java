@@ -50,7 +50,7 @@ public class User implements Serializable {
     // 用户图标
     private String userIcon;
     // 用户描述
-    private String userIntroduce;
+    private String userDescription;
     // 用户创建日期
     private String userDate;
 

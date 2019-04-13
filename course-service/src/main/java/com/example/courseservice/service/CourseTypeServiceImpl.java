@@ -1,7 +1,6 @@
 package com.example.courseservice.service;
 
 import com.example.common.entity.CourseType;
-import com.example.common.entity.Status;
 import com.example.courseservice.dao.CourseTypeMapper;
 import org.springframework.stereotype.Service;
 
@@ -20,8 +19,8 @@ public class CourseTypeServiceImpl implements CourseTypeService{
 
     public ArrayList<CourseType> getCourseTypeCatalog() {
         ArrayList<CourseType> parentTypeList = courseTypeMapper.queryOriginType();
-        ArrayList<CourseType> secondTypeList = courseTypeMapper.queryTypeByIdOnChile(parentTypeList);
-        ArrayList<CourseType> chileTypeList = courseTypeMapper.queryTypeByIdOnChile(secondTypeList);
+        ArrayList<CourseType> secondTypeList = courseTypeMapper.queryTypeByIdListOnChildList(parentTypeList);
+        ArrayList<CourseType> chileTypeList = courseTypeMapper.queryTypeByIdListOnChildList(secondTypeList);
         for (CourseType parentType : parentTypeList) {
             if (parentType.getChildList() == null) {
                 parentType.setChildList(new ArrayList<CourseType>());
@@ -54,8 +53,12 @@ public class CourseTypeServiceImpl implements CourseTypeService{
 
     @Override
     public ArrayList<CourseType> courseTypeOnChile(ArrayList<CourseType> parentTypeList) {
-        ArrayList<CourseType> courseTypeChile = courseTypeMapper.queryTypeByIdOnChile(parentTypeList);
+        ArrayList<CourseType> courseTypeChile = courseTypeMapper.queryTypeByIdListOnChildList(parentTypeList);
         return courseTypeChile;
     }
 
+    @Override
+    public ArrayList<CourseType> getCourseTypeByParentIdForChildList(int parentId) {
+        return courseTypeMapper.queryTypeByParentIdForChildList(parentId);
+    }
 }

@@ -1,0 +1,28 @@
+
+body{
+    background: url("/img/imgs/login-background.jpg") no-repeat  center;
+}
+
+.register-content{
+    width: 1200px;
+    margin: 0 auto;
+    border: #EEEEEE solid 1px;
+}
+
+.clear-fix:after{
+    content: ".";
+    display: block;
+    clear: both;
+    height: 0px;
+    visibility: hidden;
+}
+
+.register-left {
+    float: left;
+    width: 595px;
+}
+
+.register-right{
+    float: right;
+    width: 595px;
+}

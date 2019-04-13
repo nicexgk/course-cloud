@@ -1,4 +1,8 @@
 ﻿
+a{
+	color: #000 !important;
+}
+
 .container{
     min-height: 200px;
 }
@@ -125,32 +129,39 @@ select{
 
 /*内容主体部分*/
 
-.content-c{
-	width: 1200px;
+.content-course{
+	width: 1220px;
 	overflow: hidden;
 	margin: 0 auto;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .cont-left{
-	width: 950px;
-	overflow: hidden;
 	float: left;
 }
 
+.map a{
+    line-height: 43px;
+}
 
 .guide-wrap{
 	width: 100%;
 	overflow: hidden;
 }
 .guide{
-	padding:15px;
+	padding:10px;
 	overflow: hidden;
-	background: #f7f7f7;
-	border: 1px solid #eee;
+	background: #FFFFFF;
+	border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
 }
 .guide-left,.theme-left{
 	width: 80px;
 	float: left;
+}
+.guide-left h3{
+    line-height: 55px;
 }
 .guide-wrap h3,.theme h3{
 	font-size: 14px;
@@ -168,7 +179,7 @@ select{
 	float: left;
 	margin-right: 5px;
 	font-size: 14px;
-	margin-bottom: 30px;
+    line-height: 52px;
 }
 .theme{
 	padding:15px;

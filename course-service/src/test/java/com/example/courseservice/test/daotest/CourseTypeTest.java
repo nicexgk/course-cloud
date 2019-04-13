@@ -18,8 +18,14 @@ public class CourseTypeTest {
     @Test
     public void testCourseType(){
 //        System.out.println(courseTypeMapper.queryOriginType());
-        System.out.println(courseTypeMapper.queryTypeByIdOnChile(courseTypeMapper.queryOriginType()));
+        System.out.println(courseTypeMapper.queryTypeByIdListOnChildList(courseTypeMapper.queryOriginType()));
     }
 
+    @Test
+    public void courseTypeByParentIdOnChile(){
+
+        System.out.println(courseTypeMapper.queryTypeByParentIdForChildList(46));
+
+    }
 
 }

@@ -2,8 +2,11 @@ package com.example.course.controller;
 
 import com.example.common.entity.Course;
 import com.example.common.entity.CourseType;
+import com.example.common.entity.Superstate;
 import com.example.common.entity.User;
 import com.example.course.service.feign.FeignCourseService;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +23,8 @@ public class IndexController {
 
     @Resource
     FeignCourseService feignCourseService;
+    @Autowired
+    ObjectMapper objectMapper;
 
 
     @GetMapping("/index.html")
@@ -63,7 +68,6 @@ public class IndexController {
         return "/WEB-INF/views/my-course-list.jsp";
     }
 
-
     @GetMapping("/coursetypelist.html")
     public String courseTypeList(HttpServletRequest request) {
         ArrayList<CourseType> courseTypeArrayList = feignCourseService.getCourseType();
@@ -79,14 +83,37 @@ public class IndexController {
         return "/WEB-INF/views/editor-course.jsp";
     }
 
-    @GetMapping("/register.html")
-    public String register(){
-        return "/WEB-INF/views/register.jsp";
-    }
-
     @GetMapping("/managerheader.html")
     public String managerHeader(){
         return "WEB-INF/views/common/manager-header.jsp";
     }
 
+    @GetMapping("/coursedetail.html")
+    public String courseDetail(){
+        return "/WEB-INF/views/course-detail.jsp";
+    }
+
+    @GetMapping("/course.html")
+    public String course(){
+        return"/WEB-INF/views/course.jsp";
+    }
+
+    @GetMapping("/addcomment.html")
+    public String addComment(){
+        return "/WEB-INF/views/add-comment.jsp";
+    }
+
+    @GetMapping("/register.html")
+    public String register(){
+        return "/WEB-INF/views/register.jsp";
+    }
+
+    @GetMapping("/courselist.html")
+    public String courseList(HttpServletRequest request){
+        Superstate superstate = feignCourseService.getCourseList(0, 20);
+        ArrayList<Course> courseArrayList = objectMapper.convertValue(superstate.getResource(), new TypeReference<ArrayList<Course>>(){});
+        request.setAttribute("courseList", courseArrayList);
+        request.setAttribute("pojo", superstate);
+        return "/WEB-INF/views/course-list.jsp";
+    }
 }

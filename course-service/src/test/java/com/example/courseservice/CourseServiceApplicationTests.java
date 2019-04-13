@@ -1,5 +1,6 @@
 package com.example.courseservice;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,6 +12,8 @@ public class CourseServiceApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		ObjectMapper mapper = new ObjectMapper();
+//		mapper.convertValue()
 	}
 
 

@@ -2,9 +2,10 @@ package com.example.courseservice.service;
 
 import com.example.common.entity.Course;
 import com.example.common.entity.Status;
-import org.springframework.stereotype.Service;
+import com.example.common.entity.Superstate;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
 public interface CourseService {
 
@@ -15,4 +16,11 @@ public interface CourseService {
     public Status modifyCourse(Course course);
 
     public Course getCourseById(int id);
+
+    public Superstate getCourseByTypeForPageSize(int tid, int page, int size);
+
+    public Superstate getCourseForPageSize(int page, int size);
+
+    public LinkedHashMap<String, ArrayList<Course>> getCourseTopNumByParentType(int parentId, int page, int size);
+
 }

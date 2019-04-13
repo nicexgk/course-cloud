@@ -11,4 +11,6 @@ public interface CourseTypeService {
     public ArrayList<CourseType> courseTypeNavigation();
     public ArrayList<CourseType> originCourseType();
     public ArrayList<CourseType> courseTypeOnChile(ArrayList<CourseType> parentTypeList);
+    public ArrayList<CourseType> getCourseTypeByParentIdForChildList(int parentId);
+
 }
