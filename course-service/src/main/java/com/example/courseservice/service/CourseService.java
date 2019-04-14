@@ -23,4 +23,8 @@ public interface CourseService {
 
     public LinkedHashMap<String, ArrayList<Course>> getCourseTopNumByParentType(int parentId, int page, int size);
 
+    public ArrayList<Course> getPopularCourseList(int page, int size);
+
+    public ArrayList<Course> getPurchaseCourseList(int page, int size);
+
 }

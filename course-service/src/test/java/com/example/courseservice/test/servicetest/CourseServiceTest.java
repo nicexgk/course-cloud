@@ -40,4 +40,13 @@ public class CourseServiceTest {
         }
 
     }
+
+
+    @Test
+    public void popularCourseList(){
+        System.out.println(courseService.getPopularCourseList(0, 2));
+        ArrayList<Course> popularList = courseService.getPopularCourseList(0, 2);
+        Course course = popularList.get(0);
+        System.out.println(course.getCourseId());
+    }
 }

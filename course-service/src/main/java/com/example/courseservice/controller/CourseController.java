@@ -55,9 +55,8 @@ public class CourseController {
 
     // 分页获取热门个课程
     @GetMapping("/popular/{page}/{size}")
-    public ArrayList<Course> popularCourseList(@PathVariable("page") int page, @PathVariable("size") int size){
-
-        return null;
+    public ArrayList<Course> getPopularCourseList(@PathVariable("page") int page, @PathVariable("size") int size){
+        return courseService.getPopularCourseList(page, size);
     }
 
     // 分页获取某主类下所有子类的课程热门课程
@@ -67,6 +66,12 @@ public class CourseController {
         System.out.println("page = " + page);
         System.out.println("size = " + size);
         return courseService.getCourseTopNumByParentType(parentId, page, size);
+    }
+
+    // 分页查询购买量热门的课程
+    @GetMapping("/purchase/{page}/{size}")
+    public ArrayList<Course> getPurchaseCourseList(@PathVariable("page")int page, @PathVariable("size")int size){
+        return courseService.getPopularCourseList(page, size);
     }
 
 }

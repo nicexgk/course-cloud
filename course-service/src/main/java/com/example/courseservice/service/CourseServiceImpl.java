@@ -2,20 +2,74 @@ package com.example.courseservice.service;
 
 import com.example.common.entity.*;
 import com.example.courseservice.dao.CourseMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.DefaultTypedTuple;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class CourseServiceImpl implements CourseService {
+    public static double SCORE = 0;
     @Resource
     CourseMapper courseMapper;
     @Resource
-    CatalogService catalogService;
-    @Resource
     CourseTypeService courseTypeService;
+    @Autowired
+    CatalogService catalogService;
+    @Autowired
+    RedisTemplate<String, Object> redisTemplate;
+
+    @Override
+    public ArrayList<Course> getPurchaseCourseList(int page, int size) {
+        Set<Object> purchaseSet = redisTemplate.opsForZSet().range("purchase-course-zset", page * size, size);
+        ArrayList<Course> purchaseCourseList = null;
+        if (purchaseSet == null || purchaseSet.isEmpty()){
+            Set<ZSetOperations.TypedTuple<Object>> tupleSet = new HashSet<>();
+            purchaseCourseList = courseMapper.queryCourseStartSize(page * size, size);
+            for(Course course : purchaseCourseList){
+                tupleSet.add(new DefaultTypedTuple<Object>(course, SCORE));
+            }
+            long add = redisTemplate.opsForZSet().add("purchase-course-zset", tupleSet);
+            redisTemplate.expire("purchase-course-zset", 60 , TimeUnit.SECONDS);
+            System.out.println("purchase-course-zset add " + add );
+        } else {
+            System.out.println(purchaseSet.size());
+            purchaseCourseList = new ArrayList<>();
+            for(Iterator iterator  = purchaseSet.iterator(); iterator.hasNext();){
+                purchaseCourseList.add((Course) iterator.next());
+            }
+        }
+        return purchaseCourseList;
+    }
+
+    @Override
+    public ArrayList<Course> getPopularCourseList(int page, int size) {
+        Set<Object> popularSet = redisTemplate.opsForZSet().range("popular-course-zset", page * size, size);
+        ArrayList<Course> popularCourseList = null;
+        if (popularSet == null || popularSet.isEmpty()){
+            Set<ZSetOperations.TypedTuple<Object>> tupleSet = new HashSet<>();
+            popularCourseList = courseMapper.queryCourseStartSize(page * size, size);
+            for(Course course : popularCourseList){
+                tupleSet.add(new DefaultTypedTuple<Object>(course, SCORE));
+            }
+            long add = redisTemplate.opsForZSet().add("popular-course-zset", tupleSet);
+            redisTemplate.expire("popular-course-zset", 60 , TimeUnit.SECONDS);
+            System.out.println("popular-course-zset add " + add );
+        } else {
+            System.out.println(popularSet.size());
+            popularCourseList = new ArrayList<>();
+            for(Iterator iterator  = popularSet.iterator(); iterator.hasNext();){
+                popularCourseList.add((Course) iterator.next());
+            }
+        }
+
+        return popularCourseList;
+    }
 
     @Override
     public LinkedHashMap<String, ArrayList<Course>> getCourseTopNumByParentType(int parentId, int page, int size) {

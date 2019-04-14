@@ -12,9 +12,24 @@ function downloadVideo(target){
 }
 
 var ue;
+var ueContent;
 $(function(){
     ue = UE.getEditor("ue-editor");
     ue.ready(function () {
         ue.setDisabled();
     });
+
+    initEditor();
 })
+
+
+
+function initEditor(){
+
+    ueContent = UE.getEditor("chat-ue-editor-content", );
+    ueContent.ready(function () {
+        ue.setDisabled();
+    });
+
+
+}
