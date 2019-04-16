@@ -39,7 +39,7 @@ public class Order implements Serializable {
     // 订单id
     private Integer orderId;
     // 订单编号
-    private Integer orderOn;
+    private String orderOn;
     // 订单状态
     private Integer orderStatus;
     // 订单的用户
@@ -47,7 +47,9 @@ public class Order implements Serializable {
     // 订单的对应的课程
     private Course orderCourse;
     // 订单的金额
-    private Double orderMoney;
+    private Integer orderMoney;
+    // 评论标记
+    private Integer orderCommentary;
     // 订单创建日期
     private String orderDate;
 

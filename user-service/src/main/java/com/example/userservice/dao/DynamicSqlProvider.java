@@ -4,6 +4,8 @@ import com.example.common.entity.User;
 import org.apache.ibatis.jdbc.SQL;
 import org.springframework.stereotype.Repository;
 
+import java.util.Set;
+
 @Repository
 public class DynamicSqlProvider {
     public String addUserProvider(User user){
@@ -48,6 +50,24 @@ public class DynamicSqlProvider {
                     flag = true;
                     property += "user_pwd";
                     value += "#{userPwd}";
+                }
+                if (user.getUserAutograph() != null) {
+                    if(flag){
+                        property += ",";
+                        value += ",";
+                    }
+                    flag = true;
+                    property += "user_autograph";
+                    value += "#{userAutograph }";
+                }
+                if (user.getUserSex() != null) {
+                    if(flag){
+                        property += ",";
+                        value += ",";
+                    }
+                    flag = true;
+                    property += "user_sex";
+                    value += "#{userSex}";
                 }
                 if (user.getUserAddress() != null) {
                     if(flag){
@@ -98,4 +118,32 @@ public class DynamicSqlProvider {
             }
         }.toString();
     }
+
+    public String updateUserProvider(User user){
+        return new SQL(){
+            {
+                UPDATE("user_info");
+                if(user.getUserName() != null)
+                    SET("user_name = #{userName}");
+                if(user.getUserPhone() != null)
+                    SET("user_phone = #{userPhone}");
+                if(user.getUserIcon() != null)
+                    SET("user_icon = #{userIcon}");
+                if(user.getUserAddress() != null)
+                    SET("user_address = #{userAddress}");
+                if(user.getUserPwd() != null)
+                    SET("user_pwd = #{userPwd}");
+                if (user.getUserOn() != null)
+                    SET("user_on = #{userOn}");
+                if (user.getUserType() != null)
+                    SET("user_type = #{userType}");
+                if (user.getUserAutograph() != null)
+                    SET("user_autograph = #{userAutograph}");
+                if (user.getUserDescription() != null)
+                    SET("user_description = #{userDescription}");
+                WHERE("user_id = #{studentId}");
+            }
+        }.toString();
+    }
+
 }

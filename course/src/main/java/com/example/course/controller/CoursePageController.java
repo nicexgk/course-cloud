@@ -1,9 +1,6 @@
 package com.example.course.controller;
 
-import com.example.common.entity.Catalog;
-import com.example.common.entity.Course;
-import com.example.common.entity.CourseType;
-import com.example.common.entity.Superstate;
+import com.example.common.entity.*;
 import com.example.course.service.feign.FeignCourseService;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -18,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.concurrent.*;
@@ -28,8 +24,6 @@ import java.util.concurrent.*;
 @RequestMapping("/course/page")
 public class CoursePageController {
 
-    //创建一个固定大小的线程池用于调用服务
-    public static ExecutorService executorService = Executors.newFixedThreadPool(15);
 
 
     @Resource
@@ -41,19 +35,24 @@ public class CoursePageController {
     public void addAttribute(HttpServletRequest request) {
         ArrayList<CourseType> courseTypeArrayList = feignCourseService.getCourseType();
         request.setAttribute("courseTypeCatalog", courseTypeArrayList);
-
-
     }
 
     @ApiOperation(value = "根据课程的id获取课程的的详细页面信息", notes = "返回的是HTML代码不是JOSN数据")
-    @GetMapping("/{id}")
-    public String getCoursePage(HttpServletRequest request, @PathVariable("id") int id) {
+    @GetMapping("/{cid}")
+    public String getCoursePage(HttpServletRequest request, @PathVariable("cid") int cid) {
         System.out.println("this is course page controller");
-        System.out.println(id);
-
-        Course course = feignCourseService.getCourseById(id);
+        System.out.println(cid);
+        Course course = feignCourseService.getCourseById(cid);
+        User user = (User) request.getSession().getAttribute("user");
+        if(user != null){
+            StudentCourse studentCourse = feignCourseService.getStudentBySidCid(user.getUserId(), cid);
+            Collect collect = feignCourseService.getCollectBySidCid(user.getUserId(), cid);
+            request.setAttribute("studentCourse", studentCourse);
+            request.setAttribute("collect", collect);
+        }
         System.out.println(course);
         request.setAttribute("course", course);
+
         return "/WEB-INF/views/course.jsp";
     }
 
@@ -70,7 +69,8 @@ public class CoursePageController {
     public String getCourseList(HttpServletRequest request, @PathVariable("tid") int tid, @PathVariable("page") int page, @PathVariable("size") int size) {
         System.out.println("tid = " + tid);
         Superstate superstate = feignCourseService.getCourseList(tid, page, size);
-        ArrayList courseArrayList = objectMapper.convertValue(superstate.getResource(), new TypeReference<ArrayList<Course>>() {});
+        ArrayList courseArrayList = objectMapper.convertValue(superstate.getResource(), new TypeReference<ArrayList<Course>>() {
+        });
         request.setAttribute("courseList", courseArrayList);
         request.setAttribute("pojo", superstate);
         ArrayList<CourseType> courseTypes = (ArrayList<CourseType>) request.getAttribute("courseTypeCatalog");
@@ -82,7 +82,7 @@ public class CoursePageController {
         } else {
             studyList = studyList(courseTypes, tid);
             routeList = routeList(courseTypes, tid);
-            if(routeList.size() > 1){
+            if (routeList.size() > 1) {
                 parentType = routeList.get(routeList.size() - 2);
             }
             System.out.println(routeList);
@@ -98,7 +98,8 @@ public class CoursePageController {
     @GetMapping("/{page}/{size}")
     public String getCourseList(HttpServletRequest request, @PathVariable("page") int page, @PathVariable("size") int size) {
         Superstate superstate = feignCourseService.getCourseList(page, size);
-        ArrayList courseArrayList = objectMapper.convertValue(superstate.getResource(), new TypeReference<ArrayList<Course>>() {});
+        ArrayList courseArrayList = objectMapper.convertValue(superstate.getResource(), new TypeReference<ArrayList<Course>>() {
+        });
 
         request.setAttribute("courseList", superstate.getResource());
         request.setAttribute("pojo", superstate);
@@ -124,77 +125,41 @@ public class CoursePageController {
 
 
 
-    @GetMapping("/index")
-    public String index(HttpServletRequest request){
-        ArrayList<CourseType> courseTypes = (ArrayList<CourseType>) request.getAttribute("courseTypeCatalog");
-        FutureTask<?> futureTasks[] = new FutureTask[courseTypes.size()];
-        int i = 0;
-        for(CourseType courseType : courseTypes){
-           futureTasks[i] = new FutureTask<LinkedHashMap<String, ArrayList<Course>>>(new Callable<LinkedHashMap<String, ArrayList<Course>>>() {
-               @Override
-               public LinkedHashMap<String, ArrayList<Course>> call() throws Exception {
-                   return feignCourseService.getCourseTopNumByParentType(courseType.getTypeId(), 0, 8);
-               }
-           });
-           executorService.submit(futureTasks[i]);
-           i ++;
-        }
-
-        for(i = 0; i < courseTypes.size(); i++){
-            try {
-                request.setAttribute("superType" + i, futureTasks[i].get());
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            }
-        }
-
-        return "/index.jsp";
-    }
-
-
-
-
-
-
-
-
     public ArrayList<CourseType> studyList(ArrayList<CourseType> courseTypes, int tid) {
         ArrayList<CourseType> studyList = null;
-        if (courseTypes == null){
+        if (courseTypes == null) {
             return null;
         }
         for (CourseType courseType : courseTypes) {
-            if (courseType != null && courseType.getTypeId() == tid && courseType.getChildList() != null ) {
+            if (courseType != null && courseType.getTypeId() == tid && courseType.getChildList() != null) {
                 studyList = courseType.getChildList();
                 return studyList;
-            } else if ( courseType != null && courseType.getTypeId() == tid) {
+            } else if (courseType != null && courseType.getTypeId() == tid) {
                 studyList = courseTypes;
                 return studyList;
             } else {
-                studyList =  studyList(courseType.getChildList(), tid);
+                studyList = studyList(courseType.getChildList(), tid);
             }
-            if (studyList != null){
+            if (studyList != null) {
                 break;
             }
         }
         return studyList;
     }
 
-    public ArrayList routeList(ArrayList<CourseType> courseTypes, int tid){
-        if(courseTypes == null){
+    public ArrayList routeList(ArrayList<CourseType> courseTypes, int tid) {
+        if (courseTypes == null) {
             return null;
         }
         ArrayList<CourseType> routeList = null;
-        for(CourseType courseType : courseTypes){
-            if(courseType.getTypeId() == tid){
+        for (CourseType courseType : courseTypes) {
+            if (courseType.getTypeId() == tid) {
                 routeList = new ArrayList<CourseType>();
                 routeList.add(courseType);
                 return routeList;
             } else {
                 routeList = routeList(courseType.getChildList(), tid);
-                if(routeList != null){
+                if (routeList != null) {
                     routeList.add(0, courseType);
                     return routeList;
                 }

@@ -27,4 +27,5 @@ public interface CourseService {
 
     public ArrayList<Course> getPurchaseCourseList(int page, int size);
 
+    public ArrayList<Course> getStudentCourseList(int uid, int page, int size);
 }

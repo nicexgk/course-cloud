@@ -104,7 +104,6 @@
                 <!-- 默认搜索词 -->
                 <input type="text" id="js_keyword" maxlength="38" class="mod-search__input" placeholder="课程搜索">
                 <a id="js_search" href="javascript:void(0)" class="mod-search__btn-search">
-                    <%--<i class="icon-font i-search-bold"></i>--%>
                     <i class="layui-icon">&#xe615;</i>
                 </a>
             </div>
@@ -151,19 +150,19 @@
                         </p>
                         <ul class="mod-header__user-operations dropdown-list">
                             <li>
-                                <a href="courses" class="mod-header__user-operation" rel="nofollow"
+                                <a href="/studentcourse.html" class="mod-header__user-operation" rel="nofollow"
                                    report-attr="module=personalcenter&amp;position=class_schedule&amp;ver1=topbar">课程表</a>
                             </li>
                             <li>
-                                <a href="orders" class="mod-header__user-operation js-signup" rel="nofollow"
+                                <a href="/order.html" class="mod-header__user-operation js-signup" rel="nofollow"
                                    report-attr="module=personalcenter&amp;position=orders&amp;ver1=topbar">全部订单</a>
                             </li>
                             <li>
-                                <a href="collections" class="mod-header__user-operation js-fav" rel="nofollow"
+                                <a href="/collection.html" class="mod-header__user-operation js-fav" rel="nofollow"
                                    report-attr="module=personalcenter&amp;position=collection&amp;ver1=topbar">收藏</a>
                             </li>
                             <li>
-                                <a href="information" class="mod-header__user-operation js-userinfo" rel="nofollow"
+                                <a href="/userinfo.html" class="mod-header__user-operation js-userinfo" rel="nofollow"
                                    report-attr="module=personalcenter&amp;position=userinfo&amp;ver1=topbar">个人信息</a>
                             </li>
                             <li>
@@ -187,19 +186,19 @@
                         </p>
                         <ul class="mod-header__user-operations dropdown-list">
                             <li>
-                                <a href="courses" class="mod-header__user-operation" rel="nofollow"
+                                <a href="/studentcourse.html" class="mod-header__user-operation" rel="nofollow"
                                    report-attr="module=personalcenter&amp;position=class_schedule&amp;ver1=topbar">课程表</a>
                             </li>
                             <li>
-                                <a href="orders" class="mod-header__user-operation js-signup" rel="nofollow"
+                                <a href="/order.html" class="mod-header__user-operation js-signup" rel="nofollow"
                                    report-attr="module=personalcenter&amp;position=orders&amp;ver1=topbar">全部订单</a>
                             </li>
                             <li>
-                                <a href="collections" class="mod-header__user-operation js-fav" rel="nofollow"
+                                <a href="/collection.html" class="mod-header__user-operation js-fav" rel="nofollow"
                                    report-attr="module=personalcenter&amp;position=collection&amp;ver1=topbar">收藏</a>
                             </li>
                             <li>
-                                <a href="information" class="mod-header__user-operation js-userinfo" rel="nofollow"
+                                <a href="/userinfo.html" class="mod-header__user-operation js-userinfo" rel="nofollow"
                                    report-attr="module=personalcenter&amp;position=userinfo&amp;ver1=topbar">个人信息</a>
                             </li>
                             <li>
@@ -222,7 +221,7 @@
                 <!-- 用户未登录 -->
                 <div class="mod-header_wrap-user dropdown-wrap" id="js_logout_outer2" style="display: block;">
                     <p class="mod-header__user-name dropdown-tt">
-                        <a href="help.jsp" class="mod-header__user-operation" rel="nofollow"
+                        <a href="/WEB-INF/views/help.jsp" class="mod-header__user-operation" rel="nofollow"
                            report-hover="module=personalcenter&amp;position=nickname"
                            report-attr="module=personalcenter&amp;position=nickname">
                             <span class="mod-header__user-operation-title">帮助</span>
@@ -259,7 +258,6 @@
                 <div class="ui-dialog-l40"><a target="_blank" href="/register.html">立即注册</a>
                 </div>
             </div>
-            <%--</form>--%>
         </div>
         <!-------------------- 登录框 end ------------------------------>
     </div>

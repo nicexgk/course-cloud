@@ -39,6 +39,10 @@ public class User implements Serializable {
     private String userOn;
     // 用户名称
     private String userName;
+    // 用户性别
+    private Integer userSex;
+    // 个性签名
+    private String userAutograph;
     // 用户密码
     private String userPwd;
     // 用户邮箱

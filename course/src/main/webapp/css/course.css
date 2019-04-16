@@ -1,161 +1,232 @@
 
-.catalog-tool{
+.btn-disabled {
+    width: 150px;
+    height: 50px;
+    background: #EEEEEE;
+    font-size: 16px;
+    color: #7f7f7f;
+    float: left;
+    font-weight: bold;
+    border:0px ;
+}
+
+.catalog-tool {
     display: inline-block;
     width: 30px;
     float: right;
 }
-.catalog-tool:hover{
+
+.catalog-tool:hover {
     font-size: 20px;
 }
 
-.catalog-nav{
+.catalog-nav {
     width: 1200px;
 }
 
-.over-view-warp{
+.over-view-warp {
     clear: both;
 }
 
-
-
-.content{
-	width: 100%;
-	overflow: hidden;
+.content {
+    width: 100%;
+    overflow: hidden;
 }
-.content-c{
-	width: 1200px;
-	overflow: hidden;
-	margin: 0 auto;
-	overflow: hidden;
+
+.content-c {
+    width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+    overflow: hidden;
 }
+
 /*顶部课程信息*/
-.course-information{
-	width: 1200px;
-	background: red;
+.course-information {
+    width: 1200px;
+    background: red;
 }
 
-.course-info-left{
-	width: 600px;
-	height: 420px;
-	float: left;
-}
-.banner{
-	width: 600px;
-}
-.course-info-left p{
-	display: block;
-	height: 30px;
-	margin-top: 15px;
-	color: #999;
-	font-size: 14px;
-}
-.course-info-left p a{
-	display: block;
-	float: left;
-	margin-left: 15px;
+.course-info-left {
+    width: 600px;
+    height: 420px;
+    float: left;
 }
 
-.course-info-right{
-	width: 570px;
-	padding:15px;
-	padding-top: 0px;
-	height: 340px;
-	float: right;
-}
-.course-info-right h3{
-	font-size: 22px;
-	font-weight: normal;
-	margin-bottom: 10px;
-}
-.course-info-right span{
-	font-size: 14px;
-	color: #999;
-	display: block;
-	float: left;
-	margin-right: 30px;
-	margin-bottom: 30px;
-}
-.class-info{
-	width: 550px;
-	border:1px solid #ccc;
-	clear: both;
-	position: relative;
-	padding: 15px;
-}
-.class-info label{
-	margin-top: -28px;
-	font-size: 16px;
-	font-weight: normal;
-	background: #fff;
-	text-align: center;
-	position: absolute;
-	left: 10px;
-	padding-right: 5px;
-	padding-left: 5px;
-	z-index: 200;
-}
-.class-info p{
-	display: block;
-	text-indent: 1em;
+.banner {
+    width: 600px;
 }
 
-.price{
-	background: #f4f4f4;
-	width: 100%;
-	margin-top: 15px;
-	margin-bottom: 10px;
-	color: #e85308;
-	font-size: 26px;
-	padding: 10px;
-	padding-top: 5px;
-	padding-bottom: 5px;
+.course-info-left p {
+    display: block;
+    height: 30px;
+    margin-top: 15px;
+    color: #999;
+    font-size: 14px;
 }
 
-.btn-group{
-	width: 100%;
-}
-.btn2{
-	width: 150px;
-	height: 50px;
-	border-radius: 5px;
-	background: #188eee;
-	font-size: 16px;
-	color: #fff;
-	float: left;
-	font-weight: bold;
-}
-#btn:hover{
-	background: #147de2;
+.course-info-left p a {
+    display: block;
+    float: left;
+    margin-left: 15px;
 }
 
-.btn-group ul li{
-	width: 150px;
-	height: 50px;
-	border-radius: 5px;
-	border:1px solid #147de2;
-	float: left;
-	margin-left: 10px;
-	line-height: 50px;
-	text-align: center;
-	color: #147de2;
-	cursor: pointer;
+.course-info-right {
+    width: 570px;
+    padding: 15px;
+    padding-top: 0px;
+    height: 340px;
+    float: right;
 }
-.btn-group ul li strong{
-	color: #147de2;
+
+.course-info-right h3 {
+    font-size: 22px;
+    font-weight: normal;
+    margin-bottom: 10px;
 }
-.btn-group ul li dl{
-	display: block;
-	height: 50px;
-	text-align: center;
-	width: 74px;
-	color: #147de2;
-	float: left;
-	display: none;
+
+.course-info-right span {
+    font-size: 14px;
+    color: #999;
+    display: block;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 30px;
 }
-.btn-group ul li dl a{
-	font-weight: bold;
-	color: #188eee;
+
+.class-info {
+    width: 550px;
+    border: 1px solid #ccc;
+    clear: both;
+    position: relative;
+    padding: 15px;
 }
-#bd{
-	border-right: 1px solid #147de2;
+
+.class-info label {
+    margin-top: -28px;
+    font-size: 16px;
+    font-weight: normal;
+    background: #fff;
+    text-align: center;
+    position: absolute;
+    left: 10px;
+    padding-right: 5px;
+    padding-left: 5px;
+    z-index: 200;
 }
+
+.class-info p {
+    display: block;
+    text-indent: 1em;
+}
+
+.price {
+    background: #f4f4f4;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: #e85308;
+    font-size: 26px;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.btn-group {
+    width: 100%;
+}
+
+.btn2 {
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    background: #188eee;
+    font-size: 16px;
+    color: #fff;
+    float: left;
+    font-weight: bold;
+}
+
+#btn:hover {
+    background: #147de2;
+}
+
+.btn-group ul li {
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid #147de2;
+    float: left;
+    margin-left: 10px;
+    line-height: 50px;
+    text-align: center;
+    color: #147de2;
+    cursor: pointer;
+}
+
+.btn-group ul li strong {
+    color: #147de2;
+}
+
+.btn-group ul li dl {
+    display: block;
+    height: 50px;
+    text-align: center;
+    width: 74px;
+    color: #147de2;
+    float: left;
+    display: none;
+}
+
+.btn-group ul li dl a {
+    font-weight: bold;
+    color: #188eee;
+}
+
+#bd {
+    border-right: 1px solid #147de2;
+}
+
+.chat-content {
+    height: 250px;
+    max-height: 500px;
+    overflow: scroll;
+    border: red solid 2px;
+}
+
+.receive-text {
+    float: left;
+    border: cyan solid 2px;
+}
+
+.send-text {
+    float: right;
+    border: chartreuse solid 2px;
+}
+
+.receive-head-img {
+    width: 40px;
+    height: 40px;
+
+}
+
+.send-head-img {
+    width: 40px;
+    height: 40px;
+}
+
+.receive-content-text {
+    margin-left: 45px;
+}
+
+.send-content-text {
+    margin-right: 45px;
+}
+
+.chat-send {
+    display: block;
+    float: right;
+    width: 80px;
+    height: 35px;
+    background-color: #188eee;
+}
+

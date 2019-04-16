@@ -15,7 +15,7 @@ function init() {
         // 图片上传
         upload.render({
             elem: '#upload-img',
-            url: '/upload/image',
+            url: '/upload/image/',
             accept: 'file',
             exts: 'img|jpg|jpeg|png',
             done: function (res) {
@@ -38,11 +38,9 @@ function init() {
             user.userEmail = $("input[name='email']").val();
             user.userPwd = $("input[name='password']").val();
             user.userPhone = $("input[name='phone']").val();
-            user.userSex = $(":radio:checked[name='sex']").val();
-            user.courseType = $("#select3").val();
-            user.description = $("textarea[name='description']").val();
+            user.userSex = $(":radio:checked[name='sex']").val() == "女" ? 1 : 0 ;
+            user.userDescription = $("textarea[name='description']").val();
             user.userAutograph = $("input[name='user-autograph']").val();
-            user.userIcon = $("input[name='course-price']").val();
             user.userType = $("em").html() == "ON" ? 1: 0;
             user.userIcon = $("input[name='course-img']").attr("src");
             var check = $("input[name='check']")

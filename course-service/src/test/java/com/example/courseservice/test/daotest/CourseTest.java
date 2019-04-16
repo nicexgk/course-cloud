@@ -46,7 +46,7 @@ public class CourseTest {
 
     @Test
     public void getCourseById(){
-        System.out.println(courseMapper.queryCourseById(107));
+        System.out.println(courseMapper.queryCourseByCid(107));
     }
 
     @Test

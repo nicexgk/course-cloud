@@ -32,4 +32,19 @@ public class UserMapperTest {
 
     }
 
+    @Test
+    public  void updateUserTest(){
+        User user = new User();
+        user.setUserId(10);
+        user.setUserEmail("621392651@Dfd");
+        user.setUserName("nice");
+        user.setUserOn("3443f44");
+        user.setUserPwd("123456");
+        user.setUserDescription("nice nci enic enice");
+        user.setUserType(1);
+        user.setUserAddress(":dd");
+        user.setUserPhone("11225");
+        System.out.println(userMapper.updateUser(user));
+    }
+
 }

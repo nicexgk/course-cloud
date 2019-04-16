@@ -24,16 +24,16 @@ public interface UserMapper {
             @Result(property = "userAddress", column = "user_address"),
             @Result(property = "userIcon", column = "user_icon"),
             @Result(property = "userDescription", column = "user_description"),
+            @Result(property = "userAutograph", column = "user_autograph"),
+            @Result(property = "userSex", column = "user_sex"),
             @Result(property = "userDate", column = "user_date"),
     })
     public User queryUser(String account, String pwd);
 
-    public User userLoginByOn(String on, String pwd);
-
-    public User userLingoByEmail(String email, String pwd);
 
     @InsertProvider(type = DynamicSqlProvider.class, method = "addUserProvider")
     public boolean insertUser(User user);
 
+    @UpdateProvider(type = DynamicSqlProvider.class, method = "updateUserProvider")
     public boolean updateUser(User user);
 }

@@ -25,6 +25,11 @@ public class CourseServiceImpl implements CourseService {
     RedisTemplate<String, Object> redisTemplate;
 
     @Override
+    public ArrayList<Course> getStudentCourseList(int uid, int page, int size) {
+        return courseMapper.queryCourseByStudentForStartSize(uid, page * size, size);
+    }
+
+    @Override
     public ArrayList<Course> getPurchaseCourseList(int page, int size) {
         Set<Object> purchaseSet = redisTemplate.opsForZSet().range("purchase-course-zset", page * size, size);
         ArrayList<Course> purchaseCourseList = null;
@@ -210,10 +215,10 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public Course getCourseById(int id) {
-        Course course = courseMapper.queryCourseById(id);
+    public Course getCourseById(int cid) {
+        Course course = courseMapper.queryCourseByCid(cid);
         if (course != null) {
-            ArrayList<Catalog> catalogList = catalogService.getCatalogList(id);
+            ArrayList<Catalog> catalogList = catalogService.getCatalogList(cid);
             course.setCatalogList(catalogList);
         }
         return course;

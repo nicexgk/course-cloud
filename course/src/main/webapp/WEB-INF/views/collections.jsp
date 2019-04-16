@@ -10,12 +10,12 @@
 <html>
 <head>
     <title>收藏</title>
-    <jsp:include page="common/head.jsp"/>
+    <%--<jsp:include page="common/head.jsp"/>--%>
 </head>
 <body class="l-aside-left l-min">
 <div id="index_87d1ccfce071f024bf1348bcfed03a9b"></div>
 <!-- header -->
-<jsp:include page="common/header.jsp"/>
+<%--<jsp:include page="common/header.jsp"/>--%>
 
 <div id="react-body">
     <section class="inner-center clearfix">
@@ -32,13 +32,11 @@
         <main class="main">
             <div class="wrapper-plan"><h1 class="wrapper-tt">收藏</h1>
             </div>
-
             <!-- 收藏列表区 -->
-
         </main>
     </section>
     <!-- footer -->
-    <jsp:include page="common/footer.jsp"/>
+    <%--<jsp:include page="common/footer.jsp"/>--%>
 </div>
 </body>
 </html>

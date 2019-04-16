@@ -25,7 +25,7 @@ public class UploadController {
 
     // 上传图片
     @ApiOperation(value = "上传图片接口", tags = {"返回一个JSON格式的状态对象", "upload-controller"}, notes = "上传图片的name应为file")
-    @PostMapping("/image")
+    @PostMapping("/image/")
     public Status uploadImage(HttpServletRequest request, @RequestParam(name = "file") MultipartFile upfile){
         // 获得指定目录的真实路径
         String path = request.getServletContext().getRealPath("/upload/image");
@@ -66,7 +66,7 @@ public class UploadController {
 
     // 上传视频
     @ApiOperation(value = "视频上传接口", tags = {"返回一个JSON格式的状态对象", "upload-controller"})
-    @PostMapping("/video")
+    @PostMapping("/video/")
     public Status upload(HttpServletRequest request,  @RequestParam(name = "file") MultipartFile upfile) {
         // 获得指定目录的真实路径
         String path = request.getServletContext().getRealPath("/upload/video");

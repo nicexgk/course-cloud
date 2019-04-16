@@ -1,8 +1,8 @@
 package com.example.courseservice.dao;
 
 import com.example.common.entity.Course;
+import com.example.common.entity.StudentCourse;
 import org.apache.ibatis.jdbc.SQL;
-import org.springframework.stereotype.Repository;
 
 //  动态添加课程SQL提供类
 public class DynamicSqlProvider {
@@ -69,7 +69,7 @@ public class DynamicSqlProvider {
                     if(flag)
                         str += ",";
                     flag = true;
-                    val += "#{courseTeacher.userId}";
+                    val += "#{courseTeacher.studentId}";
                 }
                 if (course.getCoursePrice() != null) {
                     if(flag)
@@ -141,4 +141,54 @@ public class DynamicSqlProvider {
             }
         }.toString();
     }
+
+    // 生成动态的添加用户课程信息SQL
+    public String insertUserCourseProvider(StudentCourse studentCourse){
+        return new SQL(){
+            {
+                INSERT_INTO("student_course");
+                String str = "";
+                String val = "";
+                boolean flag = false;
+                if (studentCourse.getCourse() != null) {
+                    if(flag){
+                        str += ",";
+                        val += ",";
+                    }
+                    flag = true;
+                    str += "course_id";
+                    val += "#{course.courseId}";
+                }
+                if(studentCourse.getOrderOn() != null){
+                    if(flag){
+                        str += ",";
+                        val += ",";
+                    }
+                    flag = true;
+                    str += "order_on";
+                    val += "#{orderOn}";
+                }
+                if(studentCourse.getStudentId() != null){
+                    if(flag){
+                        str += ",";
+                        val += ",";
+                    }
+                    flag = true;
+                    str += "student_id";
+                    val += "#{studentId}";
+                }
+                if(studentCourse.getIsCommentary() != null){
+                    if(flag){
+                        str += ",";
+                        val += ",";
+                    }
+                    flag = true;
+                    str += "is_commentary";
+                    val += "#{isCommentary}";
+                }
+                VALUES(str, val);
+            }
+        }.toString();
+    }
+
 }

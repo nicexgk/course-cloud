@@ -68,16 +68,13 @@ public class FeignCourseServiceTest {
         commentary.setCommentContent("nice nice nice");
         commentary.setCommentGrade(5);
         System.out.println(feignCourseService.addCommentary(commentary));
-
     }
 
     @Test
     public void getCourseByTypePageSizeTest(){
-//        System.out.println(feignCourseService.getCourseList(46, 1, 3));
         Superstate superstate = feignCourseService.getCourseList(46, 1, 3);
         ArrayList<Course> arrayList = objectMapper.convertValue(superstate.getResource(), new TypeReference<ArrayList<Course>>(){});
         System.out.println(arrayList);
-//        System.out.println(feignCourseService.getCourseList(1, 4));
     }
 
     @Test
@@ -86,6 +83,40 @@ public class FeignCourseServiceTest {
         for (Map.Entry<String, ArrayList<Course>> enty : nice.entrySet()){
             System.out.println(enty.getValue());
         }
+    }
+
+    @Test
+    public void getPopularArrayListTest(){
+
+//        System.out.println(feignCourseService.getPopularCourseList(0, 10));
+        System.out.println(feignCourseService.getPurchaseCourseList(0, 10));
+    }
+
+    @Test
+    public void getUserCourseListByUserIdForPageSize(){
+        System.out.println(feignCourseService.getStudentCourseListByUserIdForPageSize(9, 0, 10));
+    }
+
+    @Test
+    public void getStudentCourseBySidCid(){
+        System.out.println(feignCourseService.getStudentBySidCid(9, 179));
+    }
+
+    @Test
+    public void collectionTest(){
+
+        System.out.println(feignCourseService.addCollect(10, 179));
+        System.out.println("==============");
+        System.out.println(feignCourseService.deleteCollect(9, 179));
+        System.out.println("==============");
+        System.out.println(feignCourseService.getCollectList(9, 0, 5));
+
+    }
+
+    @Test
+    public void queryCollectTest(){
+
+        System.out.println(feignCourseService.getCollectBySidCid(9, 181));
     }
 
 }

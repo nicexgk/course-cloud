@@ -21,4 +21,7 @@ public interface FeignUserService {
     @PostMapping("/user/")
     public Status register(@RequestBody User user);
 
+    @PutMapping("/user/")
+    public  Status updateUser(@RequestBody User user);
+
 }

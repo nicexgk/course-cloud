@@ -101,42 +101,13 @@
                             <!--包含一个u（用来放置图片）一个div（图片底部的状态方块）两个a（两个按钮用于给图片翻页）-->
                             <!--mod-big-banner_imgs-->
                             <ul id="js_sliderbox" class="mod-big-banner_imgs">
-                                <li style="display: block;">
-                                    <a href="#" class="mod-big-banner_link-img" title="1" target="_blank">
-                                        <img src="img/imgs/1.jpg" alt="1" class="mod-big-banner_img" width="760px" height="300"/>
-                                    </a>
-                                </li>
-                                <li style="display: none;">
-                                    <a href="#" class="mod-big-banner_link-img" title="1" target="_blank">
-                                        <img src="img/imgs/2.png" alt="1" class="mod-big-banner_img" width="760px" height="300"/>
-                                    </a>
-                                </li>
-                                <li style="display: none;">
-                                    <a href="#" class="mod-big-banner_link-img" title="1" target="_blank">
-                                        <img src="img/imgs/3.jpg" alt="1" class="mod-big-banner_img" width="760px" height="300"/>
-                                    </a>
-                                </li>
-                                <li style="display: none;">
-                                    <a href="#" class="mod-big-banner_link-img" title="1" target="_blank">
-                                        <img src="img/imgs/4.jpg" alt="1" class="mod-big-banner_img" width="760px"
-                                             height="300"/>
-                                    </a>
-                                </li>
-                                <li style="display: none;">
-                                    <a href="#" class="mod-big-banner_link-img" title="1" target="_blank">
-                                        <img src="img/imgs/5.jpg" alt="1" class="mod-big-banner_img" width="760px" height="300"/>
-                                    </a>
-                                </li>
-                                <li style="display: none;">
-                                    <a href="#" class="mod-big-banner_link-img" title="1" target="_blank">
-                                        <img src="img/imgs/6.jpg" alt="1" class="mod-big-banner_img" width="760px" height="300"/>
-                                    </a>
-                                </li>
-                                <li style="display: none;">
-                                    <a href="#" class="mod-big-banner_link-img" title="1" target="_blank">
-                                        <img src="img/imgs/7.jpg" alt="1" class="mod-big-banner_img" width="760px" height="300"/>
-                                    </a>
-                                </li>
+                                <c:forEach items="${purchaseCourseList}" var="course" end="6" varStatus="status">
+                                    <li style="display: ${status.count == 1 ? "block" : "none"};">
+                                        <a href="/course/page/${course.courseId}" class="mod-big-banner_link-img" title="1" target="_blank">
+                                            <img src="${course.picUrl}" alt="1" class="mod-big-banner_img" width="760px" height="300"/>
+                                        </a>
+                                    </li>
+                                </c:forEach>
                             </ul>
                             <!--=========================================================mod-big-banner_imgs end-->
                             <!--mod-big-banner_banner-status-->
@@ -210,13 +181,13 @@
         <!----------------------- 活动DIV start ------------------------------->
         <div class="wrap-activities">
             <a class="activity-card_link" title="挑灯夜学" target="_blank" href="#">
-                <img class="activity-card_img" src="img/imgs/nightly.jpg"/>
+                <img class="activity-card_img" src="/img/imgs/nightly.jpg"/>
             </a>
             <a class="activity-card_link" title="名企面试资格，精英定制" target="_blank" href="#">
-                <img class="activity-card_img" src="img/imgs/job.jpg"/>
+                <img class="activity-card_img" src="/img/imgs/job.jpg"/>
             </a>
             <a class="activity-card_link" title="群聚学习" target="_blank" href="#">
-                <img class="activity-card_img" src="img/imgs/subscribe.jpg"/>
+                <img class="activity-card_img" src="/img/imgs/subscribe.jpg"/>
             </a>
         </div>
         <!----------------------- 活动DIV start ------------------------------->
@@ -228,212 +199,36 @@
             <div class="aBigTopDiv">
                 <!--热门课堂DIV-->
                 <div class="aReMen">热门课程</div>
-                <!--按钮大div-->
-                <div class="aButtonBigDiv">
-                    <!--按钮大div的直播课程-->
-                    <div class="aZhiBo">查看更多</div>
-                    <!--按钮大div的录播课程-->
-                    <div id="aLuBoKe" class="aLuBo">
-                        <!--装图标的-->
-                        <!-- <span class="aBoFang"> </span> -->
-                        <!--装录播课的-->
-                        <!-- <span> 录播课 </span> -->
-                    </div>
-                </div>
             </div>
             <!------------------- 标题DIV end  -------------------------------->
 
             <!------------------- 课程DIV 框 start ---------------------------->
             <div id="aQieHuan1" class="aQieHuanBigBottom">
                 <!--小div框框-->
-                <!--------------- 第一个课程框 start ----------------->
-                <div class="aRongQiDiv">
-                    <!--装图片的a-->
-                    <a class="aImgRongQi" href="#"> <img src="./img/imgs/img/a11.jpg"/>
-                    </a>
-                    <!--图片下面装字体的元素-->
-                    <a class="aImgBottom" href="#"> 蓝铅笔公开课——小白学漫画 </a>
-                    <!--装费用和学校的div-->
-                    <div class="aBottomDivTwo">
-                        <!--费用“免费”-->
-                        <span class="aBottomDivTwoSpan1">免费</span>
-                        <!--中间的竖线-->
-                        <span class="aBottomDivTwoSpan2">|</span> <a class="aBottomSchool" target="_blank" href="#"> 跨考直播 </a>
+                <c:forEach items="${requestScope.popularCourseList}" var="course" end="4">
+                    <!--------------- 第一个课程框 start ----------------->
+                    <div class="aRongQiDiv">
+                        <!--装图片的a-->
+                        <a class="aImgRongQi" target="_blank" href="/course/page/${course.courseId}"><img src="${course.picUrl}"/>
+                        </a>
+                        <!--图片下面装字体的元素-->
+                        <a class="aImgBottom" target="_blank" href="/course/page/${course.courseId}">${course.courseName}</a>
+                        <!--装费用和学校的div-->
+                        <div class="aBottomDivTwo">
+                            <!--费用“免费”-->
+                            <c:if test="${course.coursePrice > 0 }">
+                                <span class="aBottomDivTwoSpan1 course-price">￥${course.coursePrice}</span>
+                            </c:if>
+                            <c:if test="${course.coursePrice <= 0 }">
+                                <span class="aBottomDivTwoSpan1 course-price course-money-null">免费</span>
+                            </c:if>
+                            <a class="aBottomSchool course-teacher" href="#">${course.courseTeacher.userName} </a>
+                        </div>
                     </div>
-                </div>
-                <!--------------- 第一个课程框 end  ------------------>
-
-                <!--------------- 第二个课程框 start ----------------->
-                <div class="aRongQiDiv">
-                    <!--装图片的a-->
-                    <a class="aImgRongQi" target="_blank" href="#"> <img
-                            src="./img/imgs/img/a12.jpg"/>
-                    </a>
-                    <!--图片下面装字体的元素-->
-                    <a class="aImgBottom" target="_blank" href="#"> 2014年12月四六级冲刺班 </a>
-                    <!--装费用和学校的div-->
-                    <div class="aBottomDivTwo">
-                        <!--费用“免费”-->
-                        <span class="aBottomDivTwoSpan1">免费</span>
-                        <!--中间的竖线-->
-                        <span class="aBottomDivTwoSpan2">|</span> <a class="aBottomSchool" href="#">
-                        应试宝 </a>
-                    </div>
-                </div>
-                <!--------------- 第二个课程框 end  ------------------>
-
-                <!--------------- 第三个课程框 start ----------------->
-                <div class="aRongQiDiv">
-                    <!--装图片的a-->
-                    <a class="aImgRongQi" href="#"> <img src="./img/imgs/img/a13.jpg"/>
-                    </a>
-                    <!--图片下面装字体的元素-->
-                    <a class="aImgBottom" href="#"> 2015年国考笔试高分速成班 </a>
-                    <!--装费用和学校的div-->
-                    <div class="aBottomDivTwo">
-                        <!--费用“免费”-->
-                        <span class="aBottomDivTwoSpan1">免费</span>
-                        <!--中间的竖线-->
-                        <span class="aBottomDivTwoSpan2">|</span> <a class="aBottomSchool" href="#">
-                        魁冠公考 </a>
-                    </div>
-                </div>
-                <!--------------- 第三个课程框 end  ------------------>
-
-                <!--------------- 第四个课程框 start ----------------->
-                <div class="aRongQiDiv">
-                    <!--装图片的a-->
-                    <a class="aImgRongQi" href="#"> <img src="./img/imgs/img/a14.jpg"/>
-                    </a>
-                    <!--图片下面装字体的元素-->
-                    <a class="aImgBottom" href="#"> 英语拼记忆 不怕底子薄 洛基英语 </a>
-                    <!--装费用和学校的div-->
-                    <div class="aBottomDivTwo">
-                        <!--费用“免费”-->
-                        <span class="aBottomDivTwoSpan1">免费</span>
-                        <!--中间的竖线-->
-                        <span class="aBottomDivTwoSpan2">|</span> <a class="aBottomSchool" href="#">
-                        洛基英语 </a>
-                    </div>
-                </div>
-                <!--------------- 第四个课程框 end  ------------------>
-
-                <!--------------- 第五个课程框 start ----------------->
-                <div class="aRongQiDiv" style="margin-right: -50px;">
-                    <!--装图片的a-->
-                    <a class="aImgRongQi" href="#"> <img src="./img/imgs/img/a15.jpg"/>
-                    </a>
-                    <!--图片下面装字体的元素-->
-                    <a class="aImgBottom" href="#"> web前端开发求职季试听课 </a>
-                    <!--装费用和学校的div-->
-                    <div class="aBottomDivTwo">
-                        <!--费用“免费”-->
-                        <span class="aBottomDivTwoSpan1">免费</span>
-                        <!--中间的竖线-->
-                        <span class="aBottomDivTwoSpan2">|</span> <a class="aBottomSchool" href="#">
-                        德科特 </a>
-                    </div>
-                </div>
-                <!--------------- 第五个课程框 end  ------------------>
+                    <!--------------- 第一个课程框 end ------------------>
+                </c:forEach>
             </div>
             <!------------------- 课程DIV 框 end  ----------------------------->
-
-            <!------------------- 隐藏的课程DIV start ------------------------->
-            <div id="aQieHuan2" class="aQieHuanBigBottom" style="display: none;">
-                <!--小div框框-->
-                <!--重复的第一个start----------------->
-                <div class="aRongQiDiv">
-                    <!--装图片的a-->
-                    <a class="aImgRongQi" href="#"> <img src="./img/imgs/img/a22.jpg"/>
-                    </a>
-                    <!--图片下面装字体的元素-->
-                    <a class="aImgBottom" href="#"> 历代经济变革得失 </a>
-                    <!--装费用和学校的div-->
-                    <div class="aBottomDivTwo">
-                        <!--费用“免费”-->
-                        <span class="aBottomDivTwoSpan1">免费</span>
-                        <!--中间的竖线-->
-                        <span class="aBottomDivTwoSpan2">|</span> <a class="aBottomSchool" href="#">
-                        吴晓波 </a>
-                    </div>
-                </div>
-                <!--重复的第一个end----------------->
-                <!--小div框框-->
-                <!--重复的第一个start----------------->
-                <div class="aRongQiDiv">
-                    <!--装图片的a-->
-                    <a class="aImgRongQi" href="#"> <img src="./img/imgs/img/a21.jpg"/>
-                    </a>
-                    <!--图片下面装字体的元素-->
-                    <a class="aImgBottom" href="#"> 从零开始学日语（和名师快乐玩 </a>
-                    <!--装费用和学校的div-->
-                    <div class="aBottomDivTwo">
-                        <!--费用“免费”-->
-                        <span class="aBottomDivTwoSpan1">免费</span>
-                        <!--中间的竖线-->
-                        <span class="aBottomDivTwoSpan2">|</span> <a class="aBottomSchool" href="#">
-                        海贝网校 </a>
-                    </div>
-                </div>
-                <!--重复的第一个end----------------->
-
-                <!--小div框框-->
-                <!--重复的第一个start----------------->
-                <div class="aRongQiDiv">
-                    <!--装图片的a-->
-                    <a class="aImgRongQi" href="#"> <img src="./img/imgs/img/a23.jpg"/>
-                    </a>
-                    <!--图片下面装字体的元素-->
-                    <a class="aImgBottom" href="#"> 以礼走天下 </a>
-                    <!--装费用和学校的div-->
-                    <div class="aBottomDivTwo">
-                        <!--费用“免费”-->
-                        <span class="aBottomDivTwoSpan1">免费</span>
-                        <!--中间的竖线-->
-                        <span class="aBottomDivTwoSpan2">|</span> <a class="aBottomSchool" href="#">
-                        周思敏 </a>
-                    </div>
-                </div>
-                <!--重复的第一个end----------------->
-
-                <!--小div框框-->
-                <!--重复的第一个start----------------->
-                <div class="aRongQiDiv">
-                    <!--装图片的a-->
-                    <a class="aImgRongQi" href="#"> <img src="./img/imgs/img/a24.jpg"/>
-                    </a>
-                    <!--图片下面装字体的元素-->
-                    <a class="aImgBottom" href="#"> 芩说红楼梦 </a>
-                    <!--装费用和学校的div-->
-                    <div class="aBottomDivTwo">
-                        <!--费用“免费”-->
-                        <span class="aBottomDivTwoSpan1">免费</span>
-                        <!--中间的竖线-->
-                        <span class="aBottomDivTwoSpan2">|</span> <a class="aBottomSchool" href="#"> 苏岑
-                    </a>
-                    </div>
-                </div>
-                <!--重复的第一个end----------------->
-
-                <!--小div框框-->
-                <!--重复的第一个start----------------->
-                <div class="aRongQiDiv" style="margin-right: -50px;">
-                    <!--装图片的a-->
-                    <a class="aImgRongQi" href="#"> <img src="./img/imgs/img/a25.jpg"/>
-                    </a>
-                    <!--图片下面装字体的元素-->
-                    <a class="aImgBottom" href="#"> 90后英语：iTop-[英语求职]潜规则 </a>
-                    <!--装费用和学校的div-->
-                    <div class="aBottomDivTwo">
-                        <!--费用“免费”-->
-                        <span class="aBottomDivTwoSpan1">免费</span>
-                        <!--中间的竖线-->
-                        <span class="aBottomDivTwoSpan2">|</span> <a class="aBottomSchool" href="#">
-                        北京新范文化 </a>
-                    </div>
-                </div>
-            </div>
-            <!------------------- 隐藏的课程DIV end  -------------------------->
 
         </div>
         <!----------------------- 人课程DIV start ----------------------------->
@@ -462,7 +257,7 @@
                         <div id="" class="bBigRightTOp">
                             <!--右边的大div上面按钮5个元素-->
                             <c:forEach items="${requestScope.superType0}" var="map" varStatus="status">
-                                <a href="javascript:;" class="${status.count == 1 ? "course-link-title": "none"}">${map.key}</a>
+                                <a href="javascript:;" onclick="onChange(this)" class="${status.count == 1 ? "course-link-title": "none"}">${map.key}</a>
                             </c:forEach>
                         </div>
                         <c:forEach items="${requestScope.superType0}" var="entry" varStatus="status">
@@ -471,7 +266,6 @@
                                 <!--右边的大div下面的切换大div左边框-->
                                 <div class="bBigRightBottomLeft">
                                     <c:forEach items="${entry.value}" var="course">
-                                        <!------------------------------------------------------------------------------------>
                                         <div class="aRongQiDiv">
                                             <!--装图片的a-->
                                             <a class="aImgRongQi" target="_blank" href="/course/page/${course.courseId}"><img src="${course.picUrl}"/></a>
@@ -489,7 +283,6 @@
                                                 <a class="aBottomSchool course-teacher" href="#">${course.courseTeacher.userName} </a>
                                             </div>
                                         </div>
-                                        <!------------------------------------------------------------------------------------>
                                     </c:forEach>
                                 </div>
                             </div>
@@ -506,7 +299,7 @@
                     <!--左边的大div-->
                     <div class="bBigLeft">
                         <!--左边的大div上面div-->
-                        <div class="bBigLeftTop">语言学习</div>
+                        <div class="bBigLeftTop">设计·创作</div>
                         <!--左边的大div下面div-->
                         <div class="bBigLeftBottom">
                             <a href="#" target="_blank"><img src="/img/imgs/img1/xx.jpg"/></a>
@@ -518,7 +311,7 @@
                         <div id="cQieHuanButton" class="bBigRightTOp">
                             <!--右边的大div上面按钮5个元素-->
                             <c:forEach items="${requestScope.superType1}" var="entry">
-                                <a href="javascript:;" class="${status.count == 1 ? "course-link-title": "none"}">${entry.key}</a>
+                                <a href="javascript:;" onclick="onChange(this)" class="${status.count == 1 ? "course-link-title": "none"}">${entry.key}</a>
                             </c:forEach>
                         </div>
                         <c:forEach items="${requestScope.superType1}" var="entry" varStatus="status">
@@ -526,12 +319,11 @@
                                 <!--右边的大div下面的切换大div左边框-->
                                 <div class="bBigRightBottomLeft">
                                     <c:forEach items="${entry.value}" var="course">
-                                        <!------------------------------------------------------------------------------------>
                                         <div class="aRongQiDiv">
                                             <!--装图片的a-->
                                             <a class="aImgRongQi" target="_blank" href="/course/page/${course.courseId}"><img src="${course.picUrl}"/></a>
                                             <!--图片下面装字体的元素-->
-                                            <a class="aImgBottom"target="_blank" href="/course/page/${course.courseId}">${course.courseName}</a>
+                                            <a class="aImgBottom" target="_blank" href="/course/page/${course.courseId}">${course.courseName}</a>
                                             <!--装费用和学校的div-->
                                             <div class="aBottomDivTwo">
                                                 <!--费用“免费”-->
@@ -544,7 +336,6 @@
                                                 <a class="aBottomSchool course-teacher" href="#">${course.courseTeacher.userName} </a>
                                             </div>
                                         </div>
-                                        <!------------------------------------------------------------------------------------>
                                     </c:forEach>
                                 </div>
                             </div>
@@ -561,7 +352,7 @@
                     <!--左边的大div-->
                     <div class="bBigLeft">
                         <!--左边的大div上面div-->
-                        <div class="bBigLeftTop">职业技能</div>
+                        <div class="bBigLeftTop">考研·留学</div>
                         <!--左边的大div下面div-->
                         <div class="bBigLeftBottom">
                             <a href="#" target="_blank"><img src="/img/imgs/img3/zz.jpg"/></a>
@@ -573,7 +364,7 @@
                         <div id="dQieHuanButton" class="bBigRightTOp">
                             <!--右边的大div上面按钮5个元素-->
                             <c:forEach items="${requestScope.superType2}" var="entry" varStatus="status">
-                                <a href="javascript:;" class="${status.count == 1 ? "course-link-title": "none"}">${entry.key}</a>
+                                <a href="javascript:;" onclick="onChange(this)" class="${status.count == 1 ? "course-link-title": "none"}">${entry.key}</a>
                             </c:forEach>
                         </div>
 
@@ -620,7 +411,7 @@
                     <!--左边亲子和图片的大div-->
                     <div class="pLeftBigDiv">
                         <!--亲子div-->
-                        <div class="pLeftTopDiv">中小学/大学</div>
+                        <div class="pLeftTopDiv">职业·技能</div>
                         <!--左边亲子下面的图片div-->
                         <div class="pLeftBottomDiv">
                             <a href="#" target="_blank"><img src="/img/imgs/img4/daXue.png"/></a>
@@ -631,20 +422,20 @@
                         <!--上面的五个切换divAll-->
                         <div id="pQieHuanButton" class="bBigRightTOp">
                             <c:forEach items="${requestScope.superType3}" var="entry" varStatus="status">
-                                <a href="javascript:;" class="${status.count == 1 ? "course-link-title": "none"}">${entry.key}</a>
+                                <a href="javascript:;" onclick="onChange(this)" class="${status.count == 1 ? "course-link-title": "none"}">${entry.key}</a>
                             </c:forEach>
                         </div>
                         <c:forEach items="${requestScope.superType3}" var="entry" varStatus="status">
                             <!--需要切换的整个大div-->
                             <div id="pQieHuanOne" class="pRightBottomDiv" style="display: ${status.count == 1 ? "block" : "none"};">
-                                <c:forEach items="${entry.value}" var="course">
+                                <c:forEach items="${entry.value}" var="course" end="2">
                                     <!------------------------------------------------------------------------------------>
                                     <div class="aRongQiDiv">
                                         <!--装图片的a-->
                                         <a class="aImgRongQi" target="_blank" href="/course/page/${course.courseId}"><img src="${course.picUrl}"/>
                                         </a>
                                         <!--图片下面装字体的元素-->
-                                        <a class="aImgBottom"target="_blank" href="/course/page/${course.courseId}">${course.courseName}</a>
+                                        <a class="aImgBottom" target="_blank" href="/course/page/${course.courseId}">${course.courseName}</a>
                                         <!--装费用和学校的div-->
                                         <div class="aBottomDivTwo">
                                             <!--费用“免费”-->
@@ -676,7 +467,7 @@
                     <!--左边亲子和图片的大div-->
                     <div class="pLeftBigDiv">
                         <!--亲子div-->
-                        <div class="pLeftTopDiv">兴趣爱好</div>
+                        <div class="pLeftTopDiv">语言·学习</div>
                         <!--左边亲子下面的图片div-->
                         <div class="pLeftBottomDiv">
                             <a href="#" target="_blank"><img src="/img/imgs/img6/xingQu.png"/></a>
@@ -687,13 +478,13 @@
                         <!--上面的五个切换divAll-->
                         <div id="ppQieHuanButton" class="bBigRightTOp">
                             <c:forEach items="${requestScope.superType4}" var="entry" varStatus="status">
-                                <a href="javascript:;" class="${status.count == 1 ? "course-link-title": "none"}">${entry.key}</a>
+                                <a href="javascript:;" onclick="onChange(this)" class="${status.count == 1 ? "course-link-title": "none"}">${entry.key}</a>
                             </c:forEach>
                         </div>
                         <c:forEach items="${requestScope.superType4}" var="entry" varStatus="status">
                             <!--需要切换的整个大div-->
                             <div id="pQieHuanOne" class="pRightBottomDiv" style="display: ${status.count == 1 ? "block" : "none"};">
-                                <c:forEach items="${entry.value}" var="course">
+                                <c:forEach items="${entry.value}" var="course" end="2">
                                     <!------------------------------------------------------------------------------------>
                                     <div class="aRongQiDiv">
                                         <!--装图片的a-->
@@ -731,7 +522,7 @@
                     <!--左边亲子和图片的大div-->
                     <div class="pLeftBigDiv">
                         <!--亲子div-->
-                        <div class="pLeftTopDiv">亲子课堂</div>
+                        <div class="pLeftTopDiv">性趣·爱好</div>
                         <!--左边亲子下面的图片div-->
                         <div class="pLeftBottomDiv">
                             <a href="#" target="_blank"></a><img src="/img/imgs/img7/qingZi.jpg"/>
@@ -743,21 +534,21 @@
                         <div id="pppQieHuanButton" class="bBigRightTOp">
                             <!--分别5个按钮-->
                             <c:forEach items="${requestScope.superType5}" var="entry" varStatus="status">
-                                <a href="javascript:;" class="${status.count == 1 ? "course-link-title": "none"}">${entry.key}</a>
+                                <a href="javascript:;" onclick="onChange(this)" class="${status.count == 1 ? "course-link-title": "none"}">${entry.key}</a>
                             </c:forEach>
                         </div>
                         <!--需要切换的整个大div-->
                         <c:forEach items="${requestScope.superType5}" var="entry" varStatus="status">
                             <!--需要切换的整个大div-->
                             <div id="pQieHuanOne" class="pRightBottomDiv" style="display: ${status.count == 1 ? "block" : "none"};">
-                                <c:forEach items="${entry.value}" var="course">
+                                <c:forEach items="${entry.value}" var="course" end="2">
                                     <!------------------------------------------------------------------------------------>
                                     <div class="aRongQiDiv">
                                         <!--装图片的a-->
                                         <a class="aImgRongQi" target="_blank" href="/course/page/${course.courseId}"><img src="${course.picUrl}"/>
                                         </a>
                                         <!--图片下面装字体的元素-->
-                                        <a class="aImgBottom"target="_blank" href="/course/page/${course.courseId}">${course.courseName}</a>
+                                        <a class="aImgBottom" target="_blank" href="/course/page/${course.courseId}">${course.courseName}</a>
                                         <!--装费用和学校的div-->
                                         <div class="aBottomDivTwo">
                                             <!--费用“免费”-->

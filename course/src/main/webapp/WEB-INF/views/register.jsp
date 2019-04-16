@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>register</title>
     <link rel="stylesheet" type="text/css" href="/layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="/css/mycss/home-page.css"/>
     <link rel="stylesheet" type="text/css" href="/css/mycss/register.css">
 
     <script src="/js/jquery.js"></script>

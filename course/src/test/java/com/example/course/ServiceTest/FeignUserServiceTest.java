@@ -35,4 +35,19 @@ public class FeignUserServiceTest {
         user.setUserPhone("11225");
         System.out.println(feignUserService.register(user));
     }
+
+    @Test
+    public void updateUserTest(){
+        User user = new User();
+        user.setUserId(10);
+        user.setUserEmail("2132d651@Dfd");
+        user.setUserName("nice");
+        user.setUserOn("34df44");
+        user.setUserPwd("123456");
+        user.setUserDescription("nice nci enic enice");
+        user.setUserType(1);
+        user.setUserAddress(":dd");
+        user.setUserPhone("11225");
+        System.out.println(feignUserService.updateUser(user));
+    }
 }

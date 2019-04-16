@@ -119,10 +119,6 @@ public class CourseController {
         return feignCourseService.getCourseTopNumByParentType(parentId, page, size);
     }
 
-
-
-
-
     @ApiOperation(value = "用户评论接口", notes = "用户必须登录后才能调用此接口")
     @PostMapping("/commentary/")
     public Status commentary(HttpServletRequest request, @RequestBody Commentary commentary){

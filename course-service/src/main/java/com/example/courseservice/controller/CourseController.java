@@ -7,6 +7,7 @@ import com.example.courseservice.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
@@ -72,6 +73,11 @@ public class CourseController {
     @GetMapping("/purchase/{page}/{size}")
     public ArrayList<Course> getPurchaseCourseList(@PathVariable("page")int page, @PathVariable("size")int size){
         return courseService.getPopularCourseList(page, size);
+    }
+
+    @GetMapping("/student/{uid}/{page}/{size}")
+    public ArrayList<Course> getStudentCourseList(@PathVariable("uid")int uid, @PathVariable("page")int page, @PathVariable("size")int size){
+        return courseService.getStudentCourseList(uid, page, size);
     }
 
 }

@@ -8,6 +8,7 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.server.Session;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -79,6 +80,17 @@ public class UserController {
         System.out.println("login outer user");
         Status status = new Status();
         status.setStatus(200);
+        return status;
+    }
+
+    @PutMapping("/")
+    public Status updateUser(HttpServletRequest request, @RequestBody User user){
+        User user2 = (User) request.getSession().getAttribute("user");
+        user.setUserId(user2.getUserId());
+        Status status = feignUserService.updateUser(user);
+        if(status.getStatus() == 200){
+            request.getSession().setAttribute("user", user);
+        }
         return status;
     }
 

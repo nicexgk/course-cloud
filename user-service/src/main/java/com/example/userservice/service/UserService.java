@@ -9,4 +9,6 @@ public interface UserService {
     public User userLogin(String account, String pwd);
 
     public Status addUser(User user);
+
+    public Status updateUser(User user);
 }

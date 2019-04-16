@@ -47,7 +47,7 @@ function form_init() {
         // 图片上传
         upload.render({
             elem: '#uploadimg',
-            url: '/upload/image',
+            url: '/upload/image/',
             accept: 'file',
             exts: 'img|jpg|jpeg|png',
             done: function (res) {
@@ -243,7 +243,7 @@ function uploadFile() {
         console.log(data);
         upload.render({
             elem: opernfile // 绑定对象
-            , url: '/upload/video'  // 上传url
+            , url: '/upload/video/'  // 上传url
             , auto: false // 关闭自动上传
             , bindAction: uploadfile  // 触发上传的对象
             , accept: 'file' //允许上传的文件类型

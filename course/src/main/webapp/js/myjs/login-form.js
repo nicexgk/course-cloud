@@ -101,6 +101,7 @@ function loginSuccess(data) {
     $("#js_logout_inter").css("display", "block");
     $(".mod-header__user-avatar").attr("src", data.userIcon);
     $(".js-username").attr("title", data.userName).html(data.userName);
+    location.reload(true);
     hideDialog();
 }
 
@@ -114,6 +115,7 @@ function loginOuter() {
                 $("#js_logout_inter").css("display", "none");
                 $("#js_logout_outer").css("display", "block");
                 layer.msg("你以退出登录!", {icon: 1});
+                // location.reload(true);
             }
             else {
                 console.log("login outer final");

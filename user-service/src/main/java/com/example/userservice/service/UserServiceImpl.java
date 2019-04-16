@@ -14,6 +14,19 @@ public class UserServiceImpl implements UserService{
     UserMapper userMapper;
 
     @Override
+    public Status updateUser(User user) {
+        Status status = new Status();
+        if (!userMapper.insertUser(user)){
+            status.setStatus(400);
+            status.setDescription("信息修改失败");
+            return status;
+        }
+        status.setStatus(200);
+        status.setDescription("信息修改成功");
+        return status;
+    }
+
+    @Override
     public User userLogin(String account, String pwd) {
         User user = userMapper.queryUser(account, pwd);
         return user;

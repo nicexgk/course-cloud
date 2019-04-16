@@ -8,6 +8,6 @@ import org.apache.ibatis.annotations.Mapper;
 public interface CommentaryMapper {
 
     @Insert("insert into commentary(commentary_user, commentary_course, commentary_grade, commentary_content)" +
-            "values(#{commentUser.userId}, #{commentCourse}, #{commentGrade}, #{commentContent})")
+            "values(#{commentUser.studentId}, #{commentCourse}, #{commentGrade}, #{commentContent})")
     public boolean addCommentary(Commentary commentary);
 }

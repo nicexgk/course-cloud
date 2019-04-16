@@ -55,3 +55,26 @@ function play() {
 };
 
 
+
+function onChange(target){
+
+    var index ;
+    $(target).parent().children().each(function(i){
+        if(this == target){
+            index = i;
+            $(this).attr("class", "course-link-title");
+            console.log(index);
+        } else {
+            $(this).attr("class", "");
+        }
+    })
+
+    $(target).parent().nextAll().each(function(i){
+        if(i == index){
+            $(this).css("display", "block");
+        }else {
+            $(this).css("display", "none");
+        }
+    });
+}
+
