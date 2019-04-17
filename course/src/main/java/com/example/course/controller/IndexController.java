@@ -2,6 +2,7 @@ package com.example.course.controller;
 
 import com.example.common.entity.*;
 import com.example.course.service.feign.FeignCourseService;
+import com.example.course.service.feign.FeignOrderService;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.ApiOperation;
@@ -21,12 +22,14 @@ import java.util.concurrent.*;
 @Controller
 public class IndexController {
     //创建一个固定大小的线程池用于调用服务
-    public static ExecutorService executorService = Executors.newFixedThreadPool(15);
+    public static ExecutorService executorService = Executors.newFixedThreadPool(8);
 
     @Resource
-    FeignCourseService feignCourseService;
+    private FeignCourseService feignCourseService;
+    @Resource
+    private FeignOrderService feignOrderService;
     @Autowired
-    ObjectMapper objectMapper;
+    private ObjectMapper objectMapper;
 
     @ModelAttribute
     public void addAttribute(HttpServletRequest request){
@@ -35,7 +38,7 @@ public class IndexController {
     }
 
     @ApiOperation(value = "首页数据填充")
-    @GetMapping("/index")
+    @GetMapping("/index.html")
     public String index1(HttpServletRequest request) {
         ArrayList<CourseType> courseTypes = (ArrayList<CourseType>) request.getAttribute("courseTypeCatalog");
         FutureTask<?> futureTasks[] = new FutureTask[courseTypes.size()];
@@ -87,12 +90,6 @@ public class IndexController {
             e.printStackTrace();
         }
 
-        return "/index.jsp";
-    }
-
-    @GetMapping("/index.html")
-    public String index(HttpServletRequest request){
-        request.setAttribute("courseTypeCatalog", feignCourseService.getCourseType());
         return "/index.jsp";
     }
 
@@ -172,13 +169,18 @@ public class IndexController {
     @GetMapping("/studentcourse.html")
     public String studentCourse(HttpServletRequest request){
         User user = (User) request.getSession().getAttribute("user");
-        ArrayList<StudentCourse> studentCourses = feignCourseService.getStudentCourseListByUserIdForPageSize(user.getUserId(), 0, 10);
+        Superstate superstate = feignCourseService.getStudentCourseListByUserIdForPageSize(user.getUserId(), 0, 10);
+        ArrayList<StudentCourse> studentCourses = objectMapper.convertValue(superstate.getResource(),new TypeReference<ArrayList<StudentCourse>>(){});
         request.setAttribute("studentCourses", studentCourses);
+        request.setAttribute("pojo", superstate);
         return "/WEB-INF/views/information/student-course.jsp";
     }
 
     @GetMapping("/order.html")
-    public String order(){
+    public String order(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("user");
+        ArrayList<Order> orderList = feignOrderService.getOrderListBySidFoePageSize(user.getUserId(), 0 , 10 );
+        request.setAttribute("orderList", orderList);
         return "/WEB-INF/views/information/order.jsp";
     }
 

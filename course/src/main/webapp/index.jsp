@@ -7,9 +7,6 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="/layui/css/layui.css">
     <link rel="stylesheet" type="text/css" href="/css/mycss/home-page.css"/>
-    <%--<link rel="stylesheet" type="text/css" href="/css/jsuggest.css">--%>
-    <%--<script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>--%>
-    <%--<script type="text/javascript" src="/js/jSuggest.js"></script>--%>
     <script type="text/javascript" src="/js/jquery.js"></script>
     <script type="text/javascript" src="/js/bootstrap-popover.js"></script>
     <script type="text/javascript" src="/js/myjs/blanner.js"></script>

@@ -23,7 +23,6 @@ public class StudentCourseMapperTest {
         course.setCourseId(179);
         StudentCourse studentCourse = new StudentCourse();
         studentCourse.setCourse(course);
-        studentCourse.setIsCommentary(1);
         studentCourse.setOrderOn("7626fe1b-d756-4465-9a59-4a19e481ad25");
         studentCourse.setStudentId(9);
         System.out.println(studentCourseMapper.insertUserCourse(studentCourse));
@@ -31,19 +30,18 @@ public class StudentCourseMapperTest {
 
     @Test
     public void selectUserCourseTest(){
-
         System.out.println(studentCourseMapper.queryUserCourseByUserIdForStatSize(9, 0, 10));
         StudentCourse studentCourse = new StudentCourse();
     }
 
     @Test
-    public void updateCommentary(){
-        System.out.println(studentCourseMapper.updateUserCourseCommentaryStatus(9, 179 , 0));
+    public void queryStudentCourseBySidCidTest(){
+        System.out.println(studentCourseMapper.queryStudentBySidCid(9, 179));
     }
 
     @Test
-    public void queryStudentCourseBySidCidTest(){
-        System.out.println(studentCourseMapper.queryStudentBySidCid(9, 179));
+    public void queryStudentCourseByCount(){
+        System.out.println(studentCourseMapper.queryStudentBySidCount(21));
     }
 
 }

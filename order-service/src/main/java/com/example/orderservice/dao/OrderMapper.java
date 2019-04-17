@@ -3,6 +3,8 @@ package com.example.orderservice.dao;
 import com.example.common.entity.Order;
 import org.apache.ibatis.annotations.*;
 
+import java.util.ArrayList;
+
 @Mapper
 public interface OrderMapper {
 
@@ -29,4 +31,20 @@ public interface OrderMapper {
             @Result(property = "orderCourse.coursePrice", column = "course_price")
     })
     public Order queryOrderByOrderOn(String orderOn);
+
+    @Select("select * from orders t1 inner join course t2 on t1.order_course = t2.course_id and t1.order_user = #{arg0} limit #{arg1}, #{arg2} ")
+    @Results({
+            @Result(property = "orderId" ,column = "order_id"),
+            @Result(property = "orderOn", column = "order_On"),
+            @Result(property = "orderUser", column = "order_user"),
+            @Result(property = "orderMoney", column = "order_money"),
+            @Result(property = "orderStatus", column = "order_status"),
+            @Result(property = "orderCommentary", column = "order_commentary"),
+            @Result(property = "orderDate", column = "order_date"),
+            @Result(property = "orderCourse.courseId", column = "course_id"),
+            @Result(property = "orderCourse.courseName", column = "course_name"),
+            @Result(property = "orderCourse.picUrl", column = "pic_url"),
+            @Result(property = "orderCourse.coursePrice", column = "course_price")
+    })
+    public ArrayList<Order> queryOrderListBySidStartSize(int sid, int start, int size);
 }

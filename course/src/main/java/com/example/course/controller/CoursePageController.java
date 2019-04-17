@@ -23,9 +23,7 @@ import java.util.concurrent.*;
 @Controller
 @RequestMapping("/course/page")
 public class CoursePageController {
-
-
-
+    public static ExecutorService executorService = Executors.newFixedThreadPool(8);
     @Resource
     FeignCourseService feignCourseService;
     @Autowired
@@ -39,10 +37,30 @@ public class CoursePageController {
 
     @ApiOperation(value = "根据课程的id获取课程的的详细页面信息", notes = "返回的是HTML代码不是JOSN数据")
     @GetMapping("/{cid}")
-    public String getCoursePage(HttpServletRequest request, @PathVariable("cid") int cid) {
+    public String getCoursePage(HttpServletRequest request, @PathVariable("cid") int cid) throws ExecutionException, InterruptedException {
         System.out.println("this is course page controller");
         System.out.println(cid);
-        Course course = feignCourseService.getCourseById(cid);
+        // 异步调用课程服务获取评论列表
+        FutureTask<Superstate> commentaryTask = new FutureTask<>(new Callable<Superstate>() {
+            @Override
+            public Superstate call() throws Exception {
+                return feignCourseService.getCommentaryListByCidForPageSize(cid, 0, 10);
+            }
+        });
+        executorService.submit(commentaryTask);
+        // 异步调用课程服务获取课程信息
+        FutureTask<Course> courseFutureTask = new FutureTask<>(new Callable<Course>() {
+            @Override
+            public Course call() throws Exception {
+                return feignCourseService.getCourseById(cid);
+            }
+        });
+        executorService.submit(courseFutureTask);
+        // 获取异步调用处理后返回的结果
+        Superstate superstate = commentaryTask.get();
+        ArrayList<Commentary> commentaryList = objectMapper.convertValue(superstate.getResource(), new TypeReference<ArrayList<Commentary>>(){});
+        Course course = courseFutureTask.get();
+
         User user = (User) request.getSession().getAttribute("user");
         if(user != null){
             StudentCourse studentCourse = feignCourseService.getStudentBySidCid(user.getUserId(), cid);
@@ -51,8 +69,9 @@ public class CoursePageController {
             request.setAttribute("collect", collect);
         }
         System.out.println(course);
+        request.setAttribute("commentaryList", commentaryList);
         request.setAttribute("course", course);
-
+        request.setAttribute("pojo", superstate);
         return "/WEB-INF/views/course.jsp";
     }
 

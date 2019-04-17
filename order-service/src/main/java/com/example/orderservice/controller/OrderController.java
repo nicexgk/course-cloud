@@ -6,6 +6,8 @@ import com.example.orderservice.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 @RestController()
 @RequestMapping("/order")
 public class OrderController {
@@ -26,6 +28,11 @@ public class OrderController {
     @GetMapping("/{orderOn}")
     public Order getOrderByOrderOn(@PathVariable("orderOn") String orderOn){
         return orderService.getOrderByOrderOn(orderOn);
+    }
+
+    @GetMapping("/{sid}/{page}/{size}")
+    public ArrayList<Order> getOrderListBySidForPageSize(@PathVariable("sid") int sid, @PathVariable("page") int page, @PathVariable("size") int size){
+        return orderService.getOrderListBySidForPageSize(sid, page, size);
     }
 
 }

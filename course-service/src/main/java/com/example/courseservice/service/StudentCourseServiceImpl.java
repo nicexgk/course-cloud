@@ -2,6 +2,7 @@ package com.example.courseservice.service;
 
 import com.example.common.entity.Status;
 import com.example.common.entity.StudentCourse;
+import com.example.common.entity.Superstate;
 import com.example.courseservice.dao.StudentCourseMapper;
 import org.springframework.stereotype.Service;
 
@@ -28,8 +29,15 @@ public class StudentCourseServiceImpl implements StudentCourseService {
     }
 
     @Override
-    public ArrayList<StudentCourse> getStudentCourseListByUserIdForPageSize(int sid, int page, int size) {
-        return studentCourseMapper.queryUserCourseByUserIdForStatSize(sid, page * size, size);
+    public Superstate getStudentCourseListByUserIdForPageSize(int sid, int page, int size) {
+        Superstate superstate = new Superstate();
+        page = page >= 0 ? page : 0;
+        size = size >= 0 ? size : 0;
+        superstate.setPage(page);
+        superstate.setSize(size);
+        superstate.setResource(studentCourseMapper.queryUserCourseByUserIdForStatSize(sid, page * size, size));
+        superstate.setCount(studentCourseMapper.queryStudentBySidCount(sid));
+        return superstate;
     }
 
 

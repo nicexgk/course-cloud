@@ -11,6 +11,11 @@
 
     <script href="/js/jquery.js"></script>
     <script href="/layui/layui.js"></script>
+    <script href="/js/information/student-course.js"></script>
+    <script href="/js/myjs/student-course.js"></script>
+
+
+
 </head>
 <body class="l-aside-left l-min">
 
@@ -22,7 +27,7 @@
         <aside class="aside-left">
             <div class="l-nav-area">
                 <ul class="l-nav">
-                    <li class="l-nav-item"><a title="课程表" href="/studentcourse.html"  class="active">课程表</a></li>
+                    <li class="l-nav-item"><a title="课程表" href="/studentcourse.html" class="active">课程表</a></li>
                     <li class="l-nav-item"><a title="全部订单" href="/order.html">全部订单</a></li>
                     <li class="l-nav-item"><a title="收藏" href="/collection.html">收藏列表</a></li>
                     <li class="l-nav-item"><a title="个人信息" href="/userinfo.html">个人信息</a></li>
@@ -32,7 +37,7 @@
 
         <main class="main main-container">
 
-            <div>
+            <div class="student-course-contain">
                 <c:forEach items="${requestScope.studentCourses}" var="studentCourse" varStatus="status">
                     <div class="tab-ctn">
                         <div class="tab-course-list clear-fix">
@@ -47,31 +52,36 @@
                         </div>
                     </div>
                 </c:forEach>
-
-                <div class="tab-ctn">
-                    <div class="tab-course-list clear-fix">
-                        <div class="tab-item-ctn active">
-                            <a><img src="/img/icon/6.jpg"></a>
-                        </div>
-                        <div class="tab-item-ctn">
-                            <p class="tab-title" title="JAVA高级开发 架构师课程（高并发 高可用 高扩展）【享学课堂】">
-                                <a target="_blank" href="">JAVA高级开发 架构师课程（高并发 高可用 高扩展）【享学课堂】</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
+            </div>
+            <div style="margin: 0 auto;width: 1200px;">
+                <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+                    <legend></legend>
+                </fieldset>
+                <div id="page"></div>
             </div>
         </main>
     </section>
 </div>
 <script>
 
-    $(function(){
-        $(".tab-course-list").firstChild.mouseover(function(){
-            // $()
+    var size = ${requestScope.pojo.size};
+    var type = ${requestScope.pojo.type};
+
+    layui.use(['laypage', 'layer'], function () {
+        var laypage = layui.laypage;
+        laypage.render({
+            elem: 'page'
+            , count: ${requestScope.pojo.count}
+            //获取hash值为fenye的当前页
+            , curr: ${requestScope.pojo.page + 1}
         });
-    })
+    });
+
+    window.onload = function () {
+        $("#page>div>a").each(function (i) {
+            $(this).attr("onclick", "paging(this)")
+        });
+    }
 
 </script>
 </body>

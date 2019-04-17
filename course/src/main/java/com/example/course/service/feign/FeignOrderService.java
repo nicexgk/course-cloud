@@ -5,6 +5,8 @@ import com.example.common.entity.Status;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 /**
  *
  * @description 调用order服务接口
@@ -21,5 +23,8 @@ public interface FeignOrderService {
 
     @GetMapping("/order/{orderOn}")
     public Order getOrderByOrderOn(@PathVariable("orderOn") String OrderOn);
+
+    @GetMapping("/order/{sid}/{page}/{size}")
+    public ArrayList<Order> getOrderListBySidFoePageSize(@PathVariable("sid")int sid, @PathVariable("page")int page, @PathVariable("size")int size);
 
 }

@@ -18,7 +18,7 @@
         $(document).ready(function () {
             //绑定输入框，产生自动补全效果
             $("#js_keyword").jSuggest({
-                url: "queryByKey",
+                url: "/course/search/",
                 type: "GET",
                 data: "key",
                 autoChange: true,

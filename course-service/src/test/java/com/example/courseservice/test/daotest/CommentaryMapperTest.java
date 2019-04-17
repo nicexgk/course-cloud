@@ -28,4 +28,14 @@ public class CommentaryMapperTest {
         commentary.setCommentGrade(5);
         System.out.println(commentaryMapper.addCommentary(commentary));
     }
+
+    @Test
+    public void queryCommentaryByCid(){
+        System.out.println(commentaryMapper.queryCommentaryByCidForStartSize(179, 0 , 10));
+    }
+
+    @Test
+    public void queryCommentaryByCidCount(){
+        System.out.println(commentaryMapper.queryCommentaryByCidCount(179));
+    }
 }

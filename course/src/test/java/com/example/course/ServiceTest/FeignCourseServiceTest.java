@@ -30,7 +30,6 @@ public class FeignCourseServiceTest {
 
     @Test
     public void courseServiceTest(){
-
         Course course = new Course();
         course.setCourseName("test text test test");
         System.out.println(feignCourseService.addCourse(course));
@@ -59,7 +58,6 @@ public class FeignCourseServiceTest {
 
     @Test
     public void addCommentaryTest(){
-
         Commentary commentary = new Commentary();
         User user = new User();
         user.setUserId(7);
@@ -87,7 +85,6 @@ public class FeignCourseServiceTest {
 
     @Test
     public void getPopularArrayListTest(){
-
 //        System.out.println(feignCourseService.getPopularCourseList(0, 10));
         System.out.println(feignCourseService.getPurchaseCourseList(0, 10));
     }
@@ -104,19 +101,25 @@ public class FeignCourseServiceTest {
 
     @Test
     public void collectionTest(){
-
         System.out.println(feignCourseService.addCollect(10, 179));
         System.out.println("==============");
         System.out.println(feignCourseService.deleteCollect(9, 179));
         System.out.println("==============");
         System.out.println(feignCourseService.getCollectList(9, 0, 5));
-
     }
 
     @Test
     public void queryCollectTest(){
-
         System.out.println(feignCourseService.getCollectBySidCid(9, 181));
     }
 
+    @Test
+    public void searchCourseList(){
+        System.out.println(feignCourseService.searchCourseListByNameForPageSize("nic", 0, 6));
+    }
+
+    @Test
+    public void getCommentaryListByCidForPageSizeTest(){
+        System.out.println(feignCourseService.getCommentaryListByCidForPageSize(179, 0 , 10));
+    }
 }

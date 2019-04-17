@@ -41,4 +41,8 @@ public class FeignOrderServiceTest {
         System.out.println(feignOrderService.getOrderByOrderOn("7a1ffa5a-7c0a-432f-9a8b-f6df373869e4"));
     }
 
+    @Test
+    public void getOrderListBySidForPageSize(){
+        System.out.println(feignOrderService.getOrderListBySidFoePageSize(8, 0 , 10));
+    }
 }

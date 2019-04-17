@@ -44,25 +44,44 @@
                     <div class="flex-list-item">
                         <div class="flex-row head">
                             <div class="time">
-                                <span>2019-04-16</span>
+                                <span>${order.orderDate}</span>
                             </div>
                         </div>
                         <div class="flex-row content">
                             <div class="flex-cell first cover item-block">
                                 <a href="" class="link js-report-link" target="_blank">
-                                    <img src="/img/1.jpg" alt="课程封面">
+                                    <img src="${order.orderCourse.picUrl}" alt="课程封面">
                                     <div class="title">
-                                        <span title="大数据开发系列之zookeeper">大数据开发系列之zookeeper</span>
+                                        <span title="${order.orderCourse.courseName}">${order.orderCourse.courseName}</span>
                                     </div>
                                 </a>
                             </div>
-                            <div class="flex-cell price item-block">免费</div>
+                            <c:if test="${order.orderCourse.coursePrice <= 0}">
+                                <div class="flex-cell price item-block">免费</div>
+                            </c:if>
+                            <c:if test="${order.orderCourse.coursePrice > 0}">
+                                <div class="flex-cell price item-block">${order.orderCourse.coursePrice}</div>
+                            </c:if>
                             <div class="flex-cell wording item-block">
-                                <span class="black">报名成功</span>
+                                <c:choose>
+                                    <c:when test="${order.orderStatus == 1}">
+                                        <span class="black">报名成功</span>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <span class="black">等待支付</span>
+                                    </c:otherwise>
+                                </c:choose>
                             </div>
                             <div class="flex-cell operating item-block">
-                                <a href="" class="link-block" target="_blank">评价课程</a>
-                                <a href="javascript:void(0);" class="link-block">取消报名</a>
+                                <c:if test="${order.orderCommentary == 0 && order.orderStatus == 1}">
+                                    <a href="" class="link-block" target="_blank">评价课程</a>
+                                </c:if>
+                                <c:if test="${order.orderStatus == 1}">
+                                    <a href="javascript:void(0);" class="link-block">取消报名</a>
+                                </c:if>
+                                <c:if test="${order.orderStatus == 0}">
+                                    <a href="javascript:void(0);" class="link-block">取消订单</a>
+                                </c:if>
                             </div>
                         </div>
                     </div>

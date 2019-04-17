@@ -6,6 +6,7 @@ import com.example.orderservice.dao.OrderMapper;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -16,7 +17,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public Status addOrder(Order order) {
         Status status = new Status();
-        if(!orderMapper.insertOrder(order)){
+        if (!orderMapper.insertOrder(order)) {
             status.setStatus(400);
             status.setDescription("订单创建失败");
             return status;
@@ -29,7 +30,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public Status updateOrderStatus(String orderOn, int status) {
         Status status1 = new Status();
-        if(!orderMapper.updateOrderStatus(orderOn, status)){
+        if (!orderMapper.updateOrderStatus(orderOn, status)) {
             status1.setStatus(400);
             status1.setDescription("订单修改失败");
             return status1;
@@ -42,5 +43,10 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public Order getOrderByOrderOn(String orderOn) {
         return orderMapper.queryOrderByOrderOn(orderOn);
+    }
+
+    @Override
+    public ArrayList<Order> getOrderListBySidForPageSize(int sid, int page, int size) {
+        return orderMapper.queryOrderListBySidStartSize(sid, page * size, size);
     }
 }

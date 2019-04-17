@@ -1,35 +1,69 @@
 #jSuggestContainer {
-position:absolute;
-font: 12px Tahoma;
-border:1px solid #ffb931;
-border-top:0;
-background:#FFF;
+    position: absolute;
+    font: 12px Tahoma;
+    border: 1px solid #EEEEEE;
+    border-top: 0;
+    background: #FFF;
+    width: 348px !important;
 }
 
 .jSuggestLoading {
-font-style:italic;
-padding: 10px;
+    font-style: italic;
+    padding: 10px;
 }
 
-#jSuggestContainer ul, #jSuggestContainer ul li{
-margin: 0;
-padding:0;
-list-style:none;
+#jSuggestContainer ul, #jSuggestContainer ul li {
+    margin: 1px;
+    padding: 1px;
+    list-style: none;
 }
 
-#jSuggestContainer ul li{
-padding: 2px 4px;
-border-bottom: 1px dotted #ffe594;
-color:#666;
-background:#fff9e7;
-cursor:pointer
+#jSuggestContainer ul li {
+    padding: 2px 4px;
+    border-bottom: 1px dotted #ffe594;
+    color: #666;
+    background: #fff9e7;
+    cursor: pointer;
+    height: 50px !important;
 }
 
-#jSuggestContainer ul li.last{
-border-bottom: 0;
+#jSuggestContainer li{
+    font-size: 14px;
+}
+#jSuggestContainer li a{
+    color: #151515;
+}
+#jSuggestContainer li:hover{
+    background-color: #ececec;
 }
 
-#jSuggestContainer ul li.jSuggestHover{
-background:#ffeaaa;
-color:#333;
+#jSuggestContainer li:after{
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0px;
+    visibility: hidden;
+}
+
+#jSuggestContainer ul li.last {
+    border-bottom: 0;
+}
+
+#jSuggestContainer ul li.jSuggestHover {
+    background: #ffeaaa;
+    color: #333;
+}
+
+.search-course-name {
+    display: inline-block;
+    float: left;
+    line-height: 40px;
+    margin-left: 20px;
+}
+
+.search-teacher {
+    display: inline-block;
+    float: right;
+    line-height: 40px;
+    margin-right: 20px;
 }

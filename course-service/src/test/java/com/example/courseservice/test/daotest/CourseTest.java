@@ -60,4 +60,11 @@ public class CourseTest {
         System.out.println(courseMapper.queryCourseStartSize(0, 4));
         System.out.println(courseMapper.queryCourseCount());
     }
+
+
+    @Test
+    public void likeCourseList(){
+
+        System.out.println(courseMapper.likeCourseByNameForStartSize("", 0,100));
+    }
 }

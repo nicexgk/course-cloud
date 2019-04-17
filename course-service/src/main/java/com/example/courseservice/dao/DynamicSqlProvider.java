@@ -177,15 +177,6 @@ public class DynamicSqlProvider {
                     str += "student_id";
                     val += "#{studentId}";
                 }
-                if(studentCourse.getIsCommentary() != null){
-                    if(flag){
-                        str += ",";
-                        val += ",";
-                    }
-                    flag = true;
-                    str += "is_commentary";
-                    val += "#{isCommentary}";
-                }
                 VALUES(str, val);
             }
         }.toString();

@@ -33,19 +33,19 @@ public class CourseServiceImpl implements CourseService {
     public ArrayList<Course> getPurchaseCourseList(int page, int size) {
         Set<Object> purchaseSet = redisTemplate.opsForZSet().range("purchase-course-zset", page * size, size);
         ArrayList<Course> purchaseCourseList = null;
-        if (purchaseSet == null || purchaseSet.isEmpty()){
+        if (purchaseSet == null || purchaseSet.isEmpty()) {
             Set<ZSetOperations.TypedTuple<Object>> tupleSet = new HashSet<>();
             purchaseCourseList = courseMapper.queryCourseStartSize(page * size, size);
-            for(Course course : purchaseCourseList){
+            for (Course course : purchaseCourseList) {
                 tupleSet.add(new DefaultTypedTuple<Object>(course, SCORE));
             }
             long add = redisTemplate.opsForZSet().add("purchase-course-zset", tupleSet);
-            redisTemplate.expire("purchase-course-zset", 60 , TimeUnit.SECONDS);
-            System.out.println("purchase-course-zset add " + add );
+            redisTemplate.expire("purchase-course-zset", 60, TimeUnit.SECONDS);
+            System.out.println("purchase-course-zset add " + add);
         } else {
             System.out.println(purchaseSet.size());
             purchaseCourseList = new ArrayList<>();
-            for(Iterator iterator  = purchaseSet.iterator(); iterator.hasNext();){
+            for (Iterator iterator = purchaseSet.iterator(); iterator.hasNext(); ) {
                 purchaseCourseList.add((Course) iterator.next());
             }
         }
@@ -56,19 +56,19 @@ public class CourseServiceImpl implements CourseService {
     public ArrayList<Course> getPopularCourseList(int page, int size) {
         Set<Object> popularSet = redisTemplate.opsForZSet().range("popular-course-zset", page * size, size);
         ArrayList<Course> popularCourseList = null;
-        if (popularSet == null || popularSet.isEmpty()){
+        if (popularSet == null || popularSet.isEmpty()) {
             Set<ZSetOperations.TypedTuple<Object>> tupleSet = new HashSet<>();
             popularCourseList = courseMapper.queryCourseStartSize(page * size, size);
-            for(Course course : popularCourseList){
+            for (Course course : popularCourseList) {
                 tupleSet.add(new DefaultTypedTuple<Object>(course, SCORE));
             }
             long add = redisTemplate.opsForZSet().add("popular-course-zset", tupleSet);
-            redisTemplate.expire("popular-course-zset", 60 , TimeUnit.SECONDS);
-            System.out.println("popular-course-zset add " + add );
+            redisTemplate.expire("popular-course-zset", 60, TimeUnit.SECONDS);
+            System.out.println("popular-course-zset add " + add);
         } else {
             System.out.println(popularSet.size());
             popularCourseList = new ArrayList<>();
-            for(Iterator iterator  = popularSet.iterator(); iterator.hasNext();){
+            for (Iterator iterator = popularSet.iterator(); iterator.hasNext(); ) {
                 popularCourseList.add((Course) iterator.next());
             }
         }
@@ -224,4 +224,12 @@ public class CourseServiceImpl implements CourseService {
         return course;
     }
 
+    // 搜索课程
+    @Override
+    public ArrayList<Course> searchCourseListByNameForPageSize(String text, int page, int size) {
+        page = page >= 0 ? page : 0;
+        size = size >= 0 ? size : 0;
+        text = text.trim();
+        return courseMapper.likeCourseByNameForStartSize(text, page * size, size);
+    }
 }

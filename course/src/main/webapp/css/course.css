@@ -227,6 +227,26 @@
     float: right;
     width: 80px;
     height: 35px;
-    background-color: #188eee;
+    background-color: #4ca5e3;
 }
 
+/*评分*/
+
+.commentary-rate li{
+    float: left;
+}
+.clear-fix:after{
+    content: ".";
+    display: block;
+    clear: both;
+    height: 0px;
+    visibility: hidden;
+}
+
+.layui-icon-rate-solid, .layui-icon-rate{
+    color: #FFB800;
+}
+
+.comment-item{
+    margin-top: 10px;
+}

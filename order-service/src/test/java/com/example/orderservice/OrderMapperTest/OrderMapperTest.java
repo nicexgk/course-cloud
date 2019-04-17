@@ -47,4 +47,9 @@ public class OrderMapperTest {
 
     }
 
+    @Test
+    public void queryOrderBySidPageSizeTest(){
+        System.out.println(orderMapper.queryOrderListBySidStartSize(8, 0  ,10 ));
+    }
+
 }

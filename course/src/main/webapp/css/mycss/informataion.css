@@ -77,3 +77,8 @@ flex-list{
     line-height: 35px;
     background-color:#F8F8F8;
 }
+
+.tab-item-ctn img{
+    width: 250px;
+    height: 70px;
+}

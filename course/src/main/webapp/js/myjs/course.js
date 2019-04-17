@@ -35,11 +35,9 @@ $(function () {
 
 })
 
-
 function previewVideo(target) {
     var resource = $(target).parent().attr("data-resource");
     $(".header-video").attr('src', resource)[0].play();
-
 }
 
 function downloadVideo(target) {
@@ -51,7 +49,6 @@ var sendDiv = '<div class="receive-text">' +
     '<img class="receive-head-img" src="">' +
     '<div class="receive-content-text"></div>' +
     '</div>';
-
 
 var receiveDiv = '<div class="send-text">' +
     '<img class="send-head-img" src="">' +
@@ -67,7 +64,6 @@ function send() {
         console.log("你的浏览器不支持webSocket通信");
     } else {
         webSocket = new WebSocket("/social/4/4");
-
     }
     webSocket.onmessage = function (data) {
         console.log(data);
@@ -99,7 +95,6 @@ function onTrade(target) {
         }
     });
 }
-
 
 function showTrade(data) {
     layer.open({
@@ -165,4 +160,60 @@ function collectOperation(cid, type) {
             });
         }
     });
+}
+
+function paging(target){
+    var page = $(target).attr("data-page") - 1;
+    $.getJSON("/course/commentary/" + cid + "/" + page + "/" + size, function(data){
+        console.log(data);
+
+        layui.use(['laypage', 'layer'], function () {
+            var laypage = layui.laypage;
+            //开启HASH
+            laypage.render({
+                elem: 'page'
+                , count:data.count
+                , curr:data.page + 1//获取hash值为fenye的当前页
+            });
+        });
+
+        pagingFull(data.resource);
+        $("#page>div>a").each(function (i) {
+            $(this).attr("onclick", "paging(this)")
+        });
+    });
+
+}
+
+function pagingFull(data){
+
+    var solid = '<li><i class="layui-icon layui-icon-rate-solid"></i></li>';
+    var noSolid = '<li><i class="layui-icon layui-icon-rate"></i></li>';
+    var content = "";
+
+    for (var i in data){
+        var comment = data[i];
+        var grade = "";
+        for(var i = 1 ; i <= comment.commentGrade; i ++){
+            grade += comment.commentGrade >= i ? solid : noSolid;
+        }
+        
+        var commentary = '<div class="comment-item clear-fix">' +
+            '<div class="item-left" style="float: left;">' +
+            '<img class="user-avatar" src="'+ comment.commentUser.userIcon +'" style="width: 40px;height: 40px;margin-top: 20px">' +
+            '<p class="user-name">'+ comment.commentUser.userName +'</p>' +
+            '</div>' +
+            '<div class="item-right" style="float: right;width: 1100px;">' +
+            '<ul class="commentary-rate clear-fix">' +
+             grade +
+            '</ul>' +
+            '<div class="comment-bd">'+ comment.commentContent +'</div>' +
+            '<div class="comment-ft">' +
+            '<span class="comment-time">'+ comment.commentDate +'</span>' +
+            '</div>' +
+            '</div>' +
+            '</div>';
+        content += commentary;
+    }
+    $(".commentary-contain").html(content);
 }

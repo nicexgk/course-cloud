@@ -9,6 +9,8 @@ import com.example.common.entity.*;
 import com.example.course.config.AlipayConfig;
 import com.example.course.service.feign.FeignCourseService;
 import com.example.course.service.feign.FeignOrderService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
@@ -18,12 +20,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
+@Api("订单接口")
 @RestController
 @RequestMapping("/order")
 public class OrderController {
@@ -35,6 +35,7 @@ public class OrderController {
     @Autowired
     RedisTemplate<String, Object> redisTemplate;
 
+    @ApiOperation("订单操作接口，用户完成用户的呢订单操作")
     @GetMapping("/trade/{cid}")
     public Status order(HttpServletRequest request,  @PathVariable("cid") int cid) throws IOException, AlipayApiException {
         Course course = feignCourseService.getCourseById(cid);
@@ -45,6 +46,7 @@ public class OrderController {
         order.setOrderUser(user.getUserId());
         order.setOrderOn(UUID.randomUUID().toString());
         order.setOrderMoney(course.getCoursePrice());
+        order.setOrderCommentary(0);
 //        if (course.getCoursePrice() <= 0) {
         if(true){
             order.setOrderStatus(1);
@@ -80,6 +82,7 @@ public class OrderController {
         return status;
     }
 
+    @ApiOperation("支付宝完成自付同步返回接口")
     @GetMapping("/trade/return/")
     public void orderTrade(HttpServletResponse response, HttpServletRequest request) throws UnsupportedEncodingException {
 
@@ -133,6 +136,7 @@ public class OrderController {
         }
     }
 
+    @ApiOperation("支付宝完成自付异步返回接口")
     @RequestMapping("/trade/notify/")
     public void orderTradeNotify(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
         /*
@@ -186,6 +190,15 @@ public class OrderController {
         catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @ApiOperation(value = "分页查询用户订单接口", notes = "页数是从0开始不是1")
+    @GetMapping("/{page}/{size}")
+    public ArrayList<Order> getOrderListBySidForPageSize(HttpServletRequest request,@PathVariable("page") int page, @PathVariable("size")int size){
+        page = page >= 0 ? page : 0;
+        size = size >= 0 ? size : 0;
+        User user = (User) request.getSession().getAttribute("user");
+        return feignOrderService.getOrderListBySidFoePageSize(user.getUserId(), page, size);
     }
 
     public String createTradeInfo(Course course) throws UnsupportedEncodingException, AlipayApiException {

@@ -21,9 +21,9 @@ public interface StudentCourseMapper {
             @Result(property = "studentCourseDate", column = "student_course_date"),
             @Result(property = "course.courseId", column = "course_id"),
             @Result(property = "course.courseName", column = "course_name"),
-            @Result(property = "course.picUrl", column = "picUrl"),
             @Result(property = "course.coursePrice", column = "course_price"),
-            @Result(property = "course.courseDetail", column = "course_detail")
+            @Result(property = "course.courseDetail", column = "course_detail"),
+            @Result(property = "course.picUrl", column = "pic_url"),
     })
     public ArrayList<StudentCourse> queryUserCourseByUserIdForStatSize(int sid, int start, int size);
 
@@ -41,4 +41,6 @@ public interface StudentCourseMapper {
             @Result(property = "course.courseDetail", column = "course_detail")
     })
     public StudentCourse queryStudentBySidCid(int sid, int cid);
+    @Select("select count(1) from student_course where student_id = #{arg0}")
+    public int queryStudentBySidCount(int sid);
 }
