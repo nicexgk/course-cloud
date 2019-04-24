@@ -2,6 +2,7 @@ package com.example.orderservice.service;
 
 import com.example.common.entity.Order;
 import com.example.common.entity.Status;
+import com.example.common.entity.Superstate;
 
 import java.util.ArrayList;
 
@@ -13,6 +14,6 @@ public interface OrderService {
 
     public Order getOrderByOrderOn(String orderOn);
 
-    public ArrayList<Order> getOrderListBySidForPageSize(int sid, int page, int size);
+    public Superstate getOrderListBySidForPageSize(int sid, int page, int size);
 
 }

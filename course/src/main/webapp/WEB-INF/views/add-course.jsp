@@ -101,14 +101,14 @@
                             <span>目录一</span>
                             <span class="catalog-tool catalog-add layui-icon" onclick="addCatalog(this)">&#xe608;</span>
                             <span class="catalog-tool catalog-sub layui-icon" onclick="removeCatalog(this)">&#x1006;</span>
-                            <span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xeb61;</span>
+                            <span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xe642;</span>
                         </a>
                         <dl class="layui-nav-child">
                             <dd><a href="javascript:;" data-name="选项一">
                                 <span>选项一</span>
                                 <span class="catalog-tool catalog-add layui-icon" onclick="addChildCatalog(this)">&#xe608;</span>
                                 <span class="catalog-tool catalog-sub layui-icon" onclick="removeCatalog(this)">&#x1006;</span>
-                                <span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xeb61;</span>
+                                <span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xe642;</span>
                                 <span class="catalog-tool catalog-view layui-icon" onclick="">&#xe652;</span>
                                 <span class="catalog-tool catalog-upload layui-icon upload-file-1" onclick="">&#xe681;</span>
                                 <span class="catalog-tool catalog-open layui-icon open-file-1" onclick="">&#xe655;</span>
@@ -117,7 +117,7 @@
                                 <span>选项二</span>
                                 <span class="catalog-tool catalog-add layui-icon" onclick="addChildCatalog(this)">&#xe608;</span>
                                 <span class="catalog-tool catalog-sub layui-icon" onclick="removeCatalog(this)">&#x1006;</span>
-                                <span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xeb61;</span>
+                                <span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xe642;</span>
                                 <span class="catalog-tool catalog-view layui-icon" onclick="">&#xe652;</span>
                                 <span class="catalog-tool catalog-upload layui-icon upload-file-2" onclick="">&#xe681;</span>
                                 <span class="catalog-tool catalog-open layui-icon open-file-2" onclick="">&#xe655;</span>
@@ -129,14 +129,14 @@
                             <span>目录二</span>
                             <span class="catalog-tool catalog-add layui-icon" onclick="addCatalog(this)">&#xe608;</span>
                             <span class="catalog-tool catalog-sub layui-icon" onclick="removeCatalog(this)">&#x1006;</span>
-                            <span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xeb61;</span>
+                            <span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xe642;</span>
                         </a>
                         <dl class="layui-nav-child">
                             <dd><a href="javascript:;" data-name="选项一">
                                 <span>选项一</span>
                                 <span class="catalog-tool catalog-add layui-icon" onclick="addChildCatalog(this)">&#xe608;</span>
                                 <span class="catalog-tool catalog-sub layui-icon" onclick="removeCatalog(this)">&#x1006;</span>
-                                <span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xeb61;</span>
+                                <span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xe642;</span>
                                 <span class="catalog-tool catalog-view layui-icon" onclick="">&#xe652;</span>
                                 <span class="catalog-tool catalog-upload layui-icon upload-file-3" onclick="">&#xe681;</span>
                                 <span class="catalog-tool catalog-open layui-icon open-file-3" onclick="">&#xe655;</span>
@@ -148,7 +148,7 @@
                             <span>目录三</span>
                             <span class="catalog-tool catalog-add layui-icon" onclick="addCatalog(this)">&#xe608;</span>
                             <span class="catalog-tool catalog-sub layui-icon" onclick="removeCatalog(this)">&#x1006;</span>
-                            <span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xeb61;</span>
+                            <span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xe642;</span>
                         </a>
                         <dl class="layui-nav-child"></dl>
                     </li>

@@ -2,6 +2,7 @@ package com.example.orderservice.controller;
 
 import com.example.common.entity.Order;
 import com.example.common.entity.Status;
+import com.example.common.entity.Superstate;
 import com.example.orderservice.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -31,7 +32,7 @@ public class OrderController {
     }
 
     @GetMapping("/{sid}/{page}/{size}")
-    public ArrayList<Order> getOrderListBySidForPageSize(@PathVariable("sid") int sid, @PathVariable("page") int page, @PathVariable("size") int size){
+    public Superstate getOrderListBySidForPageSize(@PathVariable("sid") int sid, @PathVariable("page") int page, @PathVariable("size") int size){
         return orderService.getOrderListBySidForPageSize(sid, page, size);
     }
 

@@ -2,6 +2,7 @@ package com.example.courseservice.controller;
 
 import com.example.common.entity.Collect;
 import com.example.common.entity.Status;
+import com.example.common.entity.Superstate;
 import com.example.courseservice.service.CollectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +27,7 @@ public class CollectController {
     }
 
     @GetMapping("/{sid}/{page}/{size}")
-    public ArrayList<Collect> getCollectListBySidForPageSize(@PathVariable("sid") int sid, @PathVariable("page")int page, @PathVariable("size") int size){
+    public Superstate getCollectListBySidForPageSize(@PathVariable("sid") int sid, @PathVariable("page")int page, @PathVariable("size") int size){
         return collectService.getCollectListBySidForPageSize(sid, page, size);
     }
 

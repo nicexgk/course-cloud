@@ -36,11 +36,14 @@ public class UserController {
         User user = null;
         System.out.println(account + "  " + pwd);
         if (account != null && pwd != null) {
+            // 调用用户服务，获取用户信息。
             user = feignUserService.getUser(account, pwd);
         }
         if (user == null){
+            // 当返回的用户对象为空时，说明用户名或密码错误，登录失败
             user = new User();
         } else {
+            // 用户对象不为空时，登录成功
             request.getSession().setAttribute("user", user);
         }
         user.setUserPwd(null);
@@ -49,9 +52,14 @@ public class UserController {
     }
 
     @ApiOperation(value = "用户注册接口")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "check", value = "邮箱验证码", required = true),
+            @ApiImplicitParam(name = "user", value = "用户信息对象", required = true)
+    })
     @PostMapping("/{check}")
     public Status register(@RequestBody User user, @PathVariable("check")Integer check){
         Status status = null;
+        // 从redis中获取email对应的验证码
         Integer reCheck = (Integer)redisTemplate.opsForValue().get(user.getUserEmail());
         if(reCheck == null || reCheck.intValue() != check){
             status = new Status();
@@ -59,12 +67,13 @@ public class UserController {
             status.setDescription("验证码不正确！");
             return status;
         }
-
-        if(user.getUserEmail() == null || user.getUserPwd() == null ){
+        // 判断邮箱和密码格式是否正确
+        if(user.getUserEmail() == null || user.getUserPwd() == null || user.getUserPwd().trim() == ""){
             status.setStatus(400);
             status.setDescription("邮箱或密码格式错误！");
             return status;
         }
+        // 调用用户注册服务
         status = feignUserService.register(user);
         if(status == null){
             status.setStatus(400);

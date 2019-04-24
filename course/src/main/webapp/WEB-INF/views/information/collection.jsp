@@ -41,7 +41,7 @@
                         <th style="width: 14%;">操作</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="collect-table-body">
                     <c:forEach items="${requestScope.collects}" var="collect">
                         <tr>
                             <td>
@@ -71,8 +71,96 @@
                     </tbody>
                 </table>
             </div>
+            <div style="margin: 0 auto;width: 1200px;">
+                <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+                    <legend></legend>
+                </fieldset>
+                <div id="page"></div>
+            </div>
         </main>
     </section>
 </div>
 </body>
+
+<script>
+    function pagingFull(data) {
+
+        var content = "";
+        for (var i in data) {
+            var collect = data[i];
+            var price = '免费';
+            if (collect.collectCourse.coursePrice != 0){
+                price = '￥' +  collect.collectCourse.coursePrice;
+            }
+            var str = '<tr>' +
+                '<td>' +
+                '<div class="fav-info clearfix">' +
+                '<a class="fav-info-cover" href="/course/page/' + collect.collectCourse.courseId + '" target="_blank">' +
+                '<img src="' + collect.collectCourse.picUrl + '" alt="封面">' +
+                '</a>' +
+                '<div class="fav-info-desc">' +
+                '<p class="fav-info-name">' +
+                '<a class="link-3" href="/course/page/' + collect.collectCourse.courseId + '" target="_blank">' + collect.collectCourse.courseName + '</a>' +
+                '</p>' +
+                '<a class="fav-info-agency link-3" target="_blank" href="javascript:;">' + collect.collectDate + '</a>' +
+                '</div>' +
+                '</div>' +
+                '</td>' +
+                '<td>' +
+                '<div class="fav-price">'+ price +'</div>' +
+                '</td>' +
+                '<td><span class="link-3">取消收藏</span></td>' +
+                '</tr>';
+            content += str;
+        }
+        $(".collect-table-body").html(content);
+    }
+    function pageSplit(target) {
+        console.log("nice nice nice");
+        var page = $(target).attr("data-page") - 1;
+        $.getJSON("/collection/" + page + "/" + size, function (data) {
+            console.log(data);
+            layui.use(['laypage', 'layer'], function () {
+                var laypage = layui.laypage;
+                laypage.render({
+                    elem: 'page'
+                    , count: data.count
+                    //获取hash值为fenye的当前页
+                    , curr: data.page + 1
+                });
+            });
+            // 填充数据
+            pagingFull(data.resource);
+            $("#page>div>a").each(function (i) {
+                $(this).attr("onclick", "pageSplit(this)")
+            });
+        });
+    }
+    function nice() {
+        console.log("nice nice ncie");
+    }
+
+</script>
+
+<script>
+    var size = ${requestScope.pojo.size};
+    var type = ${requestScope.pojo.type};
+
+    layui.use(['laypage', 'layer'], function () {
+        var laypage = layui.laypage;
+        laypage.render({
+            elem: 'page'
+            , count: ${requestScope.pojo.count}
+            //获取hash值为fenye的当前页
+            , curr: ${requestScope.pojo.page + 1}
+        });
+    });
+
+    window.onload = function () {
+        $("#page>div>a").each(function (i) {
+            $(this).attr("onclick", "pageSplit(this)")
+        });
+    }
+
+</script>
 </html>

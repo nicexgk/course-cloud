@@ -10,6 +10,8 @@ import com.example.course.config.AlipayConfig;
 import com.example.course.service.feign.FeignCourseService;
 import com.example.course.service.feign.FeignOrderService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -192,14 +194,24 @@ public class OrderController {
         }
     }
 
-    @ApiOperation(value = "分页查询用户订单接口", notes = "页数是从0开始不是1")
+    @ApiOperation(value = "分页查询学生订单列表信息接口", notes = "页数从0开始，不是1，用户必须登录了才可以访问该接口，否则将被拦截器拦截")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "page", value = "页数，从0开始"),
+            @ApiImplicitParam(name = "size", value = "页的大小")
+    })
     @GetMapping("/{page}/{size}")
-    public ArrayList<Order> getOrderListBySidForPageSize(HttpServletRequest request,@PathVariable("page") int page, @PathVariable("size")int size){
+    public Superstate getOrderListBySidForPageSize(HttpServletRequest request,@PathVariable("page") int page, @PathVariable("size")int size){
         page = page >= 0 ? page : 0;
         size = size >= 0 ? size : 0;
         User user = (User) request.getSession().getAttribute("user");
+        // 调用订单服务接口，分页查询用户订单信息
         return feignOrderService.getOrderListBySidFoePageSize(user.getUserId(), page, size);
     }
+
+
+
+
+
 
     public String createTradeInfo(Course course) throws UnsupportedEncodingException, AlipayApiException {
         AlipayClient alipayClient = new DefaultAlipayClient(AlipayConfig.gatewayUrl, AlipayConfig.app_id,

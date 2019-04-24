@@ -42,5 +42,9 @@ public class CollectMapperTest {
         System.out.println(collectMapper.queryCollectBySidCid(9, 181));
     }
 
+    @Test
+    public void queryCollectCount(){
+        System.out.println(collectMapper.queryCollectCount(21));
+    }
 
 }

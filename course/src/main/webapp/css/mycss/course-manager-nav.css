@@ -1,20 +1,9 @@
 
-.right-contain{
-    margin-left: 200px;
-}
 
-.object-contain{
-    position: absolute;
-    height: 100%;
-    width: 91%;
+.ul-nav-list{
+    background-color: #EEEEEE !important;
+    color: #000 !important;
 }
-
-.left-contain{
-    margin-top: 81px;
-    /*position: absolute;*/
-}
-
-.object-contain{
-    overflow: hidden;
-    scroll-snap-type: none;
+.ul-nav-list a{
+    color: #000000 !important;
 }

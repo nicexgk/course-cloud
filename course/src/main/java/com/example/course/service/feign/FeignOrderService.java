@@ -2,6 +2,7 @@ package com.example.course.service.feign;
 
 import com.example.common.entity.Order;
 import com.example.common.entity.Status;
+import com.example.common.entity.Superstate;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,6 +26,6 @@ public interface FeignOrderService {
     public Order getOrderByOrderOn(@PathVariable("orderOn") String OrderOn);
 
     @GetMapping("/order/{sid}/{page}/{size}")
-    public ArrayList<Order> getOrderListBySidFoePageSize(@PathVariable("sid")int sid, @PathVariable("page")int page, @PathVariable("size")int size);
+    public Superstate getOrderListBySidFoePageSize(@PathVariable("sid")int sid, @PathVariable("page")int page, @PathVariable("size")int size);
 
 }

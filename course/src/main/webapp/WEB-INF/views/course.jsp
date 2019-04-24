@@ -13,7 +13,7 @@
     <script src="/layui/layui.js"></script>
     <script src="/ueditor/ueditor.config_1.js"></script>
     <script src="/ueditor/ueditor.all.js"></script>
-    <script src="/ueditor/ueditor.parse.js"></script>
+    <%--<script src="/ueditor/ueditor.parse.js"></script>--%>
     <script src="/js/myjs/course.js"></script>
 </head>
 <body>
@@ -112,8 +112,8 @@
             </ul>
             <div class="layui-tab-content">
                 <!--------------简介start--------------->
-                <div class="layui-tab-item layui-show">
-                    <textarea id="ue-editor" data-content="${requestScope.course.description}" style="width: 1200px;"></textarea>
+                <div class="layui-tab-item layui-show course-description-detail">
+                    <textarea id="ue-editor" style="width: 1200px;"> ${requestScope.course.description} </textarea>
                 </div>
                 <!--------------简介 end --------------->
 
@@ -214,7 +214,6 @@
 
 </script>
 <script>
-
     var size = ${requestScope.pojo.size};
     var type = ${requestScope.pojo.type};
     var cid = ${requestScope.course.courseId};

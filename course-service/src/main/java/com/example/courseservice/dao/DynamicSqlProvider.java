@@ -69,7 +69,7 @@ public class DynamicSqlProvider {
                     if(flag)
                         str += ",";
                     flag = true;
-                    val += "#{courseTeacher.studentId}";
+                    val += "#{courseTeacher.userId}";
                 }
                 if (course.getCoursePrice() != null) {
                     if(flag)

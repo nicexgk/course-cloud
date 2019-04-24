@@ -7,64 +7,71 @@
   </component>
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/course/src/main/java/com/example/course/controller/CourseController.java" />
-    <bookmark url="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/course-manager-nav.jsp" line="53" />
-    <bookmark url="file://$PROJECT_DIR$/course/src/main/java/com/example/course/controller/CoursePageController.java" line="86" />
-    <bookmark url="file://$PROJECT_DIR$/course/src/test/java/com/example/course/ServiceTest/FeignCourseServiceTest.java" line="121" />
+    <bookmark url="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/course-manager-nav.jsp" line="56" />
+    <bookmark url="file://$PROJECT_DIR$/course/src/main/java/com/example/course/controller/CoursePageController.java" line="92" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43a6ab9b-5e98-4a12-8534-d1300babfc29" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/SearchController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/config/LoginInterceptor.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/StudentController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/js/information/student-course.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/js/myjs/student-course.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderservice/Config/RedisConfig.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/interceptor/LoginInterceptor.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/util/CookieUtil.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/js/information/student.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/test/java/com/example/course/ServiceTest/FeignSocialServiceTest.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/social-service/src/main/java/com/example/socialservice/controller/SocialController.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/social-service/src/main/java/com/example/socialservice/dao/CommentaryMapper.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/social-service/src/main/java/com/example/socialservice/service/CommentaryService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/social-service/src/main/java/com/example/socialservice/service/CommentaryServiceImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/social-service/src/test/java/com/example/socialservice/dao/CommentaryMapperTest.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/CommentaryController.java" afterPath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/CommentaryController.java" />
-      <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/StudentCourseController.java" afterPath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/StudentCourseController.java" />
-      <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/dao/CommentaryMapper.java" afterPath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/dao/CommentaryMapper.java" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/entity/Order.java" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/entity/Order.java" />
+      <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/CollectController.java" afterPath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/CollectController.java" />
+      <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/CommentaryController.java" afterPath="$PROJECT_DIR$/social-service/src/main/java/com/example/socialservice/controller/CommentaryController.java" />
+      <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/dao/CollectMapper.java" afterPath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/dao/CollectMapper.java" />
+      <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/dao/CommentaryMapper.java" afterPath="" />
       <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/dao/CourseMapper.java" afterPath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/dao/CourseMapper.java" />
       <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/dao/DynamicSqlProvider.java" afterPath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/dao/DynamicSqlProvider.java" />
-      <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/dao/StudentCourseMapper.java" afterPath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/dao/StudentCourseMapper.java" />
-      <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CommentaryService.java" afterPath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CommentaryService.java" />
-      <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CommentaryServiceImpl.java" afterPath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CommentaryServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CourseService.java" afterPath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CourseService.java" />
-      <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CourseServiceImpl.java" afterPath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CourseServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/StudentCourseService.java" afterPath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/StudentCourseService.java" />
-      <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/StudentCourseServiceImpl.java" afterPath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/StudentCourseServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/course-service/src/test/java/com/example/courseservice/test/daotest/CommentaryMapperTest.java" afterPath="$PROJECT_DIR$/course-service/src/test/java/com/example/courseservice/test/daotest/CommentaryMapperTest.java" />
-      <change beforePath="$PROJECT_DIR$/course-service/src/test/java/com/example/courseservice/test/daotest/CourseTest.java" afterPath="$PROJECT_DIR$/course-service/src/test/java/com/example/courseservice/test/daotest/CourseTest.java" />
-      <change beforePath="$PROJECT_DIR$/course-service/src/test/java/com/example/courseservice/test/daotest/StudentCourseMapperTest.java" afterPath="$PROJECT_DIR$/course-service/src/test/java/com/example/courseservice/test/daotest/StudentCourseMapperTest.java" />
+      <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CollectService.java" afterPath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CollectService.java" />
+      <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CollectServiceImpl.java" afterPath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CollectServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CommentaryService.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CommentaryServiceImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/course-service/src/test/java/com/example/courseservice/test/daotest/CollectMapperTest.java" afterPath="$PROJECT_DIR$/course-service/src/test/java/com/example/courseservice/test/daotest/CollectMapperTest.java" />
+      <change beforePath="$PROJECT_DIR$/course-service/src/test/java/com/example/courseservice/test/daotest/CommentaryMapperTest.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/CollectionController.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/CollectionController.java" />
       <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/CourseController.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/CourseController.java" />
       <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/CoursePageController.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/CoursePageController.java" />
       <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/IndexController.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/IndexController.java" />
       <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/OrderController.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/OrderController.java" />
+      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/SocialController.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/SocialController.java" />
+      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/StudentController.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/StudentController.java" />
+      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/UserController.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/UserController.java" />
       <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/FeignCourseService.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/FeignCourseService.java" />
       <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/FeignOrderService.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/FeignOrderService.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/course/src/main/resources/application.properties" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/collections.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/FeignSocialService.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/FeignSocialService.java" />
+      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/add-comment.jsp" afterPath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/add-comment.jsp" />
+      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/add-course.jsp" afterPath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/add-course.jsp" />
       <change beforePath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/common/header.jsp" afterPath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/common/header.jsp" />
       <change beforePath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/course-list.jsp" afterPath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/course-list.jsp" />
+      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/course-manager-nav.jsp" afterPath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/course-manager-nav.jsp" />
       <change beforePath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/course.jsp" afterPath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/course.jsp" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/coursereflash.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/courses.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/editor-course.jsp" afterPath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/editor-course.jsp" />
+      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/information/collection.jsp" afterPath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/information/collection.jsp" />
       <change beforePath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/information/order.jsp" afterPath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/information/order.jsp" />
       <change beforePath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/information/student-course.jsp" afterPath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/information/student-course.jsp" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/test.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/css/course.css" afterPath="$PROJECT_DIR$/course/src/main/webapp/css/course.css" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/css/header.css" afterPath="$PROJECT_DIR$/course/src/main/webapp/css/header.css" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/css/jsuggest.css" afterPath="$PROJECT_DIR$/course/src/main/webapp/css/jsuggest.css" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/css/mycss/informataion.css" afterPath="$PROJECT_DIR$/course/src/main/webapp/css/mycss/informataion.css" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/course/src/main/webapp/index.jsp" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/js/jSuggest.js" afterPath="$PROJECT_DIR$/course/src/main/webapp/js/jSuggest.js" />
+      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/information/user-info.jsp" afterPath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/information/user-info.jsp" />
+      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/my-course-list.jsp" afterPath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/my-course-list.jsp" />
+      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/css/mycss/course-manager-nav.css" afterPath="$PROJECT_DIR$/course/src/main/webapp/css/mycss/course-manager-nav.css" />
+      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/css/mycss/my-course-list.css" afterPath="$PROJECT_DIR$/course/src/main/webapp/css/mycss/my-course-list.css" />
+      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/js/information/student-course.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/js/myjs/add-course.js" afterPath="$PROJECT_DIR$/course/src/main/webapp/js/myjs/add-course.js" />
       <change beforePath="$PROJECT_DIR$/course/src/main/webapp/js/myjs/course.js" afterPath="$PROJECT_DIR$/course/src/main/webapp/js/myjs/course.js" />
+      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/js/myjs/editor-course.js" afterPath="$PROJECT_DIR$/course/src/main/webapp/js/myjs/editor-course.js" />
+      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/js/myjs/my-course-list.js" afterPath="$PROJECT_DIR$/course/src/main/webapp/js/myjs/my-course-list.js" />
+      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/js/myjs/student-course.js" afterPath="" />
       <change beforePath="$PROJECT_DIR$/course/src/test/java/com/example/course/ServiceTest/FeignCourseServiceTest.java" afterPath="$PROJECT_DIR$/course/src/test/java/com/example/course/ServiceTest/FeignCourseServiceTest.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/test/java/com/example/course/ServiceTest/FeignOrderServiceTest.java" afterPath="$PROJECT_DIR$/course/src/test/java/com/example/course/ServiceTest/FeignOrderServiceTest.java" />
       <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderservice/controller/OrderController.java" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderservice/controller/OrderController.java" />
       <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderservice/dao/OrderMapper.java" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderservice/dao/OrderMapper.java" />
       <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderservice/service/OrderService.java" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderservice/service/OrderService.java" />
       <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderservice/service/OrderServiceImpl.java" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderservice/service/OrderServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/order-service/src/main/resources/application.properties" />
       <change beforePath="$PROJECT_DIR$/order-service/src/test/java/com/example/orderservice/OrderMapperTest/OrderMapperTest.java" afterPath="$PROJECT_DIR$/order-service/src/test/java/com/example/orderservice/OrderMapperTest/OrderMapperTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/eureka-service/target/" />
@@ -110,13 +117,6 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="course: schema" type="c314c289:MysqlImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="course@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="course: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="student_course: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
     </expand>
     <select />
   </component>
@@ -125,62 +125,54 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="course.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/course.jsp">
+      <file leaf-file-name="my-course-list.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/my-course-list.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="238" column="11" lean-forward="false" selection-start-line="238" selection-start-column="11" selection-end-line="238" selection-end-column="11" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="student-course.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/information/student-course.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-748">
-              <caret line="14" column="55" lean-forward="true" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#main#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#0;n#div#1;n#main#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="student-course.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/course/src/main/webapp/js/information/student-course.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="15" />
+            <state relative-caret-position="660">
+              <caret line="33" column="103" lean-forward="false" selection-start-line="33" selection-start-column="103" selection-end-line="33" selection-end-column="103" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StudentController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/course/src/main/java/com/example/course/controller/StudentController.java">
+      <file leaf-file-name="course-manager-nav.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/course-manager-nav.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="396">
+              <caret line="31" column="79" lean-forward="true" selection-start-line="31" selection-start-column="79" selection-end-line="31" selection-end-column="79" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IndexController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/course/src/main/java/com/example/course/controller/IndexController.java">
+      <file leaf-file-name="editor-course.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/editor-course.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
-              <folding>
-                <element signature="method#index1#0;class#IndexController#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="22">
+              <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="course-list.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/course-list.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="484">
+              <caret line="59" column="32" lean-forward="true" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="136" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="my-course-list.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/course/src/main/webapp/css/mycss/my-course-list.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -198,11 +190,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ArrayList&lt;E&gt;</find>
-      <find>public ArrayList</find>
-      <find>comment</find>
-      <find>btn-group</find>
-      <find>btn</find>
       <find>info</find>
       <find>course-logo</find>
       <find>#date</find>
@@ -219,7 +206,6 @@
       <find>active</find>
       <find>script</find>
       <find>scrip</find>
-      <find>studentId</find>
       <find>userId</find>
       <find>flex-row</find>
       <find>item-linit</find>
@@ -228,6 +214,12 @@
       <find>jSuggestContainer</find>
       <find>objectMapper</find>
       <find>over-view-warp</find>
+      <find>studentId</find>
+      <find>&gt;&amp;#xeb61;</find>
+      <find>&amp;#xeb61;</find>
+      <find>&amp;#xe642;</find>
+      <find>courseList</find>
+      <find>card-li-item</find>
     </findStrings>
     <replaceStrings>
       <replace>item-editor</replace>
@@ -237,6 +229,9 @@
       <replace>&amp;#xe652;</replace>
       <replace>item-block</replace>
       <replace>userId</replace>
+      <replace>&amp;#xe642;</replace>
+      <replace>&gt;&amp;#xe642;</replace>
+      <replace>userCourseList;</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -254,57 +249,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/common/src/main/java/com/example/common/entity/StudentCourse.java" />
-        <option value="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/UserStudentController.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/com/example/common/entity/Order.java" />
-        <option value="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/dao/DynamicSqlProvider.java" />
-        <option value="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/FeignOrderService.java" />
+        <option value="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/StudentController.java" />
+        <option value="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/CollectController.java" />
+        <option value="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CollectService.java" />
+        <option value="$PROJECT_DIR$/order-service/src/main/java/com/example/orderservice/service/OrderService.java" />
+        <option value="$PROJECT_DIR$/order-service/src/main/java/com/example/orderservice/controller/OrderController.java" />
+        <option value="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/course.jsp" />
+        <option value="$PROJECT_DIR$/social-service/src/main/java/com/example/socialservice/dao/CommentaryMapping.java" />
+        <option value="$PROJECT_DIR$/social-service/src/test/java/com/example/socialservice/dao/CommentaryMapperTest.java" />
+        <option value="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/CourseController.java" />
+        <option value="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/SocialController.java" />
+        <option value="$PROJECT_DIR$/social-service/src/main/java/com/example/socialservice/service/CommentaryService.java" />
+        <option value="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CommentaryServiceImpl.java" />
+        <option value="$PROJECT_DIR$/social-service/src/main/java/com/example/socialservice/service/CommentaryServiceImpl.java" />
+        <option value="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/dao/CommentaryMapper.java" />
+        <option value="$PROJECT_DIR$/social-service/src/main/java/com/example/socialservice/dao/CommentaryMapper.java" />
+        <option value="$PROJECT_DIR$/social-service/src/main/java/com/example/socialservice/controller/CommentaryController.java" />
+        <option value="$PROJECT_DIR$/social-service/src/main/java/com/example/socialservice/controller/SocialController.java" />
+        <option value="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/FeignSocialService.java" />
+        <option value="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/FeignCourseService.java" />
+        <option value="$PROJECT_DIR$/course/src/test/java/com/example/course/ServiceTest/FeignCourseServiceTest.java" />
+        <option value="$PROJECT_DIR$/course/src/test/java/com/example/course/ServiceTest/FeignSocialServiceTest.java" />
+        <option value="$PROJECT_DIR$/course/src/main/webapp/js/myjs/course.js" />
+        <option value="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/CoursePageController.java" />
+        <option value="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/add-comment.jsp" />
+        <option value="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/common/header.jsp" />
+        <option value="$PROJECT_DIR$/course/src/main/webapp/js/information/student-course.js" />
+        <option value="$PROJECT_DIR$/course/src/main/webapp/js/information/user-info.js" />
+        <option value="$PROJECT_DIR$/course/src/main/webapp/js/information/student.js" />
+        <option value="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/information/student-course.jsp" />
+        <option value="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/dao/CollectMapper.java" />
+        <option value="$PROJECT_DIR$/course-service/src/test/java/com/example/courseservice/test/daotest/CollectMapperTest.java" />
+        <option value="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CollectServiceImpl.java" />
+        <option value="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/CollectionController.java" />
+        <option value="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/information/collection.jsp" />
         <option value="$PROJECT_DIR$/order-service/src/main/java/com/example/orderservice/dao/OrderMapper.java" />
         <option value="$PROJECT_DIR$/order-service/src/test/java/com/example/orderservice/OrderMapperTest/OrderMapperTest.java" />
-        <option value="$PROJECT_DIR$/order-service/src/main/java/com/example/orderservice/service/OrderService.java" />
         <option value="$PROJECT_DIR$/order-service/src/main/java/com/example/orderservice/service/OrderServiceImpl.java" />
-        <option value="$PROJECT_DIR$/order-service/src/main/java/com/example/orderservice/controller/OrderController.java" />
-        <option value="$PROJECT_DIR$/course/src/test/java/com/example/course/ServiceTest/FeignOrderServiceTest.java" />
+        <option value="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/IndexController.java" />
         <option value="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/OrderController.java" />
         <option value="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/information/order.jsp" />
-        <option value="$PROJECT_DIR$/course/src/main/webapp/css/mycss/informataion.css" />
-        <option value="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/CourseController.java" />
-        <option value="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CourseService.java" />
-        <option value="$PROJECT_DIR$/course-service/src/test/java/com/example/courseservice/test/daotest/CourseTest.java" />
-        <option value="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CourseServiceImpl.java" />
-        <option value="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/SearchController.java" />
-        <option value="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/common/header.jsp" />
-        <option value="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/dao/CourseMapper.java" />
-        <option value="$PROJECT_DIR$/course/src/main/webapp/css/header.css" />
-        <option value="$PROJECT_DIR$/course/src/main/webapp/css/jsuggest.css" />
-        <option value="$PROJECT_DIR$/course/src/main/webapp/js/jSuggest.js" />
-        <option value="$PROJECT_DIR$/course/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/course/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/order-service/src/main/java/com/example/orderservice/Config/RedisConfig.java" />
-        <option value="$PROJECT_DIR$/order-service/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/course/src/main/java/com/example/course/config/LoginInterceptor.java" />
-        <option value="$PROJECT_DIR$/course/src/test/java/com/example/course/ServiceTest/FeignCourseServiceTest.java" />
-        <option value="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CommentaryService.java" />
-        <option value="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/dao/CommentaryMapper.java" />
-        <option value="$PROJECT_DIR$/course-service/src/test/java/com/example/courseservice/test/daotest/CommentaryMapperTest.java" />
-        <option value="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/CommentaryController.java" />
-        <option value="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CommentaryServiceImpl.java" />
-        <option value="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/CoursePageController.java" />
+        <option value="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/add-course.jsp" />
+        <option value="$PROJECT_DIR$/course/src/main/webapp/js/myjs/editor-course.js" />
+        <option value="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/editor-course.jsp" />
+        <option value="$PROJECT_DIR$/course/src/main/webapp/js/myjs/add-course.js" />
+        <option value="$PROJECT_DIR$/course/src/main/webapp/css/mycss/course-manager-nav.css" />
+        <option value="$PROJECT_DIR$/course/src/main/webapp/js/myjs/my-course-list.js" />
         <option value="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/course-list.jsp" />
-        <option value="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/course.jsp" />
-        <option value="$PROJECT_DIR$/course/src/main/webapp/css/course.css" />
-        <option value="$PROJECT_DIR$/course/src/main/webapp/js/myjs/course.js" />
-        <option value="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/FeignCourseService.java" />
-        <option value="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/IndexController.java" />
-        <option value="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/StudentCourseController.java" />
-        <option value="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/StudentCourseService.java" />
-        <option value="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/dao/StudentCourseMapper.java" />
-        <option value="$PROJECT_DIR$/course-service/src/test/java/com/example/courseservice/test/daotest/StudentCourseMapperTest.java" />
-        <option value="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/StudentCourseServiceImpl.java" />
-        <option value="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/CourseController.java" />
-        <option value="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/StudentController.java" />
-        <option value="$PROJECT_DIR$/course/src/main/webapp/js/information/student-course.js" />
-        <option value="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/information/student-course.jsp" />
+        <option value="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/dao/CourseMapper.java" />
+        <option value="$PROJECT_DIR$/course/src/main/webapp/css/mycss/my-course-list.css" />
+        <option value="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/my-course-list.jsp" />
+        <option value="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/course-manager-nav.jsp" />
       </list>
     </option>
   </component>
@@ -367,8 +362,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -418,59 +412,7 @@
               <item name="course" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="course" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="course-springcloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="course-springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="course" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="course" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="course-springcloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="course-springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="course" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="course" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="course-springcloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="course-springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="course" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="course" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="feign" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="course-springcloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="course-springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="course" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="course" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="course-springcloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="course-springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="course" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="course-springcloud" type="b2602c69:ProjectViewProjectNode" />
@@ -479,6 +421,17 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="course-springcloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="course-springcloud" type="462c0819:PsiDirectoryNode" />
+              <item name="course" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="mycss" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="course-springcloud" type="b2602c69:ProjectViewProjectNode" />
@@ -488,16 +441,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="course-springcloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="course-springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="course" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="information" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="course-springcloud" type="b2602c69:ProjectViewProjectNode" />
@@ -531,28 +474,6 @@
             <path>
               <item name="course-springcloud" type="b2602c69:ProjectViewProjectNode" />
               <item name="course-springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="course" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="course-springcloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="course-springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="course" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="information" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="course-springcloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="course-springcloud" type="462c0819:PsiDirectoryNode" />
               <item name="course-service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -584,16 +505,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="courseservice" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="course-springcloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="course-springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="course-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="courseservice" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="course-springcloud" type="b2602c69:ProjectViewProjectNode" />
@@ -605,66 +516,12 @@
               <item name="courseservice" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="course-springcloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="course-springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="course-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="courseservice" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="course-springcloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="course-springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="course-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="course-springcloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="course-springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="course-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="course-springcloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="course-springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="course-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="courseservice" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="course-springcloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="course-springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="course-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="courseservice" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="course-springcloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="course-springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="course-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="courseservice" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="daotest" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -686,24 +543,25 @@
     <property name="database.data.extractors.current.id" value="SQL Updates" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\course-springcloud\course\src\main\webapp\WEB-INF\views\common" />
-      <recent name="D:\course-springcloud\course\src\main\webapp\WEB-INF\views" />
-      <recent name="D:\course-springcloud\course\src\main\webapp" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\course-springcloud\course\src\main\resources\static" />
       <recent name="D:\course-springcloud\course\src\main\webapp\js\myjs" />
+      <recent name="D:\course-springcloud\course\src\main\webapp\WEB-INF\lib" />
+      <recent name="D:\course-springcloud\course\src\main\webapp\img\imgs" />
+      <recent name="D:\course-springcloud\course\src\main\webapp\ueditor" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.socialservice.controller" />
       <recent name="com.example.orderservice.Config" />
       <recent name="com.example.orderservice.OrderMapperTest" />
       <recent name="com.example.course.controller" />
       <recent name="com.example.common.entity" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\course-springcloud\course\src\main\webapp\js\myjs" />
-      <recent name="D:\course-springcloud\course\src\main\webapp\WEB-INF\lib" />
-      <recent name="D:\course-springcloud\course\src\main\webapp\img\imgs" />
-      <recent name="D:\course-springcloud\course\src\main\webapp\ueditor" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\course-springcloud\course\src\main\webapp" />
+      <recent name="D:\course-springcloud\course\src\main\webapp\WEB-INF\views\common" />
+      <recent name="D:\course-springcloud\course\src\main\webapp\WEB-INF\views" />
+      <recent name="D:\course-springcloud\course\src\main\webapp\js\myjs" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -740,7 +598,7 @@
       <module name="" />
       <envs />
     </configuration>
-    <configuration name="CommentaryMapperTest.queryCommentaryByCid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CollectMapperTest.queryCollectCount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.example.courseservice.test.daotest.*" />
@@ -751,8 +609,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.example.courseservice.test.daotest" />
-      <option name="MAIN_CLASS_NAME" value="com.example.courseservice.test.daotest.CommentaryMapperTest" />
-      <option name="METHOD_NAME" value="queryCommentaryByCid" />
+      <option name="MAIN_CLASS_NAME" value="com.example.courseservice.test.daotest.CollectMapperTest" />
+      <option name="METHOD_NAME" value="queryCollectCount" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -765,19 +623,19 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="CommentaryMapperTest.queryCommentaryByCidCount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CommentaryMapperTest.insetCommentaryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.example.courseservice.test.daotest.*" />
+          <option name="PATTERN" value="com.example.socialservice.dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <module name="course-service" />
+      <module name="social-service" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.example.courseservice.test.daotest" />
-      <option name="MAIN_CLASS_NAME" value="com.example.courseservice.test.daotest.CommentaryMapperTest" />
-      <option name="METHOD_NAME" value="queryCommentaryByCidCount" />
+      <option name="PACKAGE_NAME" value="com.example.socialservice.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.example.socialservice.dao.CommentaryMapperTest" />
+      <option name="METHOD_NAME" value="insetCommentaryTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -790,7 +648,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="FeignCourseServiceTest.getCommentaryListByCidForPageSizeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FeignSocialServiceTest.addCommentary" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.example.course.ServiceTest.*" />
@@ -801,33 +659,33 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.example.course.ServiceTest" />
-      <option name="MAIN_CLASS_NAME" value="com.example.course.ServiceTest.FeignCourseServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="com.example.course.ServiceTest.FeignSocialServiceTest" />
+      <option name="METHOD_NAME" value="addCommentary" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="FeignSocialServiceTest.getCommentaryListByCidForPageSizeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.example.course.ServiceTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="course" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.example.course.ServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="com.example.course.ServiceTest.FeignSocialServiceTest" />
       <option name="METHOD_NAME" value="getCommentaryListByCidForPageSizeTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="FeignCourseServiceTest.searchCourseList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.example.course.ServiceTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="course" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.example.course.ServiceTest" />
-      <option name="MAIN_CLASS_NAME" value="com.example.course.ServiceTest.FeignCourseServiceTest" />
-      <option name="METHOD_NAME" value="searchCourseList" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -865,19 +723,19 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="StudentCourseMapperTest.queryStudentCourseByCount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OrderMapperTest.queryOrderCountBySid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.example.courseservice.test.daotest.*" />
+          <option name="PATTERN" value="com.example.orderservice.OrderMapperTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <module name="course-service" />
+      <module name="order-service" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.example.courseservice.test.daotest" />
-      <option name="MAIN_CLASS_NAME" value="com.example.courseservice.test.daotest.StudentCourseMapperTest" />
-      <option name="METHOD_NAME" value="queryStudentCourseByCount" />
+      <option name="PACKAGE_NAME" value="com.example.orderservice.OrderMapperTest" />
+      <option name="MAIN_CLASS_NAME" value="com.example.orderservice.OrderMapperTest.OrderMapperTest" />
+      <option name="METHOD_NAME" value="queryOrderCountBySid" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -998,7 +856,7 @@
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="Unnamed_course-springcloud" />
-        <option name="JNDI_PORT" value="10299" />
+        <option name="JNDI_PORT" value="1029" />
       </server-settings>
       <predefined_log_file id="Tomcat" enabled="true" />
       <predefined_log_file id="Tomcat Catalina" enabled="true" />
@@ -1073,22 +931,22 @@
       <item index="3" class="java.lang.String" itemvalue="Spring Boot.UserServiceApplication" />
       <item index="4" class="java.lang.String" itemvalue="Spring Boot.CourseServiceApplication" />
       <item index="5" class="java.lang.String" itemvalue="Spring Boot.SocialServiceApplication" />
-      <item index="6" class="java.lang.String" itemvalue="Spring Boot.CourseApplication" />
-      <item index="7" class="java.lang.String" itemvalue="Spring Boot.CommonApplication" />
-      <item index="8" class="java.lang.String" itemvalue="Tomcat Server.tomcat 9.0.6" />
-      <item index="9" class="java.lang.String" itemvalue="JUnit.FeignCourseServiceTest.searchCourseList" />
-      <item index="10" class="java.lang.String" itemvalue="JUnit.CommentaryMapperTest.queryCommentaryByCid" />
-      <item index="11" class="java.lang.String" itemvalue="JUnit.FeignCourseServiceTest.getCommentaryListByCidForPageSizeTest" />
-      <item index="12" class="java.lang.String" itemvalue="JUnit.CommentaryMapperTest.queryCommentaryByCidCount" />
-      <item index="13" class="java.lang.String" itemvalue="JUnit.StudentCourseMapperTest.queryStudentCourseByCount" />
+      <item index="6" class="java.lang.String" itemvalue="Tomcat Server.tomcat 9.0.6" />
+      <item index="7" class="java.lang.String" itemvalue="JUnit.CommentaryMapperTest.insetCommentaryTest" />
+      <item index="8" class="java.lang.String" itemvalue="JUnit.FeignSocialServiceTest.addCommentary" />
+      <item index="9" class="java.lang.String" itemvalue="JUnit.FeignSocialServiceTest.getCommentaryListByCidForPageSizeTest" />
+      <item index="10" class="java.lang.String" itemvalue="Spring Boot.CommonApplication" />
+      <item index="11" class="java.lang.String" itemvalue="Spring Boot.CourseApplication" />
+      <item index="12" class="java.lang.String" itemvalue="JUnit.CollectMapperTest.queryCollectCount" />
+      <item index="13" class="java.lang.String" itemvalue="JUnit.OrderMapperTest.queryOrderCountBySid" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.StudentCourseMapperTest.queryStudentCourseByCount" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.CommentaryMapperTest.queryCommentaryByCidCount" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.FeignCourseServiceTest.getCommentaryListByCidForPageSizeTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.CommentaryMapperTest.queryCommentaryByCid" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.FeignCourseServiceTest.searchCourseList" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.OrderMapperTest.queryOrderCountBySid" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.CollectMapperTest.queryCollectCount" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.FeignSocialServiceTest.getCommentaryListByCidForPageSizeTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.FeignSocialServiceTest.addCommentary" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.CommentaryMapperTest.insetCommentaryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -1129,7 +987,13 @@
       <workItem from="1555379352511" duration="53009000" />
       <workItem from="1555464163895" duration="17998000" />
       <workItem from="1555491995073" duration="559000" />
-      <workItem from="1555492576397" duration="20564000" />
+      <workItem from="1555492576397" duration="20650000" />
+      <workItem from="1555771012232" duration="12833000" />
+      <workItem from="1555809311025" duration="11382000" />
+      <workItem from="1555933582135" duration="8870000" />
+      <workItem from="1555946713878" duration="465000" />
+      <workItem from="1555947364455" duration="327000" />
+      <workItem from="1556102775143" duration="13476000" />
     </task>
     <task id="LOCAL-00001" summary="dsfsdfds">
       <created>1554708225208</created>
@@ -1166,43 +1030,50 @@
       <option name="project" value="LOCAL" />
       <updated>1555441908281</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="完善了基本内容">
+      <created>1555520517144</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1555520517144</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CommentaryMapperTest_queryCommentaryByCid - 2019.04.17 at 21h 31m 35s.xml">
-      <configuration name="CommentaryMapperTest.queryCommentaryByCid" configurationId="JUnit" />
+    <history-entry file="CollectMapperTest_queryCollectCount - 2019.04.24 at 23h 34m 10s.xml">
+      <configuration name="CollectMapperTest.queryCollectCount" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CommentaryMapperTest_queryCommentaryByCid - 2019.04.17 at 21h 33m 30s.xml">
-      <configuration name="CommentaryMapperTest.queryCommentaryByCid" configurationId="JUnit" />
+    <history-entry file="CollectMapperTest_queryCollectCount - 2019.04.24 at 23h 35m 16s.xml">
+      <configuration name="CollectMapperTest.queryCollectCount" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CommentaryMapperTest_queryCommentaryByCidCount - 2019.04.17 at 22h 27m 41s.xml">
-      <configuration name="CommentaryMapperTest.queryCommentaryByCidCount" configurationId="JUnit" />
+    <history-entry file="FeignSocialServiceTest_addCommentary - 2019.04.22 at 22h 33m 16s.xml">
+      <configuration name="FeignSocialServiceTest.addCommentary" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CommentaryMapperTest_queryCommentaryByCidCount - 2019.04.17 at 23h 02m 45s.xml">
-      <configuration name="CommentaryMapperTest.queryCommentaryByCidCount" configurationId="JUnit" />
+    <history-entry file="FeignSocialServiceTest_addCommentary - 2019.04.22 at 22h 36m 13s.xml">
+      <configuration name="FeignSocialServiceTest.addCommentary" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FeignCourseServiceTest_getCommentaryListByCidForPageSizeTest - 2019.04.17 at 21h 46m 53s.xml">
-      <configuration name="FeignCourseServiceTest.getCommentaryListByCidForPageSizeTest" configurationId="JUnit" />
+    <history-entry file="FeignSocialServiceTest_addCommentary - 2019.04.22 at 22h 37m 19s.xml">
+      <configuration name="FeignSocialServiceTest.addCommentary" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FeignCourseServiceTest_getCommentaryListByCidForPageSizeTest - 2019.04.17 at 22h 00m 43s.xml">
-      <configuration name="FeignCourseServiceTest.getCommentaryListByCidForPageSizeTest" configurationId="JUnit" />
+    <history-entry file="FeignSocialServiceTest_addCommentary - 2019.04.22 at 23h 09m 09s.xml">
+      <configuration name="FeignSocialServiceTest.addCommentary" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FeignOrderServiceTest_getOrderListBySidForPageSize - 2019.04.17 at 11h 59m 25s.xml">
-      <configuration name="FeignOrderServiceTest.getOrderListBySidForPageSize" configurationId="JUnit" />
+    <history-entry file="FeignSocialServiceTest_getCommentaryListByCidForPageSizeTest - 2019.04.22 at 23h 09m 31s.xml">
+      <configuration name="FeignSocialServiceTest.getCommentaryListByCidForPageSizeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OrderMapperTest_queryOrderBySidPageSizeTest - 2019.04.17 at 11h 51m 42s.xml">
-      <configuration name="OrderMapperTest.queryOrderBySidPageSizeTest" configurationId="JUnit" />
+    <history-entry file="FeignSocialServiceTest_getCommentaryListByCidForPageSizeTest - 2019.04.22 at 23h 13m 20s.xml">
+      <configuration name="FeignSocialServiceTest.getCommentaryListByCidForPageSizeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StudentCourseMapperTest_queryStudentCourseByCount - 2019.04.18 at 00h 14m 51s.xml">
-      <configuration name="StudentCourseMapperTest.queryStudentCourseByCount" configurationId="JUnit" />
+    <history-entry file="OrderMapperTest_queryOrderCountBySid - 2019.04.24 at 23h 58m 07s.xml">
+      <configuration name="OrderMapperTest.queryOrderCountBySid" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StudentCourseMapperTest_queryStudentCourseByCount - 2019.04.18 at 00h 16m 59s.xml">
-      <configuration name="StudentCourseMapperTest.queryStudentCourseByCount" configurationId="JUnit" />
+    <history-entry file="OrderMapperTest_queryOrderCountBySid - 2019.04.25 at 00h 00m 54s.xml">
+      <configuration name="OrderMapperTest.queryOrderCountBySid" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="606467000" />
+    <option name="totallyTimeSpent" value="653906000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1217,38 +1088,38 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1787649" sideWeight="0.51492536" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.4978678" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Redis Servers" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25373134" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2835821" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Redis Servers" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25373134" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2835821" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15884861" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14072494" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.4978678" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21776815" sideWeight="0.4978678" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.4978678" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.4978678" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17659806" sideWeight="0.48507464" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2611051" sideWeight="0.48507464" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22921109" sideWeight="0.49463806" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21002132" sideWeight="0.49463806" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20415778" sideWeight="0.5053619" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3856988" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1267,7 +1138,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="63" />
+      <option name="time" value="68" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1276,267 +1147,11 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/dao/DynamicSqlProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/UserServiceApplication.java">
+    <entry file="file://$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/CourseTypeController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/service/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-22">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/Config/RedisConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-87">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/courses.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2464">
-          <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course/src/main/java/com/example/course/config/LoginInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/coursereflash.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-924">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/error.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/help.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/test.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/register.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/404.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/add-comment.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-362">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/my-course-list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/collections.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-186">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/course-type-list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="946">
-          <caret line="46" column="24" lean-forward="true" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
-          <folding>
-            <marker date="1552994652444" expanded="true" signature="3321:3352" ph="..." />
-            <marker date="1552994652444" expanded="true" signature="3376:3384" ph="&amp;##xe642;" />
-            <marker date="1552994652444" expanded="true" signature="3559:3590" ph="..." />
-            <marker date="1552994652444" expanded="true" signature="3614:3622" ph="&amp;##xe640;" />
-            <marker date="1552994652444" expanded="true" signature="4521:4552" ph="..." />
-            <marker date="1552994652444" expanded="true" signature="4576:4584" ph="&amp;##xe642;" />
-            <marker date="1552994652444" expanded="true" signature="4759:4790" ph="..." />
-            <marker date="1552994652444" expanded="true" signature="4814:4822" ph="&amp;##xe640;" />
-            <marker date="1552994652444" expanded="true" signature="6059:6090" ph="..." />
-            <marker date="1552994652444" expanded="true" signature="6114:6122" ph="&amp;##xe642;" />
-            <marker date="1552994652444" expanded="true" signature="6284:6315" ph="..." />
-            <marker date="1552994652444" expanded="true" signature="6339:6347" ph="&amp;##xe640;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/editor-course.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/tradefail.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/course-manager-nav.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/example/common/entity/Commentary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="36" column="13" lean-forward="false" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course/src/test/java/com/example/course/ServiceTest/FeignCourseServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="31" column="36" lean-forward="false" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
-          <folding>
-            <element signature="method#modifyCourseTest#0;class#FeignCourseServiceTest#0" expanded="false" />
-            <element signature="e#3748#3749#0" expanded="false" />
-            <element signature="e#3829#3830#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CommentaryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/CommentaryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="31" column="20" lean-forward="false" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course-service/src/test/java/com/example/courseservice/test/daotest/CommentaryMapperTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#1153#1154#0" expanded="false" />
-            <element signature="e#1236#1237#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/dao/CommentaryMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="28" column="40" lean-forward="false" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/FeignUserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CommentaryServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="41" column="33" lean-forward="false" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course/src/main/java/com/example/course/controller/CollectionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="40" column="36" lean-forward="true" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/course-list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="210" column="0" lean-forward="false" selection-start-line="210" selection-start-column="0" selection-end-line="210" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#fieldset#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1547,179 +1162,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/958ea6bc/b2d9a5fb-bf6e-462c-a65a-f65376ccc3af/course.commentary">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/example/common/entity/Superstate.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.5.RELEASE/spring-webmvc-5.1.5.RELEASE-sources.jar!/org/springframework/web/servlet/DispatcherServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="27" />
+        <state relative-caret-position="1417">
+          <caret line="1263" column="46" lean-forward="false" selection-start-line="1263" selection-start-column="29" selection-end-line="1263" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/css/course.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11">
-          <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course/src/main/java/com/example/course/controller/CoursePageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="73" column="49" lean-forward="false" selection-start-line="73" selection-start-column="49" selection-end-line="73" selection-end-column="49" />
-          <folding>
-            <element signature="method#getCoursePlayCatalog#0;class#CoursePageController#0" expanded="false" />
-            <element signature="method#getCourseList#0;class#CoursePageController#0" expanded="false" />
-            <element signature="method#getCourseList#1;class#CoursePageController#0" expanded="false" />
-            <element signature="method#getCourseComment#0;class#CoursePageController#0" expanded="false" />
-            <element signature="method#studyList#0;class#CoursePageController#0" expanded="false" />
-            <element signature="method#routeList#0;class#CoursePageController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/FeignCourseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="61" column="21" lean-forward="false" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/SearchController.java">
+    <entry file="file://$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/CatalogController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/958ea6bc/b2d9a5fb-bf6e-462c-a65a-f65376ccc3af/course.student_course">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/dao/StudentCourseMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="826">
-          <caret line="44" column="45" lean-forward="false" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course-service/src/test/java/com/example/courseservice/test/daotest/StudentCourseMapperTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="32" column="49" lean-forward="true" selection-start-line="32" selection-start-column="49" selection-end-line="32" selection-end-column="49" />
-          <folding>
-            <element signature="e#1393#1394#0" expanded="false" />
-            <element signature="e#1475#1476#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/StudentCourseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/StudentCourseServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="38" column="75" lean-forward="false" selection-start-line="38" selection-start-column="75" selection-end-line="38" selection-end-column="75" />
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/StudentCourseController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="132">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/course/src/main/java/com/example/course/controller/IndexController.java">
+    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/common/header.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
-          <folding>
-            <element signature="method#index1#0;class#IndexController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/course.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="238" column="11" lean-forward="false" selection-start-line="238" selection-start-column="11" selection-end-line="238" selection-end-column="11" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/js/myjs/course.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1510">
-          <caret line="210" column="27" lean-forward="true" selection-start-line="210" selection-start-column="27" selection-end-line="210" selection-end-column="27" />
-          <folding>
-            <element signature="e#35#1019#0" expanded="false" />
-            <element signature="n#!!block;n#send#0" expanded="false" />
-            <element signature="n#!!block;n#onTrade#0" expanded="false" />
-            <element signature="n#!!block;n#showTrade#0" expanded="false" />
-            <element signature="n#!!block;n#collection#0" expanded="false" />
-            <element signature="n#!!block;n#collectOperation#0" expanded="false" />
-            <marker date="1555516669395" expanded="true" signature="5946:5958" ph="..." />
-            <marker date="1555516669395" expanded="true" signature="6050:6091" ph="..." />
-            <marker date="1555516669395" expanded="true" signature="6240:6267" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course/src/main/java/com/example/course/controller/CourseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="147" column="5" lean-forward="false" selection-start-line="147" selection-start-column="5" selection-end-line="147" selection-end-column="5" />
-          <folding>
-            <element signature="method#addCourse#0;class#CourseController#0" expanded="false" />
-            <element signature="method#modifyCourse#0;class#CourseController#0" expanded="false" />
-            <element signature="method#getCourseById#0;class#CourseController#0" expanded="false" />
-            <element signature="method#getUserCourseList#0;class#CourseController#0" expanded="false" />
-            <element signature="method#getUserCourseList#1;class#CourseController#0" expanded="false" />
-            <element signature="method#commentary#0;class#CourseController#0" expanded="false" />
-            <element signature="method#searchCourse#0;class#CourseController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course/src/main/java/com/example/course/controller/StudentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/js/information/student-course.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="15" />
+        <state relative-caret-position="131">
+          <caret line="213" column="67" lean-forward="true" selection-start-line="213" selection-start-column="67" selection-end-line="213" selection-end-column="67" />
           <folding />
         </state>
       </provider>
@@ -1727,19 +1197,459 @@
     <entry file="file://$PROJECT_DIR$/course/src/main/webapp/js/myjs/student-course.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
+          <caret line="2" column="12" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/js/information/student-course.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/js/myjs/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/js/information/user-info.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/js/information/student.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="38" column="15" lean-forward="false" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/CourseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course-service/src/test/java/com/example/courseservice/test/daotest/CollectMapperTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="46" column="58" lean-forward="false" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="58" />
+          <folding>
+            <element signature="e#1395#1396#0" expanded="false" />
+            <element signature="e#1466#1467#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/dao/CollectMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="43" column="32" lean-forward="false" selection-start-line="43" selection-start-column="15" selection-end-line="43" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CollectServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="53" column="4" lean-forward="false" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CollectService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/CollectController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="30" column="46" lean-forward="true" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/example/common/entity/Collect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="652">
+          <caret line="40" column="32" lean-forward="false" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/src/main/java/com/example/course/controller/CollectionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/information/collection.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="130" column="15" lean-forward="true" selection-start-line="130" selection-start-column="15" selection-end-line="130" selection-end-column="15" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#main#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#fieldset#0;n#div#1;n#main#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/FeignCourseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="69" column="28" lean-forward="false" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/order-service/src/main/java/com/example/orderservice/service/OrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/order-service/src/test/java/com/example/orderservice/OrderMapperTest/OrderMapperTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding>
+            <element signature="e#1499#1500#0" expanded="false" />
+            <element signature="e#1571#1572#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/order-service/src/main/java/com/example/orderservice/dao/OrderMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="51" column="35" lean-forward="false" selection-start-line="51" selection-start-column="15" selection-end-line="51" selection-end-column="35" />
+          <folding>
+            <element signature="e#662#774#0" expanded="false" />
+            <element signature="e#1659#1800#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/order-service/src/main/java/com/example/orderservice/service/OrderServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="57" column="67" lean-forward="false" selection-start-line="57" selection-start-column="67" selection-end-line="57" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/SearchController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/FeignOrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="27" column="40" lean-forward="false" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/order-service/src/main/java/com/example/orderservice/controller/OrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="35" column="45" lean-forward="false" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/information/student-course.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-748">
-          <caret line="14" column="55" lean-forward="true" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
+        <state relative-caret-position="650">
+          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="135" selection-end-column="9" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#main#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#0;n#div#1;n#main#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#main#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#fieldset#0;n#div#1;n#main#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#2674#3506#0#HTML" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/src/main/java/com/example/course/controller/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="192" column="35" lean-forward="false" selection-start-line="192" selection-start-column="35" selection-end-line="192" selection-end-column="35" />
+          <folding>
+            <element signature="method#index1#0;class#IndexController#0" expanded="false" />
+            <element signature="method#myCourseManage#0;class#IndexController#0" expanded="false" />
+            <element signature="method#courseList#0;class#IndexController#0" expanded="false" />
+            <element signature="method#studentCourse#0;class#IndexController#0" expanded="false" />
+            <element signature="method#studentCollection#0;class#IndexController#0" expanded="false" />
+            <element signature="method#getCourseComment#0;class#IndexController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/src/main/java/com/example/course/controller/OrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="201" column="32" lean-forward="false" selection-start-line="201" selection-start-column="32" selection-end-line="201" selection-end-column="32" />
+          <folding>
+            <element signature="method#order#0;class#OrderController#0" expanded="false" />
+            <element signature="method#orderTrade#0;class#OrderController#0" expanded="false" />
+            <element signature="method#orderTradeNotify#0;class#OrderController#0" expanded="false" />
+            <element signature="method#createTradeInfo#0;class#OrderController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/information/order.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-77">
+          <caret line="71" column="68" lean-forward="false" selection-start-line="71" selection-start-column="64" selection-end-line="71" selection-end-column="68" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#div#0;n#main#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#fieldset#0;n#div#2;n#div#0;n#main#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/example/common/entity/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="47" column="30" lean-forward="false" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/js/myjs/login-form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/js/myjs/course.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-571">
+          <caret line="166" column="26" lean-forward="false" selection-start-line="166" selection-start-column="26" selection-end-line="166" selection-end-column="26" />
+          <folding>
+            <marker date="1555945872388" expanded="true" signature="5938:5950" ph="..." />
+            <marker date="1555945872388" expanded="true" signature="6042:6083" ph="..." />
+            <marker date="1555945872388" expanded="true" signature="6232:6259" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/js/myjs/add-course.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="180" column="66" lean-forward="true" selection-start-line="180" selection-start-column="66" selection-end-line="180" selection-end-column="66" />
+          <folding>
+            <element signature="n#!!block;n#sortSelect_1#0" expanded="false" />
+            <element signature="n#!!block;n#sortSelect_2#0" expanded="false" />
+            <marker date="1556125067609" expanded="true" signature="5773:5781" ph="&amp;##xe608;" />
+            <marker date="1556125067609" expanded="true" signature="5877:5885" ph="&amp;##x1006;" />
+            <marker date="1556125067609" expanded="true" signature="5984:5992" ph="&amp;##xe642;" />
+            <marker date="1556125067609" expanded="true" signature="6119:6127" ph="&amp;##xe608;" />
+            <marker date="1556125067609" expanded="true" signature="6223:6231" ph="&amp;##x1006;" />
+            <marker date="1556125067609" expanded="true" signature="6330:6338" ph="&amp;##xe642;" />
+            <marker date="1556125067609" expanded="true" signature="6416:6424" ph="&amp;##xe652;" />
+            <marker date="1556125067609" expanded="true" signature="6528:6536" ph="&amp;##xe681;" />
+            <marker date="1556125067609" expanded="true" signature="6634:6642" ph="&amp;##xe655;" />
+            <marker date="1556125067609" expanded="true" signature="6803:6811" ph="&amp;##xe608;" />
+            <marker date="1556125067609" expanded="true" signature="6911:6919" ph="&amp;##x1006;" />
+            <marker date="1556125067609" expanded="true" signature="7022:7030" ph="&amp;##xe642;" />
+            <marker date="1556125067609" expanded="true" signature="7112:7120" ph="&amp;##xe652;" />
+            <marker date="1556125067609" expanded="true" signature="7228:7236" ph="&amp;##xe681;" />
+            <marker date="1556125067609" expanded="true" signature="7338:7346" ph="&amp;##xe655;" />
+            <marker date="1556125067609" expanded="true" signature="7905:7913" ph="&amp;##xe608;" />
+            <marker date="1556125067609" expanded="true" signature="8013:8021" ph="&amp;##x1006;" />
+            <marker date="1556125067609" expanded="true" signature="8124:8132" ph="&amp;##xe642;" />
+            <marker date="1556125067609" expanded="true" signature="8131:8132" ph="&amp;##xeb61;" />
+            <marker date="1556125067609" expanded="true" signature="8214:8222" ph="&amp;##xe652;" />
+            <marker date="1556125067609" expanded="true" signature="8330:8338" ph="&amp;##xe681;" />
+            <marker date="1556125067609" expanded="true" signature="8440:8448" ph="&amp;##xe655;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/add-course.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="59" lean-forward="false" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/js/myjs/editor-course.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="188" column="100" lean-forward="false" selection-start-line="188" selection-start-column="92" selection-end-line="188" selection-end-column="100" />
+          <folding>
+            <marker date="1556124421094" expanded="true" signature="125:133" ph="&amp;##xe608;" />
+            <marker date="1556124421094" expanded="true" signature="229:237" ph="&amp;##x1006;" />
+            <marker date="1556124421094" expanded="true" signature="336:340" ph="&amp;##xeb61;" />
+            <marker date="1556124421094" expanded="true" signature="336:344" ph="&amp;##xe642;" />
+            <marker date="1556124421094" expanded="true" signature="471:479" ph="&amp;##xe608;" />
+            <marker date="1556124421094" expanded="true" signature="575:583" ph="&amp;##x1006;" />
+            <marker date="1556124421094" expanded="true" signature="682:690" ph="&amp;##xe642;" />
+            <marker date="1556124421094" expanded="true" signature="768:776" ph="&amp;##xe652;" />
+            <marker date="1556124421094" expanded="true" signature="880:888" ph="&amp;##xe681;" />
+            <marker date="1556124421094" expanded="true" signature="986:994" ph="&amp;##xe655;" />
+            <marker date="1556124421094" expanded="true" signature="7181:7189" ph="&amp;##xe608;" />
+            <marker date="1556124421094" expanded="true" signature="7289:7297" ph="&amp;##x1006;" />
+            <marker date="1556124421094" expanded="true" signature="7400:7408" ph="&amp;##xe642;" />
+            <marker date="1556124421094" expanded="true" signature="7490:7498" ph="&amp;##xe652;" />
+            <marker date="1556124421094" expanded="true" signature="7606:7614" ph="&amp;##xe681;" />
+            <marker date="1556124421094" expanded="true" signature="7716:7724" ph="&amp;##xe655;" />
+            <marker date="1556124421094" expanded="true" signature="8283:8291" ph="&amp;##xe608;" />
+            <marker date="1556124421094" expanded="true" signature="8391:8399" ph="&amp;##x1006;" />
+            <marker date="1556124421094" expanded="true" signature="8502:8510" ph="&amp;##xe642;" />
+            <marker date="1556124421094" expanded="true" signature="8592:8600" ph="&amp;##xe652;" />
+            <marker date="1556124421094" expanded="true" signature="8708:8716" ph="&amp;##xe681;" />
+            <marker date="1556124421094" expanded="true" signature="8818:8826" ph="&amp;##xe655;" />
+            <marker date="1556124421094" expanded="true" signature="16543:16551" ph="&amp;##xe608;" />
+            <marker date="1556124421094" expanded="true" signature="16659:16667" ph="&amp;##x1006;" />
+            <marker date="1556124421094" expanded="true" signature="16778:16786" ph="&amp;##xe642;" />
+            <marker date="1556124421094" expanded="true" signature="16785:16786" ph="&amp;##xeb61;" />
+            <marker date="1556124421094" expanded="true" signature="16894:16902" ph="&amp;##xe652;" />
+            <marker date="1556124421094" expanded="true" signature="17018:17026" ph="&amp;##xe681;" />
+            <marker date="1556124421094" expanded="true" signature="17136:17144" ph="&amp;##xe655;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-22">
+          <caret line="20" column="6" lean-forward="true" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/css/mycss/course-manager-nav.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/course-detail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1254">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/course.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3171">
+          <caret line="204" column="8" lean-forward="false" selection-start-line="204" selection-start-column="8" selection-end-line="204" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/dao/CourseMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="14" column="101" lean-forward="false" selection-start-line="14" selection-start-column="101" selection-end-line="14" selection-end-column="101" />
+          <folding>
+            <element signature="e#1571#1693#0" expanded="false" />
+            <element signature="e#2863#3550#0" expanded="false" />
+            <element signature="e#4546#5190#0" expanded="false" />
+            <element signature="e#5247#5392#0" expanded="false" />
+            <element signature="e#6513#6647#0" expanded="false" />
+            <element signature="e#7646#7811#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/js/myjs/my-course-list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="42" lean-forward="true" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/css/mycss/my-course-list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/css/mycss/course-list.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="45" column="17" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/css/mycss/my-course-list.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/course-list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="59" column="32" lean-forward="true" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="136" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/my-course-list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="33" column="103" lean-forward="false" selection-start-line="33" selection-start-column="103" selection-end-line="33" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/course-manager-nav.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="31" column="79" lean-forward="true" selection-start-line="31" selection-start-column="79" selection-end-line="31" selection-end-column="79" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/editor-course.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>

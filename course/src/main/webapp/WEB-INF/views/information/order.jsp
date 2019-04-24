@@ -40,55 +40,168 @@
                         <div class="flex-cell">操作</div>
                     </div>
                 </div>
-                <c:forEach items="${requestScope.orderList}" var="order">
-                    <div class="flex-list-item">
-                        <div class="flex-row head">
-                            <div class="time">
-                                <span>${order.orderDate}</span>
+                <div class="order-body clear-fix">
+                    <c:forEach items="${requestScope.orderList}" var="order">
+                        <div class="flex-list-item">
+                            <div class="flex-row head">
+                                <div class="time">
+                                    <span>${order.orderDate}</span>
+                                </div>
+                            </div>
+                            <div class="flex-row content">
+                                <div class="flex-cell first cover item-block">
+                                    <a href="" class="link js-report-link" target="_blank">
+                                        <img src="${order.orderCourse.picUrl}" alt="课程封面">
+                                        <div class="title">
+                                            <span title="${order.orderCourse.courseName}">${order.orderCourse.courseName}</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <c:if test="${order.orderCourse.coursePrice <= 0}">
+                                    <div class="flex-cell price item-block">免费</div>
+                                </c:if>
+                                <c:if test="${order.orderCourse.coursePrice > 0}">
+                                    <div class="flex-cell price item-block">${order.orderCourse.coursePrice}</div>
+                                </c:if>
+                                <div class="flex-cell wording item-block">
+                                    <c:choose>
+                                        <c:when test="${order.orderStatus == 1}">
+                                            <span class="black">报名成功</span>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <span class="black">等待支付</span>
+                                        </c:otherwise>
+                                    </c:choose>
+                                </div>
+                                <div class="flex-cell operating item-block">
+                                    <c:if test="${order.orderCommentary == 0 && order.orderStatus == 1}">
+                                        <a href="" class="link-block" target="_blank">评价课程</a>
+                                    </c:if>
+                                    <c:if test="${order.orderStatus == 1}">
+                                        <a href="javascript:void(0);" class="link-block">取消课程</a>
+                                    </c:if>
+                                    <c:if test="${order.orderStatus == 0}">
+                                        <a href="javascript:void(0);" class="link-block">取消订单</a>
+                                    </c:if>
+                                </div>
                             </div>
                         </div>
-                        <div class="flex-row content">
-                            <div class="flex-cell first cover item-block">
-                                <a href="" class="link js-report-link" target="_blank">
-                                    <img src="${order.orderCourse.picUrl}" alt="课程封面">
-                                    <div class="title">
-                                        <span title="${order.orderCourse.courseName}">${order.orderCourse.courseName}</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <c:if test="${order.orderCourse.coursePrice <= 0}">
-                                <div class="flex-cell price item-block">免费</div>
-                            </c:if>
-                            <c:if test="${order.orderCourse.coursePrice > 0}">
-                                <div class="flex-cell price item-block">${order.orderCourse.coursePrice}</div>
-                            </c:if>
-                            <div class="flex-cell wording item-block">
-                                <c:choose>
-                                    <c:when test="${order.orderStatus == 1}">
-                                        <span class="black">报名成功</span>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <span class="black">等待支付</span>
-                                    </c:otherwise>
-                                </c:choose>
-                            </div>
-                            <div class="flex-cell operating item-block">
-                                <c:if test="${order.orderCommentary == 0 && order.orderStatus == 1}">
-                                    <a href="" class="link-block" target="_blank">评价课程</a>
-                                </c:if>
-                                <c:if test="${order.orderStatus == 1}">
-                                    <a href="javascript:void(0);" class="link-block">取消报名</a>
-                                </c:if>
-                                <c:if test="${order.orderStatus == 0}">
-                                    <a href="javascript:void(0);" class="link-block">取消订单</a>
-                                </c:if>
-                            </div>
-                        </div>
-                    </div>
-                </c:forEach>
+                    </c:forEach>
+                </div>
+                <div class="flex-list-header clear-fix" style="margin: 0 auto;width: 1200px;">
+                    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+                        <legend></legend>
+                    </fieldset>
+                    <div id="page"></div>
+                </div>
             </div>
         </main>
     </section>
 </div>
 </body>
+<script>
+    function pagingFull(data) {
+        var content = "";
+        for (var i in data) {
+            var order = data[i];
+            var price = '免费';
+            var cancel = '';
+            var commentary = '';
+            var cancelOrder = '';
+            var wartTrade = '<span class="black">等待支付</span>';
+
+            if(order.orderCourse.coursePrice != 0){
+                price = '￥' + order.orderCourse.coursePrice;
+            }
+            if(order.orderStatus == 1){
+                wartTrade = '<span class="black">报名成功</span>'
+            }
+            if (order.orderCommentary == 0 && order.orderStatus == 1){
+                commentary = '<a href="" class="link-block" target="_blank">评价课程</a>';
+            }
+            if (order.orderStatus == 1){
+                cancel = '<a href="javascript:void(0);" class="link-block">取消课程</a>';
+            }
+            if(order.orderStatus == 0){
+                cancelOrder = '<a href="javascript:void(0);" class="link-block">取消订单</a>';
+            }
+
+            var str = '<div class="flex-list-item">' +
+                '<div class="flex-row head">' +
+                '<div class="time">' +
+                '<span>'+ order.orderDate +'</span>' +
+                '</div>' +
+                '</div>' +
+                '<div class="flex-row content">' +
+                '<div class="flex-cell first cover item-block">' +
+                '<a href="" class="link js-report-link" target="_blank">' +
+                '<img src="'+ order.orderCourse.picUrl + '" alt="课程封面">' +
+                '<div class="title">' +
+                '<span title="'+ order.orderCourse.courseName + '">'+ order.orderCourse.courseName+ '</span>' +
+                '</div>' +
+                '</a>' +
+                '</div>' +
+                '<div class="flex-cell price item-block">'+ price +'</div>' +
+                '<div class="flex-cell wording item-block">' +
+                wartTrade +
+                '</div>' +
+                '<div class="flex-cell operating item-block">' +
+                commentary +
+                cancel +
+                cancelOrder +
+                '</div>' +
+                '</div>' +
+                '</div>';
+            content += str;
+        }
+        $(".order-body").html(content);
+    }
+
+    function pageSplit(target) {
+        console.log("nice nice nice");
+        var page = $(target).attr("data-page") - 1;
+        $.getJSON("/order/" + page + "/" + size, function (data) {
+            console.log(data);
+            layui.use(['laypage', 'layer'], function () {
+                var laypage = layui.laypage;
+                laypage.render({
+                    elem: 'page'
+                    , count: data.count
+                    //获取hash值为fenye的当前页
+                    , curr: data.page + 1
+                });
+            });
+
+            pagingFull(data.resource);
+            $("#page>div>a").each(function (i) {
+                $(this).attr("onclick", "pageSplit(this)")
+            });
+        });
+    }
+
+    function nice() {
+        console.log("nice nice ncie");
+    }
+
+</script>
+<script>
+    var size = ${requestScope.pojo.size};
+    var type = ${requestScope.pojo.type};
+
+    layui.use(['laypage', 'layer'], function () {
+        var laypage = layui.laypage;
+        laypage.render({
+            elem: 'page'
+            , count: ${requestScope.pojo.count}
+            //获取hash值为fenye的当前页
+            , curr: ${requestScope.pojo.page + 1}
+        });
+    });
+
+    window.onload = function () {
+        $("#page>div>a").each(function (i) {
+            $(this).attr("onclick", "pageSplit(this)")
+        });
+    }
+</script>
 </html>

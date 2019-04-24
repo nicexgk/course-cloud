@@ -57,18 +57,6 @@ public class FeignCourseServiceTest {
     }
 
     @Test
-    public void addCommentaryTest(){
-        Commentary commentary = new Commentary();
-        User user = new User();
-        user.setUserId(7);
-        commentary.setCommentUser(user);
-        commentary.setCommentCourse(179);
-        commentary.setCommentContent("nice nice nice");
-        commentary.setCommentGrade(5);
-        System.out.println(feignCourseService.addCommentary(commentary));
-    }
-
-    @Test
     public void getCourseByTypePageSizeTest(){
         Superstate superstate = feignCourseService.getCourseList(46, 1, 3);
         ArrayList<Course> arrayList = objectMapper.convertValue(superstate.getResource(), new TypeReference<ArrayList<Course>>(){});
@@ -105,7 +93,7 @@ public class FeignCourseServiceTest {
         System.out.println("==============");
         System.out.println(feignCourseService.deleteCollect(9, 179));
         System.out.println("==============");
-        System.out.println(feignCourseService.getCollectList(9, 0, 5));
+        System.out.println(feignCourseService.getCollectListBySidForPageSize(9, 0, 5));
     }
 
     @Test
@@ -118,8 +106,4 @@ public class FeignCourseServiceTest {
         System.out.println(feignCourseService.searchCourseListByNameForPageSize("nic", 0, 6));
     }
 
-    @Test
-    public void getCommentaryListByCidForPageSizeTest(){
-        System.out.println(feignCourseService.getCommentaryListByCidForPageSize(179, 0 , 10));
-    }
 }

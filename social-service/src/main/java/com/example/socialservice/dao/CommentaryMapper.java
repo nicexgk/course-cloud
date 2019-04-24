@@ -1,4 +1,4 @@
-package com.example.courseservice.dao;
+package com.example.socialservice.dao;
 
 import com.example.common.entity.Commentary;
 import org.apache.ibatis.annotations.*;
@@ -9,8 +9,8 @@ import java.util.ArrayList;
 public interface CommentaryMapper {
 
     @Insert("insert into commentary(commentary_user, commentary_course, commentary_grade, commentary_content)" +
-            "values(#{commentUser.studentId}, #{commentCourse}, #{commentGrade}, #{commentContent})")
-    public boolean addCommentary(Commentary commentary);
+            "values(#{commentUser.userId}, #{commentCourse}, #{commentGrade}, #{commentContent})")
+    public boolean insertCommentary(Commentary commentary);
 
     @Select("select * from commentary t1 inner join user_info t2 on t1.commentary_user = t2.user_id and commentary_course = #{arg0} limit #{arg1}, #{arg2}")
     @Results({
@@ -27,4 +27,5 @@ public interface CommentaryMapper {
 
     @Select("select count(1) from commentary where commentary_course = #{arg0}")
     public int queryCommentaryByCidCount(int cid);
+
 }

@@ -1,33 +1,42 @@
-package com.example.courseservice.service;
+package com.example.socialservice.service;
 
 import com.example.common.entity.Commentary;
 import com.example.common.entity.Status;
 import com.example.common.entity.Superstate;
-import com.example.courseservice.dao.CommentaryMapper;
+import com.example.socialservice.dao.CommentaryMapper;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
 
 @Service
-public class CommentaryServiceImpl implements CommentaryService {
+public class CommentaryServiceImpl implements CommentaryService{
 
     @Resource
-    CommentaryMapper commentaryMapper;
+    private CommentaryMapper commentaryMapper;
 
-    // 添加评论
     @Override
     public Status addCommentary(Commentary commentary) {
         Status status = new Status();
-        if (!commentaryMapper.addCommentary(commentary)) {
+        if (commentary.getCommentGrade() == null){
+            commentary.setCommentGrade(1);
+        } else {
+            int grade;
+            grade = commentary.getCommentGrade() > 5 ? 5 : commentary.getCommentGrade();
+            commentary.setCommentGrade(grade);
+            grade = commentary.getCommentGrade() <= 0 ? 0 : commentary.getCommentGrade();
+            commentary.setCommentGrade(grade);
+        }
+        if (!commentaryMapper.insertCommentary(commentary)){
             status.setStatus(400);
-            status.setDescription("评论发布失败");
+            status.setDescription("评论添加失败");
             return status;
         }
         status.setStatus(200);
-        status.setDescription("评论发布成功");
+        status.setDescription("评论添加成功");
         return status;
     }
+
 
     // 根据课程的id分页查询课程的评论
     @Override

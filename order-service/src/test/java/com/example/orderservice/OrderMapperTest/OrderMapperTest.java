@@ -32,7 +32,6 @@ public class OrderMapperTest {
 
         System.out.println(orderMapper.insertOrder(order));
         System.out.println(order);
-
     }
 
     @Test
@@ -51,5 +50,11 @@ public class OrderMapperTest {
     public void queryOrderBySidPageSizeTest(){
         System.out.println(orderMapper.queryOrderListBySidStartSize(8, 0  ,10 ));
     }
+
+    @Test
+    public void queryOrderCountBySid(){
+        System.out.println(orderMapper.queryOrderCountBySid(21));
+    }
+
 
 }

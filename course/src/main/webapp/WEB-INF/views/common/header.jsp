@@ -41,7 +41,7 @@
                 <a href="/" target="_blank" title="首页">首页</a>
                 <a href="/course/page/0/20" target="_blank" title="首页">课程</a>
 
-            <!--导航组件-->
+            <!--导航组件---->
             <div class="mod-nav header-nav" id="navigator">
                 <ul class="mod-nav_list">
                     <!---------------第1个li start ----------------->
@@ -141,7 +141,7 @@
                     <!-- 用户已登录 -->
                     <div class="mod-header_wrap-user dropdown-wrap" id="js_logout_inter" style="display: block;">
                         <p class="mod-header__user-name dropdown-tt">
-                            <a href="information" class="mod-header__user-operation" rel="nofollow"
+                            <a href="/studentcourse.html" class="mod-header__user-operation" rel="nofollow"
                                report-hover="module=personalcenter&amp;position=nickname"
                                report-attr="module=personalcenter&amp;position=nickname">
                                 <img alt="头像" class="mod-header__user-avatar js-avatar" src="${sessionScope.user.userIcon}">
@@ -177,7 +177,7 @@
                     <!----- 用户没有登录 ----->
                     <div class="mod-header_wrap-user dropdown-wrap" id="js_logout_inter" style="display: none;">
                         <p class="mod-header__user-name dropdown-tt">
-                            <a href="information" class="mod-header__user-operation" rel="nofollow"
+                            <a href="/studentcourse.html" class="mod-header__user-operation" rel="nofollow"
                                report-hover="module=personalcenter&amp;position=nickname"
                                report-attr="module=personalcenter&amp;position=nickname">
                                 <img alt="头像" class="mod-header__user-avatar js-avatar" src="">

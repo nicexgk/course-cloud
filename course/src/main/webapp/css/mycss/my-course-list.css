@@ -1,59 +1,127 @@
 
-.card-body{
-    margin: 0 auto;
-    padding: 0 20px;
+
+
+.course-content-list{
+    margin-left: -7px;
 }
 
-.card-item{
-    height: 300px;
-    text-align: center;
-    padding: 25px;
-}
-.card-item-inner:hover{
-    border: #EEEEEE solid 2px;
-}
-
-.card-item-inner{
-    margin: auto;
-    width: 320px;
-    height: 280px;
-    left: 50%;
-    top: 50%;
-}
-.item-image{
-    min-width: 300px;
-    min-height: 200px;
-    width: 250px;
-    height: 200px;
-    margin-top: 10px;
-}
-.item-title{
-    min-width: 300px;
-    width: 250px;
-    margin: 0px auto;
-    text-align: left;
-    padding: 5px;
-
-}
-.item-line{
-    min-width: 300px;
-    width: 250px;
-    margin: 0px auto;
-    text-align: left;
-    padding: 5px;
-    margin-top: 10px;
-
-}
-
-.item-price .item-editor{
-    display: inline-block;
+.card-li-item{
+    float: left;
+    width: 235px;
+    height: 268px;
     margin: 2px;
+    border: #FFFFFF solid 1px;
+    padding: 7px;
+    text-align: center;
 }
 
-.item-editor{
+.card-li-item:hover{
+    border: #ddd solid 1px;
+    -webkit-box-shadow: 1px 1px 2px 1px #ECECEC;
+    -moz-box-shadow: 1px 1px 2px 1px #ECECEC;
+    box-shadow: 1px 1px 2px 1px #ECECEC;
+}
+.item-card{
+    overflow: hidden;
+}
+
+.item-img-link img{
+    width: 220px;
+    height: 124px;
+}
+.item-status-going{
+    background-color: rgba(0,0,0,.6);
+    margin-top: -30px;
+    line-height: 24px;
+    font-size: 12px;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.item-status-going span{
+    display: inline-block;
+    padding-left: 3px;
+}
+
+.item-title{
+    height: 40px;
+    margin-bottom: 30px;
+    margin-top: 5px;
+}
+
+.item-card{
+    margin-bottom: 8px;
+}
+
+.item-inline-date{
+    display: inline-block;
+    float: left;
+}
+
+.item-inline-teacher{
+    display: inline-block;
     float: right;
-    padding: 3px 15px;
 }
-.item-editor:hover{
-    background-color: #E3E6F2;
-}
+
+
+
+
+
+/*.card-body{*/
+    /*margin: 0 auto;*/
+    /*padding: 0 20px;*/
+/*}*/
+
+/*.card-item{*/
+    /*height: 300px;*/
+    /*text-align: center;*/
+    /*padding: 25px;*/
+/*}*/
+/*.card-item-inner:hover{*/
+    /*border: #EEEEEE solid 2px;*/
+/*}*/
+
+/*.card-item-inner{*/
+    /*margin: auto;*/
+    /*width: 320px;*/
+    /*height: 280px;*/
+    /*left: 50%;*/
+    /*top: 50%;*/
+/*}*/
+/*.item-image{*/
+    /*min-width: 300px;*/
+    /*min-height: 200px;*/
+    /*width: 250px;*/
+    /*height: 200px;*/
+    /*margin-top: 10px;*/
+/*}*/
+/*.item-title{*/
+    /*min-width: 300px;*/
+    /*width: 250px;*/
+    /*margin: 0px auto;*/
+    /*text-align: left;*/
+    /*padding: 5px;*/
+
+/*}*/
+/*.item-line{*/
+    /*min-width: 300px;*/
+    /*width: 250px;*/
+    /*margin: 0px auto;*/
+    /*text-align: left;*/
+    /*padding: 5px;*/
+    /*margin-top: 10px;*/
+
+/*}*/
+
+/*.item-price .item-editor{*/
+    /*display: inline-block;*/
+    /*margin: 2px;*/
+/*}*/
+
+/*.item-editor{*/
+    /*float: right;*/
+    /*padding: 3px 15px;*/
+/*}*/
+/*.item-editor:hover{*/
+    /*background-color: #E3E6F2;*/
+/*}*/

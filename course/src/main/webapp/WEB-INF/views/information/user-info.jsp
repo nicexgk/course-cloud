@@ -23,7 +23,7 @@
         <aside class="aside-left">
             <div class="l-nav-area">
                 <ul class="l-nav">
-                    <li class="l-nav-item"><a title="课程表" href="/studentcourse.html" >课程表</a></li>
+                    <li class="l-nav-item"><a title="课程表" href="/studentcourse.html">课程表</a></li>
                     <li class="l-nav-item"><a title="全部订单" href="/order.html">全部订单</a></li>
                     <li class="l-nav-item"><a title="收藏" href="/collection.html">收藏列表</a></li>
                     <li class="l-nav-item"><a title="个人信息" href="/userinfo.html" class="active">个人信息</a></li>
@@ -65,16 +65,8 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">性别</label>
                         <div class="layui-input-block">
-                            <c:choose>
-                                <c:when test="${sessionScope.user.userSex == 0}">
-                                    <input type="radio" name="sex" value="男" title="男" checked="checked">
-                                    <input type="radio" name="sex" value="女" title="女">
-                                </c:when>
-                                <c:otherwise>
-                                    <input type="radio" name="sex" value="男" title="男">
-                                    <input type="radio" name="sex" value="女" title="女" checked="checked">
-                                </c:otherwise>
-                            </c:choose>
+                            <input type="radio" name="sex" value="男" title="男" ${sessionScope.user.userSex == 0 ? 'checked="checked"' : ""}>
+                            <input type="radio" name="sex" value="女" title="女" ${sessionScope.user.userSex != 0 ? 'checked="checked"' : ""}>
                         </div>
                     </div>
                     <div class="layui-form-item">

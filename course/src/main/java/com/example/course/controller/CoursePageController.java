@@ -2,9 +2,12 @@ package com.example.course.controller;
 
 import com.example.common.entity.*;
 import com.example.course.service.feign.FeignCourseService;
+import com.example.course.service.feign.FeignSocialService;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,9 +28,11 @@ import java.util.concurrent.*;
 public class CoursePageController {
     public static ExecutorService executorService = Executors.newFixedThreadPool(8);
     @Resource
-    FeignCourseService feignCourseService;
+    private FeignCourseService feignCourseService;
+    @Resource
+    private FeignSocialService feignSocialService;
     @Autowired
-    ObjectMapper objectMapper;
+    private ObjectMapper objectMapper;
 
     @ModelAttribute
     public void addAttribute(HttpServletRequest request) {
@@ -36,6 +41,7 @@ public class CoursePageController {
     }
 
     @ApiOperation(value = "根据课程的id获取课程的的详细页面信息", notes = "返回的是HTML代码不是JOSN数据")
+    @ApiImplicitParam(name = "cid", value = "课程的id")
     @GetMapping("/{cid}")
     public String getCoursePage(HttpServletRequest request, @PathVariable("cid") int cid) throws ExecutionException, InterruptedException {
         System.out.println("this is course page controller");
@@ -44,7 +50,7 @@ public class CoursePageController {
         FutureTask<Superstate> commentaryTask = new FutureTask<>(new Callable<Superstate>() {
             @Override
             public Superstate call() throws Exception {
-                return feignCourseService.getCommentaryListByCidForPageSize(cid, 0, 10);
+                return feignSocialService.getCommentaryListByCidForPageSize(cid, 0, 10);
             }
         });
         executorService.submit(commentaryTask);
@@ -130,16 +136,6 @@ public class CoursePageController {
         }
         request.setAttribute("studyList", studyList);
         return "/WEB-INF/views/course-list.jsp";
-    }
-
-    @ApiOperation(value = "根据cid获取对应课程的评分页面信息", notes = "返回的是HTML代码不是JSON数据")
-    @GetMapping("/commentary/{cid}")
-    public String getCourseComment(HttpServletRequest request, @PathVariable("cid") int cid) {
-        System.out.println(cid);
-        Course course = feignCourseService.getCourseById(cid);
-        System.out.println(course);
-        request.setAttribute("course", course);
-        return "/WEB-INF/views/add-comment.jsp";
     }
 
 

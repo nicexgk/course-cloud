@@ -5,7 +5,9 @@
     <title>课程评论</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="/layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="/css/mycss/home-page.css"/>
     <link rel="stylesheet" type="text/css" href="/css/mycss/add-comment.css">
+
 
     <script src="/js/jquery.js"></script>
     <script src="/layui/layui.js"></script>
@@ -92,7 +94,7 @@
         console.log(grade)
         console.log(content);
         $.ajax({
-            url: "/course/commentary/",
+            url: "/social/commentary/",
             type: "post",
             contentType: "application/json",
             data: JSON.stringify(commentary),

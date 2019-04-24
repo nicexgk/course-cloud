@@ -2,6 +2,7 @@ package com.example.orderservice.service;
 
 import com.example.common.entity.Order;
 import com.example.common.entity.Status;
+import com.example.common.entity.Superstate;
 import com.example.orderservice.dao.OrderMapper;
 import org.springframework.stereotype.Service;
 
@@ -46,7 +47,15 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public ArrayList<Order> getOrderListBySidForPageSize(int sid, int page, int size) {
-        return orderMapper.queryOrderListBySidStartSize(sid, page * size, size);
+    public Superstate getOrderListBySidForPageSize(int sid, int page, int size) {
+        Superstate superstate = new Superstate();
+        page = page >= 0 ? page : 0;
+        size = size >= 0 ? size : 0;
+        superstate.setPage(page);
+        superstate.setSize(size);
+        ArrayList<Order> orderList = orderMapper.queryOrderListBySidStartSize(sid, page * size, size);
+        superstate.setResource(orderList);
+        superstate.setCount(orderMapper.queryOrderCountBySid(sid));
+        return superstate;
     }
 }

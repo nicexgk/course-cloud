@@ -9,11 +9,9 @@
     <link rel="stylesheet" type="text/css" href="/css/mycss/home-page.css"/>
     <link rel="stylesheet" type="text/css" href="/css/mycss/informataion.css">
 
+    <script href="/js/information/student.js"></script>
     <script href="/js/jquery.js"></script>
     <script href="/layui/layui.js"></script>
-    <script href="/js/information/student-course.js"></script>
-    <script href="/js/myjs/student-course.js"></script>
-
 
 
 </head>
@@ -62,8 +60,60 @@
         </main>
     </section>
 </div>
+
 <script>
 
+
+    function pagingFull(data) {
+
+        var content = "";
+        for (var i in data) {
+            var studentCourse = data[i];
+            var course = '<div class="tab-ctn">' +
+                '<div class="tab-course-list clear-fix">' +
+                '<div class="tab-item-ctn">' +
+                '<a><img src="' + studentCourse.course.picUrl + '"></a>' +
+                '</div>' +
+                '<div class="tab-item-ctn">' +
+                '<p class="tab-title" title="' + studentCourse.course.courseName + '">' +
+                '<a target="_blank" href="/course/page/' + studentCourse.course + '">' + studentCourse.course.courseName + '</a>' +
+                '</p>' +
+                '</div>' +
+                '</div>' +
+                '</div>';
+            content += course;
+        }
+        $(".student-course-contain").html(content);
+    }
+
+    function pageSplit(target) {
+        console.log("nice nice nice");
+        var page = $(target).attr("data-page") - 1;
+        $.getJSON("/student/course/" + page + "/" + size, function (data) {
+            console.log(data);
+
+            layui.use(['laypage', 'layer'], function () {
+                var laypage = layui.laypage;
+                laypage.render({
+                    elem: 'page'
+                    , count: data.count
+                    //获取hash值为fenye的当前页
+                    , curr: data.page + 1
+                });
+            });
+
+            pagingFull(data.resource);
+            $("#page>div>a").each(function (i) {
+                $(this).attr("onclick", "pageSplit(this)")
+            });
+        });
+    }
+    function nice() {
+        console.log("nice nice ncie");
+    }
+
+</script>
+<script>
     var size = ${requestScope.pojo.size};
     var type = ${requestScope.pojo.type};
 
@@ -79,7 +129,7 @@
 
     window.onload = function () {
         $("#page>div>a").each(function (i) {
-            $(this).attr("onclick", "paging(this)")
+            $(this).attr("onclick", "pageSplit(this)")
         });
     }
 

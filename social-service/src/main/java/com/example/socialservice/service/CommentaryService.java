@@ -1,13 +1,10 @@
-package com.example.courseservice.service;
+package com.example.socialservice.service;
 
 import com.example.common.entity.Commentary;
 import com.example.common.entity.Status;
 import com.example.common.entity.Superstate;
 
-import java.util.ArrayList;
-
 public interface CommentaryService {
-
     // 添加评论方法
     public Status addCommentary(Commentary commentary);
 

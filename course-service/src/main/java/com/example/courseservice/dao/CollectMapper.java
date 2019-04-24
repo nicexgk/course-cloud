@@ -39,4 +39,7 @@ public interface CollectMapper {
             @Result(property = "collectCourse.coursePrice", column = "course_price"),
     })
     public Collect queryCollectBySidCid(int sid, int cid);
+
+    @Select("select count(1) from collect where collect_user = #{arg0}")
+    public int queryCollectCount(int sid);
 }

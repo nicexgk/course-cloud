@@ -3,11 +3,11 @@ var i = 0;
 // 目录变量
 var catalogEditor = '<span class="catalog-tool catalog-add layui-icon" onclick="addCatalog(this)">&#xe608;</span>' +
     '<span class="catalog-tool catalog-sub layui-icon" onclick="removeCatalog(this)">&#x1006;</span>' +
-    '<span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xeb61;</span>';
+    '<span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xe642;</span>';
 // 子目录变量
 var catalogEditorChild = '<span class="catalog-tool catalog-add layui-icon" onclick="addChildCatalog(this)">&#xe608;</span>' +
     '<span class="catalog-tool catalog-sub layui-icon" onclick="removeCatalog(this)">&#x1006;</span>' +
-    '<span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xeb61;</span>' +
+    '<span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xe642;</span>' +
     '<span class="catalog-tool catalog-view layui-icon" onclick="">&#xe652;</span>' +
     '<span class="catalog-tool catalog-upload layui-icon upload-file-' + ++i + '" onclick="">&#xe681;</span>' +
     '<span class="catalog-tool catalog-open layui-icon open-file-' + i + '" onclick="">&#xe655;</span>';
@@ -186,7 +186,7 @@ function sortSelect_2(index_2) {
 function addCatalog(target) {
     var catalogEditorChild = '<span class="catalog-tool catalog-add layui-icon" onclick="addChildCatalog(this)">&#xe608;</span>' +
         '<span class="catalog-tool catalog-sub layui-icon" onclick="removeCatalog(this)">&#x1006;</span>' +
-        '<span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xeb61;</span>' +
+        '<span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xe642;</span>' +
         '<span class="catalog-tool catalog-view layui-icon" onclick="">&#xe652;</span>' +
         '<span class="catalog-tool catalog-upload layui-icon upload-file-' + ++i + '" onclick="">&#xe681;</span>' +
         '<span class="catalog-tool catalog-open layui-icon open-file-' + i + '" onclick="">&#xe655;</span>';
@@ -202,7 +202,7 @@ function addCatalog(target) {
 function addChildCatalog(target) {
     var catalogEditorChild = '<span class="catalog-tool catalog-add layui-icon" onclick="addChildCatalog(this)">&#xe608;</span>' +
         '<span class="catalog-tool catalog-sub layui-icon" onclick="removeCatalog(this)">&#x1006;</span>' +
-        '<span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xeb61;</span>' +
+        '<span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xe642;</span>' +
         '<span class="catalog-tool catalog-view layui-icon" onclick="">&#xe652;</span>' +
         '<span class="catalog-tool catalog-upload layui-icon upload-file-' + ++i + '" onclick="">&#xe681;</span>' +
         '<span class="catalog-tool catalog-open layui-icon open-file-' + i + '" onclick="">&#xe655;</span>';
@@ -434,7 +434,7 @@ function initCatalog() {
             var child = parent.childList[chi];
             var catalogEditorChild = '<span class="catalog-tool catalog-add layui-icon" onclick="addChildCatalog(this)">&#xe608;</span>' +
                 '<span class="catalog-tool catalog-sub layui-icon" onclick="removeCatalog(this)">&#x1006;</span>' +
-                '<span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xeb61;</span>' +
+                '<span class="catalog-tool catalog-editor layui-icon" onclick="editorCatalog(this)">&#xe642;</span>' +
                 '<span class="catalog-tool catalog-view layui-icon" onclick="previewVideo(this)">&#xe652;</span>' +
                 '<span class="catalog-tool catalog-upload layui-icon upload-file-' + ++i + '" onclick="">&#xe681;</span>' +
                 '<span class="catalog-tool catalog-open layui-icon open-file-' + i + '" onclick="">&#xe655;</span>';

@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import springfox.documentation.annotations.ApiIgnore;
 
 import javax.annotation.Resource;
@@ -18,7 +19,6 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.concurrent.*;
 
-@ApiIgnore
 @Controller
 public class IndexController {
     //创建一个固定大小的线程池用于调用服务
@@ -43,6 +43,7 @@ public class IndexController {
         ArrayList<CourseType> courseTypes = (ArrayList<CourseType>) request.getAttribute("courseTypeCatalog");
         FutureTask<?> futureTasks[] = new FutureTask[courseTypes.size()];
         int i = 0;
+        // 根据课程类型获取指定条数的课程
         for (CourseType courseType : courseTypes) {
             futureTasks[i] = new FutureTask<LinkedHashMap<String, ArrayList<Course>>>(new Callable<LinkedHashMap<String, ArrayList<Course>>>() {
                 @Override
@@ -50,23 +51,28 @@ public class IndexController {
                     return feignCourseService.getCourseTopNumByParentType(courseType.getTypeId(), 0, 8);
                 }
             });
+            // 异步调用课程服务获取课程信息
             executorService.submit(futureTasks[i]);
             i++;
         }
-
+        // 获取浏览排行榜列表
         FutureTask<ArrayList<Course>> popularFuture = new FutureTask<>(new Callable<ArrayList<Course>>() {
             @Override
             public ArrayList<Course> call() throws Exception {
+                // 异步调用课程服务，获取浏览排行榜信息
                 return feignCourseService.getPopularCourseList(0, 8);
             }
         });
+        // 获取购买排行榜,列表
         FutureTask<ArrayList<Course>> purchaseFuture = new FutureTask<>(new Callable<ArrayList<Course>>() {
             @Override
             public ArrayList<Course> call() throws Exception {
+                // 异步调用课程服务获取购买排行榜列表
                 return feignCourseService.getPopularCourseList(0, 8);
             }
         });
 
+        // 获取异步调用返回的结果
         executorService.submit(popularFuture);
         executorService.submit(purchaseFuture);
         for (i = 0; i < courseTypes.size(); i++) {
@@ -89,7 +95,6 @@ public class IndexController {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-
         return "/index.jsp";
     }
 
@@ -114,6 +119,9 @@ public class IndexController {
 
     @GetMapping("/mycourselist.html")
     public String myCourseManage(HttpServletRequest request) {
+        User user = (User) request.getSession().getAttribute("user");
+        ArrayList<Course> userCourseList = feignCourseService.getUserCourseList(user.getUserId());
+        request.setAttribute("userCourseList", userCourseList);
         return "/WEB-INF/views/my-course-list.jsp";
     }
 
@@ -179,23 +187,37 @@ public class IndexController {
     @GetMapping("/order.html")
     public String order(HttpServletRequest request){
         User user = (User) request.getSession().getAttribute("user");
-        ArrayList<Order> orderList = feignOrderService.getOrderListBySidFoePageSize(user.getUserId(), 0 , 10 );
+        Superstate superstate = feignOrderService.getOrderListBySidFoePageSize(user.getUserId(), 0 , 10 );
+        ArrayList<Order> orderList = objectMapper.convertValue(superstate.getResource(),new TypeReference<ArrayList<Order>>(){});
         request.setAttribute("orderList", orderList);
+        request.setAttribute("pojo", superstate);
         return "/WEB-INF/views/information/order.jsp";
     }
 
     @GetMapping("/collection.html")
     public String studentCollection(HttpServletRequest request){
         User user = (User) request.getSession().getAttribute("user");
-        ArrayList<Collect> collects = feignCourseService.getCollectList(user.getUserId(), 0, 10);
+        Superstate superstate = feignCourseService.getCollectListBySidForPageSize(user.getUserId(), 0, 10);
+        ArrayList<Collect> collects = objectMapper.convertValue(superstate.getResource(),new TypeReference<ArrayList<Collect>>(){});
         System.out.println(collects);
         request.setAttribute("collects", collects);
+        request.setAttribute("pojo", superstate);
         return "/WEB-INF/views/information/collection.jsp";
     }
 
     @GetMapping("/userinfo.html")
     public String userInfo(){
         return "/WEB-INF/views/information/user-info.jsp";
+    }
+
+    @ApiOperation(value = "根据cid获取对应课程的评论页面信息", notes = "返回的是HTML代码不是JSON数据")
+    @GetMapping("/commentary/{cid}")
+    public String getCourseComment(HttpServletRequest request, @PathVariable("cid") int cid) {
+        System.out.println(cid);
+        Course course = feignCourseService.getCourseById(cid);
+        System.out.println(course);
+        request.setAttribute("course", course);
+        return "/WEB-INF/views/add-comment.jsp";
     }
 
 }

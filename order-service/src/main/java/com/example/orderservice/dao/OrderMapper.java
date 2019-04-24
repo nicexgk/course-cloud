@@ -47,4 +47,7 @@ public interface OrderMapper {
             @Result(property = "orderCourse.coursePrice", column = "course_price")
     })
     public ArrayList<Order> queryOrderListBySidStartSize(int sid, int start, int size);
+
+    @Select("select count(1) from orders where order_user = #{arg0}")
+    public int queryOrderCountBySid(int sid);
 }

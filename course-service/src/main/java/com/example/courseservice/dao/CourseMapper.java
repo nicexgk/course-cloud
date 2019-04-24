@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public interface CourseMapper {
 
 
-    @Select("select * from course t1 where t1.course_teacher_id = #{arg0}")
+    @Select("select * from course t1 inner join user_info t2 on t2.user_id = t1.course_teacher_id and t1.course_teacher_id = #{arg0}")
     @Results({
             @Result(property = "courseId", column = "course_id"),
             @Result(property = "coursePrice", column = "course_price"),
@@ -22,8 +22,10 @@ public interface CourseMapper {
             @Result(property = "description", column = "description"),
             @Result(property = "picUrl", column = "pic_url"),
             @Result(property = "courseDetail", column = "course_detail"),
-            @Result(property = "courseDate", column = "course_date")
-//                        @Result(property = "course", column = "course_id"),
+            @Result(property = "courseDate", column = "course_date"),
+            @Result(property = "courseTeacher.userId", column = "user_id"),
+            @Result(property = "courseTeacher.userName", column = "user_name"),
+            @Result(property = "courseTeacher.userIcon", column = "user_icon"),
     })
     public ArrayList<Course> queryUserCourseList(int id);
 

@@ -2,6 +2,7 @@ package com.example.courseservice.service;
 
 import com.example.common.entity.Collect;
 import com.example.common.entity.Status;
+import com.example.common.entity.Superstate;
 import com.example.courseservice.dao.CollectMapper;
 import org.springframework.stereotype.Service;
 
@@ -39,8 +40,16 @@ public class CollectServiceImpl implements CollectService{
     }
 
     @Override
-    public ArrayList<Collect> getCollectListBySidForPageSize(int sid, int page, int size) {
-        return collectMapper.queryCollectListBySidForStartSize(sid, page * size, size);
+    public Superstate getCollectListBySidForPageSize(int sid, int page, int size) {
+        Superstate superstate = new Superstate();
+        page = page >= 0 ? page : 0;
+        size = size >= 0 ? size : 0;
+        ArrayList<Collect> collectList = collectMapper.queryCollectListBySidForStartSize(sid, page * size, size);
+        superstate.setResource(collectList);
+        superstate.setPage(page);
+        superstate.setSize(size);
+        superstate.setCount(collectMapper.queryCollectCount(sid));
+        return superstate;
     }
 
     @Override

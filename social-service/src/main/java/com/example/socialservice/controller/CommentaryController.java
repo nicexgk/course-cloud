@@ -1,13 +1,11 @@
-package com.example.courseservice.controller;
+package com.example.socialservice.controller;
 
 import com.example.common.entity.Commentary;
 import com.example.common.entity.Status;
 import com.example.common.entity.Superstate;
-import com.example.courseservice.service.CommentaryService;
+import com.example.socialservice.service.CommentaryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
 
 
 // 评论控制器

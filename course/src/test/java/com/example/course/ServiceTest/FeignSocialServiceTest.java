@@ -1,8 +1,8 @@
-package com.example.courseservice.test.daotest;
+package com.example.course.ServiceTest;
 
 import com.example.common.entity.Commentary;
 import com.example.common.entity.User;
-import com.example.courseservice.dao.CommentaryMapper;
+import com.example.course.service.feign.FeignSocialService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,30 +12,27 @@ import javax.annotation.Resource;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class CommentaryMapperTest {
-
+public class FeignSocialServiceTest {
     @Resource
-    CommentaryMapper commentaryMapper;
+    FeignSocialService feignSocialService;
+
 
     @Test
-    public void addCommentaryTest(){
+    public void addCommentary(){
         Commentary commentary = new Commentary();
         User user = new User();
         user.setUserId(7);
         commentary.setCommentUser(user);
         commentary.setCommentCourse(179);
-        commentary.setCommentContent("nice nice nice");
         commentary.setCommentGrade(5);
-        System.out.println(commentaryMapper.addCommentary(commentary));
+        commentary.setCommentContent("nice nice nice");
+        System.out.println(feignSocialService.addCommentary(commentary));
+
     }
 
     @Test
-    public void queryCommentaryByCid(){
-        System.out.println(commentaryMapper.queryCommentaryByCidForStartSize(179, 0 , 10));
+    public void getCommentaryListByCidForPageSizeTest(){
+        System.out.println(feignSocialService.getCommentaryListByCidForPageSize(179, 0 , 10));
     }
 
-    @Test
-    public void queryCommentaryByCidCount(){
-        System.out.println(commentaryMapper.queryCommentaryByCidCount(179));
-    }
 }

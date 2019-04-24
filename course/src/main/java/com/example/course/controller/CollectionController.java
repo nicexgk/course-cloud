@@ -2,9 +2,12 @@ package com.example.course.controller;
 
 import com.example.common.entity.Collect;
 import com.example.common.entity.Status;
+import com.example.common.entity.Superstate;
 import com.example.common.entity.User;
 import com.example.course.service.feign.FeignCourseService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,12 +37,17 @@ public class CollectionController {
         return feignCourseService.deleteCollect(user.getUserId(), cid);
     }
 
-    @ApiOperation(value = "分页查找用户的收藏列表", notes = "页数从0开始不是1")
+    @ApiOperation(value = "分页查询学生收藏列表信息接口", notes = "页数从0开始，不是1，用户必须登录了才可以访问该接口，否则将被拦截器拦截")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "page", value = "页数，从0开始"),
+            @ApiImplicitParam(name = "size", value = "页的大小")
+    })
     @GetMapping("/{page}/{size}")
-    public ArrayList<Collect> getCollectList(HttpServletRequest request, @PathVariable("sid")int sid, @PathVariable("page")int page, @PathVariable("size")int size){
-        User user = (User) request.getSession().getAttribute("user");
+    public Superstate getStudentCollectionBySidForPageSize(HttpServletRequest request, @PathVariable("page")int page, @PathVariable("size")int size){
         page = page >= 0 ? page : 0;
         size = size >= 0 ? size : 0;
-        return feignCourseService.getCollectList(user.getUserId(), page, size);
+        User user = (User) request.getSession().getAttribute("user");
+        // 调用课程服务，分页查询用户收藏列表
+        return feignCourseService.getCollectListBySidForPageSize(user.getUserId(), page, size);
     }
 }

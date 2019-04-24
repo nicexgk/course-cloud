@@ -50,14 +50,6 @@ public interface FeignCourseService {
 
 
 
-    @PostMapping("/commentary/")
-    public Status addCommentary(@RequestBody Commentary commentary);
-
-    @GetMapping("/commentary/{cid}/{page}/{size}")
-    public Superstate getCommentaryListByCidForPageSize(@PathVariable("cid") int cid, @PathVariable("page") int page ,@PathVariable("size") int size);
-
-
-
     @GetMapping("/student/course/{sid}/{page}/{size}")
     public Superstate getStudentCourseListByUserIdForPageSize(@PathVariable("sid")int sid, @PathVariable("page")int page, @PathVariable("size")int size);
 
@@ -76,10 +68,11 @@ public interface FeignCourseService {
     public Status deleteCollect(@PathVariable("sid")int sid, @PathVariable("cid")int cid);
 
     @GetMapping("/collection/{sid}/{page}/{size}")
-    public ArrayList<Collect> getCollectList(@PathVariable("sid")int sid, @PathVariable("page")int page, @PathVariable("size")int size);
+    public Superstate getCollectListBySidForPageSize(@PathVariable("sid")int sid, @PathVariable("page")int page, @PathVariable("size")int size);
 
     @GetMapping("/collection/{sid}/{cid}")
     public Collect getCollectBySidCid(@PathVariable("sid")int sid, @PathVariable("cid")int cid);
+
 
 
     @GetMapping("/search/course/{text}/{page}/{size}")

@@ -32,7 +32,6 @@ $(function () {
                 ]
             ]
         });
-
 })
 
 function previewVideo(target) {
@@ -164,7 +163,7 @@ function collectOperation(cid, type) {
 
 function paging(target){
     var page = $(target).attr("data-page") - 1;
-    $.getJSON("/course/commentary/" + cid + "/" + page + "/" + size, function(data){
+    $.getJSON("/commentary/" + cid + "/" + page + "/" + size, function(data){
         console.log(data);
 
         layui.use(['laypage', 'layer'], function () {

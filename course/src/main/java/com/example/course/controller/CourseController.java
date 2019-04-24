@@ -3,6 +3,8 @@ package com.example.course.controller;
 import com.example.common.entity.*;
 import com.example.course.service.feign.FeignCourseService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +21,7 @@ public class CourseController {
     @Resource
     FeignCourseService feignCourseService;
 
-    @ApiOperation(value = "添加课程接口", tags = {"返回一个状态对象", "course-controller"}, notes = "必须与JSON格式提交课要添加的课程对象")
+    @ApiOperation(value = "添加课程接口", tags = {"返回一个状态对象", "course-controller"}, notes = "必须以JSON格式提交课要添加的课程对象")
     @PostMapping(value = "/")
     public Status addCourse(HttpServletRequest request, @RequestBody Course course) throws IOException {
         Status status = null;
@@ -31,6 +33,7 @@ public class CourseController {
             status.setDescription("您还没有登录，请先登录！！！");
         }
         course.setCourseTeacher(user);
+        // 调用课程服务，添加课程
         status = feignCourseService.addCourse(course);
         if (status == null) {
             status = new Status();
@@ -40,7 +43,7 @@ public class CourseController {
         return status;
     }
 
-    @ApiOperation(value = "修改课程接口", notes = "用户需要有权限才能修改课程")
+    @ApiOperation(value = "修改课程接口", notes = "用户需要有权限才能修改课程否则将被拦截器拦截")
     @PutMapping("/")
     public Status modifyCourse(HttpServletRequest request, @RequestBody Course course) {
         Status status = null;
@@ -51,6 +54,7 @@ public class CourseController {
             status.setStatus(400);
             status.setDescription("您还没有登录，请先登录！！！");
         }
+        // 调用课程修改接口，对课程进行修改
         status = feignCourseService.modifyCourse(course);
         if (status == null) {
             status = new Status();
@@ -113,19 +117,6 @@ public class CourseController {
         return feignCourseService.getCourseTopNumByParentType(parentId, page, size);
     }
 
-    @ApiOperation(value = "用户评论接口", notes = "用户必须登录后才能调用此接口")
-    @PostMapping("/commentary/")
-    public Status commentary(HttpServletRequest request, @RequestBody Commentary commentary) {
-        User user = (User) request.getSession().getAttribute("user");
-        commentary.setCommentUser(user);
-        Status status = feignCourseService.addCommentary(commentary);
-        if (status == null) {
-            status.setStatus(400);
-            status.setDescription("发布评论失败，稍后请重试！");
-        }
-        return status;
-    }
-
 
     @ApiOperation(value = "按课程名字分页搜索课程接口", notes = "页数从0开始不是1")
     @GetMapping("/search/")
@@ -136,15 +127,8 @@ public class CourseController {
         System.out.println("text = " + text);
         System.out.println(page);
         System.out.println(size);
+        // 调用课课程服务搜索课程，并分页
         return feignCourseService.searchCourseListByNameForPageSize(text, page, size);
-    }
-
-    @ApiOperation(value = "根据课程的Cid分页获取评论信息", notes = "页数从0开始不是1")
-    @GetMapping("/commentary/{cid}/{page}/{size}")
-    public Superstate getCommentaryListByCidForPageSize(@PathVariable("cid") int cid, @PathVariable("page") int page, @PathVariable("size") int size) {
-        page = page >= 0 ? page : 0;
-        size = size >= 0 ? size : 0;
-        return feignCourseService.getCommentaryListByCidForPageSize(cid, page, size);
     }
 
 }

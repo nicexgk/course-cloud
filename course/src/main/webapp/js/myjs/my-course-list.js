@@ -9,7 +9,7 @@ function editorCourse(id) {
     }
     console.log("nice nice nice");
     $.getJSON('/course/' + id , function (data) {
-        course = data;
+            course = data;
         loadContain('/editorcourse.html');
     })
 
