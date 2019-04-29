@@ -16,4 +16,5 @@ public interface OrderService {
 
     public Superstate getOrderListBySidForPageSize(int sid, int page, int size);
 
+    public Status deleteOrderById(int sid, int oid);
 }

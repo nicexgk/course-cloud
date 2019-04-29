@@ -54,7 +54,6 @@ var receiveDiv = '<div class="send-text">' +
     '<div class="send-content-text"></div>' +
     '</div>';
 
-
 var webSocket;
 
 function send() {
@@ -84,9 +83,7 @@ function onTrade(target) {
                     // location.reload(true);
                 } else if (res.status == 300) {
                     layer.msg("请先支付！", {icon: 3});
-                    $(".header-video").html(res.resource);
-                    showTrade(res.resource);
-
+                    window.location.href="/alipay/trade/page/" + res.resource;
                 } else {
                     layer.msg("出错啦！请重试,,,", {icon: 2});
                 }

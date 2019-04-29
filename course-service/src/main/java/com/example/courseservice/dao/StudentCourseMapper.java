@@ -2,6 +2,7 @@ package com.example.courseservice.dao;
 
 import com.example.common.entity.StudentCourse;
 import org.apache.ibatis.annotations.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 import java.util.ArrayList;
 
@@ -41,6 +42,9 @@ public interface StudentCourseMapper {
             @Result(property = "course.courseDetail", column = "course_detail")
     })
     public StudentCourse queryStudentBySidCid(int sid, int cid);
-    @Select("select count(1) from student_course where student_id = #{arg0}")
+    @Select("select count(1) from student_course where student_id = #{arg0} and course_id = #{arg1}")
     public int queryStudentBySidCount(int sid);
+
+    @Delete("delete from student_course where student_id = #{arg0} and course_id = #{arg1}")
+    public boolean  deleteStudentCourseByCidAndSid(int sid, int cid);
 }

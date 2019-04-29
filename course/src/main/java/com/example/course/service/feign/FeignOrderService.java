@@ -28,4 +28,7 @@ public interface FeignOrderService {
     @GetMapping("/order/{sid}/{page}/{size}")
     public Superstate getOrderListBySidFoePageSize(@PathVariable("sid")int sid, @PathVariable("page")int page, @PathVariable("size")int size);
 
+    @DeleteMapping("/order/{sid}/{oid}")
+    public Status deleteOrderBySidOid(@PathVariable("sid") int sid, @PathVariable("oid") int oid);
+
 }

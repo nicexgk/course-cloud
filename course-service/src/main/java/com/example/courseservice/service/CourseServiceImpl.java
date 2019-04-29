@@ -29,6 +29,7 @@ public class CourseServiceImpl implements CourseService {
         return courseMapper.queryCourseByStudentForStartSize(uid, page * size, size);
     }
 
+    // 获取购买排行榜
     @Override
     public ArrayList<Course> getPurchaseCourseList(int page, int size) {
         Set<Object> purchaseSet = redisTemplate.opsForZSet().range("purchase-course-zset", page * size, size);
@@ -52,6 +53,7 @@ public class CourseServiceImpl implements CourseService {
         return purchaseCourseList;
     }
 
+    // 获取热门排行榜
     @Override
     public ArrayList<Course> getPopularCourseList(int page, int size) {
         Set<Object> popularSet = redisTemplate.opsForZSet().range("popular-course-zset", page * size, size);
@@ -72,7 +74,6 @@ public class CourseServiceImpl implements CourseService {
                 popularCourseList.add((Course) iterator.next());
             }
         }
-
         return popularCourseList;
     }
 
@@ -218,6 +219,7 @@ public class CourseServiceImpl implements CourseService {
     public Course getCourseById(int cid) {
         Course course = courseMapper.queryCourseByCid(cid);
         if (course != null) {
+//            redisTemplate.opsForZSet().
             ArrayList<Catalog> catalogList = catalogService.getCatalogList(cid);
             course.setCatalogList(catalogList);
         }

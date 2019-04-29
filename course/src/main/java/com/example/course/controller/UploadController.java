@@ -21,7 +21,7 @@ import java.util.UUID;
 @RequestMapping("/upload")
 public class UploadController {
 
-    public static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY-MM");
+    public static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY-MM");
 
     // 上传图片
     @ApiOperation(value = "上传图片接口", tags = {"返回一个JSON格式的状态对象", "upload-controller"}, notes = "上传图片的name应为file")

@@ -45,4 +45,17 @@ public class StudentCourseServiceImpl implements StudentCourseService {
     public StudentCourse getStudentCourseBySidCid(int sid, int cid) {
         return studentCourseMapper.queryStudentBySidCid(sid, cid);
     }
+
+    @Override
+    public Status deleteStudentCourseByCidAndSid(int sid, int cid) {
+        Status status = new Status();
+        if(!studentCourseMapper.deleteStudentCourseByCidAndSid(sid, cid)){
+            status.setStatus(400);
+            status.setDescription("取消课程失败");
+            return status;
+        }
+        status.setStatus(200);
+        status.setDescription("取消课程成功");
+        return status;
+    }
 }

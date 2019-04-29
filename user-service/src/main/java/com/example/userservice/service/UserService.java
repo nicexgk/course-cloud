@@ -11,4 +11,6 @@ public interface UserService {
     public Status addUser(User user);
 
     public Status updateUser(User user);
+
+    public User getUser(int uid);
 }

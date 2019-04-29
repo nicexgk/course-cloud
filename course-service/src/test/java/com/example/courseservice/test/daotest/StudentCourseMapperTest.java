@@ -44,4 +44,8 @@ public class StudentCourseMapperTest {
         System.out.println(studentCourseMapper.queryStudentBySidCount(21));
     }
 
+    @Test
+    public void deleteStudentCourse(){
+        System.out.println(studentCourseMapper.deleteStudentCourseByCidAndSid(179, 21));
+    }
 }

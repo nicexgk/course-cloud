@@ -56,5 +56,9 @@ public class OrderMapperTest {
         System.out.println(orderMapper.queryOrderCountBySid(21));
     }
 
+    @Test
+    public void deleteOrderId(){
+        System.out.println(orderMapper.deleteOrderBySidOid(21, 11));
+    }
 
 }

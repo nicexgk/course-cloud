@@ -1,9 +1,7 @@
 package com.example.course.ServiceTest;
 
-import com.example.common.entity.Commentary;
 import com.example.common.entity.Course;
 import com.example.common.entity.Superstate;
-import com.example.common.entity.User;
 import com.example.course.service.feign.FeignCourseService;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -84,7 +82,7 @@ public class FeignCourseServiceTest {
 
     @Test
     public void getStudentCourseBySidCid(){
-        System.out.println(feignCourseService.getStudentBySidCid(9, 179));
+        System.out.println(feignCourseService.getStudentCourseBySidCid(9, 179));
     }
 
     @Test

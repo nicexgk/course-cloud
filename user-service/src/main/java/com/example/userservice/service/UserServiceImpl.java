@@ -44,4 +44,9 @@ public class UserServiceImpl implements UserService{
         status.setDescription("注册成功！");
         return status;
     }
+
+    @Override
+    public User getUser(int uid) {
+        return userMapper.queryUserByUid(uid);
+    }
 }

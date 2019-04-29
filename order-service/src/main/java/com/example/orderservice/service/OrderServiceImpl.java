@@ -58,4 +58,16 @@ public class OrderServiceImpl implements OrderService {
         superstate.setCount(orderMapper.queryOrderCountBySid(sid));
         return superstate;
     }
+
+    @Override
+    public Status deleteOrderById(int sid, int oid) {
+        Status status = new Status();
+        if(!orderMapper.deleteOrderBySidOid(sid, oid)){
+            status.setStatus(400);
+            status.setDescription("订单删除失败");
+        }
+        status.setStatus(200);
+        status.setDescription("订单删除成功");
+        return status;
+    }
 }

@@ -33,4 +33,8 @@ public class UserController {
         return userService.updateUser(user);
     }
 
+    @GetMapping("/{uid}")
+    public User getUser(@PathVariable("uid") int uid){
+        return userService.getUser(uid);
+    }
 }

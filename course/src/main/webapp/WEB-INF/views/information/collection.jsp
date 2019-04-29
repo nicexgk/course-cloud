@@ -65,7 +65,7 @@
                                     <div class="fav-price">￥${collect.collectCourse.coursePrice}</div>
                                 </c:if>
                             </td>
-                            <td><span class="link-3">取消收藏</span></td>
+                            <td><span class="link-3" onclick="cancelCollect(this)" data-cid="${collect.collectCourse.courseId}">取消收藏</span></td>
                         </tr>
                     </c:forEach>
                     </tbody>
@@ -83,8 +83,28 @@
 </body>
 
 <script>
-    function pagingFull(data) {
 
+    function cancelCollect(target){
+        var cid = $(target).attr('data-cid');
+        $.ajax({
+            url:"/collection/" + cid,
+            type:"delete",
+            success:function(res){
+                layui.use('element', function(){
+                    var layer = layui.layer;
+                    if(res.status == 200){
+                        layer.msg("取消收藏成功", {icon: 1});
+                        $(target).parent().parent().remove();
+                    } else {
+                        layer.msg("服务正忙，稍后请重试", {icon: 5});
+                    }
+                })
+            }
+        })
+    }
+
+
+    function pagingFull(data) {
         var content = "";
         for (var i in data) {
             var collect = data[i];
@@ -109,7 +129,7 @@
                 '<td>' +
                 '<div class="fav-price">'+ price +'</div>' +
                 '</td>' +
-                '<td><span class="link-3">取消收藏</span></td>' +
+                '<td><span class="link-3" onclick="cancelCollect(this)" data-cid="'+ collect.collectCourse.courseId +'">取消收藏</span></td>' +
                 '</tr>';
             content += str;
         }

@@ -50,4 +50,7 @@ public interface OrderMapper {
 
     @Select("select count(1) from orders where order_user = #{arg0}")
     public int queryOrderCountBySid(int sid);
+
+    @Delete("delete from orders where order_user = #{arg0} and order_id = #{arg1}")
+    public boolean deleteOrderBySidOid(int sid, int oid);
 }

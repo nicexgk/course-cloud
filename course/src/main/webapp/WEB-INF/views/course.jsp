@@ -13,8 +13,8 @@
     <script src="/layui/layui.js"></script>
     <script src="/ueditor/ueditor.config_1.js"></script>
     <script src="/ueditor/ueditor.all.js"></script>
-    <%--<script src="/ueditor/ueditor.parse.js"></script>--%>
     <script src="/js/myjs/course.js"></script>
+    <script src="/js/myjs/social.js"></script>
 </head>
 <body>
 
@@ -27,13 +27,13 @@
 
     <div class="content-course">
         <!------类型导航start----->
-        <div class="map">
-            <a href="#">全部课程</a>
-            &gt;
-            <a href="#">IT·互联网</a>
-            &gt;
-            <a href="#">${requestScope.course.courseName}</a>
-        </div>
+        <%--<div class="map">--%>
+            <%--<a href="#">全部课程</a>--%>
+            <%--&gt;--%>
+            <%--<a href="#">IT·互联网</a>--%>
+            <%--&gt;--%>
+            <%--<a href="#">${requestScope.course.courseName}</a>--%>
+        <%--</div>--%>
         <!------类型导航 end ----->
 
         <!---------课程信息描述 start----------->
@@ -176,6 +176,7 @@
 
                 <!--------------交流start--------------->
                 <div class="layui-tab-item chat-container">
+
                     <div class="chat-content">
                         <div class="receive-text">
                             <img class="receive-head-img" src="">
@@ -186,6 +187,7 @@
                             <div class="send-content-text"></div>
                         </div>
                     </div>
+
                     <div class="chat-input">
                         <textarea name="chat-ue-editor-input" id="chat-ue-editor-input" style="height: 250px"></textarea>
                         <div class="chat-tools">
@@ -217,6 +219,9 @@
     var size = ${requestScope.pojo.size};
     var type = ${requestScope.pojo.type};
     var cid = ${requestScope.course.courseId};
+    <c:if test="${sessionScope.user != null}">
+    var sid = ${sessionScope.user.userId};
+    </c:if>
     layui.use(['laypage', 'layer'], function () {
         var laypage = layui.laypage
             , layer = layui.layer;
@@ -230,7 +235,6 @@
     });
     var recodePage = $(".layui-laypage-prev").attr("data-page");
     console.log(parseInt(recodePage));
-
 
     window.onload = function () {
         $("#page>div>a").each(function (i) {

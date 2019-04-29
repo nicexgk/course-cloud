@@ -24,4 +24,7 @@ public interface FeignUserService {
     @PutMapping("/user/")
     public  Status updateUser(@RequestBody User user);
 
+    @GetMapping("/user/{uid}")
+    public User getUser(@PathVariable("uid") int uid);
+
 }

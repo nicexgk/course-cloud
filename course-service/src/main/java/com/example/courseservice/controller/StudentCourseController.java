@@ -31,5 +31,9 @@ public class StudentCourseController {
         return studentCourseService.getStudentCourseBySidCid(sid, cid);
     }
 
+    @DeleteMapping("/{sid}/{cid}")
+    public Status deleteStudentCourseBySidAndCid(@PathVariable("sid") int sid, @PathVariable("cid") int cid){
+        return studentCourseService.deleteStudentCourseByCidAndSid(sid, cid);
+    }
 
 }

@@ -50,7 +50,7 @@
                             </div>
                             <div class="flex-row content">
                                 <div class="flex-cell first cover item-block">
-                                    <a href="" class="link js-report-link" target="_blank">
+                                    <a href="/course/page/${order.orderCourse.courseId}" class="link js-report-link" target="_blank">
                                         <img src="${order.orderCourse.picUrl}" alt="课程封面">
                                         <div class="title">
                                             <span title="${order.orderCourse.courseName}">${order.orderCourse.courseName}</span>
@@ -69,19 +69,19 @@
                                             <span class="black">报名成功</span>
                                         </c:when>
                                         <c:otherwise>
-                                            <span class="black">等待支付</span>
+                                            <a href="/alipay/trade/page/${order.orderOn}" target="_blank"><span class="black">等待支付</span></a>
                                         </c:otherwise>
                                     </c:choose>
                                 </div>
                                 <div class="flex-cell operating item-block">
                                     <c:if test="${order.orderCommentary == 0 && order.orderStatus == 1}">
-                                        <a href="" class="link-block" target="_blank">评价课程</a>
+                                        <a href="/commentary/${order.orderCourse.courseId}" class="link-block" target="_blank">评价课程</a>
                                     </c:if>
                                     <c:if test="${order.orderStatus == 1}">
-                                        <a href="javascript:void(0);" class="link-block">取消课程</a>
+                                        <a href="javascript:void(0);" onclick="cancelCourse(this)" data-cid="${order.orderCourse.courseId}" class="link-block">取消课程</a>
                                     </c:if>
                                     <c:if test="${order.orderStatus == 0}">
-                                        <a href="javascript:void(0);" class="link-block">取消订单</a>
+                                        <a href="javascript:void(0);" onclick="cancelOrder(this)" data-oid="${order.orderId}" class="link-block">取消订单</a>
                                     </c:if>
                                 </div>
                             </div>
@@ -100,6 +100,45 @@
 </div>
 </body>
 <script>
+
+    function cancelCourse(target){
+        var cid = $(target).attr("data-cid");
+        $.ajax({
+            url: "/student/course/" + cid,
+            type: "delete",
+            success: function(res){
+                layui.use('element', function(){
+                    var layer = layui.layer;
+                    if(res.status == 200){
+                        layer.msg("取消课程成功", {icon: 1});
+                        $(target).parent().parent().parent().remove();
+                    } else {
+                        layer.msg("服务正忙，请重试。。。", {icon: 5});
+                    }
+                });
+            }
+        })
+    }
+
+    function cancelOrder(target){
+        var oid = $(target).attr("data-oid");
+        $.ajax({
+            url: "/order/" + oid,
+            type: "delete",
+            success: function(res){
+                layui.use('element', function(){
+                    var layer = layui.layer;
+                    if(res.status == 200){
+                        layer.msg("取消订单成功", {icon: 1});
+                        $(target).parent().parent().parent().remove();
+                    } else {
+                        layer.msg("服务正忙，请重试。。。", {icon: 5});
+                    }
+                });
+            }
+        })
+    }
+
     function pagingFull(data) {
         var content = "";
         for (var i in data) {
@@ -108,7 +147,7 @@
             var cancel = '';
             var commentary = '';
             var cancelOrder = '';
-            var wartTrade = '<span class="black">等待支付</span>';
+            var wartTrade = '<a href="/alipay/trade/page/' + order.orderOn + '" target="_blank"><span class="black">等待支付</span></a>';
 
             if(order.orderCourse.coursePrice != 0){
                 price = '￥' + order.orderCourse.coursePrice;
@@ -117,13 +156,13 @@
                 wartTrade = '<span class="black">报名成功</span>'
             }
             if (order.orderCommentary == 0 && order.orderStatus == 1){
-                commentary = '<a href="" class="link-block" target="_blank">评价课程</a>';
+                commentary = '<a href="/commentary/' + order.orderCourse.courseId + '" class="link-block" target="_blank">评价课程</a>';
             }
             if (order.orderStatus == 1){
-                cancel = '<a href="javascript:void(0);" class="link-block">取消课程</a>';
+                cancel = '<a href="javascript:void(0);" onclick="cancelCourse(this)" data-cid="' + order.orderCourse.courseId + '" class="link-block">取消课程</a>';
             }
             if(order.orderStatus == 0){
-                cancelOrder = '<a href="javascript:void(0);" class="link-block">取消订单</a>';
+                cancelOrder = '<a href="javascript:void(0);" onclick="cancelOrder(this)" data-oid="'+ order.orderId + '" class="link-block">取消订单</a>';
             }
 
             var str = '<div class="flex-list-item">' +

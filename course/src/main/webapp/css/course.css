@@ -190,36 +190,49 @@
     height: 250px;
     max-height: 500px;
     overflow: scroll;
-    border: red solid 2px;
 }
 
 .receive-text {
+    width: 1050px;
     float: left;
-    border: cyan solid 2px;
 }
 
-.send-text {
+.send-text{
+    width: 1050px;
     float: right;
-    border: chartreuse solid 2px;
 }
+
+.send-text>*{
+    float: right;
+}
+.receive-text>*{
+    float: left;
+}
+
+/*.send-text>img, .receive-text>img{*/
+    /*margin-left: 20px;*/
+/*}*/
 
 .receive-head-img {
     width: 40px;
     height: 40px;
-
+    border-radius: 30px;
 }
 
 .send-head-img {
     width: 40px;
     height: 40px;
+    border-radius: 30px;
 }
 
 .receive-content-text {
     margin-left: 45px;
+    line-height: 30px;
 }
 
 .send-content-text {
     margin-right: 45px;
+    line-height: 30px;
 }
 
 .chat-send {

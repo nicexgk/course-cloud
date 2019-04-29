@@ -55,6 +55,4 @@ public class SocialController {
         return feignSocialService.getCommentaryListByCidForPageSize(cid, page, size);
     }
 
-
-
 }

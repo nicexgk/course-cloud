@@ -4,6 +4,7 @@ import com.example.common.entity.Order;
 import com.example.common.entity.Status;
 import com.example.common.entity.Superstate;
 import com.example.orderservice.service.OrderService;
+import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,6 +35,11 @@ public class OrderController {
     @GetMapping("/{sid}/{page}/{size}")
     public Superstate getOrderListBySidForPageSize(@PathVariable("sid") int sid, @PathVariable("page") int page, @PathVariable("size") int size){
         return orderService.getOrderListBySidForPageSize(sid, page, size);
+    }
+
+    @DeleteMapping("/{sid}/{oid}")
+    public Status deleteOrderByOid(@PathVariable("sid") int sid, @PathVariable("oid") int oid){
+        return orderService.deleteOrderById(sid, oid);
     }
 
 }

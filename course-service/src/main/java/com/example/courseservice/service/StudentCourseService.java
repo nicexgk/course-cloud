@@ -13,4 +13,6 @@ public interface StudentCourseService {
     public Superstate getStudentCourseListByUserIdForPageSize(int sid, int page, int size);
 
     public StudentCourse getStudentCourseBySidCid(int sid, int cid);
+
+    public Status deleteStudentCourseByCidAndSid(int sid, int cid);
 }

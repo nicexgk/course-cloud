@@ -57,7 +57,10 @@ public interface FeignCourseService {
     public Status addStudentCourse(@RequestBody StudentCourse studentCourse);
 
     @GetMapping("/student/course/{sid}/{cid}")
-    public StudentCourse getStudentBySidCid(@PathVariable("sid") int sid, @PathVariable("cid")int cid);
+    public StudentCourse getStudentCourseBySidCid(@PathVariable("sid") int sid, @PathVariable("cid")int cid);
+
+    @DeleteMapping("/student/course/{sid}/{cid}")
+    public Status deleteStudentCourseBySidCid(@PathVariable("sid") int sid, @PathVariable("cid") int cid);
 
 
 

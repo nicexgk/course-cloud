@@ -5,9 +5,12 @@ import com.example.common.entity.Catalog;
 import com.example.common.entity.Course;
 
 import java.io.File;
+import java.lang.reflect.Proxy;
 import java.util.LinkedHashMap;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class Text {
+    static ReentrantLock  lock = new ReentrantLock();
     public static void main(String[] args) throws InterruptedException {
 
         Course course = new Course();
@@ -18,7 +21,11 @@ public class Text {
 
         System.out.println(file.getName());
 //        file.wait();
-        tt();
+//        tt();
+        System.out.println(nice(4));
+        System.out.println(nice(4));
+
+        Proxy.getProxyClass(null);
 
     }
 
@@ -28,4 +35,21 @@ public class Text {
         Text.class.wait();
         System.out.println("nice nice nice");
     }
+
+    public  static int nice(int i){
+        int a = 0;
+        try {
+            lock.lock();
+            if(i < 1){
+                return 1;
+            }
+            a = i + nice(i - 1);
+        } catch ( Exception e){
+
+        } finally {
+//            lock.tryLock();
+        }
+        return a;
+    }
+
 }

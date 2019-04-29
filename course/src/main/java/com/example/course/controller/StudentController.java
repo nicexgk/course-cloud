@@ -1,5 +1,6 @@
 package com.example.course.controller;
 
+import com.example.common.entity.Status;
 import com.example.common.entity.Superstate;
 import com.example.common.entity.User;
 import com.example.course.service.feign.FeignCourseService;
@@ -7,10 +8,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -28,12 +26,19 @@ public class StudentController {
             @ApiImplicitParam(name = "size", value = "页的大小")
     })
     @GetMapping("/course/{page}/{size}")
-    public Superstate getStudentCourseBySidForPageSize(HttpServletRequest request, @PathVariable("page") int page, @PathVariable("size") int size){
+    public Superstate getStudentCourseBySidForPageSize(HttpServletRequest request, @PathVariable("page") int page, @PathVariable("size") int size) {
         page = page >= 0 ? page : 0;
         size = size >= 0 ? size : 0;
         User user = (User) request.getSession().getAttribute("user");
         // 调用课程服务，分页查询用户课程列表
         return feignCourseService.getStudentCourseListByUserIdForPageSize(user.getUserId(), page, size);
     }
+
+    @DeleteMapping("/course/{cid}")
+    public Status cancelCourse(HttpServletRequest request, @PathVariable("cid") int cid) {
+        User user = (User) request.getSession().getAttribute("user");
+        return feignCourseService.deleteCollect(user.getUserId(), cid);
+    }
+
 
 }

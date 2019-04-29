@@ -7,7 +7,6 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,14 +18,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.concurrent.*;
 
 @Api("课程页面接口")
 @Controller
 @RequestMapping("/course/page")
 public class CoursePageController {
-    public static ExecutorService executorService = Executors.newFixedThreadPool(8);
+    public static final ExecutorService executorService = Executors.newFixedThreadPool(8);
     @Resource
     private FeignCourseService feignCourseService;
     @Resource
@@ -69,7 +67,7 @@ public class CoursePageController {
 
         User user = (User) request.getSession().getAttribute("user");
         if(user != null){
-            StudentCourse studentCourse = feignCourseService.getStudentBySidCid(user.getUserId(), cid);
+            StudentCourse studentCourse = feignCourseService.getStudentCourseBySidCid(user.getUserId(), cid);
             Collect collect = feignCourseService.getCollectBySidCid(user.getUserId(), cid);
             request.setAttribute("studentCourse", studentCourse);
             request.setAttribute("collect", collect);

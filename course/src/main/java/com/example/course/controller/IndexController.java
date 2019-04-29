@@ -22,7 +22,7 @@ import java.util.concurrent.*;
 @Controller
 public class IndexController {
     //创建一个固定大小的线程池用于调用服务
-    public static ExecutorService executorService = Executors.newFixedThreadPool(8);
+    public static final ExecutorService executorService = Executors.newFixedThreadPool(8);
 
     @Resource
     private FeignCourseService feignCourseService;
