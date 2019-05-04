@@ -4,7 +4,6 @@ import com.example.common.entity.User;
 import com.example.course.service.feign.FeignUserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -49,5 +48,10 @@ public class FeignUserServiceTest {
         user.setUserAddress(":dd");
         user.setUserPhone("11225");
         System.out.println(feignUserService.updateUser(user));
+    }
+
+    @Test
+    public void resetPwdByEmail(){
+        System.out.println(feignUserService.resetPwdByEmail("1252673738@qq.com", "123456"));
     }
 }

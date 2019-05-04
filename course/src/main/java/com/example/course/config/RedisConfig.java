@@ -37,7 +37,6 @@ public class RedisConfig {
         redisTemplate.setValueSerializer(jackson2JsonRedisSerializer);
         // 设置redisTemplate的hashValue的序列化方式
         redisTemplate.setHashValueSerializer(jackson2JsonRedisSerializer);
-
         return redisTemplate;
     }
 

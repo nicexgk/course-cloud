@@ -30,7 +30,6 @@
                 <dl class="layui-nav-child">
                     <dd><a href="/addcourse.html" target="_blank">类型管理</a></dd>
                     <dd><a href="/addcourse.html" target="_blank">添加课程</a></dd>
-                    <dd><a href="javascript:;" data-source="/editorcourse.html">修改课程</a></dd>
                 </dl>
             </li>
             <li class="layui-nav-item">

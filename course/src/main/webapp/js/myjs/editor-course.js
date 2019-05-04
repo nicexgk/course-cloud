@@ -18,12 +18,13 @@ $(document).ready(function () {
     var height = document.body.clientHeight;
     console.log(width);
     console.log(height);
-    ue = UE.getEditor('container', {initialFrameHeight: 300, initialFrameWidth: width});
+    ue = UE.getEditor('container', {initialFrameHeight: 300});
     console.log("nice nice nice");
     form_init();
     ue.ready(function () {
-        fullDate(course);
+        // fullDate(course);
     });
+    reversChangeSelect($("#select3").attr("data-select"));
     uploadFile();
     i++;
     uploadFile();
@@ -68,21 +69,6 @@ function form_init() {
                 $("#select2").html("");
                 form.render('select');
             } else {
-                // $.ajax({
-                //     type: "get",
-                //     url: "queryCourseTypeForPid.action ",
-                //     async: true, 	//是否异步
-                //     data: {selectvalue: data.value},
-                //     success: function (data) {
-                //         res = $.parseJSON(data);	// 将字符串的json数组转成json类型的json数组
-                //         var str = "";
-                //         for (var i = 0; i < res.length; i++) {
-                //             str += "<option value='" + res[i].typeId + "'>" + res[i].typeName + "</option>"
-                //         }
-                //         $("#select2").html(str);
-                //         form.render('select');
-                //     }
-                // });
                 sortSelect_1(data.value);
                 form.render('select');
             }
@@ -98,8 +84,9 @@ function form_init() {
             }
         });
         // 表单提交
-        form.on('submit(addcoursesubmit)', function (data) {
-            console.log(course);
+        form.on('submit(modifysubmit)', function (data) {
+            var course =  {};
+            course.courseId = $("input[name='course-name']").attr("data-id");
             course.courseName = $("input[name='course-name']").val();
             course.picUrl = $("img[name='course-img']").attr("src");
             course.courseDetail = $("input[name='course-detail']").val();
@@ -377,12 +364,6 @@ function reversChangeSelect(index) {
         }
         console.log(parent);
     }
-    console.log("dddddddddddddddd===============>");
-    console.log(parentCourse);
-    console.log(secondCourse);
-    console.log(childCourse);
-    console.log("dddddddddddddddd===============>");
-
     select2.html("");
     select3.html("");
     for (var child in secondCourse.childList) {
@@ -399,9 +380,6 @@ function reversChangeSelect(index) {
     for (var second in parentCourse.childList) {
         var secondCourse2 = parentCourse.childList[second];
         if (secondCourse2.typeId == secondCourse.typeId) {
-
-            console.log(" secondCourse2 secondCourse2 secondCourse2 ");
-            console.log(secondCourse2);
             select2.append('<option value="' + secondCourse2.typeId + '"selected="selected">' + secondCourse2.typeName + '</option>');
         } else {
             select2.append('<option value="' + secondCourse2.typeId + '">' + secondCourse2.typeName + '</option>');

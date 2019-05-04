@@ -1,0 +1,38 @@
+
+body{
+    background: url("/img/imgs/login-background.jpg") no-repeat  center;
+}
+
+.login-body{
+    width: 700px;
+    margin: 0 auto;
+}
+
+.input{
+    width: 390px;
+}
+
+.form{
+    margin: 0 auto;
+}
+
+.user-login{
+    float: right;
+}
+
+.user-login, .user-register{
+    width: 150px;
+}
+
+.reset-password-link{
+    float: right;
+    margin-right: 167px;
+}
+
+.layui-form-item{
+    margin: 35px;
+}
+.layui-icon{
+    margin-right: 10px;
+    font-size: 20px;
+}

@@ -12,7 +12,7 @@ import javax.websocket.server.PathParam;
  * @description 调用user服务接口
  *
  */
-@FeignClient(value = "user-service" )
+@FeignClient(value = "${user.service}", fallback = ErrorUserServiceCallback.class)
 public interface FeignUserService {
 
     @GetMapping("/user/{account}/{pwd}")
@@ -26,5 +26,8 @@ public interface FeignUserService {
 
     @GetMapping("/user/{uid}")
     public User getUser(@PathVariable("uid") int uid);
+
+    @PutMapping("/user/reset/")
+    public Status resetPwdByEmail(@RequestParam("email") String email, @RequestParam("pwd") String pwd);
 
 }

@@ -42,10 +42,10 @@ public class AlipayConfig {
     public static String alipay_public_key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA59r4HpstAlAop2cFnnDaoNexWAQfv/PdGo/jLqjeMfB2gC0Fj0XonNXpfIwSUSN8dyTWuEybbWTbn7dvC0PVtmORV5HdGPFvghrbSXkSMj30r6zZNgwrL8gp205BChFNnjNb9McqMdQUMG5cUU0r6Cw/TFDgMGP5DGw5qSasqpsISozmb6zjj0vXAh2z55XwI0wOgdMh2X4Vs8qd0i7m8rdUQ6QWuDSU2unprocuZxBdrjW1VMrxpFjOu67/AhwYrtEvqSZHUf2K5jcBfqqmUosAXBU33BucUlq+VlGIlH5G0orlEOdOV1UFp+usqm2eG9IE/j1Q360W2k0+I5e71wIDAQAB";
 
     // 服务器异步通知页面路径  需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
-     public static String notify_url = "http://192.168.1.2:8080/order/createTradeInfo/notify/";
+     public static String notify_url = "http://192.168.1.2:8080/alipay/trade/return/";
 
     // 页面跳转同步通知页面路径 需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
-    public static String return_url = "http://192.168.1.2:8080/order/createTradeInfo/return/";
+    public static String return_url = "http://192.168.1.2:8080/alipay/trade/notify/";
 
     // 签名方式
     public static String sign_type = "RSA2";
@@ -58,9 +58,6 @@ public class AlipayConfig {
 
     // 日志路径
     public static String log_path = "C:\\";
-
-
-//↑↑↑↑↑↑↑↑↑↑请在这里配置您的基本信息↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 
     /**
      * 写日志，方便测试（看网站需求，也可以改成把记录存入数据库）

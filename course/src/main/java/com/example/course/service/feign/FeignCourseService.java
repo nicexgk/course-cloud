@@ -12,7 +12,7 @@ import java.util.LinkedHashMap;
  * @description 调用course服务接口
  *
  */
-@FeignClient(value = "course-service")
+@FeignClient(value = "${course.service}", fallback = ErrorCourseServiceCallback.class)
 public interface FeignCourseService {
 
     @GetMapping("/type/")

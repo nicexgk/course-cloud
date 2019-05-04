@@ -40,6 +40,8 @@ public class AlipayTradeController {
     @ApiImplicitParam(name = "orderOn", value = "订单编号")
     @GetMapping("/trade/page/{orderOn}")
     public void getTradePage(HttpServletResponse response, HttpServletRequest request, @PathVariable("orderOn") String orderOn) throws IOException, AlipayApiException {
+        response.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=UTF-8");
         Order order = feignOrderService.getOrderByOrderOn(orderOn);
         Course course = order.getOrderCourse();
         AlipayClient alipayClient = new DefaultAlipayClient(AlipayConfig.gatewayUrl, AlipayConfig.app_id,
@@ -64,6 +66,7 @@ public class AlipayTradeController {
                 + "\"," + "\"subject\":\"" + subject + "\"," + "\"body\":\"" + body + "\","
                 + "\"product_code\":\"FAST_INSTANT_TRADE_PAY\"}");
         String result = alipayClient.pageExecute(alipayRequest).getBody();
+//        result = "<html><title><meta charset=\"utf-8\"></title><body>" + result + "</html></body>";
         response.getWriter().write(result);
     }
 
@@ -101,14 +104,10 @@ public class AlipayTradeController {
                 if (order == null) {
                     order = feignOrderService.getOrderByOrderOn(out_trade_no);
                 }
-                if (order == null) {
-
-                }
+                request.setAttribute("order", order);
                 feignOrderService.updateOrderStatus(out_trade_no, 1);
-                response.getWriter().write("trade_no:" + trade_no + "<br/>out_trade_no:" + out_trade_no
-                        + "<br/>total_amount:" + total_amount);
             } else {
-                response.getWriter().write("验签失败");
+                request.getRequestDispatcher("/WEB-INF/views/tradefail.jsp").forward(request, response);
             }
         } catch (AlipayApiException e) {
             e.printStackTrace();

@@ -31,8 +31,8 @@ public class UserController {
             @ApiImplicitParam(name = "account", value = "用户账号", required = true),
             @ApiImplicitParam(name = "pwd", value = "用户密码", required = true)
     })
-    @GetMapping("/")
-    public User userLogin(HttpServletRequest request, String account, String pwd){
+    @PostMapping("/")
+    public User userLogin(HttpServletRequest request, @RequestParam("account") String account, @RequestParam("pwd") String pwd){
         User user = null;
         System.out.println(account + "  " + pwd);
         if (account != null && pwd != null) {
@@ -92,6 +92,7 @@ public class UserController {
         return status;
     }
 
+    @ApiOperation(value = "更新用户信息接口")
     @PutMapping("/")
     public Status updateUser(HttpServletRequest request, @RequestBody User user){
         User user2 = (User) request.getSession().getAttribute("user");
@@ -103,4 +104,19 @@ public class UserController {
         return status;
     }
 
+    @ApiOperation(value = "重置密码接口")
+    @PutMapping("/reset/{check}")
+    public Status resetPassword(@PathVariable("check") Integer check, @RequestParam("email") String email, @RequestParam("pwd") String pwd){
+        Status status = null;
+        // 从redis中获取email对应的验证码
+        Integer reCheck = (Integer)redisTemplate.opsForValue().get(email);
+        if(reCheck == null || reCheck.intValue() != check){
+            status = new Status();
+            status.setStatus(400);
+            status.setDescription("验证码不正确！");
+            return status;
+        }
+        status = feignUserService.resetPwdByEmail(email, pwd);
+        return status ;
+    }
 }

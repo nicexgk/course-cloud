@@ -28,7 +28,6 @@ public class SocialController {
     @Resource
     private FeignSocialService feignSocialService;
 
-
     @ApiOperation(value = "用户评论接口", notes = "用户必须登录后才能调用此接口，否则将被拦截器拦截")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "request", value = "请求对象"),

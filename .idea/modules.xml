@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/course-service/course-service.iml" filepath="$PROJECT_DIR$/course-service/course-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/course-springcloud.iml" filepath="$PROJECT_DIR$/.idea/course-springcloud.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka-service/eureka-service.iml" filepath="$PROJECT_DIR$/eureka-service/eureka-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/log-service/log-service.iml" filepath="$PROJECT_DIR$/log-service/log-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/order-service/order-service.iml" filepath="$PROJECT_DIR$/order-service/order-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/social-service/social-service.iml" filepath="$PROJECT_DIR$/social-service/social-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/user-service/user-service.iml" filepath="$PROJECT_DIR$/user-service/user-service.iml" />

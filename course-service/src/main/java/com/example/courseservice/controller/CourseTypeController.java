@@ -19,7 +19,7 @@ public class CourseTypeController {
 
     @GetMapping("/")
     public ArrayList<CourseType> getCourseType(){
-         return courseTypeService.courseTypeNavigation();
+        return courseTypeService.courseTypeNavigation();
     }
 
 }

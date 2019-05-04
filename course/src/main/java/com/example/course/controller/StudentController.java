@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
-@Api("学生信息接口")
+@Api("学生课程信息接口")
 @RestController
 @RequestMapping("/student")
 public class StudentController {
@@ -34,6 +34,7 @@ public class StudentController {
         return feignCourseService.getStudentCourseListByUserIdForPageSize(user.getUserId(), page, size);
     }
 
+    @ApiOperation(value = "删除学生课程接口")
     @DeleteMapping("/course/{cid}")
     public Status cancelCourse(HttpServletRequest request, @PathVariable("cid") int cid) {
         User user = (User) request.getSession().getAttribute("user");

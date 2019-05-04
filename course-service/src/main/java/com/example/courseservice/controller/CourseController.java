@@ -72,7 +72,7 @@ public class CourseController {
     // 分页查询购买量热门的课程
     @GetMapping("/purchase/{page}/{size}")
     public ArrayList<Course> getPurchaseCourseList(@PathVariable("page")int page, @PathVariable("size")int size){
-        return courseService.getPopularCourseList(page, size);
+        return courseService.getPurchaseCourseList(page, size);
     }
 
     @GetMapping("/student/{uid}/{page}/{size}")

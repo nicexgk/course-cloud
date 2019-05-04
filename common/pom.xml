@@ -30,6 +30,7 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!--lombok依赖-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

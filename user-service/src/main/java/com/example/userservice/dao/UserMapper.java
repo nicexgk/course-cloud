@@ -54,5 +54,7 @@ public interface UserMapper {
     @UpdateProvider(type = DynamicSqlProvider.class, method = "updateUserProvider")
     public boolean updateUser(User user);
 
+    @Update("update user_info set user_pwd = #{arg1} where user_email = #{arg0}")
+    public boolean updatePwdByEmail(String email, String pwd);
 
 }

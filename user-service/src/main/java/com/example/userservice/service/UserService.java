@@ -13,4 +13,6 @@ public interface UserService {
     public Status updateUser(User user);
 
     public User getUser(int uid);
+
+    public Status resetPwdByEmail(String email, String pwd);
 }

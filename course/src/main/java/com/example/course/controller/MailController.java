@@ -2,6 +2,8 @@ package com.example.course.controller;
 
 import ch.qos.logback.core.util.TimeUtil;
 import com.example.common.entity.Status;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.mail.SimpleMailMessage;
@@ -14,6 +16,7 @@ import java.util.Date;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+@Api("邮箱接口")
 @RestController
 @RequestMapping("/mail")
 public class MailController {
@@ -24,6 +27,7 @@ public class MailController {
     @Autowired
     RedisTemplate<String, Object> redisTemplate;
 
+    @ApiOperation(value = "发送验证码接口")
     @GetMapping("/")
     public Status verification(@RequestParam("email") String receiveMail){
         SimpleMailMessage simpleMailMessage = new SimpleMailMessage();

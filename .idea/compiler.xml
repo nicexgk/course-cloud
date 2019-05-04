@@ -11,6 +11,7 @@
         <module name="course-provide" />
         <module name="course-service" />
         <module name="eureka-service" />
+        <module name="log-service" />
         <module name="order-provide" />
         <module name="order-service" />
         <module name="social-service" />
@@ -25,6 +26,7 @@
       <module name="course-service" target="1.8" />
       <module name="eureka-server" target="1.5" />
       <module name="eureka-service" target="1.8" />
+      <module name="log-service" target="1.8" />
       <module name="order-provide" target="1.8" />
       <module name="order-service" target="1.8" />
       <module name="social-service" target="1.8" />

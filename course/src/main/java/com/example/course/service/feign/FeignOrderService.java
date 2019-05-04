@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * @description 调用order服务接口
  *
  */
-@FeignClient(value = "order-service")
+@FeignClient(value = "${order.service}", fallback = ErrorOrderServiceCallback.class)
 public interface FeignOrderService {
 
     @PostMapping("/order/")

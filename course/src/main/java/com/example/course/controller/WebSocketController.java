@@ -7,11 +7,14 @@ import com.example.course.service.feign.FeignSocialService;
 import com.example.course.service.feign.FeignUserService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.activemq.command.ActiveMQQueue;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.jms.core.JmsMessagingTemplate;
 import org.springframework.stereotype.Component;
 
+import javax.jms.Queue;
 import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
@@ -32,6 +35,8 @@ public class WebSocketController implements ApplicationContextAware {
 
     private FeignSocialService feignSocialService;
     private FeignUserService feignUserService;
+    private JmsMessagingTemplate jmsMessagingTemplate;
+    private ActiveMQQueue queue;
     private Integer sid;
     private int cid;
 
@@ -42,6 +47,8 @@ public class WebSocketController implements ApplicationContextAware {
         if (applicationContext != null) {
             feignSocialService = applicationContext.getBean(FeignSocialService.class);
             feignUserService = applicationContext.getBean(FeignUserService.class);
+            jmsMessagingTemplate = applicationContext.getBean(JmsMessagingTemplate.class);
+            queue = (ActiveMQQueue) applicationContext.getBean("course-chat-queue");
             objectMapper = applicationContext.getBean(ObjectMapper.class);
         }
     }
@@ -102,30 +109,27 @@ public class WebSocketController implements ApplicationContextAware {
 
 
     public void sendMsg(Session session, String msg) {
-        executorService.execute(new Runnable() {
-            @Override
-            public void run() {
-                ConcurrentHashMap<Session, User> tempMap = concurrentHashMap.get(cid);
-                User user = tempMap.get(session);
-                CourseChat courseChat = new CourseChat();
-                courseChat.setSendUser(user);
-                courseChat.setContent(msg);
-                courseChat.setReceiveCourseId(cid);
-                feignSocialService.addCourseChat(courseChat);
-                String str = null;
-                try {
-                    str = objectMapper.writeValueAsString(courseChat);
-                } catch (JsonProcessingException e) {
-                    e.printStackTrace();
-                }
-                for (Iterator<Map.Entry<Session, User>> iterator = concurrentHashMap.get(cid).entrySet().iterator(); iterator.hasNext(); ) {
-                    Session session1 = iterator.next().getKey();
-                    if(session1 != session){
-                        session1.getAsyncRemote().sendText(str);
-                    }
+        executorService.execute(() -> {
+            ConcurrentHashMap<Session, User> tempMap = concurrentHashMap.get(cid);
+            User user = tempMap.get(session);
+            CourseChat courseChat = new CourseChat();
+            courseChat.setSendUser(user);
+            courseChat.setContent(msg);
+            courseChat.setReceiveCourseId(cid);
+            jmsMessagingTemplate.convertAndSend(queue, courseChat);
+//            feignSocialService.addCourseChat(courseChat);
+            String str = null;
+            try {
+                str = objectMapper.writeValueAsString(courseChat);
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+            }
+            for (Iterator<Map.Entry<Session, User>> iterator = concurrentHashMap.get(cid).entrySet().iterator(); iterator.hasNext(); ) {
+                Session session1 = iterator.next().getKey();
+                if (session1 != session) {
+                    session1.getAsyncRemote().sendText(str);
                 }
             }
         });
     }
-
 }

@@ -24,7 +24,7 @@ import java.util.concurrent.*;
 @Controller
 @RequestMapping("/course/page")
 public class CoursePageController {
-    public static final ExecutorService executorService = Executors.newFixedThreadPool(8);
+    public static final ExecutorService executorService = Executors.newFixedThreadPool(15);
     @Resource
     private FeignCourseService feignCourseService;
     @Resource
@@ -77,6 +77,14 @@ public class CoursePageController {
         request.setAttribute("course", course);
         request.setAttribute("pojo", superstate);
         return "/WEB-INF/views/course.jsp";
+    }
+
+    @ApiOperation(value = "根据课程的id获取课程的编辑页面")
+    @GetMapping("/editor/{cid}")
+    public String courseTypeList(HttpServletRequest request, @PathVariable("cid") int cid) {
+        Course course = feignCourseService.getCourseById(cid);
+        request.setAttribute("course", course);
+        return "/WEB-INF/views/editor-course.jsp";
     }
 
     @ApiOperation(value = "根据课程的id和目录id获取播放的该目录的页面信息", notes = "返回的是HTML代码不是JSON数据")
@@ -135,8 +143,6 @@ public class CoursePageController {
         request.setAttribute("studyList", studyList);
         return "/WEB-INF/views/course-list.jsp";
     }
-
-
 
     public ArrayList<CourseType> studyList(ArrayList<CourseType> courseTypes, int tid) {
         ArrayList<CourseType> studyList = null;

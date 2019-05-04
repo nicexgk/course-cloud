@@ -15,13 +15,16 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 @Api("上传接口")
 @RestController
 @RequestMapping("/upload")
 public class UploadController {
+    public static final ExecutorService executorService = Executors.newFixedThreadPool(8);
 
-    public static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY-MM");
+    public static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY-MM-DD");
 
     // 上传图片
     @ApiOperation(value = "上传图片接口", tags = {"返回一个JSON格式的状态对象", "upload-controller"}, notes = "上传图片的name应为file")
@@ -104,5 +107,6 @@ public class UploadController {
         System.out.println(status);
         return status;
     }
+
 
 }

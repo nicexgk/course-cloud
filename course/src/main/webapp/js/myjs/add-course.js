@@ -48,21 +48,6 @@ function form_init() {
                 $("#select2").html("");
                 form.render('select');
             } else {
-                // $.ajax({
-                //     type: "get",
-                //     url: "queryCourseTypeForPid.action ",
-                //     async: true, 	//是否异步
-                //     data: {selectvalue: data.value},
-                //     success: function (data) {
-                //         res = $.parseJSON(data);	// 将字符串的json数组转成json类型的json数组
-                //         var str = "";
-                //         for (var i = 0; i < res.length; i++) {
-                //             str += "<option value='" + res[i].typeId + "'>" + res[i].typeName + "</option>"
-                //         }
-                //         $("#select2").html(str);
-                //         form.render('select');
-                //     }
-                // });
                 sortSelect_1(data.value);
                 form.render('select');
             }

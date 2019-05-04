@@ -37,4 +37,9 @@ public class UserController {
     public User getUser(@PathVariable("uid") int uid){
         return userService.getUser(uid);
     }
+
+    @PutMapping("/reset/")
+    public Status resetPwdByEmail(@RequestParam("email") String email, @RequestParam("pwd") String pwd){
+        return userService.resetPwdByEmail(email, pwd);
+    }
 }

@@ -47,4 +47,8 @@ public class UserMapperTest {
         System.out.println(userMapper.updateUser(user));
     }
 
+    @Test
+    public void updatePwdByEmail(){
+        System.out.println(userMapper.updatePwdByEmail("1252673738@qq.com", "123456"));
+    }
 }

@@ -55,6 +55,7 @@ public class CourseController {
             status.setDescription("您还没有登录，请先登录！！！");
         }
         // 调用课程修改接口，对课程进行修改
+        course.setCourseTeacher(user);
         status = feignCourseService.modifyCourse(course);
         if (status == null) {
             status = new Status();
@@ -74,6 +75,13 @@ public class CourseController {
         }
         System.out.println(course);
         return course;
+    }
+
+    @ApiOperation(value = "根据课程id删除课程接口")
+    @DeleteMapping("/{cid}")
+    public Status deleteCourse(HttpServletRequest request, @PathVariable("cid") int cid){
+
+        return null;
     }
 
     @ApiOperation(value = "获取课程目录列表", tags = {"返回JSON格式的目录对象", "course-controller"})
@@ -116,7 +124,6 @@ public class CourseController {
     public LinkedHashMap<String, ArrayList<Course>> getCourseTopNumByParentType(@PathVariable("parentId") int parentId, @PathVariable("page") int page, @PathVariable("size") int size) {
         return feignCourseService.getCourseTopNumByParentType(parentId, page, size);
     }
-
 
     @ApiOperation(value = "按课程名字分页搜索课程接口", notes = "页数从0开始不是1")
     @GetMapping("/search/")

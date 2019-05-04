@@ -1,8 +1,15 @@
 package com.example.courseservice.service;
 
 import com.example.common.entity.*;
+import com.example.courseservice.Config.SpringContext;
 import com.example.courseservice.dao.CourseMapper;
+import com.example.courseservice.util.ZookeeperClient;
+import org.apache.curator.framework.recipes.locks.InterProcessMutex;
+import org.apache.curator.framework.recipes.locks.InterProcessReadWriteLock;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
 import org.springframework.data.redis.core.DefaultTypedTuple;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ZSetOperations;
@@ -12,17 +19,34 @@ import javax.annotation.Resource;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
+
 @Service
+@PropertySources({
+        @PropertySource("classpath:zookeeper.properties"),
+        @PropertySource("classpath:application.properties")
+})
 public class CourseServiceImpl implements CourseService {
     public static double SCORE = 0;
     @Resource
-    CourseMapper courseMapper;
+    private CourseMapper courseMapper;
     @Resource
-    CourseTypeService courseTypeService;
+    private CourseTypeService courseTypeService;
     @Autowired
-    CatalogService catalogService;
+    private CatalogService catalogService;
     @Autowired
-    RedisTemplate<String, Object> redisTemplate;
+    private RedisTemplate<String, Object> redisTemplate;
+    @Value("${zookeeper.cache.purchase-lock-path}")
+    private String purchaseLockPath;
+    @Value("${zookeeper.cache.popular-lock-path}")
+    private String popularLockPath;
+    @Value("${zookeeper.cache.index-data-lock-path}")
+    private String indexDataLockPath;
+    @Value("${redis.cache.purchase-key}")
+    private String purchaseZSetKey;
+    @Value("${redis.cache.popular-key}")
+    private String popularZSetKey;
+    @Value("${redis.cache.index-data-key}")
+    private String indexDataHashKey;
 
     @Override
     public ArrayList<Course> getStudentCourseList(int uid, int page, int size) {
@@ -32,23 +56,49 @@ public class CourseServiceImpl implements CourseService {
     // 获取购买排行榜
     @Override
     public ArrayList<Course> getPurchaseCourseList(int page, int size) {
-        Set<Object> purchaseSet = redisTemplate.opsForZSet().range("purchase-course-zset", page * size, size);
+        Set<Object> purchaseSet = redisTemplate.opsForZSet().range(purchaseZSetKey, page * size, size);
         ArrayList<Course> purchaseCourseList = null;
         if (purchaseSet == null || purchaseSet.isEmpty()) {
-            Set<ZSetOperations.TypedTuple<Object>> tupleSet = new HashSet<>();
-            purchaseCourseList = courseMapper.queryCourseStartSize(page * size, size);
-            for (Course course : purchaseCourseList) {
-                tupleSet.add(new DefaultTypedTuple<Object>(course, SCORE));
+            // 获取zkClient
+            ZookeeperClient curatorFramework = SpringContext.applicationContext.getBean(ZookeeperClient.class);
+            // 获取读写锁
+            InterProcessReadWriteLock readWriteLock = curatorFramework.getReadWriteLock(purchaseLockPath);
+            // 获取写锁
+            InterProcessMutex interProcessMutex = readWriteLock.writeLock();
+            //
+            try {
+                // 获取锁
+                interProcessMutex.acquire();
+                purchaseSet = redisTemplate.opsForZSet().range(purchaseZSetKey, page * size, size);
+                // 判断缓存是否还是空，如果是空则将数据放入缓存中，否则不操作
+                if (purchaseSet == null || purchaseSet.isEmpty()) {
+                    purchaseCourseList = courseMapper.queryCourseStartSize(page * size, size);
+                    Set<ZSetOperations.TypedTuple<Object>> tupleSet = new HashSet<>();
+                    for (Course course : purchaseCourseList) {
+                        tupleSet.add(new DefaultTypedTuple<Object>(course, SCORE));
+                    }
+                    long add = redisTemplate.opsForZSet().add(purchaseZSetKey, tupleSet);
+                    redisTemplate.expire(purchaseZSetKey, 60, TimeUnit.SECONDS);
+                    System.out.println("purchase-course-zset add " + add);
+                    return purchaseCourseList;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    // 释放锁
+                    interProcessMutex.release();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                // 关闭连接
+                curatorFramework.close();
             }
-            long add = redisTemplate.opsForZSet().add("purchase-course-zset", tupleSet);
-            redisTemplate.expire("purchase-course-zset", 60, TimeUnit.SECONDS);
-            System.out.println("purchase-course-zset add " + add);
-        } else {
-            System.out.println(purchaseSet.size());
-            purchaseCourseList = new ArrayList<>();
-            for (Iterator iterator = purchaseSet.iterator(); iterator.hasNext(); ) {
-                purchaseCourseList.add((Course) iterator.next());
-            }
+        }
+        System.out.println(purchaseSet.size());
+        purchaseCourseList = new ArrayList<>();
+        for (Iterator iterator = purchaseSet.iterator(); iterator.hasNext(); ) {
+            purchaseCourseList.add((Course) iterator.next());
         }
         return purchaseCourseList;
     }
@@ -56,33 +106,81 @@ public class CourseServiceImpl implements CourseService {
     // 获取热门排行榜
     @Override
     public ArrayList<Course> getPopularCourseList(int page, int size) {
-        Set<Object> popularSet = redisTemplate.opsForZSet().range("popular-course-zset", page * size, size);
+        Set<Object> popularSet = redisTemplate.opsForZSet().range(popularZSetKey, page * size, size);
         ArrayList<Course> popularCourseList = null;
         if (popularSet == null || popularSet.isEmpty()) {
-            Set<ZSetOperations.TypedTuple<Object>> tupleSet = new HashSet<>();
-            popularCourseList = courseMapper.queryCourseStartSize(page * size, size);
-            for (Course course : popularCourseList) {
-                tupleSet.add(new DefaultTypedTuple<Object>(course, SCORE));
+            ZookeeperClient zkClient = SpringContext.applicationContext.getBean(ZookeeperClient.class);
+            // 获取读写锁
+            InterProcessReadWriteLock readWriteLock = zkClient.getReadWriteLock(popularLockPath);
+            // 获取写锁
+            InterProcessMutex interProcessMutex = readWriteLock.writeLock();
+            try {
+                interProcessMutex.acquire();
+                // 重新读取缓存
+                popularSet = redisTemplate.opsForZSet().range(popularZSetKey, page * size, size);
+                // 判断缓存是否为空，如果为空将数据写入缓存
+                if (popularSet == null || popularSet.isEmpty()) {
+                    Set<ZSetOperations.TypedTuple<Object>> tupleSet = new HashSet<>();
+                    popularCourseList = courseMapper.queryCourseStartSize(page * size, size);
+                    for (Course course : popularCourseList) {
+                        tupleSet.add(new DefaultTypedTuple<Object>(course, SCORE));
+                    }
+                    long add = redisTemplate.opsForZSet().add(popularZSetKey, tupleSet);
+                    redisTemplate.expire(popularZSetKey, 60, TimeUnit.SECONDS);
+                    System.out.println("popular-course-zset add " + add);
+                    return popularCourseList;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    // 释放锁
+                    interProcessMutex.release();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                // 断开连接
+                zkClient.close();
             }
-            long add = redisTemplate.opsForZSet().add("popular-course-zset", tupleSet);
-            redisTemplate.expire("popular-course-zset", 60, TimeUnit.SECONDS);
-            System.out.println("popular-course-zset add " + add);
-        } else {
-            System.out.println(popularSet.size());
-            popularCourseList = new ArrayList<>();
-            for (Iterator iterator = popularSet.iterator(); iterator.hasNext(); ) {
-                popularCourseList.add((Course) iterator.next());
-            }
+        }
+        System.out.println(popularSet.size());
+        popularCourseList = new ArrayList<>();
+        for (Iterator iterator = popularSet.iterator(); iterator.hasNext(); ) {
+            popularCourseList.add((Course) iterator.next());
         }
         return popularCourseList;
     }
 
     @Override
     public LinkedHashMap<String, ArrayList<Course>> getCourseTopNumByParentType(int parentId, int page, int size) {
-        LinkedHashMap<String, ArrayList<Course>> superCourseList = new LinkedHashMap<>();
-        ArrayList<CourseType> ChileTypeList = courseTypeService.getCourseTypeByParentIdForChildList(parentId);
-        for (CourseType courseType : ChileTypeList) {
-            superCourseList.put(courseType.getTypeName(), courseMapper.queryCourseByTypeForStartSize(courseType.getTypeId(), page * size, size));
+        LinkedHashMap<String, ArrayList<Course>> superCourseList = null;
+        superCourseList = (LinkedHashMap<String, ArrayList<Course>>) redisTemplate.opsForHash().get(indexDataHashKey, String.valueOf(parentId));
+        if (superCourseList == null || superCourseList.isEmpty()) {
+            ZookeeperClient zkClient = SpringContext.applicationContext.getBean(ZookeeperClient.class);
+            InterProcessReadWriteLock readWriteLock = zkClient.getReadWriteLock(indexDataLockPath);
+            InterProcessMutex interProcessMutex = readWriteLock.writeLock();
+            try {
+                interProcessMutex.acquire();
+                superCourseList = (LinkedHashMap<String, ArrayList<Course>>) redisTemplate.opsForHash().get(indexDataHashKey,String.valueOf(parentId));
+                if (superCourseList == null || superCourseList.isEmpty()) {
+                    superCourseList = new LinkedHashMap<>();
+                    ArrayList<CourseType> ChileTypeList = courseTypeService.getCourseTypeByParentIdForChildList(parentId);
+                    for (CourseType courseType : ChileTypeList) {
+                        superCourseList.put(courseType.getTypeName(), courseMapper.queryCourseByTypeForStartSize(courseType.getTypeId(), page * size, size));
+                    }
+                    redisTemplate.opsForHash().put(indexDataHashKey, String.valueOf(parentId), superCourseList);
+                    return superCourseList;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    interProcessMutex.release();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                zkClient.close();
+            }
         }
         return superCourseList;
     }
@@ -171,7 +269,6 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public ArrayList<Course> getUserCourseList(int id) {
-
         return courseMapper.queryUserCourseList(id);
     }
 
@@ -219,7 +316,8 @@ public class CourseServiceImpl implements CourseService {
     public Course getCourseById(int cid) {
         Course course = courseMapper.queryCourseByCid(cid);
         if (course != null) {
-//            redisTemplate.opsForZSet().
+            // popular-course-zset
+//            redisTemplate.opsForZSet();
             ArrayList<Catalog> catalogList = catalogService.getCatalogList(cid);
             course.setCatalogList(catalogList);
         }

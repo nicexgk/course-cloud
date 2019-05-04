@@ -131,19 +131,20 @@ function login() {
     var pwd = $(".ui-dialog-input-password").val();
     console.log(account);
     console.log(pwd);
-    $.getJSON(
-        "/user/"
-        , {account: account, pwd: pwd}
-        , function (data) {
-            console.log(data);
-            if (data.userId == undefined) {
-                console.log("incorrect user or password ");
-                layer.msg("登录失败!!!", {icon: 5});
-            } else {
-                loginSuccess(data);
-                layer.msg("登录成功!!!", {icon: 1});
-            }
+    var user = {};
+    user.account = account;
+    user.pwd = pwd;
+    $.post(
+        "/user/",
+        user,
+        function (data) {
+        console.log(data);
+        if (data.userId == undefined) {
+            console.log("incorrect user or password ");
+            layer.msg("登录失败!!!", {icon: 5});
+        } else {
+            loginSuccess(data);
+            layer.msg("登录成功!!!", {icon: 1});
         }
-    )
-
+    });
 }

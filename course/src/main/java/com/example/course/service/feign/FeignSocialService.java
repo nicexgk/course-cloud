@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 /**
  * @description 调用social服务接口
  */
-@FeignClient(value = "social-service")
+@FeignClient(value = "${social.service}", fallback = ErrorSocialServiceCallback.class)
 public interface FeignSocialService {
 
     @PostMapping("/commentary/")

@@ -1,0 +1,16 @@
+
+body{
+    background: url("/img/imgs/login-background.jpg") no-repeat  center;
+}
+.input{
+    width: 400px;
+}
+
+.reset-body{
+    width: 700px;
+    margin: 0 auto;
+}
+.check-number{
+    float: right;
+    margin-right: -10px;
+}

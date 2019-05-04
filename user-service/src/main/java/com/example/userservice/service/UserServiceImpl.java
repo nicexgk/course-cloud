@@ -49,4 +49,17 @@ public class UserServiceImpl implements UserService{
     public User getUser(int uid) {
         return userMapper.queryUserByUid(uid);
     }
+
+    @Override
+    public Status resetPwdByEmail(String email, String pwd) {
+        Status status = new Status();
+        if(!userMapper.updatePwdByEmail(email, pwd)){
+            status.setStatus(400);
+            status.setDescription("重置密码失败！！！");
+            return status;
+        }
+        status.setStatus(200);
+        status.setDescription("密码已重置！");
+        return status;
+    }
 }

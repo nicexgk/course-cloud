@@ -12,7 +12,7 @@
     <%--<link type="text/css" rel="stylesheet" href="/css/mycss/my-course-list.css">--%>
     <link type="text/css" rel="stylesheet" href="/css/mycss/course-list.css">
 
-    <script src="/js/myjs/my-course-list.js"></script>
+    <%--<script src="/js/myjs/my-course-list.js"></script>--%>
 
 </head>
 
@@ -32,7 +32,7 @@
                     <h4 class="item-title"><a href="/course/page/${course.courseId}" target="_blank">${course.courseName}</a></h4>
                     <div class="item-card-parson item-card">
                         <span class="item-inline-date">${fn:substring(course.courseDate, 0, 10)}</span>
-                        <a href="" target="_blank"><span class="item-inline-teacher" data-course-id="${course.courseId}" onclick="editorCourse(${course.courseId})">编辑</span></a>
+                        <a href="/course/page/editor/${course.courseId}" target="_blank"><span class="item-inline-teacher" data-course-id="${course.courseId}" onclick="editorCourse(${course.courseId})">编辑</span></a>
                     </div>
                     <c:if test="${course.coursePrice eq 0}">
                         <div class="item-card-price item-card">
@@ -50,8 +50,6 @@
             </c:forEach>
         </ul>
     </div>
-
-
 </div>
 
 </body>
