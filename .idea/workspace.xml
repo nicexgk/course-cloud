@@ -13,211 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43a6ab9b-5e98-4a12-8534-d1300babfc29" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_lettuce_lettuce_core_5_1_6_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_3_10_6_Final.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_34_Final.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_34_Final.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_34_Final.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_34_Final.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_34_Final.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_34_Final.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_2_8_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_jms_javax_jms_api_2_0_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_9_12.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_9_12.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_activemq_activemq_broker_5_15_8.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_activemq_activemq_broker_5_15_9.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_activemq_activemq_client_5_15_8.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_activemq_activemq_client_5_15_9.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_activemq_activemq_openwire_legacy_5_15_8.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_activemq_activemq_openwire_legacy_5_15_9.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_geronimo_specs_geronimo_j2ee_management_1_1_spec_1_0_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_geronimo_specs_geronimo_jms_1_1_spec_1_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_8.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_17.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_17.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_17.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_yetus_audience_annotations_0_5_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_fusesource_hawtbuf_hawtbuf_1_11.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_16_Final.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_5_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_2_0_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_2_0_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_2_0_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_26.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_26.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_1_4_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_1_4_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_1_4_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_activemq_2_1_3_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_activemq_2_1_4_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_1_4_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_2_1_4_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_1_4_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_1_4_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_1_4_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_1_4_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_1_4_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_1_4_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_1_4_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_1_4_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_1_6_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_2_1_6_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_1_6_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_crypto_5_1_5_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_1_6_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_1_6_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_1_6_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_1_6_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_1_6_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_1_6_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_1_6_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_1_6_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jms_5_1_5_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jms_5_1_6_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_5_1_6_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_5_1_6_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_1_6_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_1_6_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_1_6_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_1_6_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/Config/SpringContext.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/util/ZookeeperClient.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course-service/src/test/java/com/example/courseservice/test/ZookeeperClientTest.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/config/ActiveMQConfig.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/config/WebConfigurer.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/interceptor/ManagerInterceptor.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/forget-password.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/login.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/css/mycss/forget-pwssword.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/css/mycss/login.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/js/myjs/forget-password.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/ueditor/jsp/upload/image/20190412/1555005962480030205.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/ueditor/jsp/upload/image/20190412/1555005999990004210.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/ueditor/jsp/upload/image/20190413/1555142651065088037.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/ueditor/jsp/upload/image/20190415/1555259890958077821.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/ueditor/jsp/upload/image/20190421/1555779179648011508.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/ueditor/jsp/upload/image/20190421/1555816898845069578.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/037e05d5ee4d45c88dcecff080c347e9c10.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/098ce6ce902f498da89a4f5227784237QQ截图20190321200255.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/0eacf1aadf6b4fd8b52ece4dde69ab7720180707130600837.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/126400e5a42a40208ab1116c5b5691b7a24.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/12849391856446459e0adae2ef3fd63320180707130600837 - 副本.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/1384b5a2806a4fdcbdf318075366a67d20180707130600837 - 副本.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/15bfd8e4c8714d358c83a1153f6cf087background.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/17effccc2ad64e7c9170ac268607804ba22.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/2c9d38b527954bc8ac63d114e83999bfc05.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/37f90fc504554d628950ae7fdb8d0fc75.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/38a179636c4546c4847a9b30c7d0cf33jg6.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/407489da9dda442fa3965d203ae7c79320180707130600837 - 副本.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/4e06bdef19ff407ca16ac4e621915b396.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/5b53038409504c9a9f4a7839d39e010fc02.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/6018fe5d3e124c6f8b3bf5d9386bb0c2teacher.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/604228c064a14f5a9e679493c09d581a20180707130600837 - 副本.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/672a307f9deb475dbc2ccb3aea7b2748login-background.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/67c629d6fb134adabe32ec694ed41801c07.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/6c47fdb5bb1948f1ae322404583dfc2e4.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/80e14250c61841b7959c5dbb055aff9clogin-background.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/8258f6e752eb4978b9902ef1220e9e0c20180707130600837 - 副本.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/8609f4213d7243d0b6c60d69a057dfcca25.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/87d87361cd0c4e6cb88c7e074e496be5c13.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/9104df0a1be14768a6db7657b4bb60e020180707130600837.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/95de2061bbfc4a82aef50d7ecfd3b84720180707130600837 - 副本.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/9bbe31c646fc4f3ab9dafeb996b3ac3fc08.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/9df4ae3275ba4747855037d45f861d8b20180707130600837.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/9e00d2ef48ab406a876fa7cd417e556820180707130600837.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/ae93d980101847beb65c0e139f0b1245login-background.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/b1ef1fb35fa741b4836640fe6a2bda17c04.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/b588244ba23d40d5882d8fc4d47d2e9dtimg.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/b740b05751a343eaa046b4b266c874e520180707130600837 - 副本.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/ba9d1a304ce24d7bb2391d1f80cbd2ce77.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/bbab93c9d6334ec0bafff6110a0cc751a23.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/ddec65f7d7ff4801846d4d6481b564c520180707130600837.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/dfde4bceecb345f7b8326a503bf7aa47c09.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/e3e95042295044c98bfa08446b7bbd0120180707130600837.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/ed2d3facd61845b8ad87e5ec5ec6c05120180707130600837.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/image/f0c6f00540b943f1a36a4f492ad07f7d20180707130600837.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/video/2019-04/036802ded3544fe2938e2068a84037aa光年之外 - G.E.M.邓紫棋.mp4" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/video/2019-04/04caf1dde1f14e9a9d2c2d872617d477我曾 - 隔壁老樊.mp4" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/video/2019-04/07c6c6e1ad9e48af9a98a0571a98b760刚刚好 - 薛之谦.mp4" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/video/2019-04/50254d1e4d13493785461e9494dd1d7d刚刚好 - 薛之谦.mp4" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/upload/video/2019-04/527938593f744cde9a2d4120cff2a0ca光年之外 - G.E.M.邓紫棋.mp4" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/log-service/src/main/java/com/example/logservice/config/ActiveMQConfigurer.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/log-service/src/main/java/com/example/logservice/dao/LogMapper.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/log-service/src/main/java/com/example/logservice/service/LogService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/log-service/src/main/java/com/example/logservice/service/LogServiceImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/log-service/src/main/java/com/example/logservice/service/activemq/Consumer/ErrorLogConsumer.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/log-service/src/test/java/com/example/logservice/dao/LogMapperTest.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/social-service/src/main/java/com/example/socialservice/config/ActiveMQConfigurer.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/social-service/src/main/java/com/example/socialservice/service/activemq/Consumer/CourseChatConsumer.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/social-service/src/test/java/com/example/socialservice/service/ActiveMQTest.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/course_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/course_war_exploded.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_cli_commons_cli_1_2.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_3_10_5_Final.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_16.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_zookeeper_zookeeper_3_5_3_beta.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_zookeeper_zookeeper_3_4_13.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" afterPath="$PROJECT_DIR$/common/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/entity/Catalog.java" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/entity/Catalog.java" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/entity/Course.java" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/entity/Course.java" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/entity/ErrorLog.java" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/entity/ErrorLog.java" />
-      <change beforePath="$PROJECT_DIR$/course-service/pom.xml" afterPath="$PROJECT_DIR$/course-service/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/Config/RedisConfig.java" afterPath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/Config/RedisConfig.java" />
-      <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/CourseController.java" afterPath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/CourseController.java" />
-      <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/CourseTypeController.java" afterPath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/CourseTypeController.java" />
-      <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CourseServiceImpl.java" afterPath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CourseServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CourseTypeServiceImpl.java" afterPath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CourseTypeServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/course-service/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/course-service/src/main/resources/application.properties" />
-      <change beforePath="$PROJECT_DIR$/course-service/src/main/resources/zookeeper.properties" afterPath="$PROJECT_DIR$/course-service/src/main/resources/zookeeper.properties" />
-      <change beforePath="$PROJECT_DIR$/course/pom.xml" afterPath="$PROJECT_DIR$/course/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/CourseApplication.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/CourseApplication.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/config/AlipayConfig.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/config/AlipayConfig.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/config/LoginInterceptor.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/config/RedisConfig.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/config/RedisConfig.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/AlipayTradeController.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/AlipayTradeController.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/CourseController.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/CourseController.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/CoursePageController.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/CoursePageController.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/IndexController.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/IndexController.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/MailController.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/MailController.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/SocialController.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/SocialController.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/StudentController.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/StudentController.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/TradeController.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/UploadController.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/UploadController.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/UserController.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/UserController.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/WebSocketController.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/WebSocketController.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/interceptor/LoginInterceptor.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/interceptor/LoginInterceptor.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/ErrorCourseServiceCallback.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/ErrorCourseServiceCallback.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/ErrorOrderServiceCallback.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/ErrorOrderServiceCallback.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/ErrorSocialServiceCallback.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/ErrorSocialServiceCallback.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/ErrorUserServiceCallback.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/ErrorUserServiceCallback.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/FeignCourseService.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/FeignCourseService.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/FeignOrderService.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/FeignOrderService.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/FeignSocialService.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/FeignSocialService.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/FeignUserService.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/FeignUserService.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/course/src/main/resources/application.properties" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/course-manager-nav.jsp" afterPath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/course-manager-nav.jsp" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/editor-course.jsp" afterPath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/editor-course.jsp" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/help.jsp" afterPath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/help.jsp" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/my-course-list.jsp" afterPath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/my-course-list.jsp" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/js/myjs/add-course.js" afterPath="$PROJECT_DIR$/course/src/main/webapp/js/myjs/add-course.js" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/js/myjs/editor-course.js" afterPath="$PROJECT_DIR$/course/src/main/webapp/js/myjs/editor-course.js" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/js/myjs/login-form.js" afterPath="$PROJECT_DIR$/course/src/main/webapp/js/myjs/login-form.js" />
-      <change beforePath="$PROJECT_DIR$/course/src/test/java/com/example/course/CourseApplicationTests.java" afterPath="$PROJECT_DIR$/course/src/test/java/com/example/course/CourseApplicationTests.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/test/java/com/example/course/ServiceTest/FeignUserServiceTest.java" afterPath="$PROJECT_DIR$/course/src/test/java/com/example/course/ServiceTest/FeignUserServiceTest.java" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderservice/Config/RedisConfig.java" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderservice/config/RedisConfig.java" />
-      <change beforePath="$PROJECT_DIR$/social-service/pom.xml" afterPath="$PROJECT_DIR$/social-service/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/social-service/src/main/java/com/example/socialservice/SocialServiceApplication.java" afterPath="$PROJECT_DIR$/social-service/src/main/java/com/example/socialservice/SocialServiceApplication.java" />
-      <change beforePath="$PROJECT_DIR$/social-service/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/social-service/src/main/resources/application.properties" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/controller/UserController.java" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/controller/UserController.java" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/dao/UserMapper.java" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/dao/UserMapper.java" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/service/UserService.java" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/service/UserService.java" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/service/UserServiceImpl.java" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/service/UserServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/test/java/com/example/userservice/daotest/UserMapperTest.java" afterPath="$PROJECT_DIR$/user-service/src/test/java/com/example/userservice/daotest/UserMapperTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/eureka-service/target/" />
     <ignored path="$PROJECT_DIR$/order-provide/target/" />
@@ -1045,7 +841,7 @@
       <workItem from="1556808523444" duration="2940000" />
       <workItem from="1556855305677" duration="26141000" />
       <workItem from="1556894117657" duration="12674000" />
-      <workItem from="1556947128064" duration="2594000" />
+      <workItem from="1556947128064" duration="2675000" />
     </task>
     <task id="LOCAL-00001" summary="dsfsdfds">
       <created>1554708225208</created>
@@ -1103,7 +899,14 @@
       <option name="project" value="LOCAL" />
       <updated>1556566231461</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="完善了基本内容">
+      <created>1556949791810</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1556949791810</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1139,7 +942,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="815074000" />
+    <option name="totallyTimeSpent" value="815155000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1296,6 +1099,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="21" column="15" lean-forward="true" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1342,6 +1146,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="38" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1438,6 +1243,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="44" column="33" lean-forward="false" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1445,6 +1251,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="21" column="31" lean-forward="false" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1452,6 +1259,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1459,6 +1267,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="18" column="31" lean-forward="false" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1466,6 +1275,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="22" column="31" lean-forward="false" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+          <folding>
+            <element signature="e#698#716#1" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
