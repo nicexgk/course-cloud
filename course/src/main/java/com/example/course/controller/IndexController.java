@@ -174,11 +174,20 @@ public class IndexController {
 
     @ApiOperation(value = "课程列表界面")
     @GetMapping("/courselist.html")
-    public String courseList(HttpServletRequest request){
+    public String courseList(HttpServletRequest request) throws ExecutionException, InterruptedException {
+        // 异步调用课程服务获取课程信息
+        FutureTask<ArrayList<Course>> coursePopularFutureTask = new FutureTask<>(() -> {
+            return feignCourseService.getPopularCourseList(0, 7);
+        });
+        executorService.submit(coursePopularFutureTask);
+
         Superstate superstate = feignCourseService.getCourseList(0, 20);
         ArrayList<Course> courseArrayList = objectMapper.convertValue(superstate.getResource(), new TypeReference<ArrayList<Course>>(){});
+
+        ArrayList<Course> popularList = coursePopularFutureTask.get();
         request.setAttribute("courseList", courseArrayList);
         request.setAttribute("pojo", superstate);
+        request.setAttribute("popularList", popularList);
         return "/WEB-INF/views/course-list.jsp";
     }
 

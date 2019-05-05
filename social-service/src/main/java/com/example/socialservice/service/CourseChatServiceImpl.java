@@ -32,7 +32,7 @@ public class CourseChatServiceImpl implements CourseChatService{
     public Superstate getCourseChatListByCidForPageSize(int cid, int page, int size) {
         page = page >= 0 ? page : 0;
         size = size >= 0 ? size : 0;
-        ArrayList<CourseChat> courseChats = courseChatMapper.queryCourseChatListByCidForStartSize(cid, page, size);
+        ArrayList<CourseChat> courseChats = courseChatMapper.queryCourseChatListByCidForStartSize(cid, page * size, size);
         Superstate superstate = new Superstate();
         superstate.setSize(size);
         superstate.setPage(page);

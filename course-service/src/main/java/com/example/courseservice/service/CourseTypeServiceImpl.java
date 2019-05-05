@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 @Service
 @PropertySources({
@@ -43,6 +44,7 @@ public class CourseTypeServiceImpl implements CourseTypeService {
                 if(arrayList == null || arrayList.isEmpty()){
                     arrayList = getCourseTypeCatalog();
                     redisTemplate.opsForValue().set(typeKey, arrayList);
+                    redisTemplate.expire(typeKey, 60, TimeUnit.SECONDS);
                     return arrayList;
                 }
             } catch (Exception e){

@@ -20,9 +20,9 @@ import java.io.*;
 public class DownloadController {
 
     @ApiOperation("文件下载接口")
-    @GetMapping("/")
+    @GetMapping("")
     public void downloadFile(HttpServletRequest request, HttpServletResponse response, @RequestParam("path") String path) throws IOException {
-        System.out.println(path);
+        System.out.println("path = " + path);
         String realPath = request.getServletContext().getRealPath(path);
         System.out.println(realPath);
 

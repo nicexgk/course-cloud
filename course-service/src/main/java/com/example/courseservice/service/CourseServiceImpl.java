@@ -4,6 +4,7 @@ import com.example.common.entity.*;
 import com.example.courseservice.Config.SpringContext;
 import com.example.courseservice.dao.CourseMapper;
 import com.example.courseservice.util.ZookeeperClient;
+import com.netflix.discovery.converters.Auto;
 import org.apache.curator.framework.recipes.locks.InterProcessMutex;
 import org.apache.curator.framework.recipes.locks.InterProcessReadWriteLock;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,8 @@ public class CourseServiceImpl implements CourseService {
     private CatalogService catalogService;
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;
+    @Autowired
+    private ZookeeperClient zkClient;
     @Value("${zookeeper.cache.purchase-lock-path}")
     private String purchaseLockPath;
     @Value("${zookeeper.cache.popular-lock-path}")
@@ -50,26 +53,28 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public ArrayList<Course> getStudentCourseList(int uid, int page, int size) {
+        page = page < 0 ? 0 : page;
+        size = size < 0 ? 0 : size;
         return courseMapper.queryCourseByStudentForStartSize(uid, page * size, size);
     }
 
     // 获取购买排行榜
     @Override
     public ArrayList<Course> getPurchaseCourseList(int page, int size) {
-        Set<Object> purchaseSet = redisTemplate.opsForZSet().range(purchaseZSetKey, page * size, size);
+        page = page < 0 ? 0 : page;
+        size = size < 0 ? 0 : size;
+        Set<Object> purchaseSet = redisTemplate.opsForZSet().range(purchaseZSetKey, page * size, size - 1);
         ArrayList<Course> purchaseCourseList = null;
         if (purchaseSet == null || purchaseSet.isEmpty()) {
-            // 获取zkClient
-            ZookeeperClient curatorFramework = SpringContext.applicationContext.getBean(ZookeeperClient.class);
             // 获取读写锁
-            InterProcessReadWriteLock readWriteLock = curatorFramework.getReadWriteLock(purchaseLockPath);
+            InterProcessReadWriteLock readWriteLock = zkClient.getReadWriteLock(purchaseLockPath);
             // 获取写锁
             InterProcessMutex interProcessMutex = readWriteLock.writeLock();
             //
             try {
                 // 获取锁
-                interProcessMutex.acquire();
-                purchaseSet = redisTemplate.opsForZSet().range(purchaseZSetKey, page * size, size);
+                interProcessMutex.acquire(10, TimeUnit.SECONDS);
+                purchaseSet = redisTemplate.opsForZSet().range(purchaseZSetKey, page * size, size - 1);
                 // 判断缓存是否还是空，如果是空则将数据放入缓存中，否则不操作
                 if (purchaseSet == null || purchaseSet.isEmpty()) {
                     purchaseCourseList = courseMapper.queryCourseStartSize(page * size, size);
@@ -91,8 +96,6 @@ public class CourseServiceImpl implements CourseService {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                // 关闭连接
-                curatorFramework.close();
             }
         }
         System.out.println(purchaseSet.size());
@@ -106,18 +109,19 @@ public class CourseServiceImpl implements CourseService {
     // 获取热门排行榜
     @Override
     public ArrayList<Course> getPopularCourseList(int page, int size) {
-        Set<Object> popularSet = redisTemplate.opsForZSet().range(popularZSetKey, page * size, size);
+        page = page < 0 ? 0 : page;
+        size = size < 0 ? 0 : size;
+        Set<Object> popularSet = redisTemplate.opsForZSet().range(popularZSetKey, page * size, size - 1);
         ArrayList<Course> popularCourseList = null;
         if (popularSet == null || popularSet.isEmpty()) {
-            ZookeeperClient zkClient = SpringContext.applicationContext.getBean(ZookeeperClient.class);
             // 获取读写锁
             InterProcessReadWriteLock readWriteLock = zkClient.getReadWriteLock(popularLockPath);
             // 获取写锁
             InterProcessMutex interProcessMutex = readWriteLock.writeLock();
             try {
-                interProcessMutex.acquire();
+                interProcessMutex.acquire(10, TimeUnit.SECONDS);
                 // 重新读取缓存
-                popularSet = redisTemplate.opsForZSet().range(popularZSetKey, page * size, size);
+                popularSet = redisTemplate.opsForZSet().range(popularZSetKey, page * size, size - 1);
                 // 判断缓存是否为空，如果为空将数据写入缓存
                 if (popularSet == null || popularSet.isEmpty()) {
                     Set<ZSetOperations.TypedTuple<Object>> tupleSet = new HashSet<>();
@@ -139,8 +143,6 @@ public class CourseServiceImpl implements CourseService {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                // 断开连接
-                zkClient.close();
             }
         }
         System.out.println(popularSet.size());
@@ -153,14 +155,15 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public LinkedHashMap<String, ArrayList<Course>> getCourseTopNumByParentType(int parentId, int page, int size) {
+        page = page < 0 ? 0 : page;
+        size = size < 0 ? 0 : size;
         LinkedHashMap<String, ArrayList<Course>> superCourseList = null;
         superCourseList = (LinkedHashMap<String, ArrayList<Course>>) redisTemplate.opsForHash().get(indexDataHashKey, String.valueOf(parentId));
         if (superCourseList == null || superCourseList.isEmpty()) {
-            ZookeeperClient zkClient = SpringContext.applicationContext.getBean(ZookeeperClient.class);
             InterProcessReadWriteLock readWriteLock = zkClient.getReadWriteLock(indexDataLockPath);
             InterProcessMutex interProcessMutex = readWriteLock.writeLock();
             try {
-                interProcessMutex.acquire();
+                interProcessMutex.acquire(10, TimeUnit.SECONDS);
                 superCourseList = (LinkedHashMap<String, ArrayList<Course>>) redisTemplate.opsForHash().get(indexDataHashKey,String.valueOf(parentId));
                 if (superCourseList == null || superCourseList.isEmpty()) {
                     superCourseList = new LinkedHashMap<>();
@@ -169,6 +172,7 @@ public class CourseServiceImpl implements CourseService {
                         superCourseList.put(courseType.getTypeName(), courseMapper.queryCourseByTypeForStartSize(courseType.getTypeId(), page * size, size));
                     }
                     redisTemplate.opsForHash().put(indexDataHashKey, String.valueOf(parentId), superCourseList);
+                    redisTemplate.expire(indexDataHashKey, 60, TimeUnit.SECONDS);
                     return superCourseList;
                 }
             } catch (Exception e) {
@@ -179,7 +183,6 @@ public class CourseServiceImpl implements CourseService {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                zkClient.close();
             }
         }
         return superCourseList;
@@ -187,10 +190,10 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public Superstate getCourseByTypeForPageSize(int tid, int page, int size) {
-        Superstate superstate = new Superstate();
-        ArrayList<Course> courseArrayList = null;
         page = page < 0 ? 0 : page;
         size = size < 0 ? 0 : size;
+        Superstate superstate = new Superstate();
+        ArrayList<Course> courseArrayList = null;
         if (tid < 0) {
             superstate.setType(-1);
             courseArrayList = courseMapper.queryCourseStartSize(page * size, size);

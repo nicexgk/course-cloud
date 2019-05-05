@@ -26,16 +26,6 @@
 <div class="content" style="margin:0 auto; width: 1200px;">
 
     <div class="content-course">
-        <!------类型导航start----->
-        <%--<div class="map">--%>
-            <%--<a href="#">全部课程</a>--%>
-            <%--&gt;--%>
-            <%--<a href="#">IT·互联网</a>--%>
-            <%--&gt;--%>
-            <%--<a href="#">${requestScope.course.courseName}</a>--%>
-        <%--</div>--%>
-        <!------类型导航 end ----->
-
         <!---------课程信息描述 start----------->
         <div class="course-information">
             <div class="course-info-left">
@@ -102,7 +92,7 @@
     </div>
 
     <!------------课程信息--------------->
-    <div class="over-view-warp" style="min-height: 350px; background: #f4f4f4">
+    <div class="over-view-warp" style="min-height: 800px;border: 1px solid #fef; width: 1200px">
         <div class="layui-tab">
             <ul class="layui-tab-title">
                 <li class="layui-this"> 课程简介</li>
@@ -177,15 +167,15 @@
                 <!--------------交流start--------------->
                 <div class="layui-tab-item chat-container">
 
-                    <div class="chat-content">
-                        <div class="receive-text">
-                            <img class="receive-head-img" src="">
-                            <div class="receive-content-text"></div>
-                        </div>
-                        <div class="send-text">
-                            <img class="send-head-img" src="">
-                            <div class="send-content-text"></div>
-                        </div>
+                    <div class="chat-content" onscroll="divScroll(this)">
+                        <%--<div class="receive-text">--%>
+                            <%--<img class="receive-head-img" src="">--%>
+                            <%--<div class="receive-content-text"></div>--%>
+                        <%--</div>--%>
+                        <%--<div class="send-text">--%>
+                            <%--<img class="send-head-img" src="">--%>
+                            <%--<div class="send-content-text"></div>--%>
+                        <%--</div>--%>
                     </div>
 
                     <div class="chat-input">
@@ -200,9 +190,11 @@
         </div>
     </div>
     <!------------课程信息------------->
-
 </div>
 
+<form class="download-file-form" action="/download/" method="get" style="display: none">
+    <input type="text" name="path" class="download-path">
+</form>
 
 <script>
     //注意：选项卡 依赖 element 模块，否则无法进行功能性操作

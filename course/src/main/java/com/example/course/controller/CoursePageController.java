@@ -18,7 +18,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.FutureTask;
 
 @Api("课程页面接口")
 @Controller
@@ -45,28 +48,23 @@ public class CoursePageController {
         System.out.println("this is course page controller");
         System.out.println(cid);
         // 异步调用课程服务获取评论列表
-        FutureTask<Superstate> commentaryTask = new FutureTask<>(new Callable<Superstate>() {
-            @Override
-            public Superstate call() throws Exception {
-                return feignSocialService.getCommentaryListByCidForPageSize(cid, 0, 10);
-            }
+        FutureTask<Superstate> commentaryTask = new FutureTask<>(() -> {
+            return feignSocialService.getCommentaryListByCidForPageSize(cid, 0, 10);
         });
         executorService.submit(commentaryTask);
         // 异步调用课程服务获取课程信息
-        FutureTask<Course> courseFutureTask = new FutureTask<>(new Callable<Course>() {
-            @Override
-            public Course call() throws Exception {
-                return feignCourseService.getCourseById(cid);
-            }
+        FutureTask<Course> courseFutureTask = new FutureTask<>(() -> {
+            return feignCourseService.getCourseById(cid);
         });
         executorService.submit(courseFutureTask);
+
         // 获取异步调用处理后返回的结果
         Superstate superstate = commentaryTask.get();
-        ArrayList<Commentary> commentaryList = objectMapper.convertValue(superstate.getResource(), new TypeReference<ArrayList<Commentary>>(){});
+        ArrayList<Commentary> commentaryList = objectMapper.convertValue(superstate.getResource(), new TypeReference<ArrayList<Commentary>>() {});
         Course course = courseFutureTask.get();
 
         User user = (User) request.getSession().getAttribute("user");
-        if(user != null){
+        if (user != null) {
             StudentCourse studentCourse = feignCourseService.getStudentCourseBySidCid(user.getUserId(), cid);
             Collect collect = feignCourseService.getCollectBySidCid(user.getUserId(), cid);
             request.setAttribute("studentCourse", studentCourse);
@@ -95,15 +93,26 @@ public class CoursePageController {
         return "/WEB-INF/views/course.jsp";
     }
 
-    @ApiOperation(value = "根据课程的类型查询课程，并指定分页的大小，返回课程列表页面信息", notes = "页数是从1开始不是0")
+    @ApiOperation(value = "根据课程的类型查询课程，并指定分页的大小，返回课程列表页面信息", notes = "页数是从0开始不是1")
     @GetMapping("/{tid}/{page}/{size}")
-    public String getCourseList(HttpServletRequest request, @PathVariable("tid") int tid, @PathVariable("page") int page, @PathVariable("size") int size) {
+    public String getCourseList(HttpServletRequest request, @PathVariable("tid") int tid, @PathVariable("page") int page, @PathVariable("size") int size) throws ExecutionException, InterruptedException {
         System.out.println("tid = " + tid);
-        Superstate superstate = feignCourseService.getCourseList(tid, page, size);
-        ArrayList courseArrayList = objectMapper.convertValue(superstate.getResource(), new TypeReference<ArrayList<Course>>() {
+        // 异步调用课程服务获取课程信息
+        FutureTask<Superstate> superstateFutureTask = new FutureTask<>(()->{
+            return feignCourseService.getCourseList(tid, page, size);
         });
-        request.setAttribute("courseList", courseArrayList);
-        request.setAttribute("pojo", superstate);
+        executorService.submit(superstateFutureTask);
+        // 异步调用课程服务获取课程信息
+        FutureTask<ArrayList<Course>> coursePopularFutureTask = new FutureTask<>(() -> {
+            return feignCourseService.getPopularCourseList(0, 7);
+        });
+        executorService.submit(coursePopularFutureTask);
+
+        // 获取异步调用处理后返回的结果
+        Superstate superstate = superstateFutureTask.get();
+        ArrayList<Course> popularList = coursePopularFutureTask.get();
+        ArrayList courseArrayList = objectMapper.convertValue(superstate.getResource(), new TypeReference<ArrayList<Course>>() {});
+
         ArrayList<CourseType> courseTypes = (ArrayList<CourseType>) request.getAttribute("courseTypeCatalog");
         ArrayList<CourseType> studyList = null;
         ArrayList<CourseType> routeList = null;
@@ -116,31 +125,39 @@ public class CoursePageController {
             if (routeList.size() > 1) {
                 parentType = routeList.get(routeList.size() - 2);
             }
-            System.out.println(routeList);
         }
-
+        request.setAttribute("courseList", courseArrayList);
+        request.setAttribute("pojo", superstate);
         request.setAttribute("studyList", studyList);
         request.setAttribute("routeList", routeList);
         request.setAttribute("parentType", parentType);
+        request.setAttribute("popularList", popularList);
         return "/WEB-INF/views/course-list.jsp";
     }
 
     @ApiOperation(value = "分页查询课程，返回课程列表页面信息", notes = "页数是从1开始不是0")
     @GetMapping("/{page}/{size}")
-    public String getCourseList(HttpServletRequest request, @PathVariable("page") int page, @PathVariable("size") int size) {
-        Superstate superstate = feignCourseService.getCourseList(page, size);
-        ArrayList courseArrayList = objectMapper.convertValue(superstate.getResource(), new TypeReference<ArrayList<Course>>() {
+    public String getCourseList(HttpServletRequest request, @PathVariable("page") int page, @PathVariable("size") int size) throws ExecutionException, InterruptedException {
+        // 异步调用课程服务获取课程信息
+        FutureTask<ArrayList<Course>> coursePopularFutureTask = new FutureTask<>(() -> {
+            return feignCourseService.getPopularCourseList(0, 7);
         });
+        executorService.submit(coursePopularFutureTask);
 
-        request.setAttribute("courseList", superstate.getResource());
-        request.setAttribute("pojo", superstate);
+        Superstate superstate = feignCourseService.getCourseList(page, size);
+        ArrayList courseArrayList = objectMapper.convertValue(superstate.getResource(), new TypeReference<ArrayList<Course>>() {});
+        ArrayList<Course> popularList = coursePopularFutureTask.get();
+
         ArrayList<CourseType> courseTypes = (ArrayList<CourseType>) request.getAttribute("courseTypeCatalog");
         ArrayList<CourseType> studyList = null;
         ArrayList<CourseType> routeList = null;
         if (superstate.getType() == -1) {
             studyList = courseTypes;
         }
+        request.setAttribute("courseList", superstate.getResource());
+        request.setAttribute("pojo", superstate);
         request.setAttribute("studyList", studyList);
+        request.setAttribute("popularList", popularList);
         return "/WEB-INF/views/course-list.jsp";
     }
 

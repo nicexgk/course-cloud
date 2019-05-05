@@ -19,7 +19,6 @@ import javax.annotation.PostConstruct;
 //zookeeper.retries.sleep-ms=1000
 //zookeeper.cache.lock-path=/redis/cache/lock/
 @Component
-@Scope("prototype")
 @PropertySource("classpath:application.properties")
 @Data
 public class ZookeeperClient {

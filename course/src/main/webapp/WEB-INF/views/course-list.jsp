@@ -78,97 +78,52 @@
             <div class="hot">
                 <h3>热门推荐</h3>
             </div>
-            <div class="course-card">
-                <div class="course-img">
-                    <img src="../../img/course1.png" alt="">
-                    <div class="course-info">随到随学（共59节）</div>
-                    <div class="course-name">
-                        <a href="#">PHP开发入门基础/web前端/MySQL/模板引擎/框架</a>
-                    </div>
-                    <div class="author">
-                        <span>免费</span>
-                        <a href="#">马哥教育</a>
-                    </div>
-                </div>
-            </div>
-            <div class="course-card">
-                <div class="course-img">
-                    <img src="../../img/course1.png" alt="">
-                    <div class="course-info">随到随学（共59节）</div>
-                    <div class="course-name">
-                        <a href="#">PHP开发入门基础/web前端/MySQL/模板引擎/框架</a>
-                    </div>
-                    <div class="author">
-                        <span>免费</span>
-                        <a href="#">马哥教育</a>
+            <c:forEach items="${requestScope.popularList}" var="course">
+                <div class="course-card">
+                    <div class="course-img">
+                        <img src="${course.picUrl}" alt="">
+                        <%--<div class="course-info">随到随学（共59节）</div>--%>
+                        <div class="course-name">
+                            <a href="/course/page/${course.courseId}" target="_blank">${course.courseName}</a>
+                        </div>
+                        <div class="author">
+                            <c:if test="${course.coursePrice == 0}">
+                                <span>免费</span>
+                            </c:if>
+                            <c:if test="${course.coursePrice != 0}">
+                                <span>￥${course.coursePrice}</span>
+                            </c:if>
+                            <a href="javascript:">${course.courseTeacher.userName}</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="course-card">
-                <div class="course-img">
-                    <img src="../../img/course1.png" alt="">
-                    <div class="course-info">随到随学（共59节）</div>
-                    <div class="course-name">
-                        <a href="#">PHP开发入门基础/web前端/MySQL/模板引擎/框架</a>
-                    </div>
-                    <div class="author">
-                        <span>免费</span>
-                        <a href="#">马哥教育</a>
-                    </div>
-                </div>
-            </div>
-            <div class="course-card">
-                <div class="course-img">
-                    <img src="../../img/course1.png" alt="">
-                    <div class="course-info">随到随学（共59节）</div>
-                    <div class="course-name">
-                        <a href="#">PHP开发入门基础/web前端/MySQL/模板引擎/框架</a>
-                    </div>
-                    <div class="author">
-                        <span>免费</span>
-                        <a href="#">马哥教育</a>
-                    </div>
-                </div>
-            </div>
-            <div class="course-card">
-                <div class="course-img">
-                    <img src="../../img/course1.png" alt="">
-                    <div class="course-info">随到随学（共59节）</div>
-                    <div class="course-name">
-                        <a href="#">PHP开发入门基础/web前端/MySQL/模板引擎/框架</a>
-                    </div>
-                    <div class="author">
-                        <span>免费</span>
-                        <a href="#">马哥教育</a>
-                    </div>
-                </div>
-            </div>
-            <div class="course-card">
-                <div class="course-img">
-                    <img src="../../img/course1.png" alt="">
-                    <div class="course-info">随到随学（共59节）</div>
-                    <div class="course-name">
-                        <a href="#">PHP开发入门基础/web前端/MySQL/模板引擎/框架</a>
-                    </div>
-                    <div class="author">
-                        <span>免费</span>
-                        <a href="#">马哥教育</a>
-                    </div>
-                </div>
-            </div>
-            <div class="course-card">
-                <div class="course-img">
-                    <img src="../../img/course1.png" alt="">
-                    <div class="course-info">随到随学（共59节）</div>
-                    <div class="course-name">
-                        <a href="#">PHP开发入门基础/web前端/MySQL/模板引擎/框架</a>
-                    </div>
-                    <div class="author">
-                        <span>免费</span>
-                        <a href="#">马哥教育</a>
-                    </div>
-                </div>
-            </div>
+            </c:forEach>
+            <%--<div class="course-card">--%>
+                <%--<div class="course-img">--%>
+                    <%--<img src="../../img/course1.png" alt="">--%>
+                    <%--<div class="course-info">随到随学（共59节）</div>--%>
+                    <%--<div class="course-name">--%>
+                        <%--<a href="#">PHP开发入门基础/web前端/MySQL/模板引擎/框架</a>--%>
+                    <%--</div>--%>
+                    <%--<div class="author">--%>
+                        <%--<span>免费</span>--%>
+                        <%--<a href="#">马哥教育</a>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+            <%--<div class="course-card">--%>
+                <%--<div class="course-img">--%>
+                    <%--<img src="../../img/course1.png" alt="">--%>
+                    <%--<div class="course-info">随到随学（共59节）</div>--%>
+                    <%--<div class="course-name">--%>
+                        <%--<a href="#">PHP开发入门基础/web前端/MySQL/模板引擎/框架</a>--%>
+                    <%--</div>--%>
+                    <%--<div class="author">--%>
+                        <%--<span>免费</span>--%>
+                        <%--<a href="#">马哥教育</a>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+            <%--</div>--%>
         </div>
         <!-- 猜你喜欢 -->
     </div>

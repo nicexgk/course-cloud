@@ -6,8 +6,7 @@ $(function () {
         ue.setDisabled();
     });
 
-    ueInput = UE.getEditor("chat-ue-editor-input",
-        {
+    ueInput = UE.getEditor("chat-ue-editor-input", {
             toolbars: [
                 [
                     'bold', //加粗
@@ -41,7 +40,11 @@ function previewVideo(target) {
 
 function downloadVideo(target) {
     var resource = $(target).parent().attr("data-resource");
-    window.open("/download/path=" + resource);
+    console.log(resource);
+    console.log('/download/?path=\"' + resource + '\"')
+    window.open('/download/?path=\"' + resource + '\"');
+    $(".download-path").val(resource);
+    $(".download-file-form").submit();
 }
 
 var sendDiv = '<div class="receive-text">' +
@@ -53,20 +56,6 @@ var receiveDiv = '<div class="send-text">' +
     '<img class="send-head-img" src="">' +
     '<div class="send-content-text"></div>' +
     '</div>';
-
-var webSocket;
-
-function send() {
-
-    if (typeof(WebSocket) == "undefine") {
-        console.log("你的浏览器不支持webSocket通信");
-    } else {
-        webSocket = new WebSocket("/social/4/4");
-    }
-    webSocket.onmessage = function (data) {
-        console.log(data);
-    }
-}
 
 function onTrade(target) {
     var courseId = $(target).attr("data-course");

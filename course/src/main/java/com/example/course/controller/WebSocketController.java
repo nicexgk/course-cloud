@@ -1,6 +1,7 @@
 package com.example.course.controller;
 
 import com.example.common.entity.CourseChat;
+import com.example.common.entity.Superstate;
 import com.example.common.entity.User;
 import com.example.course.pojo.Message;
 import com.example.course.service.feign.FeignSocialService;
@@ -95,8 +96,9 @@ public class WebSocketController implements ApplicationContextAware {
             sendMsg(session, message.getMsg());
         }
         if (message.getOpe() == 1) {
-            feignSocialService.getCourseChatListByCidForPageSize(cid, message.getPage(), message.getSize());
-            String str = objectMapper.writeValueAsString(message);
+            Superstate list = feignSocialService.getCourseChatListByCidForPageSize(cid, message.getPage(), message.getSize());
+            System.out.println(list);
+            String str = objectMapper.writeValueAsString(list);
             session.getAsyncRemote().sendText(str);
         }
     }
@@ -117,7 +119,6 @@ public class WebSocketController implements ApplicationContextAware {
             courseChat.setContent(msg);
             courseChat.setReceiveCourseId(cid);
             jmsMessagingTemplate.convertAndSend(queue, courseChat);
-//            feignSocialService.addCourseChat(courseChat);
             String str = null;
             try {
                 str = objectMapper.writeValueAsString(courseChat);
