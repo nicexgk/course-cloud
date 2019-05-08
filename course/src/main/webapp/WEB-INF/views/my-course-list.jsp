@@ -9,10 +9,9 @@
     <title>Insert title here</title>
     <link rel="stylesheet" type="text/css" href="/layui/css/layui.css">
     <link type="text/css" rel="stylesheet" href="/css/jsuggest.css">
-    <%--<link type="text/css" rel="stylesheet" href="/css/mycss/my-course-list.css">--%>
     <link type="text/css" rel="stylesheet" href="/css/mycss/course-list.css">
 
-    <%--<script src="/js/myjs/my-course-list.js"></script>--%>
+    <script src="/js/myjs/my-course-list.js"></script>
 
 </head>
 
@@ -37,7 +36,7 @@
                     <c:if test="${course.coursePrice eq 0}">
                         <div class="item-card-price item-card">
                             <span>免费</span>
-                            <a href="" target="_blank"><span class="item-inline-teacher" data-course-id="${course.courseId}" onclick="editorCourse(${course.courseId})">删除</span></a>
+                            <a href="javascript:"><span class="item-inline-teacher" data-course-id="${course.courseId}" onclick="deleteCourse(this)">删除</span></a>
                         </div>
                     </c:if>
                     <c:if test="${course.coursePrice != 0}">

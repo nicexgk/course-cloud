@@ -41,8 +41,8 @@ function previewVideo(target) {
 function downloadVideo(target) {
     var resource = $(target).parent().attr("data-resource");
     console.log(resource);
-    console.log('/download/?path=\"' + resource + '\"')
-    window.open('/download/?path=\"' + resource + '\"');
+    // console.log('/download/?path=\"' + resource + '\"')
+    // window.open('/download/?path=\"' + resource + '\"');
     $(".download-path").val(resource);
     $(".download-file-form").submit();
 }

@@ -3,13 +3,11 @@ package com.example.course.controller;
 import com.example.common.entity.Status;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -94,7 +92,13 @@ public class UploadController {
                 file.createNewFile();
                 System.out.println("mk file");
             }
-            upfile.transferTo(file);
+            executorService.execute(()->{
+                try {
+                    upfile.transferTo(file);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
         } catch (IOException e) {
             e.printStackTrace();
             status.setStatus(400);
@@ -108,5 +112,13 @@ public class UploadController {
         return status;
     }
 
-
+//    @ApiOperation(value = "上传图片接口", tags = {"返回一个JSON格式的状态对象", "upload-controller"}, notes = "上传图片的name应为file")
+//    @GetMapping("/")
+//    public String fileManager(HttpServletRequest request, HttpServletResponse response){
+//        System.out.println(request.getRequestURI());
+//        System.out.println(request.getPathInfo());
+//        System.out.println(request.getServletPath());
+//        System.out.println(request.getRemoteUser());
+//        return "/error.html";
+//    }
 }

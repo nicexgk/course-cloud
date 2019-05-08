@@ -81,6 +81,7 @@ public class CourseController {
     @DeleteMapping("/{cid}")
     public Status deleteCourse(HttpServletRequest request, @PathVariable("cid") int cid){
 
+
         return null;
     }
 
@@ -135,7 +136,7 @@ public class CourseController {
         System.out.println(page);
         System.out.println(size);
         // 调用课课程服务搜索课程，并分页
-        return feignCourseService.searchCourseListByNameForPageSize(text, page, size);
+        return (ArrayList<Course>) feignCourseService.searchCourseListByNameForPageSize(text, page, size).getResource();
     }
 
 }

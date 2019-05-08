@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 @Api("文件下载接口")
 @Controller
@@ -20,8 +23,9 @@ import java.io.*;
 public class DownloadController {
 
     @ApiOperation("文件下载接口")
-    @GetMapping("")
-    public void downloadFile(HttpServletRequest request, HttpServletResponse response, @RequestParam("path") String path) throws IOException {
+    @GetMapping("/")
+    public Callable downloadFile(HttpServletRequest request, HttpServletResponse response, @RequestParam("path") String path) throws IOException {
+
         System.out.println("path = " + path);
         String realPath = request.getServletContext().getRealPath(path);
         System.out.println(realPath);
@@ -34,6 +38,9 @@ public class DownloadController {
         String fileName = file.getName().substring(32);
         fileName = fileName.replaceAll(" ", "");
         response.setHeader("Content-Disposition", "attachment; filename=" + new String(fileName.getBytes("utf-8"), "ISO8859-1"));
-        Files.copy(file, response.getOutputStream());
+        return () -> {
+                Files.copy(file, response.getOutputStream());
+                return null;
+        };
     }
 }

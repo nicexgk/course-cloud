@@ -27,7 +27,7 @@ import java.util.concurrent.TimeUnit;
         @PropertySource("classpath:application.properties")
 })
 public class CourseServiceImpl implements CourseService {
-    public static double SCORE = 0;
+    public static double SCORE = 1;
     @Resource
     private CourseMapper courseMapper;
     @Resource
@@ -50,6 +50,9 @@ public class CourseServiceImpl implements CourseService {
     private String popularZSetKey;
     @Value("${redis.cache.index-data-key}")
     private String indexDataHashKey;
+    @Value("${redis.cache.expire.time-second}")
+    private int cacheExpireTime;
+    public final static double addScore = -1.0;
 
     @Override
     public ArrayList<Course> getStudentCourseList(int uid, int page, int size) {
@@ -83,7 +86,7 @@ public class CourseServiceImpl implements CourseService {
                         tupleSet.add(new DefaultTypedTuple<Object>(course, SCORE));
                     }
                     long add = redisTemplate.opsForZSet().add(purchaseZSetKey, tupleSet);
-                    redisTemplate.expire(purchaseZSetKey, 60, TimeUnit.SECONDS);
+                    redisTemplate.expire(purchaseZSetKey, cacheExpireTime, TimeUnit.SECONDS);
                     System.out.println("purchase-course-zset add " + add);
                     return purchaseCourseList;
                 }
@@ -113,7 +116,7 @@ public class CourseServiceImpl implements CourseService {
         size = size < 0 ? 0 : size;
         Set<Object> popularSet = redisTemplate.opsForZSet().range(popularZSetKey, page * size, size - 1);
         ArrayList<Course> popularCourseList = null;
-        if (popularSet == null || popularSet.isEmpty()) {
+        if (popularSet == null || popularSet.isEmpty() || popularSet.size() < size) {
             // 获取读写锁
             InterProcessReadWriteLock readWriteLock = zkClient.getReadWriteLock(popularLockPath);
             // 获取写锁
@@ -123,14 +126,23 @@ public class CourseServiceImpl implements CourseService {
                 // 重新读取缓存
                 popularSet = redisTemplate.opsForZSet().range(popularZSetKey, page * size, size - 1);
                 // 判断缓存是否为空，如果为空将数据写入缓存
-                if (popularSet == null || popularSet.isEmpty()) {
+                if (popularSet == null || popularSet.isEmpty() || popularSet.size() < size) {
                     Set<ZSetOperations.TypedTuple<Object>> tupleSet = new HashSet<>();
+                    if(popularSet != null && !popularSet.isEmpty()) {
+                        popularCourseList = new ArrayList<>();
+                        for (Iterator iterator = popularSet.iterator(); iterator.hasNext(); ) {
+                            popularCourseList.add((Course) iterator.next());
+                        }
+                        popularCourseList.addAll(courseMapper.queryCourseStartSize(page * size, size - popularSet.size()));
+                    } else {
+                        popularCourseList = courseMapper.queryCourseStartSize(page * size, size - popularSet.size());
+                    }
                     popularCourseList = courseMapper.queryCourseStartSize(page * size, size);
                     for (Course course : popularCourseList) {
                         tupleSet.add(new DefaultTypedTuple<Object>(course, SCORE));
                     }
                     long add = redisTemplate.opsForZSet().add(popularZSetKey, tupleSet);
-                    redisTemplate.expire(popularZSetKey, 60, TimeUnit.SECONDS);
+                    redisTemplate.expire(popularZSetKey, cacheExpireTime, TimeUnit.SECONDS);
                     System.out.println("popular-course-zset add " + add);
                     return popularCourseList;
                 }
@@ -172,7 +184,7 @@ public class CourseServiceImpl implements CourseService {
                         superCourseList.put(courseType.getTypeName(), courseMapper.queryCourseByTypeForStartSize(courseType.getTypeId(), page * size, size));
                     }
                     redisTemplate.opsForHash().put(indexDataHashKey, String.valueOf(parentId), superCourseList);
-                    redisTemplate.expire(indexDataHashKey, 60, TimeUnit.SECONDS);
+                    redisTemplate.expire(indexDataHashKey, cacheExpireTime, TimeUnit.SECONDS);
                     return superCourseList;
                 }
             } catch (Exception e) {
@@ -319,8 +331,19 @@ public class CourseServiceImpl implements CourseService {
     public Course getCourseById(int cid) {
         Course course = courseMapper.queryCourseByCid(cid);
         if (course != null) {
-            // popular-course-zset
-//            redisTemplate.opsForZSet();
+            try {
+                if(!redisTemplate.hasKey(popularZSetKey)){
+                    redisTemplate.opsForZSet().incrementScore(popularZSetKey, course, addScore);
+                    redisTemplate.expire(popularZSetKey, cacheExpireTime, TimeUnit.SECONDS);
+                    System.out.println("=========================0");
+                } else {
+                    // 将redis 中的对应的课程浏览量加一
+                    System.out.println("=========================1");
+                    redisTemplate.opsForZSet().incrementScore(popularZSetKey, course, addScore);
+                }
+                System.out.println("=========================");
+            } catch (Exception e){
+            }
             ArrayList<Catalog> catalogList = catalogService.getCatalogList(cid);
             course.setCatalogList(catalogList);
         }
@@ -329,10 +352,31 @@ public class CourseServiceImpl implements CourseService {
 
     // 搜索课程
     @Override
-    public ArrayList<Course> searchCourseListByNameForPageSize(String text, int page, int size) {
+    public Superstate searchCourseListByNameForPageSize(String text, int page, int size) {
         page = page >= 0 ? page : 0;
         size = size >= 0 ? size : 0;
         text = text.trim();
-        return courseMapper.likeCourseByNameForStartSize(text, page * size, size);
+        ArrayList courseArrayList = courseMapper.likeCourseByNameForStartSize(text, page * size, size);
+        Superstate superstate = new Superstate();
+        superstate.setResource(courseArrayList);
+        superstate.setPage(page);
+        superstate.setSize(size);
+        superstate.setType(-1);
+        superstate.setDescription(text);
+        superstate.setCount(courseMapper.likeCourseCount(text));
+        return superstate;
+    }
+
+    @Override
+    public Status deleteCourseById(int cid, int uid) {
+        Status status = new Status();
+        if(!courseMapper.deleteCourseByCidUid(cid, uid)){
+            status.setStatus(400);
+            status.setDescription("删除课程失败。。。");
+            return status;
+        }
+        status.setStatus(200);
+        status.setDescription("删除成功。。。");
+        return status;
     }
 }

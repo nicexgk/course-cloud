@@ -37,6 +37,9 @@ public interface CourseService {
      */
     public Course getCourseById(int id);
 
+
+    public Status deleteCourseById(int cid, int uid);
+
     public Superstate getCourseByTypeForPageSize(int tid, int page, int size);
 
     public Superstate getCourseForPageSize(int page, int size);
@@ -49,6 +52,6 @@ public interface CourseService {
 
     public ArrayList<Course> getStudentCourseList(int uid, int page, int size);
 
-    public ArrayList<Course> searchCourseListByNameForPageSize(String text, int page, int size);
+    public Superstate searchCourseListByNameForPageSize(String text, int page, int size);
 
 }

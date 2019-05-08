@@ -42,11 +42,17 @@ public class ErrorCourseServiceCallback implements FeignCourseService {
         }
     }
 
-    public Status getDefaultErrorStatus() {
+    @Override
+    public Status deleteCourse(int cid) {
         Status status = new Status();
         status.setStatus(500);
         status.setDescription("服务出错啦！稍后请重试。。。");
         return status;
+    }
+
+    public Status getDefaultErrorStatus() {
+        sendErrorLog("Status getDefaultErrorStatus()", defaultContent);
+        return getDefaultErrorStatus();
     }
 
     @Override
@@ -164,7 +170,7 @@ public class ErrorCourseServiceCallback implements FeignCourseService {
     }
 
     @Override
-    public ArrayList<Course> searchCourseListByNameForPageSize(String text, int page, int size) {
+    public Superstate searchCourseListByNameForPageSize(String text, int page, int size) {
         sendErrorLog("ArrayList<Course> searchCourseListByNameForPageSize(String text, int page, int size)", defaultContent);
         return null;
     }

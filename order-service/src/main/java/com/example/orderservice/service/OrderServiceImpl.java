@@ -4,17 +4,25 @@ import com.example.common.entity.Order;
 import com.example.common.entity.Status;
 import com.example.common.entity.Superstate;
 import com.example.orderservice.dao.OrderMapper;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class OrderServiceImpl implements OrderService {
-
     @Resource
-    OrderMapper orderMapper;
-
+    private OrderMapper orderMapper;
+    @Resource
+    private RedisTemplate<String, Object> redisTemplate;
+    @Value("${redis.cache.purchase-key}")
+    private String purchaseZSetKey;
+    @Value("${redis.cache.expire.time-second}")
+    private int cacheExpireTime;
+    public final static double addScore = -1.0;
     @Override
     public Status addOrder(Order order) {
         Status status = new Status();
@@ -22,6 +30,17 @@ public class OrderServiceImpl implements OrderService {
             status.setStatus(400);
             status.setDescription("订单创建失败");
             return status;
+        }
+        if(order.getOrderStatus() == 1){
+            try{
+                if(!redisTemplate.hasKey(purchaseZSetKey)){
+                    redisTemplate.opsForZSet().incrementScore(purchaseZSetKey, order.getOrderCourse(), addScore);
+                    redisTemplate.expire(purchaseZSetKey, cacheExpireTime, TimeUnit.SECONDS);
+                } else {
+                    redisTemplate.opsForZSet().incrementScore(purchaseZSetKey, order.getOrderCourse(), addScore);
+                }
+            } catch (Exception e){
+            }
         }
         status.setStatus(200);
         status.setDescription("订单创建成功");
@@ -36,6 +55,18 @@ public class OrderServiceImpl implements OrderService {
             status1.setDescription("订单修改失败");
             return status1;
         }
+//        if(status == 1){
+//            try{
+//                if(redisTemplate.hasKey(purchaseZSetKey)){
+//                    redisTemplate.opsForZSet().add(purchaseZSetKey, order.getOrderCourse(), 1.0);
+//                    redisTemplate.expire(purchaseZSetKey, cacheExpireTime, TimeUnit.SECONDS);
+//                } else {
+//                    redisTemplate.opsForZSet().incrementScore(purchaseZSetKey, order.getOrderCourse(), addScore);
+//                }
+//            } catch (Exception e){
+//
+//            }
+//        }
         status1.setStatus(200);
         status1.setDescription("订单状态修改失败");
         return status1;

@@ -10,10 +10,7 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -135,7 +132,7 @@ public class CoursePageController {
         return "/WEB-INF/views/course-list.jsp";
     }
 
-    @ApiOperation(value = "分页查询课程，返回课程列表页面信息", notes = "页数是从1开始不是0")
+    @ApiOperation(value = "分页查询课程，返回课程列表页面信息", notes = "页数是从0开始不是1")
     @GetMapping("/{page}/{size}")
     public String getCourseList(HttpServletRequest request, @PathVariable("page") int page, @PathVariable("size") int size) throws ExecutionException, InterruptedException {
         // 异步调用课程服务获取课程信息
@@ -159,6 +156,24 @@ public class CoursePageController {
         request.setAttribute("studyList", studyList);
         request.setAttribute("popularList", popularList);
         return "/WEB-INF/views/course-list.jsp";
+    }
+
+    @GetMapping("/search/{text}/{page}/{size}")
+    @ApiOperation(value = "分页搜索课程", notes = "页数是从0开始不是1")
+    public String searchCourse(HttpServletRequest request, @PathVariable("text") String text, @PathVariable("page") int page, @PathVariable("size") int size) throws ExecutionException, InterruptedException {
+        // 异步调用课程服务获取课程信息
+        FutureTask<ArrayList<Course>> coursePopularFutureTask = new FutureTask<>(() -> {
+            return feignCourseService.getPopularCourseList(0, 7);
+        });
+        executorService.submit(coursePopularFutureTask);
+        Superstate superstate = feignCourseService.searchCourseListByNameForPageSize(text, page, size);
+        ArrayList courseArrayList = objectMapper.convertValue(superstate.getResource(), new TypeReference<ArrayList<Course>>() {});
+
+        ArrayList<Course> popularList = coursePopularFutureTask.get();
+        request.setAttribute("popularList", popularList);
+        request.setAttribute("courseList", superstate.getResource());
+        request.setAttribute("pojo", superstate);
+        return "/WEB-INF/views/search-course-list.jsp";
     }
 
     public ArrayList<CourseType> studyList(ArrayList<CourseType> courseTypes, int tid) {

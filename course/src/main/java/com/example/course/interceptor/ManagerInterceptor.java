@@ -18,7 +18,7 @@ public class ManagerInterceptor implements HandlerInterceptor {
             return true;
         }
         if (user == null) {
-            request.getRequestDispatcher("login.html").forward(request, response);
+            response.sendRedirect("/login.html");
             return false;
         }
         return false;

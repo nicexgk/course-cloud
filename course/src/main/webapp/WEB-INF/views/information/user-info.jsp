@@ -144,6 +144,7 @@
                         console.log(res);
                         if (res.status == 200) {
                             layer.msg('信息修改成功!!!', {icon: 1});
+                            window.reload(true);
                         } else {
                             layer.alert(res.description, {icon: 5, skin: 'layer-ext-moon'});
                         }

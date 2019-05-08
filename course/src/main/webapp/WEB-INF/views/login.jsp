@@ -40,18 +40,18 @@
                     <a href="/register.html"><button class="layui-btn user-register">注册</button></a>
                 </div>
                 <div class="layui-input-inline">
-                    <button class="layui-btn user-login" onclick="login()">登录</button>
+                    <button class="layui-btn user-login" onclick="login2()">登录</button>
                 </div>
             </div>
             <div>
-                <a class="reset-password-link"><i class="layui-icon">&#xe607;</i>忘记密码</a>
+                <a class="reset-password-link" href="/forgetpassword.html"><i class="layui-icon">&#xe607;</i>忘记密码</a>
             </div>
         <%--</form>--%>
     </div>
 </div>
 </body>
 <script>
-    function login() {
+    function login2() {
         var account = $("input[name='username']").val();
         var pwd = $("input[name='password']").val();
         console.log(account);

@@ -21,6 +21,9 @@ public interface FeignCourseService {
     @PostMapping("/course/")
     public Status addCourse(@RequestBody Course course);
 
+    @DeleteMapping("/course/{ }")
+    public Status deleteCourse(@PathVariable("cid") int cid);
+
     @PutMapping("/course/")
     public Status modifyCourse(@RequestBody Course course);
 
@@ -47,7 +50,6 @@ public interface FeignCourseService {
 
     @GetMapping("/course/student/{uid}/{page}/{size}")
     public ArrayList<Course> getStudentCourseList(@PathVariable("uid")int uid, @PathVariable("page")int page, @PathVariable("size")int size);
-
 
 
     @GetMapping("/student/course/{sid}/{page}/{size}")
@@ -79,5 +81,5 @@ public interface FeignCourseService {
 
 
     @GetMapping("/search/course/{text}/{page}/{size}")
-    public ArrayList<Course> searchCourseListByNameForPageSize(@PathVariable("text")String text, @PathVariable("page")int page, @PathVariable("size")int size);
+    public Superstate searchCourseListByNameForPageSize(@PathVariable("text") String text, @PathVariable("page")int page, @PathVariable("size")int size);
 }

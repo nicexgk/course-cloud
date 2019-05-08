@@ -143,4 +143,9 @@ public interface CourseMapper {
     })
     public ArrayList<Course> likeCourseByNameForStartSize(String name, int start, int size);
 
+    @Select("select count(1) from course where course_name like concat('%', #{arg0}, '%')")
+    public int likeCourseCount(String name);
+
+    @Delete("delete from course where course_id = #{arg0} and course_teacher_id = #{arg1}")
+    public boolean deleteCourseByCidUid(int cid, int uid);
 }

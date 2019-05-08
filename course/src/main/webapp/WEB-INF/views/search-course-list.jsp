@@ -22,30 +22,30 @@
 <div class="content">
     <div class="content-course">
         <div class="cont-left">
-            <div class="map">
-                <a href="/course/page/0/20">全部课程</a>
-                <c:forEach items="${requestScope.routeList}" var="courseType">
-                    &nbsp;&gt; &nbsp;<a href="/course/page/${courseType.typeId}/0/20">${courseType.typeName}</a>
-                </c:forEach>
-            </div>
-            <div class="guide-wrap">
-                <div class="guide">
-                    <div class="guide-left">
-                        <h3>学习方向</h3>
-                    </div>
-                    <div class="guide-right" id="parenttype">
-                        <c:if test="${requestScope.pojo.type == -1 || requestScope.parentType == null}">
-                            <a href="/course/page/0/20" class="nav-bg">全部</a>
-                        </c:if>
-                        <c:if test="${requestScope.pojo.type != -1 && requestScope.parentType != null}">
-                            <a href="/course/page/${requestScope.parentType.typeId}/0/20" class="nav-bg">全部</a>
-                        </c:if>
-                        <c:forEach items="${requestScope.studyList}" var="courseType">
-                            <a href="/course/page/${courseType.typeId}/0/20">${courseType.typeName}</a>
-                        </c:forEach>
-                    </div>
-                </div>
-            </div>
+            <%--<div class="map">--%>
+                <%--<a href="/course/page/0/20">全部课程</a>--%>
+                <%--<c:forEach items="${requestScope.routeList}" var="courseType">--%>
+                    <%--&nbsp;&gt; &nbsp;<a href="/course/page/${courseType.typeId}/0/20">${courseType.typeName}</a>--%>
+                <%--</c:forEach>--%>
+            <%--</div>--%>
+            <%--<div class="guide-wrap">--%>
+                <%--<div class="guide">--%>
+                    <%--<div class="guide-left">--%>
+                        <%--<h3>学习方向</h3>--%>
+                    <%--</div>--%>
+                    <%--<div class="guide-right" id="parenttype">--%>
+                        <%--<c:if test="${requestScope.pojo.type == -1 || requestScope.parentType == null}">--%>
+                            <%--<a href="/course/page/0/20" class="nav-bg">全部</a>--%>
+                        <%--</c:if>--%>
+                        <%--<c:if test="${requestScope.pojo.type != -1 && requestScope.parentType != null}">--%>
+                            <%--<a href="/course/page/${requestScope.parentType.typeId}/0/20" class="nav-bg">全部</a>--%>
+                        <%--</c:if>--%>
+                        <%--<c:forEach items="${requestScope.studyList}" var="courseType">--%>
+                            <%--<a href="/course/page/${courseType.typeId}/0/20">${courseType.typeName}</a>--%>
+                        <%--</c:forEach>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+            <%--</div>--%>
 
             <!-------------课程列表 start ---------->
             <div class="card-group course-content-list">
@@ -82,7 +82,7 @@
                 <div class="course-card">
                     <div class="course-img">
                         <img src="${course.picUrl}" alt="">
-                        <%--<div class="course-info">随到随学（共59节）</div>--%>
+                            <%--<div class="course-info">随到随学（共59节）</div>--%>
                         <div class="course-name">
                             <a href="/course/page/${course.courseId}" target="_blank">${course.courseName}</a>
                         </div>
@@ -111,16 +111,14 @@
 
 </div>
 
-
 <div class="footer">
     <jsp:include page="/WEB-INF/views/common/footer.jsp" flush="true"></jsp:include>
 </div>
 
-
 <script>
 
     var size = ${requestScope.pojo.size};
-    var type = ${requestScope.pojo.type};
+    var text = "${requestScope.pojo.description}";
     layui.use(['laypage', 'layer'], function () {
         var laypage = layui.laypage
             , layer = layui.layer;
@@ -141,11 +139,7 @@
             var target = $(this);
             var page = target.attr("data-page");
             page = parseInt(page) - 1;
-            if (type == -1) {
-                target.attr("href", "/course/page/" + page + "/" + size);
-            } else {
-                target.attr("href", "/course/page/" + type + "/" + page + "/" + size);
-            }
+            target.attr("href", "/course/page/search/" + text + "/" + page + "/" + size);
         });
     }
 

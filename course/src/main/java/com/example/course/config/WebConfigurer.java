@@ -19,25 +19,35 @@ public class WebConfigurer implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
+//        registry.addResourceHandler("/upload/video/**").resourceChain(true).addResourceLocations("/upload/");
 
     }
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         // 登录拦截
-        registry.addInterceptor(loginInterceptor).addPathPatterns("/collection/*")
-                .addPathPatterns("/course/user/*")
-                .addPathPatterns("/order/*")
-                .addPathPatterns("/social/*")
-                .addPathPatterns("/student/*")
-                .addPathPatterns("/upload/*").addPathPatterns("/addcourse.html")
+        registry.addInterceptor(loginInterceptor).addPathPatterns("/collection/**")
+                .addPathPatterns("/course/user/**")
+                .addPathPatterns("/order/**")
+                .addPathPatterns("/social/**")
+                .addPathPatterns("/student/**")
+                .addPathPatterns("/upload/image/")
+                .addPathPatterns("/upload/video/")
+                .addPathPatterns("/addcourse.html")
+                .addPathPatterns("/download/")
+                .addPathPatterns("/order.html")
+                .addPathPatterns("/collection.html")
+                .addPathPatterns("/userinfo.html")
+                .addPathPatterns("/studentcourse.html")
                 .addPathPatterns("editorcourse.html")
-                .addPathPatterns("/commentary/*");
+                .addPathPatterns("/commentary/**");
 
         // 权限拦截
         registry.addInterceptor(managerInterceptor).addPathPatterns("/addcourse.html")
                 .addPathPatterns("/coursemanagenav.html")
                 .addPathPatterns("/course/")
+                .addPathPatterns("/course/user/")
+                .addPathPatterns("/course/user/")
                 .addPathPatterns("/editorcourse.html");
     }
 

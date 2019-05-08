@@ -65,6 +65,9 @@ public class CourseTest {
     @Test
     public void likeCourseList(){
 
-        System.out.println(courseMapper.likeCourseByNameForStartSize("", 0,100));
+//        System.out.println(courseMapper.likeCourseByNameForStartSize("", 0,100));
+        System.out.println(courseMapper.likeCourseCount("nice"));
     }
+
+//    public void ?
 }

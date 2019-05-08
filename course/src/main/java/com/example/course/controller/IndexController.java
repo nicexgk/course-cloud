@@ -12,7 +12,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import springfox.documentation.annotations.ApiIgnore;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -113,7 +112,7 @@ public class IndexController {
     @ApiOperation(value = "登录页面")
     @GetMapping("/login.html")
     public String login(){
-        return "WEB-INF/views/login.jsp";
+        return "/WEB-INF/views/login.jsp";
     }
 
     @ApiOperation("课程管理主页")
@@ -253,5 +252,15 @@ public class IndexController {
         return "/WEB-INF/views/forget-password.jsp";
     }
 
+    @ApiOperation(value = "错误界面")
+    @GetMapping("/error.html")
+    public String error(){
+        return "/WEB-INF/views/error/error.jsp";
+    }
 
+    @ApiOperation(value = "错误界面")
+    @GetMapping("/404.html")
+    public String notFound(){
+        return "/WEB-INF/views/error/404.jsp";
+    }
 }

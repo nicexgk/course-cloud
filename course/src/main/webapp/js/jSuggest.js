@@ -65,7 +65,6 @@
                         if (opts.autoChange)
                             $(textBox).val($(jH).text());
                     }
-
                 }
 
                 // if up arrow

@@ -64,6 +64,7 @@ function form_init() {
         });
         // 表单提交
         form.on('submit(addcoursesubmit)', function (data) {
+            $(".submit-button").attr("disabled", "true").css("background-color", "#c5c5c5");
             var course = new Object();
             course.courseName = $("input[name='course-name']").val();
             course.picUrl = $("img[name='course-img']").attr("src");
@@ -87,6 +88,7 @@ function form_init() {
                         layer.msg('添加成功!!!', {icon: 1});
                     } else {
                         layer.alert(res.description, {icon: 5, skin: 'layer-ext-moon'});
+                        $(".submit-button").attr("disabled", "false").css("background-color", "#009688;");
                     }
                 }
             });

@@ -58,10 +58,10 @@ function sendVerification(target){
             success: function(res){
                 if(res.status == 200){
                     layer.msg("验证码以发送", {icon: 1});
-                    $(target).attr("disabled", "false").css("background-color", "c5c5c5");
+                    $(target).attr("disabled", "true").css("background-color", "#c5c5c5");
                 } else {
                     layer.msg("验证码发送失败，请重试", {icon: 5});
-                    $(target).attr("disabled", "false").css("background-color", "fff");
+                    $(target).attr("disabled", "false").css("background-color", "#fff");
                 }
             }
         });

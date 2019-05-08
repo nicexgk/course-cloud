@@ -102,8 +102,10 @@
             <div class="mod-search">
                 <a class="mod-search-dropdown"></a>
                 <!-- 默认搜索词 -->
-                <input type="text" id="js_keyword" maxlength="38" class="mod-search__input" placeholder="课程搜索">
-                <a id="js_search" href="javascript:void(0)" class="mod-search__btn-search">
+                <form class="search-course-form" action="/course/page/" method="get">
+                    <input type="text" id="js_keyword" maxlength="38" class="mod-search__input" placeholder="课程搜索">
+                </form>
+                <a id="js_search" href="javascript:void(0)" onclick="onSubmit()" class="mod-search__btn-search">
                     <i class="layui-icon">&#xe615;</i>
                 </a>
             </div>
