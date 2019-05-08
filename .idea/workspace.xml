@@ -12,56 +12,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43a6ab9b-5e98-4a12-8534-d1300babfc29" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/course-service/src/test/java/com/example/courseservice/test/RedisTest.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/config/ErrorPageConfigure.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/config/FilterConfigure.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/ErrorAdviceController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/filter/VideoFilter.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/error/404.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/error/500.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/error/error.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/search-course-list.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/img/404.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/img/icon/nice_1.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/course/src/main/webapp/img/icon/nice_2.gif" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/CourseController.java" afterPath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/CourseController.java" />
-      <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/SearchController.java" afterPath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/SearchController.java" />
-      <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/dao/CourseMapper.java" afterPath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/dao/CourseMapper.java" />
-      <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CourseService.java" afterPath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CourseService.java" />
-      <change beforePath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CourseServiceImpl.java" afterPath="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/service/CourseServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/course-service/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/course-service/src/main/resources/application.properties" />
-      <change beforePath="$PROJECT_DIR$/course-service/src/test/java/com/example/courseservice/test/daotest/CourseTest.java" afterPath="$PROJECT_DIR$/course-service/src/test/java/com/example/courseservice/test/daotest/CourseTest.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/config/WebConfigurer.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/config/WebConfigurer.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/config/WebSocketConfig.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/CourseController.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/CourseController.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/CoursePageController.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/CoursePageController.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/DownloadController.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/DownloadController.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/IndexController.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/IndexController.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/UploadController.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/controller/UploadController.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/interceptor/LoginInterceptor.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/interceptor/LoginInterceptor.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/interceptor/ManagerInterceptor.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/interceptor/ManagerInterceptor.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/ErrorCourseServiceCallback.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/ErrorCourseServiceCallback.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/FeignCourseService.java" afterPath="$PROJECT_DIR$/course/src/main/java/com/example/course/service/feign/FeignCourseService.java" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/course/src/main/resources/application.properties" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/404.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/add-course.jsp" afterPath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/add-course.jsp" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/common/footer.jsp" afterPath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/common/footer.jsp" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/common/header.jsp" afterPath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/common/header.jsp" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/course-list.jsp" afterPath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/course-list.jsp" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/error.jsp" afterPath="$PROJECT_DIR$/course/src/main/resources/templates/error.html" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/information/user-info.jsp" afterPath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/information/user-info.jsp" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/login.jsp" afterPath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/login.jsp" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/my-course-list.jsp" afterPath="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/my-course-list.jsp" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/js/jSuggest.js" afterPath="$PROJECT_DIR$/course/src/main/webapp/js/jSuggest.js" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/js/myjs/add-course.js" afterPath="$PROJECT_DIR$/course/src/main/webapp/js/myjs/add-course.js" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/js/myjs/course-type-catalog.js" afterPath="$PROJECT_DIR$/course/src/main/webapp/js/myjs/course-type-catalog.js" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/js/myjs/course.js" afterPath="$PROJECT_DIR$/course/src/main/webapp/js/myjs/course.js" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/js/myjs/forget-password.js" afterPath="$PROJECT_DIR$/course/src/main/webapp/js/myjs/forget-password.js" />
-      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/js/myjs/my-course-list.js" afterPath="$PROJECT_DIR$/course/src/main/webapp/js/myjs/my-course-list.js" />
-      <change beforePath="$PROJECT_DIR$/eureka-service/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/eureka-service/src/main/resources/application.properties" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderservice/service/OrderServiceImpl.java" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderservice/service/OrderServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/order-service/src/main/resources/application.properties" />
-      <change beforePath="$PROJECT_DIR$/social-service/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/social-service/src/main/resources/application.properties" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" />
+      <change beforePath="$PROJECT_DIR$/course/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/course/src/main/webapp/index.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/eureka-service/target/" />
     <ignored path="$PROJECT_DIR$/order-provide/target/" />
@@ -96,6 +50,17 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="course@localhost" type="feb32156:DbDataSourceImpl" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="course@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="course@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="course: schema" type="c314c289:MysqlImplModel$Schema" />
+      </path>
     </expand>
     <select />
   </component>
@@ -104,57 +69,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eureka-service/src/main/resources/application.properties">
+      <file leaf-file-name="error.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/course/src/main/resources/templates/error.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="38" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/social-service/src/main/resources/application.properties">
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/course/src/main/webapp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="98" lean-forward="false" selection-start-line="6" selection-start-column="98" selection-end-line="6" selection-end-column="98" />
+            <state relative-caret-position="1095">
+              <caret line="165" column="62" lean-forward="true" selection-start-line="165" selection-start-column="62" selection-end-line="165" selection-end-column="62" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log-service/src/main/resources/application.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="11" column="60" lean-forward="true" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SocialServiceApplication.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/social-service/src/main/java/com/example/socialservice/SocialServiceApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding>
-                <element signature="e#421#422#0" expanded="true" />
-                <element signature="e#487#488#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CourseServiceApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/CourseServiceApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding>
-                <element signature="e#423#424#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -233,7 +163,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/course-service/src/test/java/com/example/courseservice/test/daotest/CourseTest.java" />
         <option value="$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/common/header.jsp" />
         <option value="$PROJECT_DIR$/course/src/main/webapp/js/myjs/course-type-catalog.js" />
         <option value="$PROJECT_DIR$/course-service/src/main/java/com/example/courseservice/controller/SearchController.java" />
@@ -284,6 +213,7 @@
         <option value="$PROJECT_DIR$/user-service/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/log-service/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/eureka-service/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/course/src/main/webapp/index.jsp" />
       </list>
     </option>
   </component>
@@ -360,6 +290,59 @@
               <item name="course-springcloud" type="b2602c69:ProjectViewProjectNode" />
               <item name="course-springcloud" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="course-springcloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="course-springcloud" type="462c0819:PsiDirectoryNode" />
+              <item name="course" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="course-springcloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="course-springcloud" type="462c0819:PsiDirectoryNode" />
+              <item name="course" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="course-springcloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="course-springcloud" type="462c0819:PsiDirectoryNode" />
+              <item name="course" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="course-springcloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="course-springcloud" type="462c0819:PsiDirectoryNode" />
+              <item name="course" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="course-springcloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="course-springcloud" type="462c0819:PsiDirectoryNode" />
+              <item name="course" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="course-springcloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="course-springcloud" type="462c0819:PsiDirectoryNode" />
+              <item name="course" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="course-springcloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="course-springcloud" type="462c0819:PsiDirectoryNode" />
+              <item name="course" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="icon" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -389,12 +372,12 @@
     <property name="database.data.extractors.current.id" value="SQL Updates" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\course-springcloud\course\src\main\webapp\WEB-INF\views\error" />
-      <recent name="D:\course-springcloud\course\src\main\webapp\WEB-INF\views" />
-      <recent name="D:\course-springcloud\course\src\main\webapp" />
-      <recent name="D:\course-springcloud\course\src\main\webapp\WEB-INF\views\common" />
-      <recent name="D:\course-springcloud\course\src\main\webapp\js\myjs" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\course-springcloud\course\src\main\webapp\img\icon" />
+      <recent name="D:\course-springcloud\course\src\main\webapp\img" />
+      <recent name="D:\course-springcloud\course\src\main\resources\templates" />
+      <recent name="D:\course-springcloud\course\src\main\webapp\ueditor\jsp" />
+      <recent name="D:\course-springcloud\course\src\main\webapp\upload\video" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.logservice.config" />
@@ -403,12 +386,12 @@
       <recent name="com.example.orderservice.Config" />
       <recent name="com.example.orderservice.OrderMapperTest" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\course-springcloud\course\src\main\webapp\img" />
-      <recent name="D:\course-springcloud\course\src\main\resources\templates" />
-      <recent name="D:\course-springcloud\course\src\main\webapp\ueditor\jsp" />
-      <recent name="D:\course-springcloud\course\src\main\webapp\upload\video" />
-      <recent name="D:\course-springcloud\course\src\main\webapp\upload\image" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\course-springcloud\course\src\main\webapp\WEB-INF\views\error" />
+      <recent name="D:\course-springcloud\course\src\main\webapp\WEB-INF\views" />
+      <recent name="D:\course-springcloud\course\src\main\webapp" />
+      <recent name="D:\course-springcloud\course\src\main\webapp\WEB-INF\views\common" />
+      <recent name="D:\course-springcloud\course\src\main\webapp\js\myjs" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -908,7 +891,7 @@
       <workItem from="1557289748734" duration="6090000" />
       <workItem from="1557313062024" duration="3332000" />
       <workItem from="1557320099739" duration="1172000" />
-      <workItem from="1557321849875" duration="7683000" />
+      <workItem from="1557321849875" duration="10535000" />
     </task>
     <task id="LOCAL-00001" summary="dsfsdfds">
       <created>1554708225208</created>
@@ -994,7 +977,14 @@
       <option name="project" value="LOCAL" />
       <updated>1557072623727</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="complete project">
+      <created>1557330612778</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1557330612778</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1030,7 +1020,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="881466000" />
+    <option name="totallyTimeSpent" value="884318000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1043,6 +1033,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18201517" sideWeight="0.5170576" order="14" side_tool="true" content_ui="tabs" />
@@ -1063,7 +1054,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.4978678" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.4978678" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4864572" sideWeight="0.48294243" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33044422" sideWeight="0.48294243" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22547974" sideWeight="0.49019608" order="1" side_tool="false" content_ui="combo" />
@@ -1104,13 +1095,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.5.RELEASE/spring-web-5.1.5.RELEASE-sources.jar!/org/springframework/http/HttpStatus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="631">
-          <caret line="190" column="13" lean-forward="false" selection-start-line="190" selection-start-column="4" selection-end-line="190" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/course/src/main/webapp/WEB-INF/views/common/footer.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -1223,14 +1207,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="770">
-          <caret line="35" column="39" lean-forward="false" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/course/src/main/webapp/css/mycss/course-list.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-66">
@@ -1261,6 +1237,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
           <caret line="27" column="59" lean-forward="false" selection-start-line="27" selection-start-column="59" selection-end-line="27" selection-end-column="59" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1302,6 +1279,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="682">
           <caret line="31" column="33" lean-forward="false" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1309,6 +1287,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1508,16 +1487,27 @@
         <state relative-caret-position="198">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
-            <element signature="e#423#424#0" expanded="true" />
+            <element signature="e#423#424#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/log-service/src/main/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/course-service/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="60" lean-forward="true" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
+        <state relative-caret-position="110">
+          <caret line="5" column="1" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/social-service/src/main/java/com/example/socialservice/SocialServiceApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#421#422#0" expanded="false" />
+            <element signature="e#487#488#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1537,22 +1527,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/course-service/src/main/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/log-service/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="1" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        <state relative-caret-position="198">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/social-service/src/main/java/com/example/socialservice/SocialServiceApplication.java">
+    <entry file="file://$PROJECT_DIR$/course/src/main/resources/templates/error.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="e#421#422#0" expanded="true" />
-            <element signature="e#487#488#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1095">
+          <caret line="165" column="62" lean-forward="true" selection-start-line="165" selection-start-column="62" selection-end-line="165" selection-end-column="62" />
+          <folding />
         </state>
       </provider>
     </entry>

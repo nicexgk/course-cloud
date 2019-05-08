@@ -136,33 +136,33 @@
                                 <!--公告板内容   3个li-->
                                 <ul class="mod-board_top-notice-list">
                                     <!--1-->
-                                    <li><a class="mod-board_top-notice" target="_blank">最后六十天考研冲刺</a></li>
+                                    <li><a class="mod-board_top-notice" target="_blank">南师梦中国梦</a></li>
                                     <!--2-->
-                                    <li><a class="mod-board_top-notice" target="_blank">2015国考快速解体</a></li>
+                                    <li><a class="mod-board_top-notice" target="_blank">求知若渴，需虚心若愚</a></li>
                                     <!--3-->
-                                    <li><a class="mod-board_top-notice" target="_blank">跟亚洲宝贝一起玩转韩国</a></li>
+                                    <li><a class="mod-board_top-notice" target="_blank">Nice课堂让梦飞的更远</a></li>
                                 </ul>
                                 <!--公告板内容   3个li end -->
                             </div>
                             <!--======================上半部分 end-->
                             <!--下半部分-->
-                            <div class="mod-board_bottom">
-                                <!--下载qq链接-->
-                                <a href="#" class="mod-board_link-dl" target="_blank"> <i class="icon-dl"></i>
-                                    <span class="mod-board_link-text"> <span
-                                            class="mod-board_link-text-large">下载</span> <br> 专用QQ
-									</span>
-                                </a>
-                                <!--二维码-->
-                                <div class="mod-board_wrap-qr">
-                                    <i class="icon-scan"></i> <span class="mod-board_link-text"> <span
-                                        class="mod-board_link-text-large">扫一扫</span> <br> QQ公众号
-										</span>
-                                    <div class="mod-board_qr">
-                                        <img src="img/imgs/bg-board-qr.png" alt="公众号"/>
-                                    </div>
-                                </div>
-                            </div>
+                            <%--<div class="mod-board_bottom">--%>
+                                <%--<!--下载qq链接-->--%>
+                                <%--<a href="#" class="mod-board_link-dl" target="_blank"> <i class="icon-dl"></i>--%>
+                                    <%--<span class="mod-board_link-text"> <span--%>
+                                            <%--class="mod-board_link-text-large"></span> <br>--%>
+									<%--</span>--%>
+                                <%--</a>--%>
+                                <%--<!--二维码-->--%>
+                                <%--<div class="mod-board_wrap-qr">--%>
+                                    <%--<i class="icon-scan"><img src="/img/icon/nice_1.gif"></i> <span class="mod-board_link-text"> <span--%>
+                                        <%--class="mod-board_link-text-large">扫一扫</span> <br>--%>
+										<%--</span>--%>
+                                    <%--<div class="mod-board_qr">--%>
+                                        <%--<img src="img/imgs/bg-board-qr.png" alt="公众号"/>--%>
+                                    <%--</div>--%>
+                                <%--</div>--%>
+                            <%--</div>--%>
                             <!--======================下半部分 end-->
                         </div>
                         <!--======================公告牌组件 end-->
